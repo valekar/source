@@ -1,0 +1,20 @@
+﻿<!--Show the Add symbol-->
+<!--<div ng-show="(row.entity.listNames == null || row.entity.listNames.length <= 0)">
+    <img src="{{grid.appScope.getImagePath('add')}}" style="width:20px; height:20px; margin-top:5px;" ng-click="grid.appScope.addNameNewAccount(row.entity, grid)" />
+</div>-->
+
+<!--Show list of values-->
+<!--<div ng-repeat="indVal in row.entity.listNames track by $index" ng-show="(row.entity.listNames != null && row.entity.listNames.length > 0)">
+    <label style="float:left;margin-left:5px;">{{indVal.strText}}</label>
+</div>-->
+
+<a href="javascript:void(0)">
+    <!--<img ng-src="{{grid.appScope.getImagePath('view')}}" style="width:20px; height:20px;float:left;margin-left:5px;" ng-click="grid.appScope.editNameNewAccount(row.entity, grid)" />-->
+    <img ng-src="{{grid.appScope.getImagePath('edit')}}" style="width:20px; height:20px;float:left;margin-left:5px;" ng-click="grid.appScope.editOrgNameGridRow(row.entity, grid)" />
+   
+</a>
+<!--<a href="javascript:void(0)" >
+    <img  ng-src="{{grid.appScope.getImagePath('research')}}" id="search" style="width:20px; height:20px;float:left;margin-left:8px;" ng-click="grid.appScope.getGoogleUrl(row.entity, grid)"/>
+</a>-->
+<label style="float:left;margin-left:5px;">{{row.entity.name}}</label>
+<ng-include src="editNameTemplate"></ng-include>

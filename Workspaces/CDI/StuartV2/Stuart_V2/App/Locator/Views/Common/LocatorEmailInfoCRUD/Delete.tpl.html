@@ -1,0 +1,86 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Delete Case Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Case Key:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.caseKey" id="CaseKey"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Case Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.caseName" id="CaseName"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CasDesc" class="col-sm-4 form-control-label">Case Details:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.caseDesc" id="CaseDesc"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Intake Channel:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.intakeChannel" id="intakeChannel"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Intake Department:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.intakeDept" id="intakeDept" ></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">CRM System:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.CRMSystem" id="CRMSystem"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CRMSystemID" class="col-sm-4 form-control-label">CRM System ID:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.CRMSystemID" id="CRMSystemID" ></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Type:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseInfo.CaseType" id="CaseType" ></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="constName" class="col-sm-4 form-control-label">Constituent Name:</label>
+            <div class="col-sm-8">
+                <label id="constName" ng-bind="caseInfo.constName" ></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Status:</label>
+            <div class="col-sm-8">
+                <label id="Status" ng-bind="caseInfo.Status"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="rowCode" class="col-sm-4 form-control-label">Reported Date:</label>
+            <div class="col-sm-8">
+                <label id="ReportedDate" ng-bind="caseInfo.ReportedDt" ></label>
+            </div>
+        </div><div class="form-group row">
+            <label for="loadID" class="col-sm-4 form-control-label">User Name:</label>
+            <div class="col-sm-8">
+                <label id="loadID" ng-bind="caseInfo.userName" >
+</div>
+        </div>
+
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

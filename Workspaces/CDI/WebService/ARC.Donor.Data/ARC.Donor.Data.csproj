@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42755B7C-040D-4223-A82E-A6DBCE1BB3F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ARC.Donor.Data</RootNamespace>
+    <AssemblyName>ARC.Donor.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MigSharp">
+      <HintPath>..\packages\MigSharp.2.3.3\lib\net40\MigSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.2.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Teradata.Client.Provider, Version=14.11.0.0, Culture=neutral, PublicKeyToken=76b417ee2e04956c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Teradata\NET Data Provider for Teradata\14.11\bin\Teradata.Client.Provider.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.cs" />
+    <Compile Include="Case\SaveCaseSearch.cs" />
+    <Compile Include="Case\Search.cs" />
+    <Compile Include="ComplexEntity\CaseSearchResults.cs" />
+    <Compile Include="ComplexEntity\ConsSearchResults.cs" />
+    <Compile Include="Constituents\Address.cs" />
+    <Compile Include="Constituents\AlternateIds.cs" />
+    <Compile Include="Constituents\Anonymous.cs" />
+    <Compile Include="Constituents\ARCBest.cs" />
+    <Compile Include="Constituents\Birth.cs" />
+    <Compile Include="Constituents\Characteristics.cs" />
+    <Compile Include="Constituents\ConstituentDNC.cs" />
+    <Compile Include="Constituents\ConstituentMaster.cs" />
+    <Compile Include="Constituents\ConstituentMerge.cs" />
+    <Compile Include="Constituents\ContactPreference.cs" />
+    <Compile Include="Constituents\Death.cs" />
+    <Compile Include="Constituents\DoNotContact.cs" />
+    <Compile Include="Constituents\Email.cs" />
+    <Compile Include="Constituents\ExternalBridge.cs" />
+    <Compile Include="Constituents\GroupMembership.cs" />
+    <Compile Include="Constituents\InternalBridge.cs" />
+    <Compile Include="Constituents\MasteringAttempts.cs" />
+    <Compile Include="Constituents\MergeHistory.cs" />
+    <Compile Include="Constituents\MessagePreference.cs" />
+    <Compile Include="Constituents\Name.cs" />
+    <Compile Include="Constituents\OldMaster.cs" />
+    <Compile Include="Constituents\OrgAffiliators.cs" />
+    <Compile Include="Constituents\OrgContacts.cs" />
+    <Compile Include="Constituents\OrgEmailDomain.cs" />
+    <Compile Include="Constituents\OrgNaics.cs" />
+    <Compile Include="Constituents\PreferenceLocator.cs" />
+    <Compile Include="Constituents\PreferredComChannel.cs" />
+    <Compile Include="Constituents\PreferredLocator.cs" />
+    <Compile Include="Constituents\RFMValues.cs" />
+    <Compile Include="Constituents\Search.cs" />
+    <Compile Include="Constituents\ShowAllDetails.cs" />
+    <Compile Include="Entities\Admin\Admin.cs" />
+    <Compile Include="Entities\Case\CaseSearch.cs" />
+    <Compile Include="Entities\Case\DeleteCase.cs" />
+    <Compile Include="Entities\Constituents\AlternateIds.cs" />
+    <Compile Include="Entities\Constituents\Anonymous.cs" />
+    <Compile Include="Entities\Constituents\ConstituentDNC.cs" />
+    <Compile Include="Entities\Constituents\ConstituentMaster.cs" />
+    <Compile Include="Entities\Constituents\ConstituentSearch.cs" />
+    <Compile Include="Entities\Constituents\DoNotContact.cs" />
+    <Compile Include="Entities\Constituents\MessagePreference.cs" />
+    <Compile Include="Entities\Constituents\OrgAffiliators.cs" />
+    <Compile Include="Entities\Constituents\OrgContacts.cs" />
+    <Compile Include="Entities\Constituents\OrgEmailDomain.cs" />
+    <Compile Include="Entities\Constituents\OrgNaics.cs" />
+    <Compile Include="Entities\Constituents\OrgName.cs" />
+    <Compile Include="Constituents\Phone.cs" />
+    <Compile Include="Constituents\Private.cs" />
+    <Compile Include="Constituents\Relationship.cs" />
+    <Compile Include="Constituents\Summary.cs" />
+    <Compile Include="Constituents\TransactionHistory.cs" />
+    <Compile Include="Constituents\Unmerge.cs" />
+    <Compile Include="Entities\Case\CaseLocator.cs" />
+    <Compile Include="Entities\Case\CaseNotes.cs" />
+    <Compile Include="Entities\Case\CaseSearchDetails.cs" />
+    <Compile Include="Entities\Case\CaseSearchResults.cs" />
+    <Compile Include="Entities\Case\SaveCaseSearch.cs" />
+    <Compile Include="Entities\Constituents\Address.cs" />
+    <Compile Include="Entities\Constituents\ARCBest.cs" />
+    <Compile Include="Entities\Constituents\Birth.cs" />
+    <Compile Include="Entities\Constituents\Characteristics.cs" />
+    <Compile Include="Entities\Constituents\Merge.cs" />
+    <Compile Include="Entities\Constituents\ConstSearchResultsCache.cs" />
+    <Compile Include="Entities\Constituents\ContactPreference.cs" />
+    <Compile Include="Entities\Constituents\Death.cs" />
+    <Compile Include="Entities\Constituents\Email.cs" />
+    <Compile Include="Entities\Constituents\ExternalBridge.cs" />
+    <Compile Include="Entities\Constituents\GroupMembership.cs" />
+    <Compile Include="Entities\Constituents\InternalBridge.cs" />
+    <Compile Include="Entities\Constituents\MasteringAttempts.cs" />
+    <Compile Include="Entities\Constituents\MergeHistory.cs" />
+    <Compile Include="Entities\Constituents\OldMaster.cs" />
+    <Compile Include="Entities\Constituents\PersonName.cs" />
+    <Compile Include="Entities\Constituents\Phone.cs" />
+    <Compile Include="Entities\Constituents\PreferenceLocator.cs" />
+    <Compile Include="Entities\Constituents\PreferredComChannel.cs" />
+    <Compile Include="Entities\Constituents\PreferredLocator.cs" />
+    <Compile Include="Entities\Constituents\Private.cs" />
+    <Compile Include="Entities\Constituents\Relationship.cs" />
+    <Compile Include="Entities\Constituents\RFMValues.cs" />
+    <Compile Include="Entities\Constituents\ShowDetails.cs" />
+    <Compile Include="Entities\Constituents\Summary.cs" />
+    <Compile Include="Entities\Constituents\TransactionHistory.cs" />
+    <Compile Include="Entities\Constituents\Unmerge.cs" />
+    <Compile Include="Entities\CrudOperationOutput.cs" />
+    <Compile Include="Entities\Locator\LocatorAddress.cs" />
+    <Compile Include="Entities\Locator\LocatorAddressSearchResults.cs" />
+    <Compile Include="Entities\Locator\LocatorDomainSearch.cs" />
+    <Compile Include="Entities\Locator\LocatorEmail.cs" />
+    <Compile Include="Entities\Locator\LocatorEmailDomainSearchResults.cs" />
+    <Compile Include="Entities\Locator\LocatorEmailSearchResults.cs" />
+    <Compile Include="Entities\Locator\LocatorSearch.cs" />
+    <Compile Include="Entities\Login\LoginHistoryInput.cs" />
+    <Compile Include="Entities\Login\TabLevelSecurity.cs" />
+    <Compile Include="Entities\MenuPreferences.cs" />
+    <Compile Include="Entities\Orgler\AccountMonitoring\ConfirmAccount.cs" />
+    <Compile Include="Entities\Orgler\AccountMonitoring\NAICS.cs" />
+    <Compile Include="Entities\Orgler\AccountMonitoring\PotentialMerge.cs" />
+    <Compile Include="Entities\Orgler\AccountMonitoring\Search.cs" />
+    <Compile Include="Entities\Orgler\AccountMonitoring\TransactionResults.cs" />
+    <Compile Include="Entities\Orgler\AccountMonitoring\UploadNaicsSuggestions.cs" />
+    <Compile Include="Entities\Orgler\Admin\UserProfile.cs" />
+    <Compile Include="Entities\Orgler\Admin\UserTabLevelSecurity.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Affiliations.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Characteristics.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Crud.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Hierarchy.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\NAICS.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Ranking.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\RFM.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Search.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Summary.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Tags.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\TransactionHistory.cs" />
+    <Compile Include="Entities\Orgler\EnterpriseOrgs\Transformations.cs" />
+    <Compile Include="Entities\Orgler\Shared.cs" />
+    <Compile Include="Entities\Orgler\Upload\AffiliationUpload.cs" />
+    <Compile Include="Entities\Orgler\Upload\EoUpload.cs" />
+    <Compile Include="Entities\Orgler\Upload\EosiUpload.cs" />
+    <Compile Include="Entities\Orgler\Upload\Transaction.cs" />
+    <Compile Include="Entities\Orgler\Upload\TransactionEntOrg.cs" />
+    <Compile Include="Entities\Orgler\Upload\UploadValidation.cs" />
+    <Compile Include="Entities\QueryLogger.cs" />
+    <Compile Include="Entities\stwrd_dnr_prfle.cs" />
+    <Compile Include="Entities\Transaction\TransactionDetails.cs" />
+    <Compile Include="Entities\Transaction\TransactionSearch.cs" />
+    <Compile Include="Entities\Transaction\TransactionUpdate.cs" />
+    <Compile Include="Entities\Upload\EmailOnlyUpload.cs" />
+    <Compile Include="Entities\Upload\GroupMembershipReference.cs" />
+    <Compile Include="Entities\Upload\GroupMembershipUpload.cs" />
+    <Compile Include="Entities\Upload\ListUploadSearch.cs" />
+    <Compile Include="Entities\Upload\MsgPrefUpload.cs" />
+    <Compile Include="Entities\Upload\NameAndEmailUpload.cs" />
+    <Compile Include="Interfaces\IConstituent.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IStuartDbContext.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Locator\Search.cs" />
+    <Compile Include="Login\LogUserHistory.cs" />
+    <Compile Include="Login\TabLevelSecurity.cs" />
+    <Compile Include="Objects\Constituent.cs" />
+    <Compile Include="Orgler\AccountMonitoring\ConfirmAccount.cs" />
+    <Compile Include="Orgler\AccountMonitoring\NAICS.cs" />
+    <Compile Include="Orgler\AccountMonitoring\PotentialMerge.cs" />
+    <Compile Include="Orgler\AccountMonitoring\Search.cs" />
+    <Compile Include="Orgler\AccountMonitoring\UploadNaicsSuggestions.cs" />
+    <Compile Include="Orgler\Admin\UserProfile.cs" />
+    <Compile Include="Orgler\Admin\UserTabLevelSecurity.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Affiliations.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Characteristics.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Crud.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Hierarchy.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\NAICS.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Ranking.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\RFM.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Search.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Summary.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Tags.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\TransactionHistory.cs" />
+    <Compile Include="Orgler\EnterpriseOrgs\Transformations.cs" />
+    <Compile Include="Orgler\Upload\EoUpload.cs" />
+    <Compile Include="Orgler\Upload\EosiUpload.cs" />
+    <Compile Include="Orgler\Upload\AffiliationUpload.cs" />
+    <Compile Include="Orgler\Upload\Transaction.cs" />
+    <Compile Include="Orgler\Upload\TransactionEntOrg.cs" />
+    <Compile Include="Orgler\Upload\UploadValidation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="RepositoryBase.cs" />
+    <Compile Include="SPHelper.cs" />
+    <Compile Include="SQLQueries\Admin\Admin.cs" />
+    <Compile Include="SQLQueries\CaseSQL.cs" />
+    <Compile Include="SQLQueries\ConstituentSearchSQL.cs" />
+    <Compile Include="SQLQueries\ConstituentSQL.cs" />
+    <Compile Include="DbContext.cs" />
+    <Compile Include="DbContextBase.cs" />
+    <Compile Include="SQLQueries\Constituents\Address.cs" />
+    <Compile Include="SQLQueries\Constituents\AlternateIds.cs" />
+    <Compile Include="SQLQueries\Constituents\Anonymous.cs" />
+    <Compile Include="SQLQueries\Constituents\ARCBest.cs" />
+    <Compile Include="SQLQueries\Constituents\Birth.cs" />
+    <Compile Include="SQLQueries\Constituents\Characteristics.cs" />
+    <Compile Include="SQLQueries\Constituents\Compare.cs" />
+    <Compile Include="SQLQueries\Constituents\ConstituentDNC.cs" />
+    <Compile Include="SQLQueries\Constituents\ConstituentMaster.cs" />
+    <Compile Include="SQLQueries\Constituents\ContactPreference.cs" />
+    <Compile Include="SQLQueries\Constituents\Death.cs" />
+    <Compile Include="SQLQueries\Constituents\DoNotContact.cs" />
+    <Compile Include="SQLQueries\Constituents\Email.cs" />
+    <Compile Include="SQLQueries\Constituents\ExternalBridge.cs" />
+    <Compile Include="SQLQueries\Constituents\GroupMembership.cs" />
+    <Compile Include="SQLQueries\Constituents\InternalBridge.cs" />
+    <Compile Include="SQLQueries\Constituents\MasteringAttempts.cs" />
+    <Compile Include="SQLQueries\Constituents\MergeHistory.cs" />
+    <Compile Include="SQLQueries\Constituents\MessagePreference.cs" />
+    <Compile Include="SQLQueries\Constituents\Name.cs" />
+    <Compile Include="SQLQueries\Constituents\OldMaster.cs" />
+    <Compile Include="SQLQueries\Constituents\OrgAffiliators.cs" />
+    <Compile Include="SQLQueries\Constituents\OrgContacts.cs" />
+    <Compile Include="SQLQueries\Constituents\OrgEmailDomain.cs" />
+    <Compile Include="SQLQueries\Constituents\OrgNaics.cs" />
+    <Compile Include="SQLQueries\Constituents\Phone.cs" />
+    <Compile Include="SQLQueries\Constituents\PreferenceLocator.cs" />
+    <Compile Include="SQLQueries\Constituents\PreferredComChannel.cs" />
+    <Compile Include="SQLQueries\Constituents\PreferredLocator.cs" />
+    <Compile Include="SQLQueries\Constituents\Private.cs" />
+    <Compile Include="SQLQueries\Constituents\Relationship.cs" />
+    <Compile Include="SQLQueries\Constituents\RFMValues.cs" />
+    <Compile Include="SQLQueries\Constituents\ShowAllDetails.cs" />
+    <Compile Include="SQLQueries\Constituents\Summary.cs" />
+    <Compile Include="SQLQueries\Constituents\TransactionHistory.cs" />
+    <Compile Include="SQLQueries\Constituents\Unmerge.cs" />
+    <Compile Include="SQLQueries\ListLocatorDomainInputSearchModel.cs" />
+    <Compile Include="SQLQueries\LocatorDomainInputSearchModel.cs" />
+    <Compile Include="SQLQueries\LocatorSQL.cs" />
+    <Compile Include="SQLQueries\Login\LogUserHistory.cs" />
+    <Compile Include="SQLQueries\Login\TabLevelSecurity.cs" />
+    <Compile Include="SQLQueries\Orgler\AccountMonitoring\ConfirmAccount.cs" />
+    <Compile Include="SQLQueries\Orgler\AccountMonitoring\NAICS.cs" />
+    <Compile Include="SQLQueries\Orgler\AccountMonitoring\PotentialMerge.cs" />
+    <Compile Include="SQLQueries\Orgler\AccountMonitoring\Search.cs" />
+    <Compile Include="SQLQueries\Orgler\AccountMonitoring\UploadNaicsSuggestions.cs" />
+    <Compile Include="SQLQueries\Orgler\Admin\UserProfile.cs" />
+    <Compile Include="SQLQueries\Orgler\Admin\UserTabLevelSecurity.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Characteristics.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\RFM.cs" />
+    <Compile Include="SQLQueries\Orgler\Upload\EoUpload.cs" />
+    <Compile Include="SQLQueries\Orgler\Upload\EosiUpload.cs" />
+    <Compile Include="SQLQueries\Orgler\Upload\AffiliationUpload.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Affiliations.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Crud.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Hierarchy.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\NAICS.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Ranking.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Search.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Summary.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Tags.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\TransactionHistory.cs" />
+    <Compile Include="SQLQueries\Orgler\EnterpriseOrgs\Transformations.cs" />
+    <Compile Include="SQLQueries\Orgler\Upload\Transaction.cs" />
+    <Compile Include="SQLQueries\Orgler\Upload\TransactionEntOrg.cs" />
+    <Compile Include="SQLQueries\Orgler\Upload\UploadValidation.cs" />
+    <Compile Include="SQLQueries\Transaction\TransactionDetails.cs" />
+    <Compile Include="SQLQueries\Transaction\TransactionSearchSQL.cs" />
+    <Compile Include="SQLQueries\Transaction\TransactionUpdate.cs" />
+    <Compile Include="SQLQueries\Upload\DncUploadSQLs.cs" />
+    <Compile Include="SQLQueries\Upload\EmailOnlyUploadDetails.cs" />
+    <Compile Include="SQLQueries\Upload\GroupMembershipReference.cs" />
+    <Compile Include="SQLQueries\Upload\ListUpload.cs" />
+    <Compile Include="SQLQueries\Upload\MsgPrefUploadSQLs.cs" />
+    <Compile Include="SQLQueries\Upload\NameAndEmailUploadDetails.cs" />
+    <Compile Include="SQLQueries\Upload\UploadDetails.cs" />
+    <Compile Include="SQLQueries\Upload\UploadValidation.cs" />
+    <Compile Include="Transaction\Search.cs" />
+    <Compile Include="Transaction\TransactionDetails.cs" />
+    <Compile Include="Transaction\TransactionUpdate.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="Entities\Upload\DncUpload.cs" />
+    <Compile Include="Upload\DncUploadDetails.cs" />
+    <Compile Include="Upload\EmailOnlyUploadDetails.cs" />
+    <Compile Include="Upload\GroupMembershipReferenceDetails.cs" />
+    <Compile Include="Upload\ListUpload.cs" />
+    <Compile Include="Upload\MsgPrefUploadDetails.cs" />
+    <Compile Include="Upload\NameAndEmailUploadDetails.cs" />
+    <Compile Include="Upload\UploadDetails.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SQLQueries\ConstituentSQL._oldcs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\" />
+    <Folder Include="StoredProc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ARC.Donor.Business\ARC.Donor.Business.csproj">
+      <Project>{84402CF5-0C41-4615-B5A4-5F9C6C160EF6}</Project>
+      <Name>ARC.Donor.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

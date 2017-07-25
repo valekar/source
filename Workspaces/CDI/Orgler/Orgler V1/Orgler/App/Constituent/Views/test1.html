@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="plunker">
+<head>
+    <title>Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+    <script src="~/Scripts/bootstrapui1.js"></script>
+    <script src="~/Scripts/AddConstituentName.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <style>
+        .full button span {
+            background-color: limegreen;
+            border-radius: 32px;
+            color: black;
+        }
+
+        .partially button span {
+            background-color: orange;
+            border-radius: 32px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="ModalDemoCtrl">
+        <script type="text/ng-template" id="myModalContent.html">
+            <form name="myForm" ng-submit="submit()">
+                Master Id: <input ng-model="masterid" type="text" required="true"> <br />
+                Prefix Name: <input ng-model="prefixname" type="text"> <br />
+                First Name: <input ng-model="firstname" type="text" required="true"> <br />
+                Last Name: <input ng-model="lastname" type="text" required="true"> <br />
+                Middle Name: <input ng-model="middlename" type="text"> <br />
+                Suffix Name: <input ng-model="suffixname" type="text"> <br />
+                Nick Name: <input ng-model="nickname" type="text"> <br />
+                Maiden Name: <input ng-model="maidenname" type="text"> <br />
+                Best LOS Indicator:
+
+                <div class="btn-group">
+
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="lositem in lositems">
+                            <a href="#" ng-click="$event.preventDefault(); selected.lositem = lositem">{{ lositem }}</a>
+                        </li>
+                    </ul>
+                    <button class="btn dropdown-toggle" data-toggle="toggleDropdown"> {{ selected.lositem }}<span class="caret"></span></button>
+                </div><!-- /btn-group -->
+                <br /><br />
+                Source System:
+                <div class="btn-group">
+
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="sourcesystemitem in sourcesystemitems">
+                            <a href="#" ng-click="$event.preventDefault(); selected.sourcesystemitem = sourcesystemitem">{{ sourcesystemitem }}</a>
+                        </li>
+                    </ul>
+                    <button class="btn dropdown-toggle" data-toggle="toggleDropdown"> {{ selected.sourcesystemitem }}<span class="caret"></span></button>
+                </div><!-- /btn-group -->
+                <br /><br />
+                Name Type:
+                <div class="btn-group">
+
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="nametypeitem in nametypeitems">
+                            <a href="#" ng-click="$event.preventDefault(); selected.nametypeitem = nametypeitem">{{ nametypeitem }}</a>
+                        </li>
+                    </ul>
+                    <button class="btn dropdown-toggle" data-toggle="toggleDropdown"> {{ selected.nametypeitem }}<span class="caret"></span></button>
+                </div><!-- /btn-group -->
+                <br /><br />
+
+                <br /><br />
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </script>
+        <button class="btn" ng-click="open()">Add New Name</button>
+        <div ng-show="selected">{{ selected }}</div>
+    </div>
+</body>
+</html>
+

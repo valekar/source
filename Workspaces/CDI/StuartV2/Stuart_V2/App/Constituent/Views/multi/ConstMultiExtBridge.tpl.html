@@ -1,0 +1,134 @@
+﻿<!--<div class="clearfix">
+    <div ng-style="toggleConstExtBridgeLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleConstExtBridgeHeader">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-left:-15px;">
+                <div class="pagination-left">
+                    <h3>Constituent External Bridge</h3>
+                </div>
+                
+                <div class="pagination-right items-number" ng-show="(totalConstExtBridgeItems>=5) == true">
+                    <select ng-model="constExtBridgeGridOptions.paginationPageSize" ng-options="o as o for o in constExtBridgeGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="constExtBridgeGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-top: 35px;">
+                <a href="#" class=" pull-right " style="padding-left:15px;" ng-click="showAllrecords(CONSTANTS.CONST_EXT_BRIDGE)">{{showExternal.showAllButtonName}}  </a>
+                <div ng-controller="ShowDetailsCtrl">
+                    <a href="#" class=" pull-right" ng-click="details.showDetails(CONSTANTS.CONST_EXT_BRIDGE)">Show Details</a>
+                    <div ng-show="details.togglePleaseWait">
+                        <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                            <h4>Please wait....</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleConstExtBridgeFiltering()">Filter</button>--
+        <div ui-grid="constExtBridgeGridOptions" ui-grid-selection class="ConstExtBridge" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize ng-style="toggleConstExtBridgeDetails">
+            <div class="watermark" ng-show="!constExtBridgeGridOptions.data.length">No data available</div>
+        </div>
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding" >
+                <div ng-show="(totalConstExtBridgeItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalConstExtBridgeItems" items-per-page="constExtBridgeGridOptions.paginationPageSize"
+                                        ng-change="pageChanged(CONSTANTS.CONST_EXT_BRIDGE,currentConstExtBridgePage)"
+                                        ng-model="currentConstExtBridgePage" class="pagination" direction-links="false" id="constExtBridge"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                   
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="showMergeUnmerge">
+                <div style="margin-top:20px;" class="pull-right">
+                    <button type="button" class="btn btn-default" ng-click="unmerge.addTocart()">Add to cart</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div> -->
+<div class="clearfix">
+    <div ng-style="toggleConstExtBridgeLoader">
+        <div class="refresh  refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleConstExtBridgeHeader">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-left:-15px;">
+                <div class="pagination-left">
+                    <h3>Constituent External Bridge</h3>
+                </div>
+               
+                <div class="pagination-right items-number" ng-show="(totalConstExtBridgeItems>=5) == true">
+                    <select ng-model="constExtBridgeGridOptions.paginationPageSize" ng-options="o as o for o in constExtBridgeGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="constExtBridgeGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-top: 35px;">
+ 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6 nopadding">
+                <div class="more-info">Displays all external bridge records</div>
+            </div> 
+            <div class="col-sm-6 col-lg-6 col-md-6 nopadding">
+
+               
+                <div ng-controller="ShowDetailsCtrl" class=" pull-right " >
+                    <a href="#" class=" pull-right" style="padding-left:15px;" ng-click="details.showDetails(CONSTANTS.CONST_EXT_BRIDGE)" >Show Details</a>
+                    <div ng-show="details.togglePleaseWait">
+                        <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                            <h4>Please wait....</h4>
+                        </div>
+                    </div>
+                    <a href="#" style="padding-left:15px;" ng-click="showAllrecords(CONSTANTS.CONST_EXT_BRIDGE)" >{{showExternal.showAllButtonName}}  </a>
+                </div>
+            </div>
+        </div>
+
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleConstExtBridgeFiltering()">Filter</button>-->
+        <div ui-grid="constExtBridgeGridOptions" ui-grid-selection class="ConstExtBridge" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize ng-style="toggleConstExtBridgeDetails">
+            <div class="watermark" ng-show="!constExtBridgeGridOptions.data.length">No data available</div>
+        </div>
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalConstExtBridgeItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalConstExtBridgeItems" items-per-page="constExtBridgeGridOptions.paginationPageSize"
+                                        ng-change="pageChanged(CONSTANTS.CONST_EXT_BRIDGE,currentConstExtBridgePage)"
+                                        ng-model="currentConstExtBridgePage" class="pagination" direction-links="false" id="constExtBridge"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="showMergeUnmerge">
+                <div style="margin-top:20px;" class="pull-right">
+                    <button type="button" class="btn btn-default" ng-click="unmerge.addTocart()">Add to cart</button>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-hide="showMergeUnmerge">
+                <div style="margin-top:20px;" class="pull-right">
+                    <span class="btn btn-default"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> 

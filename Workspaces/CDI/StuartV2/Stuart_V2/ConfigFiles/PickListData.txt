@@ -1,0 +1,5666 @@
+[
+  {
+    "picklist_typ": "Address Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "asdfsad",
+    "picklist_typ_dsc": "Address is not deliverable : Undeliverable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DELIVERABLE",
+    "picklist_typ_dsc": "Address is deliverable : Deliverable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "B",
+    "picklist_typ_dsc": "Billing Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "H",
+    "picklist_typ_dsc": "Home",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "O",
+    "picklist_typ_dsc": "Other",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SH",
+    "picklist_typ_dsc": "Shipping Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "U",
+    "picklist_typ_dsc": "Unknown",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Address Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "W",
+    "picklist_typ_dsc": "Work",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Affiliator Group Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Fortune-1K",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Assignment Method",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "FR SF PMM",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Assignment Method",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Name and Email Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Assignment Method",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Adhoc SQL script",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Assignment Method",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Group Membership Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Assignment Method",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Email-only Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Bose Application Source System Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SFFS",
+    "picklist_typ_dsc": null,
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Bose Application Source System Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TAFS",
+    "picklist_typ_dsc": null,
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 34,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Internal Matching",
+    "ref_order": 0,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 33,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Merge Conflicts - Low Priority",
+    "ref_order": 0,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 32,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Merge Conflicts - Medium Priority",
+    "ref_order": 0,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 31,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Merge Conflicts - High Priority",
+    "ref_order": 0,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 7,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Do Not Contact",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 4,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Identification Investigation",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 90,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Data Hygiene",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 5,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NCOA, Death, or Undeliverable Update",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Case Types",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Constituent Contact Update Request",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "07038",
+    "picklist_typ_dsc": "C071",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C018",
+    "picklist_typ_dsc": "Alabama",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C046",
+    "picklist_typ_dsc": "Arkansas",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C052",
+    "picklist_typ_dsc": "Bay Area",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C053",
+    "picklist_typ_dsc": "Sonoma Hub",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C062",
+    "picklist_typ_dsc": "Pikes Peak ",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C066",
+    "picklist_typ_dsc": "Colorado - Wyoming",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C071",
+    "picklist_typ_dsc": "Connecticut",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C106",
+    "picklist_typ_dsc": "Palm Beaches-Treasure Coast",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C109",
+    "picklist_typ_dsc": "North Florida",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C111",
+    "picklist_typ_dsc": "Georgia",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C131",
+    "picklist_typ_dsc": "Greater Chicago",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C132",
+    "picklist_typ_dsc": "Adams County",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C183",
+    "picklist_typ_dsc": "Southeast Louisiana",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C184",
+    "picklist_typ_dsc": "Louisiana Capital Area",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C186",
+    "picklist_typ_dsc": "Shreveport",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C211",
+    "picklist_typ_dsc": "Eastern Massachusetts",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C227",
+    "picklist_typ_dsc": "Southeast Michigan (Detroit)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C255",
+    "picklist_typ_dsc": "Kansas City",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C256",
+    "picklist_typ_dsc": "Southern MO",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C292",
+    "picklist_typ_dsc": "New Hampshire",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C303",
+    "picklist_typ_dsc": "South Jersey",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C308",
+    "picklist_typ_dsc": "South Jersey (Camden and Burlington Counties)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C322",
+    "picklist_typ_dsc": "Greater New York",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C325",
+    "picklist_typ_dsc": "Northeast New York",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C363",
+    "picklist_typ_dsc": "Eastern Oklahoma",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C382",
+    "picklist_typ_dsc": "Western Pennsylvania",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C388",
+    "picklist_typ_dsc": "Northeast Pennsylvania",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C391",
+    "picklist_typ_dsc": "Rhode Island",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C402",
+    "picklist_typ_dsc": "South Carolina Hub",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C431",
+    "picklist_typ_dsc": "North Texas",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C438",
+    "picklist_typ_dsc": "Central Texas",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C474",
+    "picklist_typ_dsc": "Western Washington",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C478",
+    "picklist_typ_dsc": "Northwest Washington",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C497",
+    "picklist_typ_dsc": "Western Wisconsin",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D102",
+    "picklist_typ_dsc": "South Florida",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D109",
+    "picklist_typ_dsc": "Florida's West Coast",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D132",
+    "picklist_typ_dsc": "Mid-Illinois",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D134",
+    "picklist_typ_dsc": "Midwest River",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D171",
+    "picklist_typ_dsc": "Louisville",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D223",
+    "picklist_typ_dsc": "Southeast Michigan (Watneshaw-Lenee)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D224",
+    "picklist_typ_dsc": "Central and Northern Michigan",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D239",
+    "picklist_typ_dsc": "Northern Minnesota",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D251",
+    "picklist_typ_dsc": "Saint Louis",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D302",
+    "picklist_typ_dsc": "North Jersey",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D324",
+    "picklist_typ_dsc": "Western New York Fingerlakes",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D326",
+    "picklist_typ_dsc": "Greater New York",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D328",
+    "picklist_typ_dsc": "Western New York",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D361",
+    "picklist_typ_dsc": "Central and Western Oklahoma",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D433",
+    "picklist_typ_dsc": "Texas Gulf Coast",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D436",
+    "picklist_typ_dsc": "Southwest Texas",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D474",
+    "picklist_typ_dsc": "Eastern Washington",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EMLT",
+    "picklist_typ_dsc": "EMLT",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "F058",
+    "picklist_typ_dsc": "Los Angeles",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "F102",
+    "picklist_typ_dsc": "Northeast Florida",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "F142",
+    "picklist_typ_dsc": "Greater Indianapolis",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "F225",
+    "picklist_typ_dsc": "West Michigan",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "G359",
+    "picklist_typ_dsc": "Northwest Ohio",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "G384",
+    "picklist_typ_dsc": "Southeast Pennsylvania",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "H351",
+    "picklist_typ_dsc": "Cincinnati",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "H387",
+    "picklist_typ_dsc": "Central Pennsylvania",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S018",
+    "picklist_typ_dsc": "S058",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S052",
+    "picklist_typ_dsc": "S052",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S058",
+    "picklist_typ_dsc": "S058",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S066",
+    "picklist_typ_dsc": "S066",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S071",
+    "picklist_typ_dsc": "S071",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S131",
+    "picklist_typ_dsc": "S131",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S142",
+    "picklist_typ_dsc": "S142",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S171",
+    "picklist_typ_dsc": "S171",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S183",
+    "picklist_typ_dsc": "S183",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S211",
+    "picklist_typ_dsc": "S211",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S223",
+    "picklist_typ_dsc": "S223",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S224",
+    "picklist_typ_dsc": "S224",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S225",
+    "picklist_typ_dsc": "S225",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S227",
+    "picklist_typ_dsc": "S227",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S234",
+    "picklist_typ_dsc": "S234",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S251",
+    "picklist_typ_dsc": "S251",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S303",
+    "picklist_typ_dsc": "S303",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S325",
+    "picklist_typ_dsc": "S325",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S351",
+    "picklist_typ_dsc": "S351",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S387",
+    "picklist_typ_dsc": "S387",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S402",
+    "picklist_typ_dsc": "S402",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S431",
+    "picklist_typ_dsc": "S431",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S432",
+    "picklist_typ_dsc": "S432",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S436",
+    "picklist_typ_dsc": "S436",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S438",
+    "picklist_typ_dsc": "S438",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S474",
+    "picklist_typ_dsc": "S474",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Chapter Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SNHQ",
+    "picklist_typ_dsc": "National Head Quarters",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "554tt",
+    "picklist_typ_dsc": "fggy5364",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "AAA",
+    "picklist_typ_dsc": "SSA",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "AGE_RANGE",
+    "picklist_typ_dsc": "AGE_RANGE",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ANONYMOUS",
+    "picklist_typ_dsc": "ANONYMOUS",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ASYNC",
+    "picklist_typ_dsc": "ASYNCHRONOUS CALLS",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "COMPANY_NM",
+    "picklist_typ_dsc": "Company Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DISABILITY",
+    "picklist_typ_dsc": "Physically Challenged",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DISCOUNT",
+    "picklist_typ_dsc": "Family",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DUPL_DW",
+    "picklist_typ_dsc": "Data Warehouse Dulicate Indicator",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ExeterTest",
+    "picklist_typ_dsc": "ExeterTest",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "FEIN",
+    "picklist_typ_dsc": "Company FEIN",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "GENDER",
+    "picklist_typ_dsc": "GENDER",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "INDUSTRY",
+    "picklist_typ_dsc": "INDUSTRY",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JDGMNTLN",
+    "picklist_typ_dsc": "Judgment or lien flag",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JOB_TITLE",
+    "picklist_typ_dsc": "Job Title",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NATIONALITY",
+    "picklist_typ_dsc": "Nationality of a person",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NUMEMPL",
+    "picklist_typ_dsc": "Number of Employees",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Oct 5 Test character",
+    "picklist_typ_dsc": "Oct 5 Test characteristic Type Desc",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG SEG:BEQ",
+    "picklist_typ_dsc": "Bequest Model",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG SEG:CGA",
+    "picklist_typ_dsc": "Annuitant Model",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG SEG:WG",
+    "picklist_typ_dsc": "Wills Guide Responder Model",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG_ARC IN WILL",
+    "picklist_typ_dsc": "ARC In Will",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG_CLOSED CGA",
+    "picklist_typ_dsc": "Donor has a Charitable Gift Annuity",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG_CLOSED PG",
+    "picklist_typ_dsc": "Donor Has Made Planned Gift",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG_CLOSED RESP",
+    "picklist_typ_dsc": "Closed responder",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PG_PREV RESP",
+    "picklist_typ_dsc": "Previous Responder",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PRIVATE",
+    "picklist_typ_dsc": "Private Person Indicator",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PRNTSUB",
+    "picklist_typ_dsc": "Parent or Subsidiary Flag",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PRPTYFLG",
+    "picklist_typ_dsc": "Company owns property flag ",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Revenue",
+    "picklist_typ_dsc": "Revenue for the company",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "rrr testing",
+    "picklist_typ_dsc": "testing",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "R_TST",
+    "picklist_typ_dsc": "Testing ",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SICCD",
+    "picklist_typ_dsc": "Company SIC code",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SLS",
+    "picklist_typ_dsc": "Sales for Company",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SLSRVNUE",
+    "picklist_typ_dsc": "Sales Revenue Type",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "STS",
+    "picklist_typ_dsc": "Company Status",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "tes",
+    "picklist_typ_dsc": "TE",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test code",
+    "picklist_typ_dsc": "testtttty",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test123",
+    "picklist_typ_dsc": "test123",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TestExeter",
+    "picklist_typ_dsc": "TestExeter",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test_firefox",
+    "picklist_typ_dsc": "test_dsc_firefox",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "UCCFLG",
+    "picklist_typ_dsc": "UCC UCC Filing Flag",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "URL",
+    "picklist_typ_dsc": "Website",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Characteristics Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "zzzzz",
+    "picklist_typ_dsc": "zzzzzz",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "00",
+    "picklist_typ_dsc": "00",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "003",
+    "picklist_typ_dsc": "003",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "111111",
+    "picklist_typ_dsc": "1s",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "44",
+    "picklist_typ_dsc": "44",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "a",
+    "picklist_typ_dsc": "b",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "a1",
+    "picklist_typ_dsc": "a1",
+    "ref_order": 6,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "AAA",
+    "picklist_typ_dsc": "AAABBB",
+    "ref_order": 7,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "aaaa",
+    "picklist_typ_dsc": "ffff",
+    "ref_order": 8,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "aaaaaaaaaaaa",
+    "picklist_typ_dsc": "11111111111111111",
+    "ref_order": 9,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "abc",
+    "picklist_typ_dsc": "b",
+    "ref_order": 10,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ACK",
+    "picklist_typ_dsc": null,
+    "ref_order": 11,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ACKNOWLEDGE",
+    "picklist_typ_dsc": null,
+    "ref_order": 12,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ACK_S",
+    "picklist_typ_dsc": null,
+    "ref_order": 13,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "APPEAL",
+    "picklist_typ_dsc": null,
+    "ref_order": 14,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "APPEAL_O",
+    "picklist_typ_dsc": null,
+    "ref_order": 15,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "APPEAL_S",
+    "picklist_typ_dsc": null,
+    "ref_order": 16,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "asdf",
+    "picklist_typ_dsc": "asdf",
+    "ref_order": 17,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "asgbxcv",
+    "picklist_typ_dsc": "xcvbcx",
+    "ref_order": 18,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Aug11 Test",
+    "picklist_typ_dsc": "Aug11 Test",
+    "ref_order": 19,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Aug14Test",
+    "picklist_typ_dsc": "Aug14TestDesc",
+    "ref_order": 20,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "AUTO_RENEW",
+    "picklist_typ_dsc": "Auto Renewing",
+    "ref_order": 21,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "BENEFIT",
+    "picklist_typ_dsc": null,
+    "ref_order": 22,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "BIOE",
+    "picklist_typ_dsc": "BIOE",
+    "ref_order": 23,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "BIOMED PREF",
+    "picklist_typ_dsc": "BIOMED PREF",
+    "ref_order": 24,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "CINFO",
+    "picklist_typ_dsc": "RE Import ID - Value in Comments",
+    "ref_order": 25,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "CINFO_S",
+    "picklist_typ_dsc": "Returned Mail",
+    "ref_order": 26,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "cntct_prefc_",
+    "picklist_typ_dsc": "cntct_prefc_dsc",
+    "ref_order": 27,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "CONSTIT",
+    "picklist_typ_dsc": null,
+    "ref_order": 28,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Contact Test",
+    "picklist_typ_dsc": "Test Description",
+    "ref_order": 29,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "cvxbc ",
+    "picklist_typ_dsc": "xcvsfdtr",
+    "ref_order": 30,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "CV_ORIGIN",
+    "picklist_typ_dsc": "Chapter uploaded Planned Gifts - mailabl",
+    "ref_order": 31,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "d",
+    "picklist_typ_dsc": "d",
+    "ref_order": 32,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "dfsd",
+    "picklist_typ_dsc": "sdfsaa",
+    "ref_order": 33,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC ALL",
+    "picklist_typ_dsc": "DNC ALL",
+    "ref_order": 34,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC Bio",
+    "picklist_typ_dsc": "DNC Bio",
+    "ref_order": 35,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC FR",
+    "picklist_typ_dsc": "DNC FR",
+    "ref_order": 36,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC insert",
+    "picklist_typ_dsc": "DNC insert",
+    "ref_order": 37,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC PHSS",
+    "picklist_typ_dsc": "DNC PHSS",
+    "ref_order": 38,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC PHST",
+    "picklist_typ_dsc": "DNC PHST",
+    "ref_order": 39,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EMAIL",
+    "picklist_typ_dsc": null,
+    "ref_order": 40,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EMAIL_OVER",
+    "picklist_typ_dsc": "Email over",
+    "ref_order": 41,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "errwg",
+    "picklist_typ_dsc": "trgregt",
+    "ref_order": 42,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EVENTSONLY",
+    "picklist_typ_dsc": null,
+    "ref_order": 43,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ExeterTest",
+    "picklist_typ_dsc": "ExeterTest",
+    "ref_order": 44,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "fdsadfsdf",
+    "picklist_typ_dsc": "asfdsadfasf",
+    "ref_order": 45,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "fff1",
+    "picklist_typ_dsc": "fff1",
+    "ref_order": 46,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "MAJOR DONOR",
+    "picklist_typ_dsc": "Chapter Major Giving Program",
+    "ref_order": 47,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NEW_TYPE",
+    "picklist_typ_dsc": "NEW_TYP",
+    "ref_order": 48,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "nm_test_cd",
+    "picklist_typ_dsc": "nm_test_dsc_chrome",
+    "ref_order": 49,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "nm_test_cd_c",
+    "picklist_typ_dsc": "nm_test_dsc_chrome",
+    "ref_order": 50,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NO CALL",
+    "picklist_typ_dsc": "DO NOT CALL",
+    "ref_order": 51,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Oct 1 Test c",
+    "picklist_typ_dsc": "Oct 1 Test contact Desc",
+    "ref_order": 52,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Oct 3 Test c",
+    "picklist_typ_dsc": "Oct 3 Test desc",
+    "ref_order": 53,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Oct 4 Test c",
+    "picklist_typ_dsc": "Oct 4 Test contact Desc",
+    "ref_order": 54,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "OK TO MAIL",
+    "picklist_typ_dsc": null,
+    "ref_order": 55,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Pre_0325",
+    "picklist_typ_dsc": "Pre_0325",
+    "ref_order": 56,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "rgh",
+    "picklist_typ_dsc": "trgregt",
+    "ref_order": 57,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SPECIALEVENT",
+    "picklist_typ_dsc": null,
+    "ref_order": 58,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SUPPRESSION",
+    "picklist_typ_dsc": "Suppression Records Sent by ARC HQ",
+    "ref_order": 59,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "tc",
+    "picklist_typ_dsc": "test after tab container",
+    "ref_order": 60,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TCP_0824",
+    "picklist_typ_dsc": "TCP_0824",
+    "ref_order": 61,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "terte",
+    "picklist_typ_dsc": "sdfs",
+    "ref_order": 62,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST",
+    "picklist_typ_dsc": "test contact by Exeter",
+    "ref_order": 63,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Test 2",
+    "picklist_typ_dsc": "Test Description",
+    "ref_order": 64,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test code Oc",
+    "picklist_typ_dsc": "test desc Oct 2",
+    "ref_order": 65,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test type cd",
+    "picklist_typ_dsc": "test type desc Oct1",
+    "ref_order": 66,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test111222",
+    "picklist_typ_dsc": "Test description",
+    "ref_order": 67,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test112",
+    "picklist_typ_dsc": "Test Description",
+    "ref_order": 68,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST123213",
+    "picklist_typ_dsc": "test contact by Exeter",
+    "ref_order": 69,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TestExeter",
+    "picklist_typ_dsc": "TestExeter",
+    "ref_order": 70,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "testing",
+    "picklist_typ_dsc": "testing",
+    "ref_order": 71,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "testing1",
+    "picklist_typ_dsc": "testing",
+    "ref_order": 72,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "testingsafs",
+    "picklist_typ_dsc": "testing",
+    "ref_order": 73,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "testtest",
+    "picklist_typ_dsc": "testtest",
+    "ref_order": 74,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "testtt",
+    "picklist_typ_dsc": "testtt",
+    "ref_order": 75,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST_C",
+    "picklist_typ_dsc": "TEST_DESC",
+    "ref_order": 76,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST_CC",
+    "picklist_typ_dsc": "TEST_DESC",
+    "ref_order": 77,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST_CD",
+    "picklist_typ_dsc": "TEST_DESC",
+    "ref_order": 78,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test_cd_chro",
+    "picklist_typ_dsc": "test_dsc_chrome",
+    "ref_order": 79,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "test_cd_fire",
+    "picklist_typ_dsc": "test_dsc_firefox",
+    "ref_order": 80,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST_PREF_CD",
+    "picklist_typ_dsc": "TEST PREFERENCE CODE",
+    "ref_order": 81,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Test_RJ",
+    "picklist_typ_dsc": "Testing RJ",
+    "ref_order": 82,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TEST_TYP",
+    "picklist_typ_dsc": "TEST_DSC",
+    "ref_order": 83,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "teswt",
+    "picklist_typ_dsc": "test",
+    "ref_order": 84,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "tttw",
+    "picklist_typ_dsc": "ttt3",
+    "ref_order": 85,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TYP1029",
+    "picklist_typ_dsc": "TYPE1029",
+    "ref_order": 86,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "typppppp cd",
+    "picklist_typ_dsc": "tyyyyy",
+    "ref_order": 87,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "werwerwe",
+    "picklist_typ_dsc": "werwerwe",
+    "ref_order": 88,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "yryery",
+    "picklist_typ_dsc": "dafgdg",
+    "ref_order": 89,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "12",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "1R",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "25",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "2R",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "44",
+    "ref_order": 6,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "4R",
+    "ref_order": 7,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "55555sss",
+    "ref_order": 8,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "7uyutu",
+    "ref_order": 9,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ADDRRESTRICT",
+    "ref_order": 10,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "adsfasdf",
+    "ref_order": 11,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ALL CHANNELS",
+    "ref_order": 12,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ARCHQ",
+    "ref_order": 13,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ARCHQ BIO",
+    "ref_order": 14,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "asdfasSS",
+    "ref_order": 15,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "asfafwer",
+    "ref_order": 16,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "BOARDOFGOV",
+    "ref_order": 17,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "CHAPTER",
+    "ref_order": 18,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "CHAPTER SENT",
+    "ref_order": 19,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "COFGOV",
+    "ref_order": 20,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "dfsf3223",
+    "ref_order": 21,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "DISASTERONLY",
+    "ref_order": 22,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "EMAIL",
+    "ref_order": 23,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "EMAIL OVER VALUE",
+    "ref_order": 24,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ExeterTest",
+    "ref_order": 25,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "EXP",
+    "ref_order": 26,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "FORMER BOG",
+    "ref_order": 27,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "GIFTSATWORK",
+    "ref_order": 28,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "GP STEWARD O",
+    "ref_order": 29,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "HLD FOR ADDR",
+    "ref_order": 30,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "HQSTAART",
+    "ref_order": 31,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "IMPORT_ID",
+    "ref_order": 32,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "INCOMPADD",
+    "ref_order": 33,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "MAIL",
+    "ref_order": 34,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "MANAGED DONOR",
+    "ref_order": 35,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NEWS_ONLY",
+    "ref_order": 36,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO",
+    "ref_order": 37,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO ADD",
+    "ref_order": 38,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO ADDRESS",
+    "ref_order": 39,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO CARD",
+    "ref_order": 40,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO CGA RENEW",
+    "ref_order": 41,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO DM",
+    "ref_order": 42,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO DM LABELS",
+    "ref_order": 43,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO EMAIL",
+    "ref_order": 44,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO EXCHANGE",
+    "ref_order": 45,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO GPSOLICIT",
+    "ref_order": 46,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO GPSURVEY",
+    "ref_order": 47,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO MAIL",
+    "ref_order": 48,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO MAIL ALL",
+    "ref_order": 49,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO NEWS",
+    "ref_order": 50,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO PG",
+    "ref_order": 51,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO PG SURVEY",
+    "ref_order": 52,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO PHONE",
+    "ref_order": 53,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NO PREMIUM",
+    "ref_order": 54,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NOMAIL",
+    "ref_order": 55,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NOPHONE",
+    "ref_order": 56,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "NOVAL",
+    "ref_order": 57,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Oct 4 Test contact Value",
+    "ref_order": 58,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OK GPLG",
+    "ref_order": 59,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKAPR",
+    "ref_order": 60,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKAUG",
+    "ref_order": 61,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKDEC",
+    "ref_order": 62,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKFEB",
+    "ref_order": 63,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKGPLG",
+    "ref_order": 64,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKJAN",
+    "ref_order": 65,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKJUL",
+    "ref_order": 66,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKJULY",
+    "ref_order": 67,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKJUN",
+    "ref_order": 68,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKJUNE",
+    "ref_order": 69,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKMAR",
+    "ref_order": 70,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKMAY",
+    "ref_order": 71,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKNOV",
+    "ref_order": 72,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKOCT",
+    "ref_order": 73,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "OKSEP",
+    "ref_order": 74,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ONCE PER YR",
+    "ref_order": 75,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ONE SUMMARY",
+    "ref_order": 76,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "PHONE",
+    "ref_order": 77,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "PREF_No11",
+    "ref_order": 78,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "PREMIUM ALLOW",
+    "ref_order": 79,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "REMOVE",
+    "ref_order": 80,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "RETURNED",
+    "ref_order": 81,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "sdffsda",
+    "ref_order": 82,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "SPECIAL",
+    "ref_order": 83,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "tc",
+    "ref_order": 84,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "test",
+    "ref_order": 85,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "test value Oct1",
+    "ref_order": 86,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "test113",
+    "ref_order": 87,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TESTAug14",
+    "ref_order": 88,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TestExeter",
+    "ref_order": 89,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TEST_PREFERENCE_VALUE",
+    "ref_order": 90,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TEST_Replica",
+    "ref_order": 91,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TEST_ReplicaMain",
+    "ref_order": 92,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Test_RJ",
+    "ref_order": 93,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "test_val_chrome",
+    "ref_order": 94,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "test_val_firefox",
+    "ref_order": 95,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TEXT",
+    "ref_order": 96,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "thetyhtyehyt",
+    "ref_order": 97,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "vbgh5rt5",
+    "ref_order": 98,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Contact Preference Value",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "WORKPLGIV",
+    "ref_order": 99,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverability Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "D",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverability Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "N",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverability Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverability Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "Y",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverable Locator Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "H",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverable Locator Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "P",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverable Locator Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "R",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Deliverable Locator Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Email Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EH",
+    "picklist_typ_dsc": "Home",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Email Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EW",
+    "picklist_typ_dsc": "Work",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Email Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "O",
+    "picklist_typ_dsc": "Other",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Email Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "U",
+    "picklist_typ_dsc": "Unknown",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Email Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "W",
+    "picklist_typ_dsc": "Web Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL_NV",
+    "picklist_typ_dsc": "Invalid ARC Email Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL_V",
+    "picklist_typ_dsc": "ARC Email Address Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DEC",
+    "picklist_typ_dsc": "Contains Deceased String",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EXTNV",
+    "picklist_typ_dsc": "External Assessment Email Invalid",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EXTVAL",
+    "picklist_typ_dsc": "Validated working email",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EXTVAL_W",
+    "picklist_typ_dsc": "External Assessment Questionable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "INVDOM",
+    "picklist_typ_dsc": "Email string is not a valid domain",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "INVFMT",
+    "picklist_typ_dsc": "Invalid format invalid email",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JUNKD",
+    "picklist_typ_dsc": "Intentionally Junked Email",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JUNKD_V",
+    "picklist_typ_dsc": "Junked Emails that are Valid",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NOSPAMDNC",
+    "picklist_typ_dsc": "No Spam DNC",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NOSPAMDNC_NV",
+    "picklist_typ_dsc": "Invalid No Spam DNC",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "REFDEC",
+    "picklist_typ_dsc": "Refused String",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_ARC",
+    "picklist_typ_dsc": "ARC Internal Service Acct",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_NV",
+    "picklist_typ_dsc": "Invalid Email appears to be service acct",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_V",
+    "picklist_typ_dsc": "Valid Email Appears to be Service Acct",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "External Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_W",
+    "picklist_typ_dsc": "Service Account may be problem",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL",
+    "picklist_typ_dsc": "ARC Email Address : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL_NV",
+    "picklist_typ_dsc": "Invalid ARC Email Address : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL_V",
+    "picklist_typ_dsc": "ARC Email Address Validated : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL_V_MAN",
+    "picklist_typ_dsc": "ARC Email Address good : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL_W_MAN",
+    "picklist_typ_dsc": "ARC Email Address warn : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DEC",
+    "picklist_typ_dsc": "Contains Deceased String : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DEC_MAN",
+    "picklist_typ_dsc": "Contains Deceased String : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC",
+    "picklist_typ_dsc": "Do Not Contact : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC_MAN",
+    "picklist_typ_dsc": "Do Not Contact : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EXTNV",
+    "picklist_typ_dsc": "External Assessment Email Invalid : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EXTVAL",
+    "picklist_typ_dsc": "Validated working email : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "EXTVAL_W",
+    "picklist_typ_dsc": "External Assessment Questionable : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "INVDOM",
+    "picklist_typ_dsc": "Email string is not a valid domain : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "INVFMT",
+    "picklist_typ_dsc": "Invalid format invalid email : Not Present",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "INVFMT_MAN",
+    "picklist_typ_dsc": "Invalid format invalid email : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JUNKD",
+    "picklist_typ_dsc": "Intentionally Junked Email : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JUNKD_MAN",
+    "picklist_typ_dsc": "Intentionally Junked Email : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "JUNKD_V",
+    "picklist_typ_dsc": "Junked Emails that are Valid : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NOSPAMDNC",
+    "picklist_typ_dsc": "No Spam DNC : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NOSPAMDNC_NV",
+    "picklist_typ_dsc": "Invalid No Spam DNC : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PASSINT",
+    "picklist_typ_dsc": "Passed Internal Assessment : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PASS_MAN",
+    "picklist_typ_dsc": "Passed Assessment : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "REFDEC",
+    "picklist_typ_dsc": "Refused String : Not Present",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_ARC",
+    "picklist_typ_dsc": "ARC Internal Service Acct : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_NV",
+    "picklist_typ_dsc": "Invalid Email appears to be service acct : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_V",
+    "picklist_typ_dsc": "Valid Email Appears to be Service Acct : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACCT_W",
+    "picklist_typ_dsc": "Service Account may be problem : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACT",
+    "picklist_typ_dsc": "Service Account Not Validated : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Final Assesment Code Email",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACT_MAN",
+    "picklist_typ_dsc": "Service Account : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 247,
+    "picklist_typ_cd": "657zxcvasdg",
+    "picklist_typ_dsc": "asfdczz",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 226,
+    "picklist_typ_cd": "AA1f",
+    "picklist_typ_dsc": "AA1f",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 206,
+    "picklist_typ_cd": "AJ 3.31",
+    "picklist_typ_dsc": "AJ 3.31 new code",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 217,
+    "picklist_typ_cd": "AJ 3.32",
+    "picklist_typ_dsc": "AJ 3.32 New code",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 148,
+    "picklist_typ_cd": "AJ's test",
+    "picklist_typ_dsc": "Does this come from the file or this field",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 157,
+    "picklist_typ_cd": "Akshay Session 4",
+    "picklist_typ_dsc": "Akshay Session 4",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 253,
+    "picklist_typ_cd": "Akshay test",
+    "picklist_typ_dsc": "Sept 3",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 176,
+    "picklist_typ_cd": "AkshayJSON0215",
+    "picklist_typ_dsc": "sfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 177,
+    "picklist_typ_cd": "AkshayJSON0221",
+    "picklist_typ_dsc": "sdfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 178,
+    "picklist_typ_cd": "AkshayJSON0222",
+    "picklist_typ_dsc": "Zxfcsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 173,
+    "picklist_typ_cd": "AkshayJSON1236",
+    "picklist_typ_dsc": "AkshayJSON1236Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 174,
+    "picklist_typ_cd": "AkshayJSON1258",
+    "picklist_typ_dsc": "AkshayJSON1258Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 267,
+    "picklist_typ_cd": "AksTest",
+    "picklist_typ_dsc": "AksTest",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 268,
+    "picklist_typ_cd": "AksTest1",
+    "picklist_typ_dsc": "AksTest1",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 220,
+    "picklist_typ_cd": "Annual meeting 2015",
+    "picklist_typ_dsc": "Annual meeting 2015",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 7,
+    "picklist_typ_cd": "Aqwq2991122",
+    "picklist_typ_dsc": "10th Annual Red Cross Ballasdasd",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 238,
+    "picklist_typ_cd": "ARC010",
+    "picklist_typ_dsc": "ARC modify/delete",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 245,
+    "picklist_typ_cd": "ARC0101",
+    "picklist_typ_dsc": "ARC constituent add",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 244,
+    "picklist_typ_cd": "ARC0111",
+    "picklist_typ_dsc": "ARC modify",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 218,
+    "picklist_typ_cd": "B110",
+    "picklist_typ_dsc": "B110",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 133,
+    "picklist_typ_cd": "bcd",
+    "picklist_typ_dsc": "bcd",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 266,
+    "picklist_typ_cd": "bcd3",
+    "picklist_typ_dsc": "bcd3",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 285,
+    "picklist_typ_cd": "Chaya Test",
+    "picklist_typ_dsc": "Chaya Test",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 164,
+    "picklist_typ_cd": "CU new on 3/26",
+    "picklist_typ_dsc": "CU new code to see in ddlb",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 233,
+    "picklist_typ_cd": "Dixit 0521",
+    "picklist_typ_dsc": "Dixit 0521",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 131,
+    "picklist_typ_cd": "dixit jain - test",
+    "picklist_typ_dsc": "dixit jain - test",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 264,
+    "picklist_typ_cd": "dj_123",
+    "picklist_typ_dsc": "dj_123",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 265,
+    "picklist_typ_cd": "dj_123",
+    "picklist_typ_dsc": "dj_123",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 254,
+    "picklist_typ_cd": "DJ_Test2",
+    "picklist_typ_dsc": "DJ_Test2",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 147,
+    "picklist_typ_cd": "egherherh",
+    "picklist_typ_dsc": "rthwtrwr",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 211,
+    "picklist_typ_cd": "Ekka",
+    "picklist_typ_dsc": "Raja",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 165,
+    "picklist_typ_cd": "ELU new on 3/26",
+    "picklist_typ_dsc": "ELU new on 3/26 for ddlb",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 138,
+    "picklist_typ_cd": "Email Assessment Tes",
+    "picklist_typ_dsc": "Email Assessment Test Group",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 187,
+    "picklist_typ_cd": "ERWEWEWEDSD",
+    "picklist_typ_dsc": "teerere",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 231,
+    "picklist_typ_cd": "ExeterTest",
+    "picklist_typ_dsc": "ExeterTest",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 120,
+    "picklist_typ_cd": "FEB2015_NEWSLTR_RFL",
+    "picklist_typ_dsc": "FEB2015_NEWSLTR_RFL",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 121,
+    "picklist_typ_cd": "FEB2015_NEWSLTR_TFNY",
+    "picklist_typ_dsc": "FEB2015_NEWSLTR_TIFFNY",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 257,
+    "picklist_typ_cd": "fgjry",
+    "picklist_typ_dsc": "uyuyrju",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 249,
+    "picklist_typ_cd": "FR MANAGED DONOR",
+    "picklist_typ_dsc": "FR MANAGED DONOR",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 256,
+    "picklist_typ_cd": "fsdggfsdfgfsdf",
+    "picklist_typ_dsc": "gsdgsdfgsdfg",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 154,
+    "picklist_typ_cd": "G0012",
+    "picklist_typ_dsc": "G0012",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 193,
+    "picklist_typ_cd": "G111",
+    "picklist_typ_dsc": "Group 111",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 149,
+    "picklist_typ_cd": "G123",
+    "picklist_typ_dsc": "Group 123",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 275,
+    "picklist_typ_cd": "G123",
+    "picklist_typ_dsc": "G123",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 153,
+    "picklist_typ_cd": "G12345",
+    "picklist_typ_dsc": "G12345",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 150,
+    "picklist_typ_cd": "G456",
+    "picklist_typ_dsc": "Group 456",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 281,
+    "picklist_typ_cd": "G909812",
+    "picklist_typ_dsc": "G909812",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 278,
+    "picklist_typ_cd": "G98091",
+    "picklist_typ_dsc": "G98091",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 292,
+    "picklist_typ_cd": "G989",
+    "picklist_typ_dsc": "Group 989",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 260,
+    "picklist_typ_cd": "gbetybyb",
+    "picklist_typ_dsc": "ybwrgbverb",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 248,
+    "picklist_typ_cd": "ggtt",
+    "picklist_typ_dsc": "ddsdfd",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 139,
+    "picklist_typ_cd": "group 0320",
+    "picklist_typ_dsc": "group 0320",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 202,
+    "picklist_typ_cd": "Group Circle1",
+    "picklist_typ_dsc": "Group Circle",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 270,
+    "picklist_typ_cd": "GroupTypeTest2",
+    "picklist_typ_dsc": "GroupTypeTest2",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 271,
+    "picklist_typ_cd": "GroupTypeTest3",
+    "picklist_typ_dsc": "GroupTypeTest3",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 144,
+    "picklist_typ_cd": "help desk",
+    "picklist_typ_dsc": "help desk",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 250,
+    "picklist_typ_cd": "hhuy8uyi",
+    "picklist_typ_dsc": "asdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 261,
+    "picklist_typ_cd": "jsdfsjdfgjksdgfsg",
+    "picklist_typ_dsc": "fsdgdfhhhhsdfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 181,
+    "picklist_typ_cd": "json02234",
+    "picklist_typ_dsc": "sdfsdfsasdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 208,
+    "picklist_typ_cd": "json1137",
+    "picklist_typ_dsc": "json1137name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 209,
+    "picklist_typ_cd": "json1150",
+    "picklist_typ_dsc": "json1150name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 179,
+    "picklist_typ_cd": "json227",
+    "picklist_typ_dsc": "dfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 180,
+    "picklist_typ_cd": "json237",
+    "picklist_typ_dsc": "sdfsfd",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 182,
+    "picklist_typ_cd": "json247",
+    "picklist_typ_dsc": "fsdfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 183,
+    "picklist_typ_cd": "json250",
+    "picklist_typ_dsc": "sdfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 184,
+    "picklist_typ_cd": "json305",
+    "picklist_typ_dsc": "sdfsf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 198,
+    "picklist_typ_cd": "json638",
+    "picklist_typ_dsc": "json638name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 199,
+    "picklist_typ_cd": "json640",
+    "picklist_typ_dsc": "json640change",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 200,
+    "picklist_typ_cd": "json647",
+    "picklist_typ_dsc": "json647name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 205,
+    "picklist_typ_cd": "json745",
+    "picklist_typ_dsc": "json745name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 203,
+    "picklist_typ_cd": "json814",
+    "picklist_typ_dsc": "json814name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 228,
+    "picklist_typ_cd": "k110",
+    "picklist_typ_dsc": "k110",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 229,
+    "picklist_typ_cd": "k110a ",
+    "picklist_typ_dsc": "k110a",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 240,
+    "picklist_typ_cd": "N111",
+    "picklist_typ_dsc": "Test-Firefox",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 167,
+    "picklist_typ_cd": "New code 3.26",
+    "picklist_typ_dsc": "New code 3.26",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 259,
+    "picklist_typ_cd": "qweqwewedwedrwe",
+    "picklist_typ_dsc": "erftrgtrgrg",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 140,
+    "picklist_typ_cd": "Reconnecting Family ",
+    "picklist_typ_dsc": "Reconnecting Family Links - March",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 242,
+    "picklist_typ_cd": "Roy-Test",
+    "picklist_typ_dsc": "Roy-Test1",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 258,
+    "picklist_typ_cd": "sdfrefefcrec",
+    "picklist_typ_dsc": "recervvtgv",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 252,
+    "picklist_typ_cd": "sdfsdfs",
+    "picklist_typ_dsc": "dfsdfsdfsdfsdfsdf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 246,
+    "picklist_typ_cd": "stawdrwew",
+    "picklist_typ_dsc": "rwresadfaszf",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 272,
+    "picklist_typ_cd": "T12334",
+    "picklist_typ_dsc": "T12334",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 243,
+    "picklist_typ_cd": "terwer",
+    "picklist_typ_dsc": "asdfads",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 282,
+    "picklist_typ_cd": "Test - Akshay",
+    "picklist_typ_dsc": "Test - Akshay Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 137,
+    "picklist_typ_cd": "Test Group",
+    "picklist_typ_dsc": "Test Group",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 291,
+    "picklist_typ_cd": "Test1017",
+    "picklist_typ_dsc": "Test1017",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 241,
+    "picklist_typ_cd": "test1234",
+    "picklist_typ_dsc": "test1234",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 134,
+    "picklist_typ_cd": "test123435changed",
+    "picklist_typ_dsc": "test123435namechanged",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 210,
+    "picklist_typ_cd": "Test222test",
+    "picklist_typ_dsc": "Test222nametest",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 145,
+    "picklist_typ_cd": "Test321",
+    "picklist_typ_dsc": "test321",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 189,
+    "picklist_typ_cd": "test467546",
+    "picklist_typ_dsc": "AkshayJSON0215",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 293,
+    "picklist_typ_cd": "test517",
+    "picklist_typ_dsc": "Tes517",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 214,
+    "picklist_typ_cd": "test626change",
+    "picklist_typ_dsc": "test626namechange",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 215,
+    "picklist_typ_cd": "test639",
+    "picklist_typ_dsc": "test639name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 216,
+    "picklist_typ_cd": "test641",
+    "picklist_typ_dsc": "test641name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 284,
+    "picklist_typ_cd": "Test914",
+    "picklist_typ_dsc": "Test914",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 288,
+    "picklist_typ_cd": "Test923",
+    "picklist_typ_dsc": "Test923",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 289,
+    "picklist_typ_cd": "Test923339",
+    "picklist_typ_dsc": "Test923339",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 286,
+    "picklist_typ_cd": "TestAkshay111",
+    "picklist_typ_dsc": "TestAkshay111",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 127,
+    "picklist_typ_cd": "testcode",
+    "picklist_typ_dsc": "testname",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 232,
+    "picklist_typ_cd": "TestExeter",
+    "picklist_typ_dsc": "TestExeter",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 186,
+    "picklist_typ_cd": "testtestttttt",
+    "picklist_typ_dsc": "skndksdn555",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 235,
+    "picklist_typ_cd": "testtt",
+    "picklist_typ_dsc": "testtt",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 142,
+    "picklist_typ_cd": "Tiffany Circle of Sa",
+    "picklist_typ_dsc": "Tiffany Circle of Saratoga",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 126,
+    "picklist_typ_cd": "Torch 1 NHQ",
+    "picklist_typ_dsc": "Torch 1 NHQ",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 225,
+    "picklist_typ_cd": "tyry",
+    "picklist_typ_dsc": "sfgdfg",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 224,
+    "picklist_typ_cd": "tyry",
+    "picklist_typ_dsc": "rtyrt",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 223,
+    "picklist_typ_cd": "www",
+    "picklist_typ_dsc": "wwww",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 263,
+    "picklist_typ_cd": "Y1234",
+    "picklist_typ_dsc": "Y1234",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 135,
+    "picklist_typ_cd": "Youthwire - 0301",
+    "picklist_typ_dsc": "Youthwire - 0301",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 141,
+    "picklist_typ_cd": "youthwire - 03232015",
+    "picklist_typ_dsc": "youthwire - 03232015a",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 136,
+    "picklist_typ_cd": "youthwire - march 20",
+    "picklist_typ_dsc": "youthwire - march 2015",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Group Name",
+    "picklist_typ_key": 251,
+    "picklist_typ_cd": "Z999",
+    "picklist_typ_dsc": "Z999",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 6,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "RCO Contact Us",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Email",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "White Mail",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 4,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Phone",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Twitter",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 5,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Facebook",
+    "ref_order": 6,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Channel",
+    "picklist_typ_key": 7,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Internal",
+    "ref_order": 7,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Biomed Customer Care",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Fundraising Donor Services",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 6,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "PHSS TSC",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 4,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Public Inquiry",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 8,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Social Media",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 7,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "MKTDATA",
+    "ref_order": 6,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 5,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "IT",
+    "ref_order": 7,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Intake Owner Department",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "SAF",
+    "ref_order": 8,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Internal Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ARCMAIL",
+    "picklist_typ_dsc": "ARC Email Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Internal Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DNC",
+    "picklist_typ_dsc": "Do Not Contact",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Internal Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PASSINT",
+    "picklist_typ_dsc": "Passed Internal Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Internal Assessment Code",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SVCACT",
+    "picklist_typ_dsc": "Service Account Not Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Address Assessment Code",
+    "picklist_typ_key": 20002,
+    "picklist_typ_cd": "DELIVERABLE_MAN",
+    "picklist_typ_dsc": "Address is deliverable : Deliverable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Address Assessment Code",
+    "picklist_typ_key": 20003,
+    "picklist_typ_cd": "NOT-DELIVERABLE_MAN",
+    "picklist_typ_dsc": "Address is not deliverable : Undeliverable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 2011,
+    "picklist_typ_cd": "ARCMAIL_V_MAN",
+    "picklist_typ_dsc": "ARC Email Address good : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 3011,
+    "picklist_typ_cd": "ARCMAIL_W_MAN",
+    "picklist_typ_dsc": "ARC Email Address warn : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 8041,
+    "picklist_typ_cd": "DEC_MAN",
+    "picklist_typ_dsc": "Contains Deceased String : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 9051,
+    "picklist_typ_cd": "DNC_MAN",
+    "picklist_typ_dsc": "Do Not Contact : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 8003,
+    "picklist_typ_cd": "INVFMT_MAN",
+    "picklist_typ_dsc": "Invalid format invalid email : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 9024,
+    "picklist_typ_cd": "JUNKD_MAN",
+    "picklist_typ_dsc": "Intentionally Junked Email : Not Usable",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 2051,
+    "picklist_typ_cd": "PASS_MAN",
+    "picklist_typ_dsc": "Passed Assessment : Validated",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Manual Email Assessment Code",
+    "picklist_typ_key": 3016,
+    "picklist_typ_cd": "SVCACT_MAN",
+    "picklist_typ_dsc": "Service Account : Use With Caution",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Organization Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "AN",
+    "picklist_typ_dsc": "Alias",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Organization Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PN",
+    "picklist_typ_dsc": "Primary Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "AN",
+    "picklist_typ_dsc": "Alias",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "HRN",
+    "picklist_typ_dsc": "Honor Roll",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "MN",
+    "picklist_typ_dsc": "Maiden Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NN",
+    "picklist_typ_dsc": "Nickname",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PN",
+    "picklist_typ_dsc": "Primary Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PSN",
+    "picklist_typ_dsc": "Presidential Salutation",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Person Name Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "U",
+    "picklist_typ_dsc": "Unknown",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "F",
+    "picklist_typ_dsc": "Other Fax",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "FH",
+    "picklist_typ_dsc": "Home Fax",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "FW",
+    "picklist_typ_dsc": "Work Fax",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "H",
+    "picklist_typ_dsc": "Home",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "M",
+    "picklist_typ_dsc": "Mobile",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "O",
+    "picklist_typ_dsc": "Other",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TF",
+    "picklist_typ_dsc": "Toll Free",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TY",
+    "picklist_typ_dsc": "TTY",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "U",
+    "picklist_typ_dsc": "Unknown",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "VM",
+    "picklist_typ_dsc": "Voice Mail",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "W",
+    "picklist_typ_dsc": "Work",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "WA",
+    "picklist_typ_dsc": "Work (Exec. Assistant)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "WD",
+    "picklist_typ_dsc": "Work (Direct Line)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "WE",
+    "picklist_typ_dsc": "Work (Corporate Executive)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Phone Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "WG",
+    "picklist_typ_dsc": "Work (Main/General)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Channel",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TELE",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Channel",
+    "picklist_typ_key": 4,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "EMAIL",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Channel",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "MAIL",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Channel",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "TEXT",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Channel",
+    "picklist_typ_key": 5,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ALL",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Los",
+    "picklist_typ_key": 6,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "ALL",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Los",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "BIO",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Los",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "FR",
+    "ref_order": 3,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Los",
+    "picklist_typ_key": 4,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "PHSS",
+    "ref_order": 4,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Los",
+    "picklist_typ_key": 5,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "SAF",
+    "ref_order": 5,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Los",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "VOL",
+    "ref_order": 6,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Message",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Appeals",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Message",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "News",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Message",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "All",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Request Type",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Please Do",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Preference Request Type",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Please DNS",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Reference Sources",
+    "picklist_typ_key": 90,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "CDI Hygiene",
+    "ref_order": 0,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Reference Sources",
+    "picklist_typ_key": 13,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "SFDC PI",
+    "ref_order": 1,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Reference Sources",
+    "picklist_typ_key": 14,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "SFDC PHSS",
+    "ref_order": 2,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 27,
+    "picklist_typ_cd": "ACQ",
+    "picklist_typ_dsc": "Acquaintance",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "Advertisin",
+    "picklist_typ_dsc": "Advertising Manager",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 24,
+    "picklist_typ_cd": "AO",
+    "picklist_typ_dsc": "Account Owner",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 25,
+    "picklist_typ_cd": "ASSIGN",
+    "picklist_typ_dsc": "Assigner",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 5,
+    "picklist_typ_cd": "BO",
+    "picklist_typ_dsc": "Business Owner",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 4,
+    "picklist_typ_cd": "BOARD",
+    "picklist_typ_dsc": "Board Member",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 6,
+    "picklist_typ_cd": "BP",
+    "picklist_typ_dsc": "Business Partner",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 31,
+    "picklist_typ_cd": "CCD",
+    "picklist_typ_dsc": "Contact from Chapter Data",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 8,
+    "picklist_typ_cd": "CEO",
+    "picklist_typ_dsc": "Chief Executive Officer",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 23,
+    "picklist_typ_cd": "CO",
+    "picklist_typ_dsc": "Contact Owner",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 9,
+    "picklist_typ_cd": "CORP",
+    "picklist_typ_dsc": "Corporate Grantmaker",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 7,
+    "picklist_typ_cd": "CP",
+    "picklist_typ_dsc": "Chairperson",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 0,
+    "picklist_typ_cd": "DWU",
+    "picklist_typ_dsc": "DW Unknown",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 10,
+    "picklist_typ_cd": "EMP",
+    "picklist_typ_dsc": "Employee",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 32,
+    "picklist_typ_cd": "FAM",
+    "picklist_typ_dsc": "Family",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 11,
+    "picklist_typ_cd": "FO",
+    "picklist_typ_dsc": "Foundation Officer",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 30,
+    "picklist_typ_cd": "FRND",
+    "picklist_typ_dsc": "Friend",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 12,
+    "picklist_typ_cd": "HR",
+    "picklist_typ_dsc": "Human Resources Manager",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "IAG",
+    "picklist_typ_dsc": "Individual Account Group",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 13,
+    "picklist_typ_cd": "IK",
+    "picklist_typ_dsc": "In-Kind Contact",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 14,
+    "picklist_typ_cd": "LU",
+    "picklist_typ_dsc": "Local Underwriting Decision Maker",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 16,
+    "picklist_typ_cd": "MG",
+    "picklist_typ_dsc": "Matching Gifts Officer",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 15,
+    "picklist_typ_cd": "MK",
+    "picklist_typ_dsc": "Marketing/Partnership Contact",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 17,
+    "picklist_typ_cd": "MM",
+    "picklist_typ_dsc": "Multi-Market Contact",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 18,
+    "picklist_typ_cd": "NA",
+    "picklist_typ_dsc": "National Underwriting Decision Maker",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "OAG",
+    "picklist_typ_dsc": "Organization Account Group",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 26,
+    "picklist_typ_cd": "PA",
+    "picklist_typ_dsc": "Parent Account",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 19,
+    "picklist_typ_cd": "PC",
+    "picklist_typ_dsc": "Primary Contact",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 34,
+    "picklist_typ_cd": "PERS",
+    "picklist_typ_dsc": "Personal",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 28,
+    "picklist_typ_cd": "PROF",
+    "picklist_typ_dsc": "Professional",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 20,
+    "picklist_typ_cd": "SC",
+    "picklist_typ_dsc": "Secondary Contact",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 21,
+    "picklist_typ_cd": "SE",
+    "picklist_typ_dsc": "Senior Executive",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 35,
+    "picklist_typ_cd": "SELF",
+    "picklist_typ_dsc": "Same Person",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 29,
+    "picklist_typ_cd": "SPOUSE",
+    "picklist_typ_dsc": "Spouse/Partner",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Relationship Type",
+    "picklist_typ_key": 22,
+    "picklist_typ_cd": "UNK",
+    "picklist_typ_dsc": "Unknown",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "0703",
+    "picklist_typ_dsc": "0703",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "2217",
+    "picklist_typ_dsc": "2217",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "2220",
+    "picklist_typ_dsc": "2220",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "3210",
+    "picklist_typ_dsc": "3210",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ATG",
+    "picklist_typ_dsc": "ATG Profiles",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ATGO",
+    "picklist_typ_dsc": "ATG Orders",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "BADW",
+    "picklist_typ_dsc": "BioMed Constituents (Donors and Contacts)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "C112",
+    "picklist_typ_dsc": "C112",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "CAS2",
+    "picklist_typ_dsc": "CAS Constituents",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "CNVO",
+    "picklist_typ_dsc": "Convio Profiles",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "DRMS",
+    "picklist_typ_dsc": "DRMS Constituents (Contacts and Prospects)",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ENTO",
+    "picklist_typ_dsc": "Enterprise Organizations",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ePID",
+    "picklist_typ_dsc": "eProgesa Constituents",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "ESCR",
+    "picklist_typ_dsc": "FR Score Constituents",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "HEMO",
+    "picklist_typ_dsc": "Hemasphere Organizations",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "HSIP",
+    "picklist_typ_dsc": "HSIP",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "LEXN",
+    "picklist_typ_dsc": "Lexis Nexis ID",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "LNHH",
+    "picklist_typ_dsc": "Lexis Nexis Household ID",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "MDON",
+    "picklist_typ_dsc": "Mobile Donation Constituents",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "NBCS",
+    "picklist_typ_dsc": "NBCS Constituents",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "PHSF",
+    "picklist_typ_dsc": "PHSS SalesForce Constituents",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S111",
+    "picklist_typ_dsc": "S111",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S134",
+    "picklist_typ_dsc": "S134",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "S491",
+    "picklist_typ_dsc": "S491",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SABA",
+    "picklist_typ_dsc": "SABA Individuals",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SABO",
+    "picklist_typ_dsc": "SABA Organizations",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "SFFS",
+    "picklist_typ_dsc": "SalesForce PMM Fundraising",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "STRX",
+    "picklist_typ_dsc": "Stuart",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TAFS",
+    "picklist_typ_dsc": "Team Approach Fundraising",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "TPGS",
+    "picklist_typ_dsc": "Team Approach Planned Giving",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Source System Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "VMS",
+    "picklist_typ_dsc": "Volunteers",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Notes",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Assessment for master constituent emails",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Notes",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Request from Constituent – Data Correction",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Notes",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Request from Chapter – Change of Information",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Notes",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Request from Chapter - Data Correction",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Notes",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Request from Constituent – Change of Information",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Domain Correction",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Group Membership - Group Membership",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Email-only Upload - Email-only Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Characteristics",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "FSA Change - Relationship",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Characteristics",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Contact Preference",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Person Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Person Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Date of Death",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Assessment - Email Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Organization Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Organization Name",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Name and Email Upload - Name and Email Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Preferred Channel",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Preferred Channel",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Relationship",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Phone",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Assessment - Address Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Date of Birth",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Date of Birth",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Affiliator Tags Upload - Affiliator Tags Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Organization Transformations - Organization Transformations",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Organization Affiliator",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Domain Correction",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Phone Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Group Membership Upload - Group Membership Upload",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Phone",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Enterprise Organization - Affiliator tags",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Date of Death",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Person Name Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Email",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Affiliator Upload - Enterprise Organization",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Group Code",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Phone Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Enterprise Organization - Affiliator Hierarchy",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Address",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Locator Change - Group Code",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Contact Preference",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Mastering Update - Merge",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Mastering Update - Unmerge",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Person Name Assessment",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Transaction Type",
+    "picklist_typ_key": null,
+    "picklist_typ_cd": "",
+    "picklist_typ_dsc": "Flag Locators - Email",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Upload Type",
+    "picklist_typ_key": 2,
+    "picklist_typ_cd": "Email-only List",
+    "picklist_typ_dsc": "Email-only List",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Upload Type",
+    "picklist_typ_key": 1,
+    "picklist_typ_cd": "Group Membership",
+    "picklist_typ_dsc": "Group Membership",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  },
+  {
+    "picklist_typ": "Upload Type",
+    "picklist_typ_key": 3,
+    "picklist_typ_cd": "Name and Email",
+    "picklist_typ_dsc": "Name and Email",
+    "ref_order": null,
+    "dw_trans_ts": "2016-06-28T08:03:07"
+  }
+]

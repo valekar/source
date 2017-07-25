@@ -1,0 +1,17 @@
+﻿<div ng-app="ngAnimate">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="row">
+            <div style="padding-right:18px"><button class="btn btn-default pull-right" ng-click="exportDetails()">Export Details</button></div>
+        </div>
+        <div class="">
+            <div ng-include src="TransactionInfoTemplate"></div>
+        </div>
+        <div col-lg-1 col-md-1 col-sm-1></div>
+    </div>
+
+</div>

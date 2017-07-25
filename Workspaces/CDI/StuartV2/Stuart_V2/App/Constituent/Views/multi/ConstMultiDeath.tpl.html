@@ -1,0 +1,144 @@
+﻿<!--<div class="clearfix">
+    <div ng-style="toggleConstDeathLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleConstDeathHeader">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-left:-15px;">
+                <div class="pagination-left">
+                    <h3>Constituent Death</h3>
+                </div>
+                
+                <div class="pagination-right items-number" ng-show="(totalConstDeathItems>=5) == true">
+                    <select ng-model="constDeathGridOptions.paginationPageSize" ng-options="o as o for o in constDeathGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="constDeathGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-top: 35px;">
+                <a href="#" class=" pull-right " style="padding-left:15px;" ng-click="showAllrecords(CONSTANTS.CONST_DEATH)">{{showDeath.showAllButtonName}}  </a>
+                <div ng-controller="ShowDetailsCtrl">
+                    <a href="#" class=" pull-right" ng-click="details.showDetails(CONSTANTS.CONST_DEATH)">Show Details</a>
+                    <div ng-show="details.togglePleaseWait">
+                        <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                            <h4>Please wait....</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleConstDeathFiltering()">Filter</button>--
+        <div ui-grid="constDeathGridOptions" ui-grid-selection class="ConstDeath" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize ng-style="toggleConstDeathDetails">
+            <div class="watermark" ng-show="!constDeathGridOptions.data.length">No data available</div>
+        </div>
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding" >
+                <div ng-show="(totalConstDeathItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalConstDeathItems" items-per-page="constDeathGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.CONST_DEATH,currentConstDeathPage)"
+                                        ng-model="currentConstDeathPage" class="pagination" direction-links="false" id="constDeath"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                   
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="commonShowAddGridRow">
+                <div style="margin-top:20px;" class="pull-right">
+                    <button type="button" class="btn btn-default" ng-click="commonAddGridRow(CONSTANTS.CONST_DEATH)">Add Death</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+<div class="clearfix">
+    <div ng-style="toggleConstDeathLoader">
+        <div class="refresh  refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleConstDeathHeader">
+
+        <div class="row padding">
+
+            <div class="row nopadding">
+                <div class="row nopadding">
+                    <div class="col-md-3 col-lg-3 col-sm-3 nopadding" style="display:inline;">
+                        <h3>Constituent Death</h3>
+
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-5 nopadding">
+                        <div ng-show="(totalConstDeathItems>=5) == true" style="display:inline;">
+                            <select ng-model="constDeathGridOptions.paginationPageSize" ng-options="o as o for o in constDeathGridOptions.paginationPageSizes" class="form-control-static new-form-control-static"
+                                    ng-if="constDeathGridOptions.paginationPageSizes.length > 1"></select>
+                            <span class="">&nbsp;records per page</span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4 font-orange-changer ">
+                        <span class="font-orange" ng-show="constDeathCount==1">There is {{constDeathCount}} distinct record</span>
+                        <span class="font-orange" ng-show="constDeathCount>1">There are {{constDeathCount}} distinct records</span>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <span>Displays all the death records existing on the master from the various production systems and LexisNexis</span>
+
+                </div>
+                <div class="pull-right ">
+                    <a href="#" class=" " ng-click="showAllrecords(CONSTANTS.CONST_DEATH)">{{showDeath.showAllButtonName}}  </a>
+                    <div ng-controller="ShowDetailsCtrl" style="display:inline;">
+                        <a href="#" class="" ng-click="details.showDetails(CONSTANTS.CONST_DEATH)">Show Details</a>
+                        <div ng-show="details.togglePleaseWait">
+                            <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                                <h4>Please wait....</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleConstEmailFiltering()">Filter</button>-->
+        <div ui-grid="constDeathGridOptions" ui-grid-selection class="ConstDeath" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize ng-style="toggleConstDeathDetails">
+
+            <div class="watermark" ng-show="!constDeathGridOptions.data.length">No data available</div>
+        </div>
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalConstDeathItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalConstDeathItems" items-per-page="constDeathGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.CONST_DEATH,currentConstDeathPage)"
+                                        ng-model="currentConstDeathPage" class="pagination" direction-links="false" id="constDeath"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="commonShowAddGridRow">
+                <div style="margin-top:20px;" class="pull-right">
+                    <button type="button" class="btn btn-default" ng-click="commonAddGridRow(CONSTANTS.CONST_DEATH)">Add Death</button>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-hide="commonShowAddGridRow">
+                <div style="margin-top:20px;" class="pull-right">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

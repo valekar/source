@@ -1,0 +1,44 @@
+﻿<!--Download NAICS suggetions pop-up template-->
+<style>
+    .select2 > .select2-choice.ui-select-match {
+        /* Because of the inclusion of Bootstrap */
+        height: 29px;
+    }
+
+    .selectize-control > .selectize-dropdown {
+        top: 36px;
+    }
+</style>
+<div class="modal fade" id="downloadNAICSSuggestionsPopup">
+    <div class="modal-dialog" style="width: 600px;height:700px" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Choose NAICS suggestions/patterns</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Enter Keyword patterns</label>                        
+                         <div class="col-lg-6">   
+                             <ui-select multiple remove-selected="false" ng-model="searchInput.keyWordMatch1" theme="bootstrap" ng-disabled="disabled" style="width: 300px;" title="Choose a keyword">
+                                 <ui-select-match placeholder="Select Rule Keyword...">{{$item}}</ui-select-match>
+                                 <ui-select-choices repeat="keyword in keyWordMatch1 | filter:$select.search">
+                                     {{keyword}}
+                                 </ui-select-choices>
+                             </ui-select>                                               
+                        </div>
+                    </div>
+                    <div>
+                        <p>Notes:Enter keywords here such as 'Schools','Hospitals','Churchs' etc.</p>
+                    </div>
+                    <br />
+                </div>
+                </div>
+            <div class="modal-footer">
+                <button type="submit"  ng-click="exportNAICSsuggestions(searchInput.keyWordMatch1)"><img src="{{downloadButtonPath}}" style="width:27px; height:27px;" /> Download</button>
+                <button type="button"  class="btn btn-default" data-dismiss="modal"> Cancel </button>
+            </div>
+        </div>
+    </div>
+</div>

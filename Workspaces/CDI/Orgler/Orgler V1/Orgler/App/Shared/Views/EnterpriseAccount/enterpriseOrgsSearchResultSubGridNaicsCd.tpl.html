@@ -1,0 +1,11 @@
+﻿<!--Show list of values-->
+<!--<div ng-repeat="indVal in row.entity.listNAICSDesc track by $index" ng-show="(row.entity.listNAICSDesc != '' && row.entity.listNAICSDesc != null && row.entity.listNAICSDesc.length > 0)">
+    <label style="float:left;margin-left:5px;">- {{indVal.strText}}</label>   
+    <br style="clear:both;" />
+    
+</div>-->
+<div ng-repeat="indVal in row.entity.listNAICSCodesAndDesc track by $index" ng-show="(row.entity.listNAICSCodesAndDesc != null && row.entity.listNAICSCodesAndDesc.length > 0)">
+
+    <div style="float:left;margin-left:5px;width:auto;" ng-show="indVal.status!= '' && indVal.status != null">({{indVal.naicsCode}})- {{indVal.naicsTitle}}</div>
+     <br style="clear:both;" />
+</div>

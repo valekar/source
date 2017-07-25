@@ -1,0 +1,231 @@
+﻿<!--<style type="text/css">
+    .multi-side-panel {
+        transition: all 0.5s;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 15%;
+        overflow-wrap: break-word;
+        border-right-color: rgb(205, 205, 205);
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+
+    .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+        transition: all linear 0.5s;
+    }
+
+    .multi-hide-show-btn {
+        /*position: absolute;*/
+        /*top: 156px;
+        left: 200px;*/
+        cursor: pointer;
+        float: left;
+        left: 5px;
+    }
+
+    .CaseMultiDetailsRow .glyphicon-chevron-left {
+        left: -14px;
+    }
+
+
+    .CaseMultiDetailsRow .glyphicon-chevron-right {
+        left: 12px;
+    }
+
+    .CaseMultiDetailsRow .DetailsPanelSmall {
+        width: 80%;
+    }
+
+    .CaseMultiDetailsRow .DetailsPanelLarge {
+        width: 98%;
+    }
+
+    .CaseMultiDetailsRow .glyphicon-backward {
+        left: -1%;
+    }
+
+    .CaseMultiDetailsRow .glyphicon-forward {
+        left: 1.5%;
+    }
+
+    .fade.ng-hide {
+      opacity: 0;
+    }
+
+    .ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+        display: block !important; /* yes, important */
+    }
+
+    
+    .cssSlideUp {
+        transition: .5s linear all;
+        height: 100%;
+        overflow: hidden;
+    }
+    .cssSlideUp.ng-hide {
+        height:0;
+    }
+
+
+</style>
+
+
+<div ng-app="ngAnimate">
+    <div>        
+        <div class="cssSlideUp col-sm-3c" ng-hide="isMultiSidePanelOpen">
+            <nav class="navbar navbar-default" style="margin-top:15px;" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div style="float:right;padding:2px; cursor:pointer;" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"><span class="glyphicon glyphicon-remove"></span> </div>
+                <div class="collapse navbar-collapse">
+                    <div>
+                        <div ng-include src="CaseMultiDetailsSidePanel"></div>
+                    </div>
+                </div><!-- /.navbar-collapse --
+            </nav>
+        </div><!--/end left column--
+        <div ng-class="{'col-sm-12': isMultiSidePanelOpen, 'col-sm-9c': !isMultiSidePanelOpen}">
+            <div style1="padding:15px;padding-top:0px;float:left; height:100%;background-color:white;">
+                <back-top scroll-speed=600 button-theme="light" button-text="Take me back"><span class="glyphicon glyphicon-chevron-up"></span></back-top>
+                <span style="cursor:pointer;" ng-class="{'glyphicon glyphicon glyphicon-th-list': isMultiSidePanelOpen}" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"></span>
+                <div ng-include src="CaseInfoTemplate"></div>
+                <div ng-include src="CaseDetailsTemplate"></div>
+                <div ng-include src="CaseLocInfoTemplate"></div>
+                <div ng-include src="CaseNotesTemplate"></div>
+                <div ng-include src="CaseTransDetailsTemplate"></div>
+            </div>
+            <br />
+        </div>
+    </div>
+
+</div>-->
+
+
+<style type="text/css">
+    .multi-side-panel {
+        transition: all 0.5s;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 15%;
+        overflow-wrap: break-word;
+        border-right-color: rgb(205, 205, 205);
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+
+    .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+        transition: all linear 0.5s;
+    }
+
+    .multi-hide-show-btn {
+        /*position: absolute;*/
+        /*top: 156px;
+        left: 200px;*/
+        cursor: pointer;
+        float: left;
+        left: 5px;
+    }
+    .glyphicon-chevron-left {
+        left: -14px;
+    }
+
+
+    .glyphicon-chevron-right {
+        left: 12px;
+    }
+
+     .DetailsPanelSmall {
+        width: 80%;
+    }
+
+   .DetailsPanelLarge {
+        width: 98%;
+    }
+
+   .glyphicon-backward {
+        left: -1%;
+    }
+
+     .glyphicon-forward {
+        left: 1.5%;
+    }
+
+    .fade.ng-hide {
+      opacity: 0;
+    }
+
+    .ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+        display: block !important; /* yes, important */
+    }
+
+    
+    .cssSlideUp {
+        transition: .5s linear all;
+        height: 100%;
+        overflow: hidden;
+    }
+    .cssSlideUp.ng-hide {
+        height:0;
+    }
+
+</style>
+
+<div ng-app="ngAnimate;">
+    <div>
+        <div class="cssSlideUp col-sm-3c" ng-hide="isMultiSidePanelOpen">
+            <nav class="custom-side-bar-border" role="navigation">
+
+                <div style="float:right;padding:2px; cursor:pointer;" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen; "><span class="glyphicon glyphicon-remove"></span> </div>
+                <div class="collapse navbar-collapse">
+                    <div>
+                        <div ng-include src="CaseMultiDetailsSidePanel"></div>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div><!--/end left column-->
+
+        <div ng-class="{'col-sm-12': isMultiSidePanelOpen, 'col-sm-9c custom-main-content': !isMultiSidePanelOpen}" style="">
+            <div class="" ng-class1="{'DetailsPanelLarge': isMultiSidePanelOpen}" style1="padding:15px;padding-top:0px;float:left; height:100%;background-color:white;">
+                <back-top scroll-speed=600 button-theme="light" button-text="Take me back"><span class="glyphicon glyphicon-chevron-up"></span></back-top>
+                <div class="row">
+                    <div class="col-sm-2 nopadding">
+                        <span style="cursor:pointer;" ng-class="{'glyphicon glyphicon glyphicon-th-list': isMultiSidePanelOpen}" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"></span>
+                    </div>
+                </div>
+
+                <div ng-include src="CaseInfoTemplate"></div>
+                <div ng-include src="CaseDetailsTemplate"></div>
+                <div ng-include src="CaseLocInfoTemplate"></div>
+                <div ng-include src="CaseNotesTemplate"></div>
+                <div ng-include src="CaseTransDetailsTemplate"></div>
+
+            </div>
+
+            <div col-lg-1 col-md-1 col-sm-1></div>
+
+        </div>
+    </div>
+
+</div>

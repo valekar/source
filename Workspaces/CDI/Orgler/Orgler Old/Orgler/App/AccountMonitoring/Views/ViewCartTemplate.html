@@ -1,0 +1,107 @@
+﻿<div class="container-fluid">   
+    <div ng-style="pleaseWait"><h3>Please Wait...</h3></div>
+   
+    <div ng-if="cart.pleaseWait">
+        <div class="refresh" style="padding:15px;width:100%;height:100px;">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div class="btn-group" uib-dropdown style="margin-top: 15px; padding-left: 15px; padding-right: 15px;">
+        <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+            {{ cart.selected.dropDown }}<span class="caret"></span>
+        </button>
+        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <li ng-repeat="dropdown in cart.dropDowns">
+                <a href="#" ng-click="$event.preventDefault(); cart.selected.dropDown = dropdown;cart.setCart()">{{ dropdown }}</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div style="margin-top: 0px; padding-left: 15px; padding-right: 15px;" >
+        <div class="pagination-left">
+            <h3>Cart Items/{{cart.selected.dropDown}}</h3>
+        </div>
+
+        <div class="pagination-right items-number" ng-show="(totalCartItems>=5) == true" >
+            <select ng-model="cartGridOptions.paginationPageSize" ng-options="o as o for o in cartGridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="cartGridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleFiltering()">Filter</button>-->
+        <div ng-style="toggleCartGrid">
+            <div ui-grid="cartGridOptions" ui-grid-selection class="grid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize></div>
+ 
+
+            <div class="grid-pager">
+                <div class="col-lg-12 col-md-12 col-sm-12 nopadding">
+                    <div ng-show="(totalCartItems>=5) == true">
+                        <div class="pagination-left">
+                            <uib-pagination boundary-links="true" total-items="totalCartItems" items-per-page="cartGridOptions.paginationPageSize" scrolldown ng-change="pageChanged(currentPage)"
+                                            ng-model="currentPage" class="pagination" direction-links="false" id=""
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                        </div>                       
+                    </div>
+                </div>
+
+            </div>
+
+            <br /><br/><div class="clear-fix"></div>
+            <div class="row">
+                <div style="float:left">
+                    <button type="button" class="btn btn-default" ng-click="compare(cart.selected.dropDown)" data-dismiss="modal">Compare</button>
+                    <a href="#" style="cursor: pointer" ng-click="ClearCart(cart.selected.dropDown)">Clear Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div ng-style="toggleNoRecords">
+            No Records found
+        </div>
+       
+        
+        <!-- Modal -->
+        <div class="modal fade" id="CartClearConfirmationModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p ng-bind="FinalMessage"></p>
+                        <p ng-bind="ReasonOrTransKey"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="RedirectToSearch()" data-dismiss="modal">Close</button>
+                    </div>
+
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Used afer merge records -->
+        <div class="modal fade" id="ConfirmationModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p ng-bind="FinalMessage"></p>
+                        <p ng-bind="ReasonOrTransKey"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="RedirectToSearch()" data-dismiss="modal">Close</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

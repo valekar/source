@@ -1,0 +1,121 @@
+﻿<div ng-style="pleaseWait" >
+    <div class="refresh" style="padding:15px;width:100%;height:100px; ">
+        <h4>Please wait....</h4>
+    </div>
+</div> 
+<div class="row ">
+    <div style="float: left;">
+     &nbsp; &nbsp;  <span style="font:bold;font-size:large"> Summary:</span> 
+        </div>   
+    <br />
+    <div style="float: left;"> 
+        <!--<span style="float:left;">
+            There are <span style="color:red;font:bold;">300</span> new source system accounts created across the enterprise from <span style="color:red;font:bold">09/02/2016</span>  to <span style="color:red;font:bold">09/02/2016.</span>
+        </span>-->
+             </div>
+    <br />
+    <div style="float: left;">
+        &nbsp;&nbsp; There are <b>300</b> new source system accounts created across the enterprise on <b>09/02/2016.</b>
+</div>
+    <br />
+        <div style="float: left;">
+            &nbsp;&nbsp;    1) <b>25</b> of them are from Biomedical line of service.
+        </div>
+        <br />
+        <div style="float: left;">
+            &nbsp;&nbsp;     2) <b>50</b> of them are from Fundraising line of service.
+</div>
+        <br />
+        <div style="float: left;">
+            &nbsp;&nbsp;   3) <b>225</b> of them are from PHSS line of service.
+</div>
+    </div>   
+    <div class="row ">
+
+        <div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+            <div ng-style="toggleShowResults">
+                <br />
+                <br />
+                <span style="font:bold;font-size:large">
+                    Biomedical:
+                   </span>
+                    <div style="float: left; width: 100%;" ui-grid="searchResultsGridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+                    <div class="grid-pager">
+
+                        <div ng-show="(totalItems>=8) == true">
+                            <div class="pagination-left">
+                                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="searchResultsGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                                ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                                first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                            </div>
+
+                            <div class="pagination-right items-number">
+                                <select ng-model="searchResultsGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsGridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="searchResultsGridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;</span>
+                                <span style="float:right">
+                        <button class="btn btn-default" id="btnSubmitNAICSCode" type="Submit" style="width:100px;" id="btnSearch" name="btnSearch">Upload</button>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+</div>
+            <div ng-style="toggleShowResults">
+                <span style="font:bold;font-size:large">
+                    Fundraising:
+                    </span>
+                    <div style="float: left; width: 100%;" ui-grid="searchResultsGridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+                    <div class="grid-pager">
+
+                        <div ng-show="(totalItems>=8) == true">
+                            <div class="pagination-left">
+                                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="searchResultsGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                                ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                                first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                            </div>
+
+                            <div class="pagination-right items-number">
+                                <select ng-model="searchResultsGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsGridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="searchResultsGridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;</span>
+                                <span style="float:right">
+                                    <button class="btn btn-default" id="btnSubmitNAICSCode" type="Submit" style="width:100px;" id="btnSearch" name="btnSearch">Upload</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+</div>
+            <div ng-style="toggleShowResults">
+                <span style="font:bold;font-size:large">
+                    Health & Safety:
+                    </span>
+                    <div style="float: left; width: 100%;" ui-grid="searchResultsGridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+                    <div class="grid-pager">
+
+                        <div ng-show="(totalItems>=8) == true">
+                            <div class="pagination-left">
+                                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="searchResultsGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                                ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                                first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                            </div>
+
+                            <div class="pagination-right items-number">
+                                <select ng-model="searchResultsGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsGridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="searchResultsGridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;</span>
+                                <span style="float:right">
+                                    <button class="btn btn-default" id="btnSubmitNAICSCode" type="Submit" style="width:100px;" id="btnSearch" name="btnSearch">Upload</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+</div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="NaicsSuggestionModal" role="dialog">
+                <div id="myGrid" ui-grid="myGridOptions" ui-grid-selection ui-grid-resize-columns class="gridTable" external-scopes="gridHandlers"></div>
+            </div>
+        </div>
+    </div>
+
+

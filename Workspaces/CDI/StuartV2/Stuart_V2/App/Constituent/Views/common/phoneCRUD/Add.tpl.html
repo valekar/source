@@ -1,0 +1,121 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Add Phone Record</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Master ID</label>
+            <div class="col-sm-8">
+                <input ng-model="masterId" class="form-control" id="MasterId" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phoneNo" class="col-sm-4 form-control-label">Phone Number<span class="requiredRed">*</span> </label>
+            <div class="col-sm-8">
+                <input ng-model="phoneNo"   class="form-control" id="phoneNo" type="text" ng-required="true" name="phoneNo" ng-pattern="cnstPhoneNumberRegex">
+            </div>
+            <!--<div role="alert">
+                <span class="error" ng-show="myForm.phoneNo.$error.pattern" style="color:Crimson">
+                    Invalid Format.Valid formats: xxx-xxx-xxxx, xxxxxxxxxx, (xxx)xxx-xxxx, (xxx) xxx-xxxx
+                </span>
+            </div>-->
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Source System</label>
+            <div class="col-sm-8">
+                <input ng-model="sourceSys" class="form-control" id="sourceSys" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Phone Type</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ selected.phoneType }}<span class="caret"></span>
+                    </button>
+
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in phoneTypes">
+                            <a href="#" ng-click="$event.preventDefault(); selected.phoneType = type.value; selected.phoneId=type.id">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Associate Case Number</label>
+            <div class="col-sm-8">
+                <input ng-model="phone.caseNo" class="form-control" id="" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Start Date </label>
+            <div class="col-sm-8">
+                <input ng-model="startDate" class="form-control" id="startDate" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row hide">
+            <label for="sourceSys" class="col-sm-4 form-control-label">End Date </label>
+            <div class="col-sm-8">
+                <input ng-model="endDate" class="form-control" id="endDate" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row hide">
+            <label for="rowCode" class="col-sm-4 form-control-label">Row Code:</label>
+            <div class="col-sm-8">
+                <input id="rowCode" ng-model="rowCode" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+        <div class="form-group row hide">
+            <label for="loadID" class="col-sm-4 form-control-label">Load ID:</label>
+            <div class="col-sm-8">
+                <input id="loadID" ng-model="loadID" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+        <div class="form-group row hide">
+            <label for="activeInd" class="col-sm-4 form-control-label">Active Indicator:</label>
+            <div class="col-sm-8">
+                <input id="activeInd" ng-model="activeInd" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+        <div class="form-group row ">
+            <label for="DWTimestamp" class="col-sm-4 form-control-label">DW Timestamp:</label>
+            <div class="col-sm-8">
+                <input id="DWTimestamp" ng-model="DWTimestamp" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Notes</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ selected.notes }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="note in notes">
+                            <a href="#" ng-click="$event.preventDefault(); selected.notes = note">{{ note }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <!-- This casePath is defined in App.js headerCtrl -->
+            <div ng-include src="CaseSearchPath"></div>
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

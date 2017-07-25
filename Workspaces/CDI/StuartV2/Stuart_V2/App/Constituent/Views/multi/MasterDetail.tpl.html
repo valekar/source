@@ -1,0 +1,104 @@
+﻿<div class="clearfix">
+    <!--<div ng-style="toggleMasterDetailLoader">
+        <div class="refresh" style="padding:15px;width:100%;height:100px;">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleMasterDetailHeader">
+        <h3>Master Details</h3>
+
+        <div ui-grid="masterDetailGridOptions" ui-grid-selection class="ConstPhone" scrolldown ui-grid-pagination ui-grid-auto-resize ng-style="toggleMasterDetailDetails">
+            <div class="watermark" ng-show="!masterDetailGridOptions.data.length">No data available</div>
+        </div>
+
+
+        <div class="grid-pager">
+            <uib-pagination boundary-links="true" total-items="totalMasterDetailItems" items-per-page="5" ng-change="pageChanged(CONSTANTS.MASTER_DETAIL,currentMasterDetailPage)" ng-show="(totalMasterDetailItems>=5) == true"
+                            ng-model="currentMasterDetailPage" class="pagination" direction-links="false" id="masterDetail"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+    </div>-->
+    <div ng-style="toggleMasterDetailHeader">
+        <div ng-controller="MasterDetailCtrl">
+            <div ng-show="master.togglePleaseWait">
+                <div class="refresh refresh-div" >
+                    <h4>Please wait....</h4>
+                </div>
+            </div>
+
+            <div ng-show="master.toggleMasterDetails">
+                <h3>Master Details</h3>
+                <div class="more-info">Displays all master details of a master Id</div>
+                <table class="table table-responsive">
+
+                    <tr class="master-table-header">
+                        <th>ARC Master Id</th>
+                        <th>Constituent Type</th>
+                        <th>DSP Id</th>
+                        <th>Household Id</th>
+                        <th>Start Date</th>
+                        <th>Origin Date</th>
+                        <th>Private</th>
+
+                    </tr>
+                    <tr class="master-table-row">
+                        <td ng-bind="master.masterResult.cnst_mstr_id|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.cnst_typ_cd|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.cnst_dsp_id|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.cnst_hsld_id|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.cnst_strt_dt|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.cnst_mstr_origin_dt|| 'N/A'"></td>
+                        <td ng-bind="master.privateResult|| 'N/A'"></td>
+                    </tr>
+                </table>
+                    <table class="table table-responsive">
+                        <tr class="master-table-header">
+                            <th>Old Master Ids</th>
+                        </tr>
+                        <tr class="master-table-row wordwrap">
+                            <td ng-bind="master.oldMasterIdResult|| 'N/A'"></td>
+
+                    
+
+                </table>
+
+                <h4>Most Recent Update to Master</h4>
+                <table class="table table-responsive">
+
+                    <tr class="master-table-header">
+                        <th>Load ID</th>
+                        <th>Row Status Code</th>
+                        <th>Source System Timestamp</th>
+                        <th>Last Bio Donation Date</th>
+                        <th>Last Fundraising Donation Date</th>
+                        <th>Last PHSS Course Completion Date</th>
+                        <th>Last Volunteering Date </th>
+                    </tr>
+                    <tr class="master-table-row">
+                        <td ng-bind="master.masterResult.load_id|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.row_stat_cd|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.dw_srcsys_trans_ts|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.lst_bio_dntn_dt || 'N/A'"></td>
+                        <td ng-bind="master.masterResult.lst_fr_dntn_dt|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.lst_phss_cours_cmpltn_dt|| 'N/A'"></td>
+                        <td ng-bind="master.masterResult.lst_volntrng_dt|| 'N/A'"></td>
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class=" nopadding">
+        <div style="margin-top:35px;" class="pull-right">
+            <span></span>
+        </div>
+    </div>
+</div>
+
+

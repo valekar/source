@@ -1,0 +1,192 @@
+﻿<div id="modalCover">
+    <div ng-if="unmerge.toggleUnmergeSection">
+        <div class="modal-header">
+            <div class="col-lg-10 col-sm-10 col-md-10">
+                <h3 class="modal-title">Compare section</h3>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2">
+                <button ng-click="unmerge.cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+            </div>
+        </div>
+        <br />
+        <div class="custom-modal-footer">
+            <button class="btn btn-default" id="" type="button" ng-click="unmerge.confirm()">Confirm</button>
+            <button class="btn btn-default" type="button" ng-click="unmerge.cancel()">Cancel</button>
+
+        </div>
+        <table class="table table-responsive table-bordered">
+            <tr>
+                <th>Master Group</th>
+                <td ng-repeat="indexString in unmerge.compareData.IndexStrings track by $index">
+                    <div class="btn-group" uib-dropdown>
+                        <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                            {{unmerge.selected['record'+$index]}}  <span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="group in unmerge.masterGroups">
+                                <a href="#" ng-click="unmerge.changeSelected($parent.$index,$event,group.value)">{{ group.value }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="wordwrap" >Master Id</th>
+                <td ng-repeat="masterId in unmerge.compareData.constMasterIds track by $index">{{masterId}}</td>
+            </tr>
+            <tr>
+                <th class="wordwrap" >Source System Code</th>
+                <td class="wordwrap"  ng-repeat="sourceSysCode in unmerge.compareData.SourcesystemCds">{{sourceSysCode}}</td>
+            </tr>
+            <tr>
+                <th class="wordwrap" >Source System Id</th>
+                <td class="wordwrap"  ng-repeat="sourceSysId in unmerge.compareData.SourcesystemIds">{{sourceSysId}}</td>
+            </tr>
+            <tr>
+                <th class="wordwrap" >Name</th>
+                <td class="wordwrap" ng-repeat="name in unmerge.compareData.ConstNames">{{name}}</td>
+            </tr>
+
+            <tr>
+                <th class="wordwrap" >Address</th>
+                <td class="wordwrap"  ng-repeat="address in unmerge.compareData.ConstAddresses track by $index">{{address}}</td>
+            </tr>
+        </table>
+
+        <div class="custom-modal-footer">
+            <button class="btn btn-default" id="" type="button" ng-click="unmerge.confirm()">Confirm</button>
+            <button class="btn btn-default" type="button" ng-click="unmerge.cancel()">Cancel</button>
+
+        </div>
+    </div>
+
+
+    <div ng-if="unmerge.toggleConfirmSection">
+        <div class="modal-header">
+            <div class="col-lg-10 col-sm-10 col-md-10">
+                <h3 class="modal-title">Are you sure you want to Un-Master/Unmerge these records</h3>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2">
+                <button ng-click="unmerge.cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+            </div>
+        </div>
+        <br />
+        <table class="table table-responsive table-bordered" ng-if="unmerge.confirmData.MasterGroup1.MasterGroupValue.length > '0'">
+            <thead class="thead-default">
+                <tr>
+                    <th>{{unmerge.confirmData.MasterGroup1.MasterGroupName}}</th>
+                    <th>Persistance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="record in unmerge.confirmData.MasterGroup1.MasterGroupValue">
+                    <td>{{record.source_system_cd + "-" + record.source_system_id}}</td>
+                    <td>
+                        <div class="checkbox">
+                            <input type="checkbox" ng-model="unmerge.confirmData.MasterGroup1.persistance" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <table class="table table-responsive table-bordered" ng-if="unmerge.confirmData.MasterGroup2.MasterGroupValue.length > '0'">
+            <thead class="thead-default">
+                <tr>
+                    <th>{{unmerge.confirmData.MasterGroup2.MasterGroupName}}</th>
+                    <th>Persistance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="record in unmerge.confirmData.MasterGroup2.MasterGroupValue">
+                    <td>{{record.source_system_cd + "-" + record.source_system_id}}</td>
+                    <td>
+                        <div class="checkbox">
+                            <input type="checkbox" ng-model="unmerge.confirmData.MasterGroup2.persistance" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <table class="table table-responsive table-bordered" ng-if="unmerge.confirmData.MasterGroup3.MasterGroupValue.length > '0'">
+            <thead class="thead-default">
+                <tr>
+                    <th>{{unmerge.confirmData.MasterGroup3.MasterGroupName}}</th>
+                    <th>Persistance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="record in unmerge.confirmData.MasterGroup3.MasterGroupValue">
+                    <td>{{record.source_system_cd + "-" + record.source_system_id}}</td>
+                    <td>
+                        <div class="checkbox">
+                            <input type="checkbox" ng-model="unmerge.confirmData.MasterGroup3.persistance" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <table class="table table-responsive table-bordered" ng-if="unmerge.confirmData.MasterGroup4.MasterGroupValue.length > '0'">
+            <thead class="thead-default">
+                <tr>
+                    <th>{{unmerge.confirmData.MasterGroup4.MasterGroupName}}</th>
+                    <th>Persistence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="record in unmerge.confirmData.MasterGroup4.MasterGroupValue">
+                    <td>{{record.source_system_cd + "-" + record.source_system_id}}</td>
+                    <td>
+                        <div class="checkbox">
+                            <input type="checkbox" ng-model="unmerge.confirmData.MasterGroup4.persistance" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <table class="table table-responsive table-bordered" ng-if="unmerge.confirmData.MasterGroup5.MasterGroupValue.length > '0'">
+            <thead class="thead-default">
+                <tr>
+                    <th>{{unmerge.confirmData.MasterGroup5.MasterGroupName}}</th>
+                    <th>Persistance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="record in unmerge.confirmData.MasterGroup5.MasterGroupValue">
+                    <td>{{record.source_system_cd + "-" + record.source_system_id}}</td>
+                    <td>
+                        <div class="checkbox">
+                            <input type="checkbox" ng-model="unmerge.confirmData.MasterGroup5.persistance" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="form-group row">
+            <label for="" class="col-sm-2 form-control-label"> Associate Case Number</label>
+            <div class="col-sm-2">
+                <input ng-model="unmerge.caseNo" class="form-control" id="" type="text">
+            </div>
+        </div>
+
+        <div class="custom-modal-footer">
+            <!-- This casePath is defined in App.js headerCtrl -->
+            <div ng-include src="CaseSearchPath"></div>
+            <button class="btn btn-default" id="" type="button" ng-click="unmerge.submit()">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="unmerge.cancel()">Cancel</button>
+
+        </div>
+    </div>
+    
+
+
+</div>

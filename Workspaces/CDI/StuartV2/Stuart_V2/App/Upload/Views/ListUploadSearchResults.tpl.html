@@ -1,0 +1,135 @@
+﻿<div ng-show="listUpload.pleaseWait">
+    <div class="refresh refresh-div" >
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<br/>
+<!--<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 pull-right ">
+        <button class="btn btn-default pull-right" ng-click="exportListUploadSearchResults()" style="margin-top: 10px;">Export</button>
+    </div>
+</div>-->
+
+<div class="row ">
+    <!--<div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+        <div ng-style="toggleShowResults">
+            <div style="width:100%;">
+                <div style="float:left;">
+                    <h3 style="float: left;">List Upload Search Results</h3>
+
+
+                </div>
+                <div style="font-style:italic; color:#ff6a00; margin-top:28px; margin-right:20px; float:right;" ng-show="listUpload.totalItems<50"> {{(listUpload.totalItems > 1) ? 'Search results found ' + listUpload.totalItems + ' records.': 'Search results found ' + listUpload.totalItems + ' record.'}}</div>
+                <div style="font-style:italic; color:#ff6a00; margin-top:28px; margin-right:20px; float:right;" ng-show="listUpload.totalItems==50"> Search results found more than {{listUpload.totalItems}} records.</div>
+
+                <div style="clear:both;"></div>
+            </div>
+
+
+            <div style="float: left; width: 100%;" ui-grid="listUpload.gridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+
+
+            <div class="grid-pager">
+
+                <div ng-show="(listUpload.totalItems>=8) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="listUpload.totalItems" items-per-page="listUpload.gridOptions.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                    <div class="pagination-right items-number">
+                        <select ng-model="listUpload.gridOptions.paginationPageSize" ng-options="o as o for o in listUpload.gridOptions.paginationPageSizes" class="form-control-static"
+                                ng-if="listUpload.gridOptions.paginationPageSizes.length > 1"></select>
+                        <span class="">&nbsp;records per page</span>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>-->
+
+<div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+    <div ng-style="toggleShowResults">
+        <div class="row" style="padding:0px;">
+            <div style="width:100%;">
+                <div style="float:left;">
+                    <h3 style="float: left;">List Upload Search Results</h3>
+                </div>
+            </div>
+        </div>
+
+        <div style="float: left; width: 100%;" ui-grid="listUpload.gridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+
+
+        <div class="grid-pager">
+            <div ng-show="(listUpload.totalItems>=10) == true">
+                <div class="row ">
+                     <div class="col-lg-3 col-md-3 col-sm-3" style=" padding:0px;">
+
+
+                        <uib-pagination boundary-links="true" total-items="listUpload.totalItems" max-size="10" items-per-page="listUpload.gridOptions.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-lg-pull-1 col-md-pull-1" style=" padding:0px;">
+
+                            <div class="col-lg-3 col-md-3 col-sm-3  " style="margin-top:20px; padding:0px;">
+                                <select ng-model="listUpload.gridOptions.paginationPageSize" ng-options="o as o for o in listUpload.gridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="listUpload.gridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 " style="margin-top:28px; padding:0px;">
+                                <div style="color:#ff6a00; font-style:italic; display:inline;">
+                                    <div ng-show="listUpload.totalItems<50"> {{(listUpload.totalItems > 1) ? 'Search results found ' + listUpload.totalItems + ' records.': 'Search results found ' + listUpload.totalItems + ' record.'}}</div>
+                                    <div ng-show="listUpload.totalItems==50"> Search results found more than {{listUpload.totalItems}} records.</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 " style="margin-top:20px;padding:0px;">
+                            <button class="btn btn-default pull-right" ng-click="exportListUploadSearchResults()" style="margin-top: 10px;">Export</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="padding-top:10px; float: right;" ng-show="(listUpload.totalItems<=10)">
+                    <button class="btn btn-default pull-right" ng-click="exportListUploadSearchResults()" style="margin-top: 10px;">Export</button>
+                </div>
+
+                <div style="float: left;margin-top: 17px;margin-left: 20px;color:#ff6a00; font-style:italic; display:inline;" ng-show="(listUpload.totalItems<=10) == true">
+                    <div ng-show="listUpload.totalItems<50"> {{(listUpload.totalItems > 1) ? 'Search results found ' + listUpload.totalItems + ' records.': 'Search results found ' + listUpload.totalItems + ' record.'}}</div>
+                    <div ng-show="listUpload.totalItems==50"> Search results found more than {{listUpload.totalItems}} records.</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-no-results">{{listUpload.errorMessage}}</div>
+
+    </div>
+
+<br />
+<br />
+
+<section>
+    <sarcasm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sarcasm>
+</section>
+
+<section>
+    <sarcasm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sarcasm>
+</section>
+
+<section>
+    <sarcasm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sarcasm>
+</section>

@@ -1,0 +1,40 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Delete Case notes Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Case Key:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseNotes.caseKey"  id="CaseKey" type="text" ></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="NotesText" class="col-sm-4 form-control-label">Notes Text:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseNotes.NotesText" id="NotesText" type="text"></label>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="StartDate" class="col-sm-4 form-control-label">Start Date:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseNotes.StartDate" id="StartDate" type="text"></label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="EndDate" class="col-sm-4 form-control-label">End Date:</label>
+            <div class="col-sm-8">
+                <label ng-bind="caseNotes.EndDate" id="EndDate" type="text"></label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,114 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <div style="display:inline-block;float:left;">
+            <h3 class="modal-title">Name and Email Upload Details</h3>
+        </div>
+        <div ng-show="nameAndEmailUpload.showCloseButton" style="display:inline-block; float:right; margin: 10px 10px 10px 0;">
+            <a ng-click="nameAndEmailUpload.closenameAndEmailUploadUserInputModal()" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+    </div>
+    <br />
+
+    <form name="nameAndEmailUploadUserInputForm" role="form" ng-submit="nameAndEmailUpload.submit()" style="margin: 10px">
+
+        <div class="row" style="width:98%;">
+
+            <div style="width:100%; background-color:red !important;">
+                <div class="col-lg-12 col-sm-12 col-md-12 " style="float:left !important;">
+                    <div style="margin-left:1%;">
+                        Please provide the below details to proceed with the Upload
+                    </div>
+                    <br />
+                    <div class="row" id="frmSearch">
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Chapter Code
+                                </label><span class="requiredRed">*</span>
+                                <div>
+                                    <select name="selChapterCode" id="selChapterCode" class="form-control" ng-options="chapterCode.id for chapterCode in nameAndEmailUpload.chapterCodes track by chapterCode.value" ng-model="nameAndEmailUpload.chapterCode"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Group Name
+                                </label><span class="requiredRed">*</span>
+                                
+                                    <!--<span class="glyphicon glyphicon-triangle-bottom" style="margin-right: 10px;top: 36px; float:right" ng-click="nameAndEmailUpload.GroupNameTxtbox()"></span>
+                                    <input type="text" class="form-control" list="groupNameList" ng-model="nameAndEmailUpload.groupName" ng-change="nameAndEmailUpload.populateGroupCode(nameAndEmailUpload.groupName)" ng-click="nameAndEmailUpload.GroupNameTxtbox()" />
+                                    <ul id="groupNameList" ng-show="nameAndEmailUpload.groupNamedropdown" class="upload_groupnameclass">
+                                        <li ng-class="{upload_licolor: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" class="upload_groupnamedropdown_value"
+                                            ng-repeat="x1 in names |orderBy:nameAndEmailUpload.UploadFilter|filter:nameAndEmailUpload.groupName"
+                                            ng-click="nameAndEmailUpload.Getgroupname(x1.id,x1.value)">{{x1.value}}</li>
+                                    </ul>-->
+                                <ui-select ng-model="nameAndEmailUpload.groupSelected">
+                                    <ui-select-match placeholder="Select a group...">
+                                        <span ng-bind="$select.selected.value "></span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="group in (names | filter: $select.search | orderBy:nameAndEmailUpload.UploadFilter)">
+                                        <div ng-bind-html="group.value | highlight: $select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                               
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Group Code
+                                </label>
+                                <div>
+                                    <input type="text" class="form-control" disabled placeholder="Group Code" required="true" ng-model="nameAndEmailUpload.groupSelected.id" />
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Name and Email Start Date
+                                </label><span class="requiredRed">*</span>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{nameAndEmailUpload.format}}" required="true" ng-model="nameAndEmailUpload.startDate" is-open="nameAndEmailUpload.popup2.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="nameAndEmailUpload.openStartDate()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                   Name and Email End Date
+                                </label><span class="requiredRed">*</span>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{nameAndEmailUpload.format}}" required="true" ng-model="nameAndEmailUpload.endDate" ng-change="nameAndEmailUpload.compareAgainstStartDate(nameAndEmailUpload.endDate)" is-open="nameAndEmailUpload.popup3.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="nameAndEmailUpload.openEndDate()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <br />
+        <div class="modal-footer">
+            <span class="search-no-results pull-right" ng-show="nameAndEmailUpload.toggleInvalidInput">{{nameAndEmailUpload.invalidInput}}</span>
+            <br />
+            <br />
+            <input type="submit" class="btn btn-default pull-right" style="width:100px;" value="Submit" ng-disabled="nameAndEmailUploadUserInputForm.$invalid || !(!!nameAndEmailUpload.chapterCode || !!nameAndEmailUpload.groupSelected  || !!nameAndEmailUpload.startDate || !!nameAndEmailUpload.endDate || !!nameAndEmailUpload.losCode) || nameAndEmailUpload.chapterCode.value == undefined || nameAndEmailUpload.groupSelected == undefined || !nameAndEmailUpload.groupSelected || nameAndEmailUpload.compareAgainstStartDate(nameAndEmailUpload.endDate)" />
+            <button class="btn btn-default pull-left" type="button" ng-click="nameAndEmailUpload.cancel()">Cancel</button>
+        </div>
+
+    </form>
+
+</div>

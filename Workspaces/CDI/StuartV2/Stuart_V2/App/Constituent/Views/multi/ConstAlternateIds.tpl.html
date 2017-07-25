@@ -1,0 +1,82 @@
+﻿<div class="row nopadding">
+    <!-- This template has a parent controller ConstCemCtrl.js, all the cem variables cna be accessed in this template -->
+    <div ng-controller="ConstAlternateIdsCtrl">
+
+        <div ng-show="alternate.togglePleaseWait">
+            <div class="refresh refresh-div">
+                <h4>Please wait....</h4>
+            </div>
+        </div>
+        <div ng-show="alternate.toggleDetails">
+
+            <div class="row padding">
+
+                <div class="row nopadding">
+                    <div class="row nopadding">
+                        <div class="col-md-4 col-lg-4 col-sm-4 nopadding" style="display:inline;">
+                            <h3>Alternate Ids</h3>
+
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 nopadding">
+                            <div ng-show="(alternate.totalItems>=5) == true" style="display:inline;">
+                                <select ng-model="alternate.gridOptions.paginationPageSize" ng-options="o as o for o in alternate.gridOptions.paginationPageSizes"
+                                        class="form-control-static new-form-control-static"
+                                        ng-if="alternate.gridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 font-orange-changer  ">
+                            <span class="font-orange" ng-show="alternate.distinctRecordCount==1">There is {{alternate.distinctRecordCount}} distinct record</span>
+                            <span class="font-orange" ng-show="alternate.distinctRecordCount>1">There are {{alternate.distinctRecordCount}} distinct record</span>
+                        </div>
+                    </div>
+
+                    <div class="pull-left">
+                        <span>Displays all alternate ids of a consituent record.</span>
+
+                    </div>
+                    <div class="pull-right ">
+                        <!--<a href="#" class=" " ng-click="alternate.showAllRecords.showAllrecords()">{{alternate.showAllRecords.showAllName}}  </a>
+                        <div style="display:inline;">
+                            <a href="#" class="" ng-click="alternate.showDetails.allDetails()">Show Details</a>
+
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+            <div ui-grid="alternate.gridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+                <div class="watermark" ng-show="!alternate.gridOptions.data.length">No data available</div>
+            </div>
+
+
+
+
+            <div class="grid-pager">
+                <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                    <div ng-show="(alternate.totalItems>=5) == true">
+                        <div class="pagination-left">
+                            <uib-pagination boundary-links="true" total-items="alternate.totalItems" items-per-page="alternate.gridOptions.paginationPageSize" ng-change="alternate.pageChanged(alternate.currentPage)" scrolldown
+                                            ng-model="alternate.currentPage" class="pagination" direction-links="false"
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                    <div style="margin-top:20px;" class="pull-right">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                    <div style="margin-top:20px;" class="pull-right">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

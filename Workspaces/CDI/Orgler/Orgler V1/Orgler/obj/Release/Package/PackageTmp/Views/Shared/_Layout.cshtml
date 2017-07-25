@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orgler - @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/menustyles.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Tab.css")" rel="stylesheet" type="text/css" />
+    <!--<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />-->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Content/Bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Content/myCSS.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/themes/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/customcss")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")    
+    <base href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]">
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <style>
+        .wordwrap {
+            white-space: pre-wrap; /* CSS3 */
+            white-space: -moz-pre-wrap; /* Firefox */
+            white-space: -pre-wrap; /* Opera <7 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* IE */
+            vertical-align: middle;
+            /*height: 43px;*/
+            padding-top: 5px;
+        }
+
+        .ChkSelected {
+            color: Red;
+            background-color: #ede4e4;
+            font-weight: bold;
+        }
+
+        .numberCircle {
+            border-radius: 50%;
+            behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+            width: 24px;
+            height: 24px;
+            padding: 2px;
+            background: #ddd;
+            border: 2px solid #428bca;
+            color: #f62323;
+            text-align: center;
+            font: 14px Arial, sans-serif;
+            display: inline-block;
+            margin: 3px;
+        }
+    </style>
+    <script>
+        //$.ajaxSetup({ cache: false }); // this didnt help, so added the relevant code in app.js
+
+        AddOverflow = function (t) {
+            t.style.height = "100%";
+            t.style.overflow = 'Auto';
+        }
+
+        RemoveOverflow = function (t) {
+            t.style.height = "";
+            t.style.overflow = "";
+        }
+    </script>
+    <!--DEPLOYMENT STEP-->
+    <base href="/Orgler/">
+</head>
+<body data-ng-app="main">
+    <div style="padding-left:5px;">
+        <div style="float:left; margin-right:20px; margin-top:0px;padding-top:5px;padding-bottom:5px;">
+            <img src="~/Images/redcross-logo1.png" alt="Red cross logo" />
+
+        </div>
+
+
+        <div class="site-title">
+            <a href="~/home">Orgler</a>
+        </div>
+    </div>
+
+    <div id="tfheader" style="float:right; text-align: center; padding-right:10px; " ng-controller="quickSearchController">
+        @*<div ng-style="pleaseWait">
+                <div class="refresh refresh-div" style="margin: 76px 123px">
+                    <h4>Please wait....</h4>
+                </div>
+            </div>*@
+        <form id="tfnewsearch" method="get">
+            <div style="float:right;">
+                <select name="type" class="tftextinput text-center" style="width:100px; margin-right:5px;border-radius: 5px;" ng-model="type">
+                    <option selected="selected" value="masterid">Master Id</option>
+                    @*<option value="address">Address</option>
+                        <option value="city">City</option>
+                        <option value="state">State</option>*@
+                    <option value="zip">Zip</option>
+                    <option value="phone">Phone</option>
+                    <option value="email">Email</option>
+                </select><input type="text" class="tftextinput" id="txtSearch" name="masterId" maxlength="120" placeholder="Quick Search for Organization(s)" ng-required ng-model="quickSearchInput">
+                <input type="submit" value="Search" ng-click="quickSearch()" class="tfbutton">
+            </div>
+
+            <div style="clear:both;">
+                <span class="search-no-results" ng-bind="quickSearchConstNoResults"></span>
+                @* commented advanced search as per Illona's suggestion #403 *@
+                @*<a href="~/Constituent">Advanced Search</a> *@ &nbsp;&nbsp;<span class="username pull-right"> Welcome @User.Identity.Name.ToUpper()</span>
+            </div>
+
+        </form>
+    </div>
+        <div class="" style=" margin-left:73px; ">
+
+            <div ng-controller="UserPermissionCtrl">@* this is used for calling user permissions *@</div>
+
+
+
+            <div class="modal fade" id="iMainErrorModal" role="dialog" data-backdrop="static"
+                 data-keyboard="false">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" ng-bind="header"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p ng-bind="message"></p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tfclear"></div>
+        </div>
+
+        <div id='divMenu' style="background-color:#ededed" class="container-fluid">
+            <section class="featured">
+                <div class="container-fluid">
+                    <div id='cssmenu' menuline style="background-color: #ededed;position:relative; z-index:10;margin-left:-4.5px;">
+                        @{
+                            string strUserName = string.Empty;
+                            string strUserRole = string.Empty;
+                        }
+
+                        @{
+                            //Get the user information stored in encrypted format from the form authentication cookie
+                            string strSerializedUserInformation = string.Empty;
+                            Orgler.Models.Login.LoginCookie loginCookie = new Orgler.Models.Login.LoginCookie();
+
+                            //Get the user information stored in encrypted format from the form authentication cookie
+                            if (System.Web.HttpContext.Current.Request.Cookies.Get(FormsAuthentication.FormsCookieName) != null)
+                            {
+                                HttpCookie cookie = System.Web.HttpContext.Current.Request.Cookies.Get(FormsAuthentication.FormsCookieName);
+                                FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(cookie.Value);
+                                strSerializedUserInformation = ticket.UserData;
+
+                                //Deserialize the user information
+                                //loginCookie = (new System.Web.Script.Serialization.JavaScriptSerializer()).Deserialize<Orgler.Models.Login.LoginCookie>(strSerializedUserInformation);
+
+                                strUserName = loginCookie.strUserName;
+                                strUserRole = strSerializedUserInformation.ToString();
+                            }
+                        }
+
+                        <ul>
+
+
+                            @{
+
+
+                                string action = HttpContext.Current.Request.Url.PathAndQuery.ToString().Replace("/Home", "");
+                                string act = "", adm = "", cas = "", cnt = "", ent = "",  tra = "", upl = "", home="";
+                                if (action.IndexOf("/NewAccount", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { act = "active "; }
+                                else if (action.IndexOf("/TopAccount", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { cas = "active "; }
+                                else if (action.IndexOf("/Constituent", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { cnt = "active "; }
+                                else if (action.IndexOf("/Transaction", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { tra = "active "; }
+                                else if (action.IndexOf("/Enterprise", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { ent = "active "; }
+                                else if (action.IndexOf("/Upload", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { upl = "active "; }
+                                else if (action.IndexOf("/Admin", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { adm = "active "; }
+
+
+
+                                else { home = "active "; }
+                            }
+                            @{
+                                if (@Model.newaccount_tb_access != "N")
+                                {
+                                    <li class='@act'>@Html.ActionLink("New Account", "NewAccount", "Home")</li>
+                                }
+                                if (@Model.topaccount_tb_access != "N")
+                                {
+                                    <li class='@cas'>@Html.ActionLink("Top Orgs", "TopAccount", "Home")</li>
+                                }
+                                if (@Model.constituent_tb_access != "N")
+                                {
+                                    <li class='@cnt'>@Html.ActionLink("Organization", "Constituent", "Home")</li>
+                                    @* <li class='@cnt'>@Html.ActionLink("Constituent", "Index", "Constituent")</li>*@
+                                }
+                                if (@Model.transaction_tb_access != "N")
+                                {
+                                    <li class='@tra'>@Html.ActionLink("Transaction", "Transaction", "Home")</li>
+                                }
+                                if (@Model.enterprise_orgs_tb_access != "N")
+                                {
+                                    <li class='@ent'>@Html.ActionLink("Enterprise Orgs", "EnterpriseAccount", "Home")</li>
+                                }
+                                if (@Model.upload_eosi_tb_access == "RW" || @Model.upload_affil_tb_access == "RW" || @Model.upload_eo_tb_access == "RW")
+                                {
+                                   <li class='@upl has-sub'>
+
+                                        @{
+                                            if (@Model.upload_eosi_tb_access == "RW")
+                                            {
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]upload/eosiupload" target="_self">Upload</a>
+                                            }
+                                            else if (@Model.upload_affil_tb_access == "RW")
+                                            {
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]upload/affiliationupload" target="_self">Upload</a>
+                                            }
+                                            else if (@Model.upload_eo_tb_access == "RW")
+                                            {
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]upload/eoupload" target="_self">Upload</a>
+                                            }
+                                       }
+                                        
+                                        <ul ng-controller="BaseUrlCtrl">
+                                            @{
+                                            if (@Model.upload_eosi_tb_access == "RW")
+                                            {
+                                                <li class='has-sub1'><a href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]upload/eosiupload" target="_self">EO Site Upload</a></li>
+                                            }
+                                            if (@Model.upload_affil_tb_access == "RW")
+                                            {
+                                                <li class='has-sub1'><a href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]upload/affiliationupload" target="_self">Affiliation upload</a></li>
+                                            }
+                                            if (@Model.upload_eo_tb_access == "RW")
+                                            {
+                                                <li class='has-sub1'><a href="@System.Configuration.ConfigurationManager.AppSettings["ResourceURL"]upload/eoupload" target="_self">EO Upload</a></li>
+                                            }
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                if (@Model.admin_tb_access != "N")
+                                {
+                                    <li class='@adm'>@Html.ActionLink("Admin", "Admin", "Home")</li>
+
+                                }
+                            }
+                        </ul>
+                    </div>
+
+
+                </div>
+            </section>
+            <div id='divRedBar' style="width:100%;height:3px; background-color:Red;"></div>
+        </div>
+    
+    <div id="divMainContent">
+        <div style="padding:0px;float:left; width:100%; height:100%; border-left:1px solid #ede4e4; background-color:white;">
+            <div id="divRefresh" class="refresh" style="padding:15px;float:left; width:100%;  height:100px; display:none;"></div>
+            @RenderBody()
+        </div>
+        <div class="panel-footer" style="text-align: center">&copy; American Red Cross 2017. Use Chrome or Firefox for optimum performance.<div style="float:right">Version 2.0&nbsp;&nbsp;Build 8&nbsp;&nbsp;Release 18</div></div>
+    </div>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/ngStorage.min.js"></script>
+    <script src="~/Scripts/angular-backtop.min.js"></script>
+    @*<script src="~/Content/js/bootstrap.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+    <script src="~/Scripts/uiBreadcrumbs.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+    <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>   
+    <script src="~/App/App.js"></script>
+    <script src="~/App/Services.js"></script>
+    <script src="~/App/Directives.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        @RenderSection("jsCode", required:false)
+    </script>
+    <script type="text/javascript">      
+
+        $(document).ready(function () {
+
+            var top = $('#divMenu').offset().top - parseFloat($('#divMenu').css('marginTop').replace(/auto/, 100));//45
+            $(window).scroll(function (event) {
+                // what the y position of the scroll is
+                var y = $(this).scrollTop();
+                //adding arbituary elements to stop the fluttering screen when viewed in maximized mode(without side menu)
+                if ($('.custom-main-content').length == 0)
+                {
+                    var elem = $("<div>", { "class": "arbituary" });
+                    if ($('.arbituary').length <= 1) {
+                        if ($('#all-contents').length != 0) {
+                            $('#all-contents').append(elem);
+                        }
+                    }
+                    //add some random page length
+                     $(".arbituary").css('height', 700 + 'px');
+                }
+
+                // whether that's below the form
+                if (y >= top) {
+                    // if so, ad the fixed class
+                    $('#divMenu').addClass('fixed');
+                    //this is only for header in constitunet tab,
+                    $('#DivDetailsHeader').addClass('fixed');
+                    //this is only for header in EO tab,
+                    $('#DivEODetailsHeader').addClass('fixed');
+
+                    //console.log(top);
+
+                    if ($('.custom-main-content').length != 0) {
+                        if ($('.arbituary').length != 0) {
+                            $(".arbituary").css('height', 0 + 'px');
+                        }
+                        var height = $('.custom-main-content')[0].scrollHeight;
+                        $('.custom-side-bar-border').css('height', (height + 750) + 'px');
+                    }
+
+                }
+                else {
+                    // otherwise remove it
+                    $('#divMenu').removeClass('fixed');
+                       //this is only for header in constitunet tab,
+                    $('#DivDetailsHeader').removeClass('fixed');
+                    //this is only for header in EO tab,
+                    $('#DivEODetailsHeader').removeClass('fixed');
+
+                    if ($('.custom-side-bar-border').length != 0) {
+                        if ($('.arbituary').length != 0) {
+                            $(".arbituary").css('height', 0 + 'px');
+                        }
+                        $('.custom-side-bar-border').css('height',(top + 600) + 'px');
+                    }
+
+
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

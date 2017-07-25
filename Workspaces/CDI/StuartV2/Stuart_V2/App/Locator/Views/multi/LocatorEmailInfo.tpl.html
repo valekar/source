@@ -1,0 +1,91 @@
+﻿
+
+<div ng-style="pleaseWait">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<div  ng-controller="LocatorDetailsEmailController">
+   
+    <div style="width:100%;">
+        <div style="float: left; width: 100%" ui-grid="searchResultsGridOptionsDetails" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+
+        <div ng-show="(totalItemsDetails<=10) == true" style="font-style:italic; color:#ff6a00; margin-top:10px;float:left; padding-left:10px;">  {{(totalItemsDetails > 1) ? 'Search results found ' + totalItemsDetails + ' records.': 'Search results found ' + totalItemsDetails + ' record.'}}</div>
+        <div class="grid-pager">
+
+            <div ng-show="(totalItemsDetails>=10) == true">
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4" style="padding:0px;">
+                        <uib-pagination boundary-links="true" total-items="totalItemsDetails" items-per-page="searchResultsGridOptionsDetails.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-lg-pull-1 col-md-pull-1" style="padding:0px;margin-top:20px;">
+                        <div class="col-lg-3 col-md-3 col-sm-3  ">
+                            <select ng-model="searchResultsGridOptionsDetails.paginationPageSize" ng-options="o as o for o in searchResultsGridOptionsDetails.paginationPageSizes" class="form-control-static"
+                                    ng-if="searchResultsGridOptionsDetails.paginationPageSizes.length > 1"></select>
+                            <span class="">&nbsp;records per page</span>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 " style="padding:0px;">
+                            <div style="font-style:italic; color:#ff6a00; margin-top:9px;float:left; padding-left:10px;">  {{(totalItemsDetails > 1) ? 'Search results found ' + totalItemsDetails + ' records.': 'Search results found ' + totalItemsDetails + ' record.'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="float:left;">
+            <div style="position:relative; margin-top: 0px;"><h3 style="float: left;">Constituents</h3></div>
+
+
+
+            <div style="float: left; width: 100%; margin-top:auto" ui-grid="searchResultsGridOptionsConstituents" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+            <div ng-show="(totalItemsConstituent<=10) == true" style="font-style:italic; color:#ff6a00; margin-top:10px;float:left; padding-left:10px;">  {{(totalItemsConstituent > 1) ? 'Search results found ' + totalItemsConstituent + ' records.': 'Search results found ' + totalItemsConstituent + ' record.'}}</div>
+
+            <div class="grid-pager">
+
+                <div ng-show="(totalItemsConstituents>=10) == true">
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding:0px;">
+                            <uib-pagination boundary-links="true" total-items="totalItemsConstituents" items-per-page="searchResultsGridOptionsConstituents.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                            ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-lg-pull-1 col-md-pull-1" style="padding:0px;margin-top:20px;">
+                            <div class="col-lg-3 col-md-3 col-sm-3  ">
+                                <select ng-model="searchResultsGridOptionsConstituents.paginationPageSize" ng-options="o as o for o in searchResultsGridOptionsConstituents.paginationPageSizes" class="form-control-static"
+                                        ng-if="searchResultsGridOptionsConstituents.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 " style="padding:0px;">
+                                <div style=" font-style:italic; color:#ff6a00; margin-top:9px;float:left; padding-left:10px;">  {{(totalItemsConstituents > 1) ? 'Search results found ' + totalItemsConstituents + ' records.': 'Search results found ' + totalItemsConstituents + ' record.'}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <a href="locator/email" style="float: left;margin-top: 10px;margin-left: 0px;padding:0px;">Search Again</a>
+        
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  
+
+				

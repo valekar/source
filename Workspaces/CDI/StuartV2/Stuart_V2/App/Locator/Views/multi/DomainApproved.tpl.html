@@ -1,0 +1,66 @@
+﻿<div ng-controller="LocatorDomainSearchResultsController">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-show="(totalItems_Approved>=1) == true">
+        <div style="position:relative; margin-top: 67px;"> <label> Status - Approved Results</label></div>
+        <div style="float: left; width: 100%;margin-top:auto" ui-grid="searchResultsGridOptions_Approved" scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+        <div class="grid-pager">
+
+            <div ng-show="(totalItems_Approved>=10) == true">
+
+                <div class="row ">
+                    <div class="col-lg-5 col-md-5 col-sm-5" style="padding:0px;">
+
+                        <uib-pagination boundary-links="true" total-items="totalItems_Approved" max-size="10" items-per-page="searchResultsGridOptions_Approved.paginationPageSize" ng-change="pageChanged_Approved(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-lg-pull-1 col-md-pull-1" style="padding:0px;">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3  " style="margin-top:20px; padding:0px; width:auto">
+                            <select ng-model="searchResultsGridOptions_Approved.paginationPageSize" ng-options="o as o for o in searchResultsGridOptions_Approved.paginationPageSizes" class="form-control-static "
+                                    ng-if="searchResultsGridOptions_Approved.paginationPageSizes.length > 1"></select>
+                            <span class="">records per page</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="padding-top:10px; float: left;">
+                    <input type="text" ng-style="btnapprove" value="Approve" class="btn btn-default" style="width:100px; display:none" id="btnapprove" ng-click="Approved(row.entity.email_domain_map_key)" />
+                </div>
+                <div style="padding-top:10px; float: left; margin-left: 10px;">
+                    <input type="text" ng-style="btnrollback" value="Rollback" class="btn btn-default" style="width:100px;display:block" id="btnrollback" ng-disabled="selecteddata_Approved.length <= 0 && selecteddata_Approved!=undefined" ng-click="Rollback(row.entity.email_domain_map_key)" />
+                </div>
+                <div style="padding-top:10px; float: left; margin-left: 10px;">
+                    <input type="text" ng-style="btnreject" value="Reject" class="btn btn-default" style="width:100px;display:none" id="btnreject" ng-click="Rejected(row.entity.email_domain_map_key)" />
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 " style="padding:0px;">
+                    <div style=" font-style:italic; color:#ff6a00; margin-top:9px;float:left; padding-left:10px;">  {{(totalItems_Approved > 1) ? 'Search results found ' + totalItems_Approved + ' records.': 'Search results found ' + totalItems_Approved + ' record.'}}</div>
+                </div>
+
+            </div>
+        </div>
+       
+    </div>
+    <div ng-show="(totalItems_Approved ==0) == true">
+        <div style="position:relative; margin-top: 67px;">
+            <div style="position:relative; margin-top: 67px;"> <label> Status - Approved Results</label></div>
+
+        </div>
+        <div style="color:red"><label>No Results found </label></div>
+
+    </div>
+    <div style="height: 3px; background-color: #cccccc; width: 100%;  margin-top: 5px;    float: left;"></div>
+</div>

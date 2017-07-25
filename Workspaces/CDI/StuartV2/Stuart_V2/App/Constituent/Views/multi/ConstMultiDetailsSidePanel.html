@@ -1,0 +1,240 @@
+﻿<div style="padding:0px;margin-left:-15px;margin-right:-15px">
+    <ul class="nav nav-tabs">
+        <li ui-sref="constituent.search.results.home({constituentId:masterId})" id="homeTab"><a class="side-panel-a-tag">Home</a></li>
+        <li ui-sref="constituent.search.results.multi({constituentId:masterId})" id="multiTab" ng-class="{active: $state.includes('results')}" class="active" active="false"><a class="side-panel-a-tag"> Multi</a></li>
+        <!--<li ui-sref="constituent.search.results.cem({constituentId:masterId})" id="cemTab"><a class="side-panel-a-tag">CEM</a></li>-->
+    </ul>
+
+
+    <!--<uib-tabset vertical="false" type="tabs">
+        <uib-tab   heading="Home"><a ng-href="constituent.search.results.summary({constituentId:masterId})" ></a></uib-tab>
+        <uib-tab heading="Multi"><a ng-href="constituent.search.results.multi({constituentId:masterId})" ui-sref-active="active"></a></uib-tab>
+    </uib-tabset>-->
+
+    <div class="menu_simple collapse in" style="background-color:white; padding-top:2px;padding-left:0px;">
+
+        <div class="menu-preferences">
+            <a href="javascript:void(0);" uib-popover-template="popver.templateUrl" popover-title="{{popver.title}}" popover-placement="right-top" popover-is-open="popver.showPref">Menu Preferences</a>
+        </div>
+        <ul style="margin-top:20px;">
+            <li class="" ng-class="liMstrDetail">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" id="" ng-change="getMasterDetail({{masterDetail}})" ng-model="masterDetail" />
+                        <label>Master Details</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liSmryView" ng-show="constituent_type == 'IN'">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" id="" ng-change="getSummaryView({{smryView}})" ng-model="smryView" />
+                        <label>Summary View</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liBestSmry">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" id="bestSmry" ng-change="getSummary({{bestSmry}})" ng-model="bestSmry" />
+                        <label>ARC Best Summary</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liOrgName" ng-show="constituent_type == 'OR'">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstOrgName({{constOrgName}})" ng-model="constOrgName" />
+                        <label>Constituent Org Name</label>
+                    </label>
+                </div>
+            </li>
+
+
+            <li class="" ng-class="liName" ng-show="constituent_type == 'IN'">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstName({{constName}})" ng-model="constName" />
+                        <label>Constituent Person Name</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liAddress">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstAddress({{constAddress}})" ng-model="constAddress" />
+                        <label>Constituent Address</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liPhone">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstPhone({{constPhone}})" ng-model="constPhone" />
+                        <label>Constituent Phone</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liEmail">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstEmail({{constEmail}})" ng-model="constEmail" />
+                        <label>Constituent Email</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liExtBridge">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstExtBridge({{constExtBridge}})" ng-model="constExtBridge" />
+                        <label>External Bridge</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liBirth" ng-show="constituent_type == 'IN'">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstBirth({{constBirth}})" ng-model="constBirth" />
+                        <label>Constituent Birth</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liDeath" ng-show="constituent_type == 'IN'">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getConstDeath({{constDeath}})" ng-model="constDeath" />
+                        <label>Constituent Death</label>
+                    </label>
+                </div>
+            </li>
+           <!-- <li class="" ng-class="liContactPref">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getContactPref({{contactPref}})" ng-model="contactPref" />
+                        <label>Contact Preference</label>
+                    </label>
+
+                </div>
+            </li>-->
+
+            <li class="" ng-class="liCharacteristics">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getCharacteristics({{characteristics}})" ng-model="characteristics" />
+                        <label>Characteristics</label>
+                    </label>
+                </div>
+            </li>
+
+
+            <li class="" ng-class="liTransHistory">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getTransHistory({{transHistory}})" ng-model="transHistory" />
+                        <label>Transaction History</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liAnonyInfo">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getAnonInfo({{anonInfo}})" ng-model="anonInfo" />
+                        <label>Anonymous Information</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liMasterAttempt">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getMasterAttempts({{masterAttempt}})" ng-model="masterAttempt" />
+                        <label>Mastering Attempts</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liIntBridge">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getInternalBridge({{internalBridge}})" ng-model="internalBridge" />
+                        <label>Internal Bridge</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liAffiliator" ng-show="constituent_type == 'OR'">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getAffiliator({{affiliator}})" ng-model="affiliator" />
+                        <label>Affiliator</label>
+                    </label>
+                </div>
+            </li>
+
+            <li class="" ng-class="liMergeHistory">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getMergeHistory({{mergeHistory}})" ng-model="mergeHistory" />
+                        <label>Merge History</label>
+                    </label>
+                </div>
+            </li>
+
+            <!-- extended functionality, if you add new function, please add the that I have added -->
+            <li>
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" id="" ng-change="multi.redirectTo(multi.CONSTANTS.ALTERNATE_IDS)" ng-model="multi.toggleAlternateIds" />
+                        <label>Alternate Ids</label>
+                    </label>
+                </div>
+            </li>
+
+        </ul>
+
+            <ul style="margin-top:20px;">
+                <li>
+                    <div class="checkbox side-bar-link">
+                        <label>
+                            <input type="checkbox" id="" ng-change="cem.redirectTo(cem.CONSTANTS.MSG_PREF)" ng-model="cem.toggleMsgPref" />
+                            <label>Message Preference</label>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="checkbox side-bar-link">
+                        <label>
+                            <input type="checkbox" id="" ng-change="cem.redirectTo(cem.CONSTANTS.PREF_LOCATION)" ng-model="cem.togglePrefLoc" />
+                            <label>Preferred Locator</label>
+                        </label>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="checkbox side-bar-link">
+                        <label>
+                            <input type="checkbox" id="" ng-change="cem.redirectTo(cem.CONSTANTS.DNC_SURFACE)" ng-model="cem.toggleDnc" />
+                            <label>DNC</label>
+                        </label>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="checkbox side-bar-link">
+                        <label>
+                            <input type="checkbox" id="" ng-change="cem.redirectTo(cem.CONSTANTS.GRP_MEMBRSHP)" ng-model="cem.toggleGrpMembrshp" />
+                            <label>Group Membership</label>
+                        </label>
+                    </div>
+                </li>
+
+            </ul>
+
+
+    </div>
+
+</div>

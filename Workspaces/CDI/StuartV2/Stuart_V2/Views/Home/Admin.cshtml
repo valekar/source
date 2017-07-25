@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+<link rel="stylesheet" href="~/Content/ui-grid.css" />
+@section scripts {
+<script src="~/Scripts/ui-grid.min.js"></script>
+    <script src="~/App/Admin/App.js"></script>
+
+
+<script src="~/App/Admin/Controllers/TabSecurityCtrl.js"></script>
+<script src="~/App/Admin/Services/TabSecurityService.js"></script>
+<script src="~/App/Admin/Directives/AdminDirectives.js"></script>
+
+<script src="~/App/Admin/Controllers/TabSecurityInsertCtrl.js"></script>
+<script src="~/App/Admin/Controllers/TabSecurityEditCtrl.js"></script>
+<script src="~/App/Admin/Controllers/TabSecurityDeleteCtrl.js"></script>
+}
+
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("admin"), ['admin']);
+}
+
+
+<div class="container-fluid" data-ng-app="admin" id="admin">
+    <br />
+    <div class="row1">
+
+
+        <div class="container-fluid">
+           
+            <div ui-view="maincontent"></div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="iErrorModal" role="dialog" data-backdrop="static"
+         data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="header"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="message"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

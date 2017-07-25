@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuart V2.0 - @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/menustyles.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Tab.css")" rel="stylesheet" type="text/css" />
+    <!--<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />-->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+
+    @*<link href="@Url.Content("~/Content/Bootstrap.min.css")" rel="stylesheet" type="text/css" />*@
+
+    <link href="@Url.Content("~/Content/Bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Content/myCSS.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/themes/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" />
+    @*<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>*@
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <style>
+        .wordwrap {
+            white-space: pre-wrap; /* CSS3 */
+            white-space: -moz-pre-wrap; /* Firefox */
+            white-space: -pre-wrap; /* Opera <7 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* IE */
+            vertical-align: middle;
+            height: 43px;
+            padding-top: 5px;
+        }
+
+        .ChkSelected {
+            color: Red;
+            background-color: #ede4e4;
+            font-weight: bold;
+        }
+
+        .numberCircle {
+            border-radius: 50%;
+            behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+            width: 24px;
+            height: 24px;
+            padding: 2px;
+            background: #ddd;
+            border: 2px solid #428bca;
+            color: #f62323;
+            text-align: center;
+            font: 14px Arial, sans-serif;
+            display: inline-block;
+            margin: 3px;
+        }
+    </style>
+    <script>
+        //$.ajaxSetup({ cache: false }); // this didnt help, so added the relevant code in app.js
+
+        AddOverflow = function (t) {
+            t.style.height = "100%";
+            t.style.overflow = 'Auto';
+        }
+
+        RemoveOverflow = function (t) {
+            t.style.height = "";
+            t.style.overflow = "";
+        }
+    </script>
+    <!--DEPLOYMENT STEP-->
+    <base href="/">
+</head>
+<body data-ng-app="main">
+
+    <div style="padding-left:5px;">
+        <div style="float:left; margin-right:20px; margin-top:0px;padding-top:5px;padding-bottom:5px;">
+            <img src="~/Images/redcross-logo1.png" alt="Red cross logo" />
+
+        </div>
+
+
+        <div class="site-title">
+            <a href="~/home">Orgler</a>
+        </div>
+    </div>
+
+    <div id="tfheader" style="float:right; text-align: center; padding-right:10px; " ng-controller="quickSearchController">
+        <div ng-style="pleaseWait">
+            <div class="refresh refresh-div" style="margin: 76px 123px">
+                <h4>Please wait....</h4>
+            </div>
+        </div>
+        <form id="tfnewsearch" method="get">
+            <div style="float:right;">
+                <select name="type" class="tftextinput text-center" style="width:100px; margin-right:5px;border-radius: 5px;" ng-model="type">
+                    <option selected="selected" value="masterid">Master Id</option>
+                    @*<option value="address">Address</option>
+                        <option value="city">City</option>
+                        <option value="state">State</option>*@
+                    <option value="zip">Zip</option>
+                    <option value="phone">Phone</option>
+                    <option value="email">Email</option>
+                </select><input type="text" class="tftextinput" id="txtSearch" name="masterId" maxlength="120" placeholder="Quick Search for Individual(s)" ng-required ng-model="quickSearchInput">
+                <input type="submit" value="Search" ng-click="quickSearch()" class="tfbutton">
+            </div>
+
+            <div style="clear:both;">
+                <span class="search-no-results" ng-bind="quickSearchConstNoResults"></span>
+                @* commented advanced search as per Illona's suggestion #403 *@
+                @*<a href="~/Constituent">Advanced Search</a> *@ &nbsp;&nbsp;<span class="username pull-right"> Welcome @User.Identity.Name.ToUpper()</span>
+            </div>
+
+        </form>
+    </div>
+
+    @*<div style="position: absolute; left: 1%; top: 2%"><img src="~/Images/StuartFAK.jpg" width="40" alt="Stuart Little was here :)" /> </div>*@
+
+    <div class="" style=" margin-left:73px; ">
+
+
+
+        <div ng-controller="UserPermissionCtrl">@* this is used for calling user permissions *@</div>
+
+
+
+        <div class="modal fade" id="iMainErrorModal" role="dialog" data-backdrop="static"
+             data-keyboard="false">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" ng-bind="header"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p ng-bind="message"></p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tfclear"></div>
+    </div>
+
+    <div id='divMenu' style="background-color:#ededed" class="container-fluid">
+        <section class="featured">
+            <div class="container-fluid">
+                <div id='cssmenu' menuline style="background-color: #ededed;position:relative; z-index:10;margin-left:-4.5px;">
+                    <ul>
+
+
+                        @{
+
+
+                            string action = HttpContext.Current.Request.Url.PathAndQuery.ToString().Replace("/Home", "");
+                            string act = "", adm = "", cas = "", cnt = "", ent = "", loc = "", home = "", red = "", rep = "", tra = "", upl = "", utl = "";
+                            if (action.IndexOf("/Account", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { act = "active "; }
+                            else if (action.IndexOf("/Admin", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { adm = "active "; }
+                            else if (action.IndexOf("/Case", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { cas = "active "; }
+                            else if (action.IndexOf("/Constituent", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { cnt = "active "; }
+                            else if (action.IndexOf("/Enterprise", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { ent = "active "; }
+                            else if (action.IndexOf("/Locator", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { loc = "active "; }
+                            else if (action.IndexOf("/Reference", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { red = "active "; }
+
+                            else if (action.IndexOf("/Reports", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { rep = "active "; }
+                            else if (action.IndexOf("/Transaction", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { tra = "active "; }
+                            else if (action.IndexOf("/Upload", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { upl = "active "; }
+                            else if (action.IndexOf("/Utilities", System.StringComparison.CurrentCultureIgnoreCase) >= 0) { utl = "active "; }
+                            else { home = "active "; }
+                        }
+                        @{
+                            if (@Model.case_tb_access != "N")
+                            {
+                                <li class='@cas'>@Html.ActionLink("Case", "Index", "Case")</li>
+                            }
+                            if (@Model.constituent_tb_access != "N")
+                            {
+                                <li class='@cnt'>@Html.ActionLink("Constituent", "Index", "Constituent")</li>
+                            }
+                            if (@Model.transaction_tb_access != "N")
+                            {
+                                <li class='@tra'>@Html.ActionLink("Transaction", "Index", "Transaction")</li>
+                            }
+                            if (@Model.upload_tb_access != "N")
+                            {
+                                <li class='@upl has-sub'>
+                                    @* DEPLOY *@
+                                    <a href='~/Home/Upload'>Upload</a>
+                                    <ul ng-controller="BaseUrlCtrl">
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/listUpload">List Upload Search</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/groupmembershipupload">Group Membership Upload</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/emailonlyupload">Email-only Upload</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/groupmembershipreferencetable">Group Membership Reference Data</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/nameandemailupload">Name and Email Upload</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/dncUpload">DNC Upload</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}upload/msgPrefUpload">Message Preference Upload</a></li>
+                                        @*<li class='has-sub1'>@Html.ActionLink("Group Membership Reference Table", "GroupMembershipReferenceTable", "Upload", new { controller = "Upload" }, new { })</li>*@
+
+                                        @*<li class='has-sub1'>@Html.ActionLink("Email-only Upload", "ChapterGroup", new { controller = "Upload" }, new { })</li>
+                                <li class='has-sub1'>@Html.ActionLink("Name and Email Upload", "LOBEmail", new { controller = "Upload" }, new { })</li>
+                                <li class='has-sub1'>@Html.ActionLink("Group Membership Reference Data", "GroupMembershipReferenceTable", new { controller = "Upload" }, new { })</li>*@
+                                    </ul>
+                                </li>
+                            }
+                            if (@Model.admin_tb_access != "N")
+                            {
+                                <li class='@adm'>@Html.ActionLink("Administration", "Index", "Admin")</li>
+                                @*<li class='@adm has-sub'>
+                            <a href='~/Home/Admin'>Admin</a>
+                            <ul>
+                                <li class='has-sub1'>@Html.ActionLink("Administration", "Admin", new { controller = "Admin" }, new { })</li>
+                                <li class='has-sub1'>@Html.ActionLink("Tab Level Security", "TabLevel", new { controller = "Admin" }, new { })</li>
+
+                            </ul>
+                        </li>*@
+                            }
+
+
+                            if (@Model.locator_tab_access != "N")
+                            {
+                                <li class='@loc has-sub'>
+                                    <a href='~/Home/Locator'>Locator</a>
+                                    <ul ng-controller="BaseUrlCtrl">
+                                        @*<li class='has-sub1'>@Html.ActionLink("Email", "Email", new { controller = "Locator" }, new { })</li>
+                                <li class='has-sub1'>@Html.ActionLink("Address", "Address", new { controller = "Locator" }, new { })</li>*@
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}locator/email">Email</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}locator/address">Address</a></li>
+                                        <li class='has-sub1'><a ng-href="{{baseUrl}}locator/domain">Domain Address</a></li>
+
+                                    </ul>
+
+                                    @*<ul>
+                                <li class='has-sub1'><a ng-href="{{baseUrl}}locator/email">Email</a></li>
+                                <li class='has-sub1'><a ng-href="{{baseUrl}}locator/address">Address</a></li>
+                            </ul>*@
+                                </li>
+                            }
+
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <div style="clear:both;"></div>
+        <div id='divRedBar' style="width:100%;height:3px; background-color:Red;"></div>
+    </div>
+    <div id="divMainContent">
+        <div style="padding:0px;float:left; width:100%; height:100%; border-left:1px solid #ede4e4; background-color:white;">
+            <div id="divRefresh" class="refresh" style="padding:15px;float:left; width:100%;  height:100px; display:none;"></div>
+            @RenderBody()
+        </div>
+        <div class="panel-footer" style="text-align: center">&copy; American Red Cross 2016. Use Chrome or Firefox for optimum performance.</div>
+    </div>
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+    <script src="~/Scripts/angular.min.js"></script>*@
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/ngStorage.min.js"></script>
+    <script src="~/Scripts/angular-backtop.min.js"></script>
+
+    @*<script src="~/Content/js/bootstrap.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+
+    <!-- <script src="~/Scripts/ladda-bootstrap/ladda.min.js"></script>
+     <script src="~/Scripts/ladda-bootstrap/spin.min.js"></script>-->
+
+    <script src="~/Scripts/uiBreadcrumbs.min.js"></script>
+    <script src="~/App/App.js"></script>
+    <script src="~/App/Services.js"></script>
+    @RenderSection("scripts", required: false)
+
+
+    <script type="text/javascript">
+        @RenderSection("jsCode", required: false)
+
+        $(document).ready(function () {
+            var top = $('#divMenu').offset().top - parseFloat($('#divMenu').css('marginTop').replace(/auto/, 100)) + 55;//45
+            $(window).scroll(function (event) {
+                // what the y position of the scroll is
+                var y = $(this).scrollTop();
+
+                // whether that's below the form
+                if (y >= top) {
+                    // if so, ad the fixed class
+                    $('#divMenu').addClass('fixed');
+                    //this is only for header in constitunet tab,
+                    $('#DivDetailsHeader').addClass('fixed');
+                    //console.log(top);
+
+                    if ($('.custom-main-content').length!=0) {
+                        var height = $('.custom-main-content')[0].scrollHeight;
+                        $('.custom-side-bar-border').css('height', height + 'px');
+                    }
+
+
+
+
+                } else {
+                    // otherwise remove it
+                    $('#divMenu').removeClass('fixed');
+                       //this is only for header in constitunet tab,
+                    $('#DivDetailsHeader').removeClass('fixed');
+
+                    if ($('.custom-side-bar-border').length !=0) {
+                        $('.custom-side-bar-border').css('height', '700px');
+                    }
+
+                }
+            });
+        });
+    </script>
+
+
+
+
+</body>
+</html>

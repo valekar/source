@@ -1,0 +1,109 @@
+﻿<div class="home-grid-content" ng-controller="TransactionDetailsMergeController" style="width:100%;">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+    <div class="row" ng-style="toggleMergeButtons" ng-show="showMergeUnmergeSection">
+        <div class=" col-lg-12">
+        <div style="padding-top:10px; padding-right:10px; float: left;">
+            <button type="button" class="btn btn-default" ng-model="ApproveRecords" ng-click="ApproveMerge(ApproveRecords)">Approve</button>
+        </div>
+        <div style="padding-top:10px; padding-right:10px; float: left;">
+            <button type="button" class="btn btn-default" ng-model="RejectRecords" ng-click="RejectMerge(RejectRecords)">Reject</button>
+        </div>
+        <div style="padding-top:10px;" padding-right:10px; float left;>
+            <button type="button" class="btn btn-default" ng-model="ResearchRecords" ng-click="Research(ResearchRecords)">Research</button>
+        </div>
+    </div>
+    </div>
+
+    <br />
+
+    <div ng-style="toggleDetails">
+
+        <div>
+            <div class="pagination-left">
+                <h3>Merge Details</h3>
+            </div>
+            <div class="more-info">In this section admins can approve/reject/research for a record</div>
+            <div class="pagination-right items-number" ng-show="(totalItems>4) == true">
+                <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                        ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+                <span class="">&nbsp;records per page</span>
+            </div>
+
+            <div ui-grid="gridOptions" ui-grid-selection class="" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+                <div class="watermark" ng-show="!gridOptions.data.length">No data available</div>
+            </div>
+
+            <div class="grid-pager">
+                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="gridOptions.paginationPageSize" ng-change="pageChanged(currentPage)" ng-show="totalItems>4"
+                                ng-model="currentPage" class="pagination" direction-links="false" id="HconstUnmerge_1"
+                                first-text="&laquo;" last-text="&raquo;">
+                </uib-pagination>
+            </div>
+        </div>
+        <br />
+        <div style="margin-top:8px;">
+            <button type="button" class="btn btn-default pull-left" ng-click="backToDetailsPage()">Cancel</button>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="accessTransDeniedModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Transaction Status</h3>
+                </div>
+                <br />
+                <br />
+
+                <div class="row" style="width:98%; ">
+                    <div style="margin-left:40px;margin-right:40px;">
+                        The Transaction will be posted to CDIM.
+                    </div>
+                </div>
+                <br />
+
+                <div class="modal-footer">
+                    <!--<button class="btn btn-default pull-left" ng-click="case.back()"> Back</button>-->
+                    <div style="padding-top:10px;">
+                        <button class="btn btn-default pull-right" type="button" ng-click="closeTransModal()">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="accessDeniedRejectModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Transaction Status</h3>
+                </div>
+                <br />
+                <br />
+
+                <div class="row" style="width:98%; ">
+                    <div style="margin-left:40px;margin-right:40px;">
+                        The Transaction will not be posted to CDIM.
+                    </div>
+                </div>
+                <br />
+
+                <div class="modal-footer">
+                    <!--<button class="btn btn-default pull-left" ng-click="case.back()"> Back</button>-->
+                    <div style="padding-top:10px;">
+                        <button class="btn btn-default pull-right" type="button" ng-click="closeTransModal()">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

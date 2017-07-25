@@ -1,0 +1,82 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <div style="display:inline-block;float:left;">
+            <h3 class="modal-title">DNC Upload Details</h3>
+        </div>
+        <div style="display:inline-block; float:right; margin: 10px 10px 10px 0;">
+            <a ng-click="dncUpload.dncClose()" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+    </div>
+    <br />
+
+    <div class="row padding">
+
+        <div class="row nopadding">
+            <div class="row nopadding">
+                <div class="col-md-6 col-lg-6 col-sm-6 nopadding" style="display:inline;">
+                    <h4>Invalid DNC records. Please correct the invalid records</h4>
+
+                </div>
+                <div class="col-md-5 col-lg-5 col-sm-5 nopadding">
+                    <!--<div ng-show="(dncUpload.totalItems>=10) == true" style="display:inline;">
+                        <select ng-model="dncUpload.validationGrid.paginationPageSize" ng-options="o as o for o in dncUpload.validationGrid.paginationPageSizes"
+                                class="form-control-static new-form-control-static"
+                                ng-if="dncUpload.validationGrid.paginationPageSizes.length > 1"></select>
+                        <span class="">&nbsp;records per page</span>
+
+                    </div>-->
+                </div>
+                <div class="col-md-1 col-lg-1 col-sm-1 font-orange-changer ">
+
+                </div>
+            </div>
+            <div class="pull-left">
+
+
+            </div>
+            <div class="pull-right ">
+
+            </div>
+        </div>
+    </div>
+
+    <div ui-grid="dncUpload.validationGrid" ui-grid-selection ui-grid-pagination scrolldown ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+        <div class="watermark" ng-show="!dncUpload.validationGrid.data.length">No data available</div>
+    </div>
+
+
+    <div class="grid-pager">
+        <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+            <div ng-show="(dncUpload.totalItems>=5) == true">
+                <div class="pagination-left">
+                    <uib-pagination boundary-links="true" total-items="dncUpload.totalItems" items-per-page="dncUpload.validationGrid.paginationPageSize" ng-change="dncUpload.pageChanged(dncUpload.currentPage)" scrolldown
+                                    ng-model="dncUpload.currentPage" class="pagination" direction-links="false"
+                                    first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+            <div style="margin-top:20px;" class="pull-right">
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+            <div style="margin-top:20px;" class="pull-right">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <br />
+    <div class="modal-footer">
+        <button class="btn btn-default pull-right" type="button" ng-click="dncUpload.dncClose()">Cancel</button>
+    </div>
+</div>
+
+
+

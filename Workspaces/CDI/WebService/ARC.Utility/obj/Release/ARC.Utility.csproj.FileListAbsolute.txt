@@ -1,0 +1,5 @@
+C:\Users\m1034714\Source\Workspaces\CDI\WebService\ARC.Utility\bin\Release\ARC.Utility.dll
+C:\Users\m1034714\Source\Workspaces\CDI\WebService\ARC.Utility\bin\Release\ARC.Utility.pdb
+C:\Users\m1034714\Source\Workspaces\CDI\WebService\ARC.Utility\obj\Release\ARC.Utility.csprojResolveAssemblyReference.cache
+C:\Users\m1034714\Source\Workspaces\CDI\WebService\ARC.Utility\obj\Release\ARC.Utility.dll
+C:\Users\m1034714\Source\Workspaces\CDI\WebService\ARC.Utility\obj\Release\ARC.Utility.pdb

@@ -1,0 +1,68 @@
+﻿<!-- Bridge Records Template -->
+<div class="clearfix" ng-if="toggleMasterBridgeMasterSection" style="margin-top: 20px">
+    <div ng-show="toggleMasterBridgeMasterDBError">
+        <h3>Affiliated Master Bridge Details(Master)</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleMasterBridgeMasterProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- Bridge Records Container -->
+    <div ng-show="toggleMasterBridgeMasterResults">
+        <div style="width:100%;" class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9 col-lg-9 col-md-9 pull-left" style="padding: 0">
+                    <div style="float:left;">
+                        <h3>Affiliated Master Bridge Details(Master)</h3>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <h5>Affiliated master bridges displayed in tree structure grouped based on master.</h5>
+                    <div><b>Org Type (Master Count): </b>{{diffOrgTypes || 'N/A'}}</div>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default pull-left" ng-show="masterBridgeMasterGridOptions.data.length" ng-click="exportDetailsData('MasterBridgeMaster')" style="margin-top: 20px;">Export Affiliated Master Bridges(Master)</button>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <table class="table table-responsive" style="width:100%;">
+            <tr class="master-table-header">
+                <th uib-tooltip="Masters had activity with ARC in past 5 years and masters information was confirmed by 3rd party data service provider" tooltip-append-to-body="true">Active Validated Masters</th>
+                <th uib-tooltip="Masters did not have any activity with ARC in past 5 years and masters information was confirmed by 3rd party data service provider" tooltip-append-to-body="true">Inactive Validated Masters</th>
+                <th uib-tooltip="Masters information was confirmed by 3rd party data service provider" tooltip-append-to-body="true">Opportunity/Prospect</th>
+                <th uib-tooltip="Masters had activity with ARC in past 5 years and masters information could not be confirmed by 3rd party data service provider" tooltip-append-to-body="true">Active Unvalidated Masters</th>
+                <th uib-tooltip="Masters did not have any activity with ARC in past 5 years and masters information could not be confirmed by 3rd party data service provider" tooltip-append-to-body="true">Inactive Unvalidated Masters</th>
+                <th uib-tooltip="Masters affiliated to the enterprise" tooltip-append-to-body="true">Total Masters</th>
+            </tr>
+            <tr class="master-table-row wordwrap">
+                <td ng-bind="act_valid_cnt || '0'"></td>
+                <td ng-bind="inact_valid_cnt || '0'"></td>
+                <td ng-bind="prospect_cnt || '0'"></td>
+                <td ng-bind="act_invalid_cnt || '0'"></td>
+                <td ng-bind="inact_invalid_cnt || '0'"></td>
+                <td ng-bind="total_mstr_cnt || '0'"></td>
+            </tr>
+        </table>
+        <div class="container-fluid">
+            <div class="pull-right" style="color:red; font-style: italic" ng-if="total_rec_cnt == masterBridgeMasterGridOptions.data.length">
+                <span><b>{{masterBridgeMasterGridOptions.data.length | number}}</b> affiliated bridges are being surfaced</span>
+            </div>
+            <div ng-if="total_rec_cnt > masterBridgeMasterGridOptions.data.length">
+                <div class="col-lg-10 col-lg-10 col-md-10 pull-left" style="padding:0; color:red; font-style: italic; word-wrap:break-word;">
+                    <span>Showing <b>{{masterBridgeMasterGridOptions.data.length | number}}</b> out of <b>{{total_rec_cnt | number}}</b> affiliated bridges on screen. Load time for {{total_rec_cnt | number}} records in the details grid might exceed 2 minutes. To continue press button at right 'Continue Details Load', or alternatively select 'Export Affiliated Master Bridges (Master)'.  </span>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default pull-left" style="margin-bottom: 5px;" ng-click="loadAllDetails('MasterBridgeMaster')">Continue Details Load</button>
+                </div>
+            </div>
+        </div>
+        <div style="float: left; width: 100%; color: #777777;" ui-grid="masterBridgeMasterGridOptions" id="masterBridgeMasterGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-grouping>
+            <div class="watermark" ng-show="!masterBridgeMasterGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <button class="btn btn-default pull-right" ng-click="addDetails('MasterBridgeMaster')" ng-show="checkAction('Add','MasterBridgeMaster')" style="margin-top: 10px;">Add Affiliations</button>
+    </div>
+</div>

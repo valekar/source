@@ -1,0 +1,44 @@
+﻿<!-- Enterprise Organization Hierarchy Template -->
+<div class="clearfix" ng-if="toggleEntOrgHierarchySection">
+    <div ng-show="toggleEntOrgHierarchyDBError">
+        <h3>Enterprise Organization Hierarchy</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleEntOrgHierarchyProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- EntOrgHierarchy Container -->
+    <div ng-if="toggleEntOrgHierarchyResults">
+        <div style="width:100%;">
+            <div class="pagination-left">
+                <div style="float:left;">
+                    <h3>Enterprise Organization Hierarchy</h3>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="pull-left">
+            <h5>Displays the hierarchy details for the enterprise</h5>
+        </div>
+        <div class="pull-right">
+            <a ng-click="filterShowInactive('EntOrgHierarchy')" ng-show="isEntOrgHierarchyFilterFlag">
+                <span ng-if="isEntOrgHierarchyInactiveHidden">Show All Records</span>
+                <span ng-if="!isEntOrgHierarchyInactiveHidden">Hide Inactive</span>
+            </a>
+            &nbsp;
+            <a href="#" ng-click="showDetailsPopup('EntOrgHierarchy')" ng-show="isEntOrgHierarchyShowDetailsFlag">
+                <span>Show Details</span>
+            </a>
+        </div>
+        <div style="float: left; width: 100%;" ui-grid="entOrgHierarchyGridOptions" id="entOrgHierarchyGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-exporter ui-grid-grouping>
+            <div class="watermark" ng-show="!entOrgHierarchyGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <button class="btn btn-default pull-right" ng-click="addDetails('EntOrgHierarchy')" ng-show="checkAction('Add','EntOrgHierarchy')" style="margin-top: 10px;">Add Enterprise Org Hierarchy</button>
+    </div>
+    <ng-include src="hierarchyDeleteModalHtml"></ng-include>
+    <ng-include src="hierarchyAddModalHtml"></ng-include>
+</div>

@@ -1,0 +1,137 @@
+﻿<!--Select Source System Add pop-up template-->
+<div class="modal fade" id="AddChapterSystemSearchPopup">
+    <div class="modal-dialog" style="width: 40%;height:500px;" role="dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Chapter System Search Criteria</h4>
+        </div>
+        <div class="modal-content">           
+            <div class="modal-body">
+                <div class="container-fluid"> 
+                    <div class="row">                       
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <fieldset data-ng-repeat="chapterSystem in chapterSystems">
+                                    <label>
+                                        Chapter System
+                                    </label>
+                                    <div class="ui-select">
+                                        <select name="selChapterSystem" id="selChapterSystem" class="form-control">
+                                            <option selected="selected" value=""></option>
+                                            <option value="C018">C018</option>
+                                            <option value="C046">C046</option>
+                                            <option value="C052">C052</option>
+                                            <option value="C053">C053</option>
+                                            <option value="C062">C062</option>
+                                            <option value="C066">C066</option>
+                                            <option value="C071">C071</option>
+                                            <option value="C106">C106</option>
+                                            <option value="C109">C109</option>
+                                            <option value="C111">C111</option>
+                                            <option value="C131">C131</option>
+                                            <option value="C132">C132</option>
+                                            <option value="C183">C183</option>
+                                            <option value="C184">C184</option>
+                                            <option value="C186">C186</option>
+                                            <option value="C211">C211</option>
+                                            <option value="C227">C227</option>
+                                            <option value="C255">C255</option>
+                                            <option value="C256">C256</option>
+                                            <option value="C292">C292</option>
+                                            <option value="C303">C303</option>
+                                            <option value="C308">C308</option>
+                                            <option value="C322">C322</option>
+                                            <option value="C325">C325</option>
+                                            <option value="C363">C363</option>
+                                            <option value="C368">C368</option>
+                                            <option value="C382">C382</option>
+                                            <option value="C388">C388</option>
+                                            <option value="C391">C391</option>
+                                            <option value="C402">C402</option>
+                                            <option value="C431">C431</option>
+                                            <option value="C438">C438</option>
+                                            <option value="C474">C474</option>
+                                            <option value="C478">C478</option>
+                                            <option value="C491">C491</option>
+                                            <option value="C496">C496</option>
+                                            <option value="C497">C497</option>
+                                            <option value="D102">D102</option>
+                                            <option value="D109">D109</option>
+                                            <option value="D132">D132</option>
+                                            <option value="D134">D134</option>
+                                            <option value="D171">D171</option>
+                                            <option value="D223">D223</option>
+                                            <option value="D224">D224</option>
+                                            <option value="D239">D239</option>
+                                            <option value="D251">D251</option>
+                                            <option value="D302">D302</option>
+                                            <option value="D324">D324</option>
+                                            <option value="D326">D326</option>
+                                            <option value="D328">D328</option>
+                                            <option value="D361">D361</option>
+                                            <option value="D433">D433</option>
+                                            <option value="D436">D436</option>
+                                            <option value="D474">D474</option>
+                                            <option value="EMLT">EMLT</option>
+                                            <option value="F058">F058</option>
+                                            <option value="F102">F102</option>
+                                            <option value="F142">F142</option>
+                                            <option value="F225">F225</option>
+                                            <option value="G359">G359</option>
+                                            <option value="G384">G384</option>
+                                            <option value="H351">H351</option>
+                                            <option value="H387">H387</option>
+                                            <option value="S">S</option>
+                                            <option value="S052">S052</option>
+                                            <option value="S058">S058</option>
+                                            <option value="S062">S062</option>
+                                            <option value="S066">S066</option>
+                                            <option value="S071">S071</option>
+                                            <option value="S111">S111</option>
+                                            <option value="S131">S131</option>
+                                            <option value="S134">S134</option>
+                                            <option value="S142">S142</option>
+                                            <option value="S171">S171</option>
+                                            <option value="S183">S183</option>
+                                            <option value="S211">S211</option>
+                                            <option value="S225">S225</option>
+                                            <option value="S251">S251</option>
+                                            <option value="S303">S303</option>
+                                            <option value="S322">S322</option>
+                                            <option value="S326">S326</option>
+                                            <option value="S351">S351</option>
+                                            <option value="S387">S387</option>
+                                            <option value="S402">S402</option>
+                                            <option value="S431">S431</option>
+                                            <option value="S436">S436</option>
+                                            <option value="S438">S438</option>
+                                            <option value="S474">S474</option>
+                                            <option value="SNHQ">SNHQ</option>
+                                        </select>
+                                    </div>
+                                    <br />
+                                    <div>
+                                        <input type="text" class="form-control" ng-model="chapterSystem.name" name="" placeholder="Enter Source System Id">
+                                        <!--<button class="btn btn-default" ng-show="$last" ng-click="removeChapterSystem()">-</button>-->
+                                        <a ng-show="$last" ng-click="removeChapterSystem()" style="color: #f54b4b;">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </a>
+                                    </div>
+                                </fieldset>
+                                <br />
+                                   
+</div>
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <button ng-click="addNewChapterSystem()">Add</button>
+                        </div>
+                        </div> 
+                 
+                </div>
+                <br />
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" ng-click="submitNaicsSegment()"> Submit </button>               
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeNaicsSegment()"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>

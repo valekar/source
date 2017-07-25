@@ -1,0 +1,142 @@
+﻿<!-- Please Wait overlay -->
+<div ng-show="toggleDetailsProcessOverlay">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<!-- Side Panel to control the visibility of the sections -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-sm-2 col-md-2" ng-show="!showSideMenuBar" ng-click="showSideMenuBar = !showSideMenuBar"><span class="glyphicon glyphicon-th-list"></span> </div>
+        <div class="col-lg-2 col-sm-2 col-md-2" ng-show="showSideMenuBar"></div>
+        <div class="col-lg-6 col-sm-6 col-md-6"><img src="Images/Expired-52.png" width="15" height="15"> - Inactive Records,<img src="Images/Historical-52.png" width="15" height="15" /> - In Progress Records</div>
+        <div class="col-lg-4 col-sm-4 col-md-4"><button class="btn btn-default pull-right" ng-click="exportDetails()">Export</button></div>
+        <div ng-class="{'col-lg-2 col-sm-2 col-md-2': showSideMenuBar}">
+            <div ng-show="showSideMenuBar" style="width: 100%" class="custom-side-bar-border">
+                <div style="float:right;padding:2px; cursor:pointer;" ng-show="showSideMenuBar" ng-click="showSideMenuBar = !showSideMenuBar"><span class="glyphicon glyphicon-remove"></span> </div>
+                <ul class="nav nav-tabs">
+                    <li ng-class="{active: showHomeSideBar}" id="homeTab" ng-click="toggleSideMenuSection('Home')"><a class="side-panel-a-tag">Home</a></li>
+                    <li ng-class="{active: showMultiSideBar}" id="multiTab" ng-click="toggleSideMenuSection('Multi')"><a class="side-panel-a-tag">Multi</a></li>
+                </ul>
+                <div class="menu_simple" width="100%" ng-show="showHomeSideBar">
+                    <ul>
+                        <li ng-class="EntOrgDetailHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('EntOrgDetail')" id="entOrgDetailsHomeItem">Enterprise Organization Details</a>
+                        </li>
+                        <li ng-class="RFMDetailsHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('RFMDetails')" id="rFMDetailsHomeItem">Patronage Summary (RFM)</a>
+                        </li>
+                        <li ng-class="TransformationDetailHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('TransformationDetail')" id="transformationDetailHomeItem">Affiliation Matching Rules</a>
+                        </li>
+                        <li ng-class="TagsHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('Tags')" id="tagsHomeItem">Tags</a>
+                        </li>
+                        <li ng-class="EntOrgHierarchyHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('EntOrgHierarchy')" id="entOrgHierarchyHomeItem">Enterprise Organization Hierarchy</a>
+                        </li>
+                        <li ng-class="MasterBridgeLocationHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('MasterBridgeLocation')" id="masterBridgeLocationHomeItem">Affiliated Master Bridge Details(Location)</a>
+                        </li>
+                        <li ng-class="MasterBridgeMasterHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('MasterBridgeMaster')" id="masterBridgeMasterHomeItem">Affiliated Master Bridge Details(Master)</a>
+                        </li>
+                        <li ng-class="NaicsCodeStewHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('NaicsCodeStew')" id="naicsCodeStewHomeItem">NAICS Code Stewarding</a>
+                        </li>
+                        <li ng-class="RankingStewHomeSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('RankingStew')" id="rankingStewHomeItem">Ranking Stewarding</a>
+                        </li>
+                        <li ng-class="TransactionHistorySelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('TransactionHistory')" id="transactionHistoryHomeItem">Transaction History</a>
+                        </li>
+                        <!-- Chracteristics -->
+                        <li ng-class="CharacteristicsSelectedClass" style="padding-bottom:8px;">
+                            <a href="#" ng-click="homeToggleSection('Characteristics')" id="charactersiticsHomeItem">Characteristics</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="menu_simple" ng-show="showMultiSideBar">
+                    <div class="menu-preferences">
+                        <a href="javascript:void(0);" uib-popover-template="sideMenuSavePopup.template" popover-title="{{sideMenuSavePopup.title}}" popover-placement="right-top" popover-is-open="sideMenuSavePopup.showPref">Menu Preferences</a>
+                    </div>
+                    <br />
+                    <ul>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleEntOrgDetail" ng-change="toggleDetailSections('EntOrgDetail',entOrgDetailCbModel)" ng-model="entOrgDetailCbModel" />
+                            Enterprise Organization Details
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleRFMDetails" ng-change="toggleDetailSections('RFMDetails',rFMDetailsCbModel)" ng-model="rFMDetailsCbModel" />
+                            Patronage Summary (RFM)
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleTransformationDetail" ng-change="toggleDetailSections('TransformationDetail',transformationDetailCbModel)" ng-model="transformationDetailCbModel" />
+                            Affiliation Matching Rules
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleTags" ng-change="toggleDetailSections('Tags',tagsCbModel)" ng-model="tagsCbModel" />
+                            Tags
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleEntOrgHierarchy" ng-change="toggleDetailSections('EntOrgHierarchy',entOrgHierarchyCbModel)" ng-model="entOrgHierarchyCbModel" />
+                            Enterprise Organization Hierarchy
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleMasterBridgeLocation" ng-change="toggleDetailSections('MasterBridgeLocation',masterBridgeLocationCbModel)" ng-model="masterBridgeLocationCbModel" />
+                            Affiliated Master Bridge Details(Location)
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleMasterBridgeMaster" ng-change="toggleDetailSections('MasterBridgeMaster',masterBridgeMasterCbModel)" ng-model="masterBridgeMasterCbModel" />
+                            Affiliated Master Bridge Details(Master)
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleNaicsCodeStew" ng-change="toggleDetailSections('NaicsCodeStew',naicsCodeStewCbModel)" ng-model="naicsCodeStewCbModel" />
+                            NAICS Code Stewarding
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleRankingStew" ng-change="toggleDetailSections('RankingStew',rankingStewCbModel)" ng-model="rankingStewCbModel" />
+                            Ranking Stewarding
+                        </li>
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="cbToggleTransactionHistory" ng-change="toggleDetailSections('TransactionHistory',transactionHistoryCbModel)" ng-model="transactionHistoryCbModel" />
+                            Transaction History
+                        </li>
+
+                        <li style="padding:5px;">
+                            <input type="checkbox" id="" ng-change="multi.toggleSection(multi.CONSTANTS.CHARACTERISTICS)" ng-model="multi.toggleCharacteristics" />
+                            Characteristics
+                        </li>
+
+                        
+
+
+                    </ul>
+                    <div style="padding:5px;">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-lg-10">-->
+        <div ng-class="{'col-lg-10 col-sm-10 col-md-10': showSideMenuBar, 'col-lg-12 col-sm-12 col-md-12': !showSideMenuBar}">
+            <div style="margin-right:10px;" style1="padding:15px;padding-top:0px;float:left; height:100%;background-color:white;">
+                <back-top scroll-speed=600 button-theme="light" button-text="Take me back"><span class="glyphicon glyphicon-chevron-up"></span></back-top>
+                <!-- Include the html files for the individual sections -->
+                <ng-include src="entOrgDetailHtml"></ng-include>
+                <ng-include src="rFMDetailsHtml"></ng-include>
+                <ng-include src="transformationDetailHtml"></ng-include>
+                <ng-include src="tagsHtml"></ng-include>
+                <ng-include src="entOrgHierarchyHtml"></ng-include>
+                <ng-include src="masterBridgeLocationHtml"></ng-include>
+                <ng-include src="masterBridgeMasterHtml"></ng-include>
+                <ng-include src="naicsCodeStewHtml"></ng-include>
+                <ng-include src="rankingStewHtml"></ng-include>
+                <ng-include src="transactionHistoryHtml"></ng-include>
+                <!-- added by srini for characteristics -->
+                <ng-include src="multi.characteristicsTemplate"></ng-include>
+                <ng-include src="showDetailsPopupHtml"></ng-include>
+                
+            </div>
+        </div>
+    </div>
+</div>

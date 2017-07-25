@@ -1,0 +1,37 @@
+﻿<!--Potential Unmerges Address-->
+<div class="modal fade" id="potentialUnmergesPopup">
+    <div class="modal-dialog" style="width: 90%;height:700px; margin-top:30px;" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Potential Unmerges</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <label class="form-control-label col-lg-4">Organization Name:</label>
+                        <div>
+                            <label class="form-control-label">{{accountName}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px">
+                            <div style="float: left; width: 100%;" ui-grid="constAddressPotentialUnmergeGridOptions" id="constAddressPotentialUnmergeGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize>
+                                <div class="watermark" ng-show="!constAddressPotentialUnmergeGridOptions.data.length">No data available</div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <br />
+                    <div class="row" style="margin-right:10px; margin-left:10px">
+                        <button type="button" id="btnAddToCart" class="btn btn-default" ng-disabled="groupName == 'Orgler'"  ng-click="addToCartPotUnmergeNewAccount()"> Add to Cart </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                    </div>
+                    
+                </div>               
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

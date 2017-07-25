@@ -1,0 +1,129 @@
+﻿<!-- Not used anywhere -->
+<style type="text/css">
+    .details-side-panel {
+        transition: all 0.5s;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 216px;
+        overflow-wrap: break-word;
+        border-right-color: rgb(205, 205, 205);
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+
+    .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+        transition: all linear 0.5s;
+    }
+
+    .details-hide-show-btn {
+        /*position: absolute;*/
+        /*top: 156px;
+        left: 200px;*/
+        cursor: pointer;
+        float: left;
+        left: 5px;
+    }
+
+    .ConstDetailsRow .glyphicon-chevron-left {
+        left: -14px;
+    }
+
+    .ConstDetailsRow .glyphicon-chevron-right {
+        left: 12px;
+    }
+
+
+    .glyphicon glyphicon-forward {
+        left: 1.5%;
+    }
+
+
+    .ConstDetailsRow .DetailsPanelSmall {
+        width: 100%;
+    }
+
+    .ConstDetailsRow .DetailsPanelLarge {
+        width: 123%;
+    }
+
+
+
+
+    .multi-show-btn {
+        position: absolute;
+        left: 93%;
+    }
+
+    .multi-hide-btn {
+        position: absolute;
+        left: 8%;
+    }
+</style>
+
+
+<div ng-app="ngAnimate">
+    <div>
+        <div class="col-sm-3c " ng-hide="isMultiSidePanelOpen">
+            <nav class="custom-side-bar-border" role="navigation">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div style="float:right;padding:2px; cursor:pointer;" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"><span class="glyphicon glyphicon-remove"></span> </div>
+
+                <div class="collapse navbar-collapse" style="margin-left:-15px;margin-right:-15px;">
+                    <div>
+                        <div ng-hide="isMultiSidePanelOpen">
+                            <ul class="nav nav-tabs">
+                                <li ui-sref="constituent.search.results.home({constituentId:cem.masterId})"  id="homeTab"><a class="side-panel-a-tag">Home</a></li>
+                                <li ui-sref="constituent.search.results.multi({constituentId:cem.masterId})" id="multiTab"><a class="side-panel-a-tag">Multi</a></li>
+                                <li ui-sref="constituent.search.results.cem({constituentId:cem.masterId})" ng-class="{active: $state.includes('results')}" class="active" active="false" id="cemTab"><a class="side-panel-a-tag">CEM</a></li>
+                            </ul>
+                            <div class="menu_simple" style="background-color:white; padding-top:2px;   padding-left: 0px;">
+                                <ul style="margin-top:20px;">
+                                    <li >
+                                        <div class="checkbox side-bar-link">
+                                            <label>
+                                                <input type="checkbox" id="" ng-change="cem.redirectTo(cem.CONSTANTS.MSG_PREF)" ng-model="cem.toggleMsgPref" />
+                                                <label>Message Preference</label>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox side-bar-link">
+                                            <label>
+                                                <input type="checkbox" id="" ng-change="cem.redirectTo(cem.CONSTANTS.PREF_LOCATION)" ng-model="cem.togglePrefLoc" />
+                                                <label>Preference Locator</label>
+                                            </label>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="col-sm-9c" ng-class="{'col-sm-12': isMultiSidePanelOpen, 'col-sm-9c custom-main-content': !isMultiSidePanelOpen}">
+
+            <span style="cursor:pointer;" ng-class="{'glyphicon glyphicon glyphicon-th-list': isMultiSidePanelOpen}" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"></span>
+
+            <ng-include src="cem.msgPrefTemplate"> </ng-include>
+            <ng-include src="cem.prefLocTemplate"> </ng-include>
+        </div>
+    </div>
+</div>

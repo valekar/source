@@ -1,0 +1,188 @@
+﻿
+<style type="text/css">
+    .details-side-panel {
+        transition: all 0.5s;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 216px;
+        overflow-wrap: break-word;
+        border-right-color: rgb(205, 205, 205);
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+    .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+        transition: all linear 0.5s;
+    }
+
+    .details-hide-show-btn {
+        /*position: absolute;*/
+        /*top: 156px;
+        left: 200px;*/
+        cursor: pointer;
+        float: left;
+        left: 5px;
+    }
+
+    .ConstDetailsRow .glyphicon-chevron-left {
+        left: -14px;
+    }
+
+    .ConstDetailsRow .glyphicon-chevron-right {
+        left: 12px;
+    }
+
+
+    .glyphicon glyphicon-forward {
+        left: 1.5%;
+    }
+
+
+    .ConstDetailsRow .DetailsPanelSmall {
+        width: 100%;
+    }
+
+    .ConstDetailsRow .DetailsPanelLarge {
+        width: 123%;
+    }
+
+
+
+
+    .multi-show-btn {
+        position: absolute;
+        left: 93%;
+    }
+
+    .multi-hide-btn {
+        position: absolute;
+        left: 8%;
+    }
+</style>
+
+
+<div ng-app="ngAnimate">
+    <div >
+        <div class="col-sm-3c " ng-hide="isMultiSidePanelOpen">
+            <nav class="custom-side-bar-border" role="navigation">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div style="float:right;padding:2px; cursor:pointer;" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"><span class="glyphicon glyphicon-remove"></span> </div>
+
+                <div class="collapse navbar-collapse" style="margin-left:-15px;margin-right:-15px;">
+                    <div>
+                        <div ng-hide="isMultiSidePanelOpen">
+                            <ul class="nav nav-tabs">
+                                <li ui-sref="constituent.search.results.home({constituentId:masterId})" ng-class="{active: $state.includes('results')}" class="active" active="false" id="homeTab"><a class="side-panel-a-tag">Home</a></li>
+                                <li ui-sref="constituent.search.results.multi({constituentId:masterId})" id="multiTab"><a class="side-panel-a-tag">Multi</a></li>
+
+                            </ul>
+                            <div class="menu_simple" style="background-color:white; padding-top:2px;   padding-left: 0px;">
+                                <ul>
+                                    <li ng-class="liMasterDetail" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.MASTER_DETAIL)" id="masterDetail">Master Detail</a>
+                                    </li>
+                                    <li ng-class="liSmryView" style="padding-bottom:8px;" ng-show="constituent_type == 'IN'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.SUMMARY_VIEW)" id="constSmryView">Summary View</a>
+                                    </li>
+                                    <li ng-class="liARCBest" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.BEST_SMRY)" id="constBestSmry">Arc Best Summary</a>
+                                    </li>
+                                    <li ng-class="liExternalBridge" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_EXT_BRIDGE)" id="constExtBridge">External Bridge</a>
+                                    </li>
+                                    <li ng-class="liName" style="padding-bottom:8px;" ng-show="constituent_type == 'IN'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_NAME)" id="constName">Organization Person Name</a>
+                                    </li>
+
+                                    <li ng-class="liOrgName" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_ORG_NAME)" id="constOrgName">Organization Name</a>
+                                    </li>
+
+                                    <li ng-class="liAddress" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_ADDRESS)" id="constAddress">Organization Address</a>
+                                    </li>
+                                    <li ng-class="liPhone" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_PHONE)" id="constPhone">Organization Phone</a>
+                                    </li>
+                                    <li ng-class="liEmail" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_EMAIL)" id="constEmail">Organization Email</a>
+                                    </li>                                   
+                                    <li ng-class="liBirth" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'IN'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_BIRTH)" id="constBirth">Organization Birth</a>
+                                    </li>
+                                    <li ng-class="liDeath" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'IN'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_DEATH)" id="constDeath">Organization Death</a>
+                                    </li>
+                                    <li ng-class="liConactPreference" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONST_PREF)" id="contactPref">Contact Preference</a>
+                                    </li>
+                                    <li ng-class="liCharacteristics" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CHARACTERISTICS)" id="characteristics">Characteristics</a>
+                                    </li>
+                                    <li ng-class="liGroupMemberships" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.GRP_MEMBERSHIP)" id="grpMembership">Group Memberships</a>
+                                    </li>
+                                    <li ng-class="liTransactionHistory" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.TRANS_HISTORY)" id="transHistory">Transaction History</a>
+                                    </li>
+                                    <li ng-class="liAnonymousInfo" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.ANON_INFO)" id="anonInfo">Anonymous Information</a>
+                                    </li>
+                                    <li ng-class="liMasteringAttempts" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.MASTER_ATTEMPT)" id="masterAttempt">Mastering Attempts</a>
+                                    </li>
+                                    <li ng-class="liInternalBridge" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.INTERNAL_BRIDGE)" id="internalBridge">Internal Bridge</a>
+                                    </li>
+                                    <li ng-class="liAffiliator" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.AFFILIATOR)" id="affiliator">Affiliator</a>
+                                    </li>
+                                    <li ng-class="liMergeHistory" class="" style="padding-bottom:8px;">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.MERGE_HISTORY)" id="mergeHistory">Merge History</a>
+                                    </li>
+                                    <li ng-class="liEmailDomainDetails" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.EMAIL_DOMAINS)" id="emailDomain">Email Domain</a>
+                                    </li>
+                                    <li ng-class="liNAICSCodes" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.NAICS_CODES)" id="naicsCode">NAICS Codes</a>
+                                    </li>
+                                    <li ng-class="liContactsDetails" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.CONTACTS_DETAILS)" id="contacts">Contacts</a>
+                                    </li>
+                                    <li ng-class="liAlternateIds" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS.ALTERNATEIDS_DETAILS)" id="alternateIds">AlternateIds</a>
+                                    </li>
+                                    <li ng-class="liRFMValues" class="" style="padding-bottom:8px;" ng-show="constituent_type == 'OR'">
+                                        <a href="#" ng-click="redirectTo(CONSTANTS. RFMVALUES_DETAILS)" id="RFMValues">RFM Values</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="col-sm-9c" ng-class="{'col-sm-12': isMultiSidePanelOpen, 'col-sm-9c custom-main-content': !isMultiSidePanelOpen}">
+
+            <span style="cursor:pointer;" ng-class="{'glyphicon glyphicon glyphicon-th-list': isMultiSidePanelOpen}" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"></span>
+
+            <ng-include src="currentTlp"> </ng-include>
+        </div>
+    </div>
+</div>
+

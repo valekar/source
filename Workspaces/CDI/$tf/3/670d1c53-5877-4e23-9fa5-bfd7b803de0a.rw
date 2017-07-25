@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "Top Accounts";
+}
+
+<h2>Top Accounts</h2>
+
+<p>This tab is under construction.</p>

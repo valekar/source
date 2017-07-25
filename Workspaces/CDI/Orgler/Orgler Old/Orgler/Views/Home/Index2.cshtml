@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getResults() {
+            var searchInput = {
+                MasterID: "700",
+                UserName: "dixit.jain", 
+                ConstType: "IN",
+                Notes: "DJ testing",
+                CaseNum: "123",
+                FirstName: "X",
+                MiddleName: "Y",
+                LastName: "Z",
+                PrefixName: "JKL",
+                SuffixName: "GHI",
+                NickName: "DEF",
+                MaidenName: "ABC",
+                SourceSystemCd: "STRX",
+                NameTypeCd: "PN",
+                BestLOS: "0"
+            };
+            $.ajax({
+                type: "POST",
+                data: JSON.stringify(searchInput),
+                url: "/api/DataApi/PostAddConstPersonName",
+                contentType: "application/json"
+            });
+        }
+
+    //    $(function () {
+
+    //});
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="getResults()">Click</button>
+    </div>
+</body>
+
+</html>

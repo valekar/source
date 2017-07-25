@@ -1,0 +1,56 @@
+﻿<!-- Transformation Details Template -->
+<div class="clearfix" ng-if="toggleTransformationDetailSection">
+    <div ng-show="toggleTransformationDetailDBError">
+        <h3>Affiliation Matching Rules</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleTransformationDetailProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- Transformation Details Container -->
+    <div ng-if="toggleTransformationDetailResults">
+        <div style="width:100%;">
+            <div class="pagination-left">
+                <div style="float:left;">
+                    <h3>Affiliation Matching Rules</h3>
+                </div>
+                <!--<div class="pagination-left items-number-det" ng-if="totalTransformationDetailItems > 5">
+                    <span>Showing </span>
+                    <select ng-model="transformationDetailGridOptions.paginationPageSize" ng-options="o as o for o in transformationDetailGridOptions.paginationPageSizes" class="selcls"></select>
+                    <span> records per page of the total <b>{{totalTransformationDetailItems}}</b> records</span>
+                </div>-->
+                <div style="clear:both;"></div>
+                <h5>Displays the affiliation matching rules based on which masters are affiliated with the enterprise</h5>
+                <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <h5 style="color:Red" ng-show="manuallyAffiliatedMasterCount > 0"><b>There are {{manuallyAffiliatedMasterCount}} organizations which are manually affiliated to the enterprise.</b></h5>
+        </div>
+        <div class="pull-right">
+            <a ng-click="filterShowInactive('TransformationDetail')" ng-show="isTransformationDetailFilterFlag">
+                <span ng-if="isTransformationDetailInactiveHidden">Show All Records</span>
+                <span ng-if="!isTransformationDetailInactiveHidden">Hide Inactive</span>
+            </a>
+            &nbsp;
+            <a href="#" ng-click="showDetailsPopup('TransformationDetail')" ng-show="isTransformationDetailShowDetailsFlag">
+                <span>Show Details</span>
+            </a>
+        </div>
+        <div style="float: left; width: 100%;" ui-grid="transformationDetailGridOptions" id="transformationDetailGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-exporter ui-grid-grouping>
+            <div class="watermark" ng-show="!transformationDetailGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <!--<div class="grid-pager pull-left">
+            <uib-pagination boundary-links="true" total-items="totalTransformationDetailItems" items-per-page="transformationDetailGridOptions.paginationPageSize" ng-show="(totalTransformationDetailItems > transformationDetailGridOptions.paginationPageSize) == true" max-size="10" rotate="false"
+                            ng-model="transformationDetailPaginationCurrentPage" class="pagination" previous-text="&lt;" next-text="&gt" first-text="&laquo;" last-text="&raquo;"
+                            ng-change="transformationDetailNavigationPageChange(transformationDetailPaginationCurrentPage)"></uib-pagination>
+        </div>-->
+        <button class="btn btn-default pull-right" ng-click="addDetails('TransformationDetail')" ng-show="checkAction('Add','TransformationDetail')" style="margin-top: 10px;">Add Affiliation Matching Rules</button>
+    </div>
+    <ng-include src="transformationsDeleteModalHtml"></ng-include>
+    <ng-include src="transformationsEditModalHtml"></ng-include>
+    <ng-include src="transformationsAddModalHtml"></ng-include>
+</div>

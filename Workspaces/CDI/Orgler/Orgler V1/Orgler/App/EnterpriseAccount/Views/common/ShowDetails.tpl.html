@@ -1,0 +1,58 @@
+﻿<div id="modalCover" ng-show="showDetails.toggleDetails">
+    <div class="modal-header">
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            <h3 class="modal-title">Show Details - {{showDetails.title}}</h3>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <button ng-click="showDetails.back()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+
+    </div>
+    <br />
+    <br />
+
+
+
+    <div class="row">
+        <div style="">
+            <div ui-grid="showDetails.gridOptions" ui-grid-selection class="" ui-grid-pagination ui-grid-auto-resize ui-grid-resize-columns ui-grid-move-columns>
+                <div class="watermark" ng-show="!showDetails.gridOptions.data.length">No data available</div>
+            </div>
+
+
+
+            <div class="grid-pager">
+                <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                    <div ng-show="(showDetails.totalItems>=8) == true">
+                        <div class="pagination-left">
+                            <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="showDetails.gridOptions.paginationPageSize" scrolldown ng-change="pageChanged(currentPage)"
+                                            ng-model="currentPage" class="pagination" direction-links="false" id=""
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                        </div>
+
+                        <div class="pagination-right items-number">
+                            <select ng-model="showDetails.gridOptions.paginationPageSize" ng-options="o as o for o in showDetails.gridOptions.paginationPageSizes" class="form-control-static"
+                                    ng-if="showDetails.gridOptions.paginationPageSizes.length > 1"></select>
+                            <span class="">&nbsp;records per page</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br />
+
+    <div class="modal-footer">
+        <button class="btn btn-default pull-left" ng-click="showDetails.back()"> Back</button>
+    </div>
+</div>
+
+
+
+

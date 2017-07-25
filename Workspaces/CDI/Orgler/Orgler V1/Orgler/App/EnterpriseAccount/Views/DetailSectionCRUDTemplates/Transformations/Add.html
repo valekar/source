@@ -1,0 +1,122 @@
+﻿<!--Add Transformations template-->
+<div class="modal fade" id="transformationsAddModal">
+    <div class="modal-dialog" role="dialog" style="width: 50%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Affiliation Matching Rules</h4>
+            </div>
+            <form name="transformationsAddModalForm" ng-submit="submitTransformationUpdates('Add')" style="margin: 10px">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Enterprise Org ID</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="addRecord.entOrgId"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Enterprise Org Name</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="addRecord.entOrgName"></label>
+                        </div>
+                        <div style="border-top: solid; border-width: thin; color: #cccccc"></div>
+                        <div class="row form-group">
+                            <table class="table">
+                                <thead>
+                                    <tr style="text-align: center">
+                                        <td></td>
+                                        <td><b>Condition</b></td>
+                                        <td><b>String</b></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="indvCondition in addRecord.listTransformationConditions track by $index" style="border: none; background-color:{{indvCondition.dup}}">
+                                        <td width="20px" style="color:brown; align-content:center" ng-if="$index > 0">
+                                            <i>AND</i>
+                                        </td>
+                                        <td width="20px" ng-if="$index <= 0"></td>
+                                        <td width="35%">
+                                            <div class="ui-select">
+                                                <select ng-model="indvCondition.condition" class="form-control">
+                                                    <option value="{{ddl.key}}" ng-repeat="ddl in addRecord.listCondition">{{ddl.val}}</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td width="55%">
+                                            <span style="color: red; float:left">*</span><input type="text" name="pattenString{{$index}}" style="width:90%;float:left;margin-left:10px;" class="form-control" ng-required="true" ng-model="indvCondition.string" ng-pattern="transformationPatternString" />
+                                            <span class="error" ng-show="transformationsAddModalForm.pattenString{{$index}}.$error.pattern" style="color:Crimson">
+                                                String should be >1 character long & without comma/pipe
+                                                <!--&nbsp;&nbsp;Affiliation match string should be greater than 1 character long-->
+                                            </span>
+                                        </td>
+                                        <td width="10%">
+                                            <input class="btn btn-default" type="button" ng-click="removeCondition($index, 'Add')" value="Delete" ng-disabled="addRecord.listTransformationConditions.length == 1" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="width: 80%" class="pull-left">
+                                <div style="color:brown; font-style: italic" ng-if="addRecord.listTransformationConditions.length > 1">
+                                    <span>Configured <b>{{addRecord.listTransformationConditions.length | number}}</b> conditions</span>
+                                </div>
+                                <br />
+                                <div style="color:Red; font-style: italic" ng-if="showDoesNotContainWarning">
+                                    <span>Affiliation matching rule contains only a 'Does not Contain' rule. Please revise the affiliation matching rules.</span>
+                                </div>
+                                <div style="color:Red; font-style: italic" ng-if="showDupWarning">
+                                    <span>One or more added conditions are repeated. Please review and submit again.</span>
+                                </div>
+                                <div style="color:Red; font-style: italic" ng-if="showDupTransformationWarning">
+                                    <span>A similar affiliation matching rule is already present for the given Enterprise Organization. Please review.</span>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <input class="btn btn-default" type="button" ng-click="addNewCondition('Add')" value="Add Condition" />
+                            </div>
+                        </div>
+                        <div style="border-top: solid; border-width: thin; color: #cccccc"></div>
+                        <div class="row form-group">
+                            <br />
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Rule Objective</label>
+                            <div class="col-lg-6 col-md-8 col-sm-12">
+                                <input class="form-control" ng-model="addRecord.comment" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">DW Timestamp</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="addRecord.dwDate"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Start Date</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="addRecord.startDate"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">End Date</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="addRecord.endDate"></label>
+                        </div>
+                        <div ng-if="showPotentialAffiliation">
+                            <div class="pull-left" style="width: 80%">
+                                <span style="color:Red; font-style: italic"><b>{{ DeltaAffiliationCount | number}} out of {{ PotentialAffiliationCount | number}} organization(s) will newly get affiliated to the selected enterprise based on the rules configured above.</b> You can export up to 2000 sample organizations using the export button 'Export Sample Orgs' to the right.</span>
+                            </div>
+                            <div class="pull-right" ng-show="PotentialAffiliationCount > 0">
+                                <button type="button" class="btn btn-default" ng-click="exportPotentialMasters('Add')">Export Sample Orgs</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Please Wait overlay -->
+                    <div ng-show="toggleSmokeTestProcessOverlay">
+                        <div class="refresh refresh-div">
+                            <h4>Please wait....</h4>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default" ng-disabled="!transformationsAddModalForm.$valid" ng-click="smokeTestingCount('Add')"> Smoke Test </button>
+                    <button type="submit" class="btn btn-default" ng-disabled="!transformationsAddModalForm.$valid"> Submit </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

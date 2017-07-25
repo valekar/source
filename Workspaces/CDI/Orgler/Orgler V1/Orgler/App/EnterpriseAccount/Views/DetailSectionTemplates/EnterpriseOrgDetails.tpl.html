@@ -1,0 +1,155 @@
+﻿<!-- Enterprise Org Details Template -->
+<div class="clearfix" ng-show="toggleEntOrgDetailSection">
+    <div ng-show="toggleEntOrgDetailDBError">
+        <h3>Enterprise Organization Details</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleEntOrgDetailProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- Enterprise Org Details Container -->
+    <div ng-show="toggleEntOrgDetailResults">
+        <div style="width:100%;">
+            <div class="pagination-left">
+                <div style="float:left;">
+                    <h3>Enterprise Organization Details</h3>
+                </div>
+                <div class="pagination-left items-number-det" ng-if="totalEntOrgDetailItems > 5">
+                    <span>Showing </span>
+                    <select ng-model="entOrgDetailGridOptions.paginationPageSize" ng-options="o as o for o in entOrgDetailGridOptions.paginationPageSizes" class="selcls"></select>
+                    <span> records per page of the total <b>{{totalEntOrgDetailItems}}</b> records</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="pull-left">
+            <h5>Displays the enterprise organization details</h5>
+        </div>
+        <div class="pull-right">
+            <a ng-click="filterShowInactive('EntOrgDetail')" ng-show="isEntOrgDetailFilterFlag">
+                <span ng-if="isEntOrgDetailInactiveHidden">Show All Records</span>
+                <span ng-if="!isEntOrgDetailInactiveHidden">Hide Inactive</span>
+            </a>
+            &nbsp;
+            <a href="#" ng-click="showDetailsPopup('EntOrgDetail')" ng-show="isEntOrgDetailShowDetailsFlag">
+                <span>Show Details</span>
+            </a>
+        </div>
+        <div style="float: left; width: 100%;" ui-grid="entOrgDetailGridOptions" id="entOrgDetailGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-exporter>
+            <div class="watermark" ng-show="!entOrgDetailGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="grid-pager pull-left">
+            <uib-pagination boundary-links="true" total-items="totalEntOrgDetailItems" items-per-page="entOrgDetailGridOptions.paginationPageSize" ng-show="(totalEntOrgDetailItems > entOrgDetailGridOptions.paginationPageSize) == true" max-size="10" rotate="false"
+                            ng-model="entOrgDetailPaginationCurrentPage" class="pagination" previous-text="&lt;" next-text="&gt" first-text="&laquo;" last-text="&raquo;"
+                            ng-change="entOrgDetailNavigationPageChange(entOrgDetailPaginationCurrentPage)"></uib-pagination>
+        </div>
+        <br />
+        <table class="table table-responsive" ng-if="entOrgDetailGridOptions.data[0].lt_brid_cnt.length>0">
+            <tr class="master-table-header">
+                <th>LOS Bridge Count</th>
+                <th>Bridge Count</th>
+            </tr>
+            <tr class="master-table-row" ng-repeat="brid in entOrgDetailGridOptions.data[0].lt_brid_cnt">
+                <td width="30%">
+                    <div style="max-height:100px; overflow-y:auto" ng-bind="brid.los_cnt">
+                    </div>
+                </td>
+                <td width="70%">
+                    <div style="max-height:100px; overflow-y:auto" ng-bind="brid.srcsys_cnt">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-responsive" ng-if="entOrgDetailGridOptions.data[0].lt_brid_cnt.length<=0">
+            <tr class="master-table-header">
+                <th>Bridge Count</th>
+            </tr>
+            <tr class="master-table-row">
+                <td>
+                    No bridges could be found.
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table class="table table-responsive">
+            <tr class="master-table-header">
+                <th>Enterprise Org Summary/Narrative</th>
+            </tr>
+            <tr class="master-table-row">
+                <td>
+                    <div style="max-height:200px; overflow-y:auto" ng-bind="entOrgDetailGridOptions.data[0].ent_org_dsc">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <!--<h4>Biomed RFM Summary</h4>
+        <table class="table table-responsive">
+            <tr class="master-table-header">
+                <th>Last Patronage Date</th>
+                <th>Lifetime Blood Donation Count</th>
+                <th>Lifetime Donated Blood Units</th>
+                <th>Recency Score</th>
+                <th>Frequency Score</th>
+                <th>Blood Donation Score</th>
+                <th>Total RFM Score</th>
+            </tr>
+            <tr class="master-table-row">
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_rcnt_patrng_dt || 'N/A'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_totl_dntn_cnt || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_totl_dntn_val || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_rcncy_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_freq_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_dntn_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].bio_totl_rfm_scr || '0'"></td>
+            </tr>
+        </table>
+        <h4>Fundraising RFM Summary</h4>
+        <table class="table table-responsive">
+            <tr class="master-table-header">
+                <th>Last Patronage Date</th>
+                <th>Lifetime Monetary Donation Count</th>
+                <th>Lifetime Monetary Value</th>
+                <th>Recency Score</th>
+                <th>Frequency Score</th>
+                <th>Monetary Score</th>
+                <th>Total RFM Score</th>
+            </tr>
+            <tr class="master-table-row wordwrap">
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_rcnt_patrng_dt || 'N/A'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_totl_dntn_cnt || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_totl_dntn_val || '0' | currency"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_rcncy_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_freq_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_dntn_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].fr_totl_rfm_scr || '0'"></td>
+            </tr>
+        </table>
+        <h4>PHSS RFM Summary</h4>
+        <table class="table table-responsive">
+            <tr class="master-table-header">
+                <th>Last Patronage Date</th>
+                <th>Lifetime Subscription Count</th>
+                <th>Lifetime Subscription Monetary Value</th>
+                <th>Recency Score</th>
+                <th>Frequency Score</th>
+                <th>Monetary Score</th>
+                <th>Total RFM Score</th>
+            </tr>
+            <tr class="master-table-row wordwrap">
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_rcnt_patrng_dt || 'N/A'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_totl_dntn_cnt || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_totl_dntn_val || '0' | currency"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_rcncy_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_freq_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_dntn_scr || '0'"></td>
+                <td ng-bind="entOrgDetailGridOptions.data[0].hs_totl_rfm_scr || '0'"></td>
+            </tr>
+        </table>-->
+        <button class="btn btn-default pull-right" ng-click="addDetails('EntOrgDetail')" ng-show="checkAction('Add','EntOrgDetail')" style="margin-top: 10px;">Add Enterprise Organization Detail</button>
+    </div>
+</div>
+<ng-include src="editEntOrgsPopupHtml"></ng-include>

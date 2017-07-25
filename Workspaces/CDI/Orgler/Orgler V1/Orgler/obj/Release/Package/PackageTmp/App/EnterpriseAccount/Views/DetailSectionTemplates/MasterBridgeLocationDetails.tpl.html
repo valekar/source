@@ -1,0 +1,50 @@
+﻿<!-- Affiliated Master Bridge Details(Location) Template -->
+<div class="clearfix" ng-show="toggleMasterBridgeLocationSection" style="margin-top: 10px">
+    <div ng-show="toggleMasterBridgeLocationDBError">
+        <h3>Affiliated Master Bridge Details(Location)</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleMasterBridgeLocationProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- Affiliated Master Bridge Details(Location) Container -->
+    <div ng-show="toggleMasterBridgeLocationResults">
+        <div style="width:100%;" class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9 col-lg-9 col-md-9 pull-left" style="padding: 0">
+                    <div style="float:left;">
+                        <h3>Affiliated Master Bridge Details(Location)</h3>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <h5>Affiliated master bridges displayed in tree structure grouped based on location.</h5>
+                    <div><b>Org Type (Master Count): </b>{{diffOrgTypes || 'N/A'}}</div>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default pull-left" ng-show="masterBridgeLocationGridOptions.data.length" ng-click="exportDetailsData('MasterBridgeLocation')" style="margin-top: 20px;">Export Affiliated Master Bridges(Location)</button>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="pull-right" style="color:red; font-style: italic" ng-if="total_rec_cnt == masterBridgeLocationGridOptions.data.length">
+                <span><b>{{masterBridgeLocationGridOptions.data.length | number}}</b> affiliated bridges are being surfaced</span>
+            </div>
+            <div ng-if="total_rec_cnt > masterBridgeLocationGridOptions.data.length">
+                <div class="col-lg-10 col-lg-10 col-md-10 pull-left" style="padding: 0;color:red; font-style: italic; word-wrap:break-word;">
+                    <span>Showing <b>{{masterBridgeLocationGridOptions.data.length | number}}</b> out of <b>{{total_rec_cnt | number}}</b> affiliated bridges on screen. Load time for {{total_rec_cnt | number}} records in the details grid might exceed 2 minutes. To continue press button at right 'Continue Details Load', or alternatively select 'Export Affiliated Master Bridges (Location)'.  </span>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default pull-left" style="margin-bottom: 5px;" ng-click="loadAllDetails('MasterBridgeLocation')">Continue Details Load</button>
+                </div>
+            </div>
+        </div>
+        <div style="float: left; width: 100%; color: #777777" ui-grid="masterBridgeLocationGridOptions" id="masterBridgeLocationGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-grouping>
+            <div class="watermark" ng-show="!masterBridgeLocationGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <button class="btn btn-default pull-right" ng-click="addDetails('MasterBridgeLocation')" ng-show="checkAction('Add','MasterBridgeLocation')" style="margin-top: 10px;">Add Affiliations</button>
+    </div>
+</div>
+<ng-include src="affiliationsDeleteModalHtml"></ng-include>
+<ng-include src="affiliationsAddModalHtml"></ng-include>

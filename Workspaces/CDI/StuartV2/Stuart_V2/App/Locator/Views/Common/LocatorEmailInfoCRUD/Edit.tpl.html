@@ -1,0 +1,48 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Locator Email Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Email Key:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorEmail.email_key" class="form-control" id="email_key" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Email Address:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorEmail.cnst_email_addr" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CasDesc" class="col-sm-4 form-control-label">Final Assessment Code Title: Category</label>
+            <div class="col-sm-8">
+                    <div class="btn-group" uib-dropdown>
+                        <button id="singlebutton" type="button" ng-disabled="CaseTypeState" class="btn" uib-dropdown-toggle>
+                            {{ LocatorEmail.selected.FinalCode_Ctry }}<span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="type in LocatorEmail.Finalassesmentcodes">
+                                <a href="#" ng-click="$event.preventDefault(); 
+                                   LocatorEmail.selected.FinalCode_CtryId = type.id;
+                                   LocatorEmail.selected.FinalCode_Ctry = type.value;
+                                   ">{{ type.value }}</a>
+                                 </li>
+                        </ul>
+                    </div>
+                
+            </div>
+        </div>
+       
+        
+     
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

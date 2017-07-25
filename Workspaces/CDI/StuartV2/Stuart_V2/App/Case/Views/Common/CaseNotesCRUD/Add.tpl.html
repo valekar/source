@@ -1,0 +1,40 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Add Case notes Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Case Key</label>
+            <div class="col-sm-8">
+                <input ng-model="caseNotes.caseKey" class="form-control" id="CaseKey" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="NotesText" class="col-sm-4 form-control-label">Notes Text</label>
+            <div class="col-sm-8">
+                <textarea ng-model="caseNotes.NotesText" class="form-control" id="NotesText" required="true" type="text" />
+            </div>
+        </div>
+      
+
+        <div class="form-group row">
+            <label for="StartDate" class="col-sm-4 form-control-label">Start Date:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseNotes.StartDate" id="StartDate" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="EndDate" class="col-sm-4 form-control-label">End Date:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseNotes.EndDate" id="EndDate" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

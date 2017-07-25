@@ -1,0 +1,7 @@
+2017-06-20 10:18:47.1836|INFO|Stuart_V2.Models.LDAPAuthentication|User Name : M1034714, Error principal context A local error has occurred.
+
+2017-06-20 10:19:03.5868|INFO|Stuart_V2.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\srinivas.valekar
+2017-06-20 10:19:06.1070|INFO|Stuart_V2.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\srinivas.valekar
+2017-06-20 10:19:06.1070|INFO|Stuart_V2.Models.LDAPAuthentication|Path:LDAP://archq.ri.redcross.net, User : srinivas.valekar, User Email: srinivas.valekar@redcross.org
+2017-06-20 10:19:10.9535|INFO|Stuart_V2.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART, SITE - 2025, 
+2017-06-20 10:19:10.9976|INFO|Stuart_V2.Controllers.LoginController|User srinivas.valekar is validated. Roles User,

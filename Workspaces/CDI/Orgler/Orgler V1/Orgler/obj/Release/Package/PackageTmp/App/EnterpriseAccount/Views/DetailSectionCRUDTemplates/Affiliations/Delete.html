@@ -1,0 +1,49 @@
+﻿<!--Delete Affiliations template-->
+<div class="modal fade" id="affiliationsDeleteModal">
+    <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Affiliations</h4>
+            </div>
+            <form name="affiliationsModalForm" ng-submit="submitAffiliationUpdates('Delete',deleteRecord.sectionName)" style="margin: 10px">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Enterprise Org ID</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.entOrgId"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Enterprise Org Name</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.entOrgName"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Master ID</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.mstrId"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Org Name</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.mstrName"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">DW Timestamp</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.dwDate"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">Start Date</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.startDate"></label>
+                        </div>
+                        <div class="row form-group">
+                            <label class="form-control-label col-lg-4 col-md-4 col-sm-12">End Date</label>
+                            <label class="form-control-label col-lg-6 col-md-8 col-sm-12" ng-bind="deleteRecord.endDate"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default"> Submit </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

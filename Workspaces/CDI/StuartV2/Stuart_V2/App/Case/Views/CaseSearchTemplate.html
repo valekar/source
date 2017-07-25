@@ -1,0 +1,256 @@
+﻿
+<div ng-controller="CaseSearchController">
+    <div ng-style="pleaseWait">
+
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div>
+                <h3>Search Case</h3>
+                <div style="float: right; margin-top: -35px">
+                    <button type="button" class="btn btn-default" ng-show="lastCaseSearchResultPresent" ng-click="fetchLastCaseSearchResult()">Last Search Result</button>
+                    <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#recentCaseSearchesModal">Recent Searches</button>
+                </div>
+            </div>
+            <div class="modal fade" id="recentCaseSearchesModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Recent Searches</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="menu_simple" ng-repeat="obj in CaseRecentSearches track by $index" style="padding:8px;">
+                                    <ul>
+                                        <li>
+                                            <a href="#" ng-click="CaseRecentSearch(obj)" ng-model="obj">{{obj| placeholderfunc}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row" ng-repeat="counter in CaseSearchFormElements">
+        <div ng-show="CaseParams.showCloseButton[counter]" style="float:right; margin: 10px 10px 0 0;">
+            <a href="#" ng-click="RemoveRow(counter)" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+        <div ng-show="CaseParams.SearchPanel[counter]">
+
+            <div class="col-lg-12">
+
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Case Number
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Case Number"  ng-model="CaseParams.CaseNumber[counter]" ng-keypress="$event.keyCode == 13 && caseSearch()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Case Name
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Case Name" ng-model="CaseParams.CaseName[counter]" ng-keypress="$event.keyCode == 13 && caseSearch()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                CRM System
+                            </label>
+                            <div>
+                                <select name="selCRMSystemType" id="selCRMSystemType" class="form-control" ng-keypress="$event.keyCode == 13 && caseSearch()" ng-options="CRMSystem.value for CRMSystem in CaseParams.CRMSystems track by CRMSystem.id" ng-model="CaseParams.Case_CRMSystem[counter]">
+                                    <option selected="selected" value=""></option>
+        <!--<option value="90">CDI Hygiene</option>
+        <option value="13">SFDC PI</option>
+        <option value="14">SFDC PHSS</option>-->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                CRM System Id
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="CRM System Id" ng-model="CaseParams.case_CRMSysId[counter]" ng-keypress="$event.keyCode == 13 && caseSearch()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Type
+                            </label>
+                            
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control"  ng-keypress="$event.keyCode == 13 && caseSearch()" ng-model="CaseParams.case_Type[counter]">
+                                    <option selected="selected" value=""></option>
+                                    <!--<option ng-repeat="CaseType in CaseParams.CaseTypes" value="{{CaseType.id}}">{{CaseType.value}}</option>-->
+        <option value="34">Internal Matching</option>
+        <option value="33">Merge Conflicts - Low Priority</option>
+        <option value="32">Merge Conflicts - Medium Priority</option>
+        <option value="31">Merge Conflicts - High Priority</option>
+        <option value="7">Do Not Contact</option>
+        <option value="4">Identification Investigation</option>
+        <option value="90">Data Hygiene</option>
+        <option value="5">NCOA, Death, or Undeliverable Update</option>
+        <option value="3">Constituent Contact Update Request</option>
+        <option value="8">Escalate to CDI Team</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Constituent Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Constituent Name" ng-model="CaseParams.case_constName[counter]" ng-keypress="$event.keyCode == 13 && caseSearch()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="frmSearch">
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>User Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="User Name" ng-model="CaseParams.case_userName[counter]" ng-disabled="CaseParams.caseUsernameState[counter]" ng-keypress="$event.keyCode == 13 && caseSearch()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (From)</label>
+                            <!--<div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Address Line" ng-model="constituent_AddressLine" />
+                            </div>-->
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-keypress="$event.keyCode == 13 && caseSearch()" ng-model="CaseParams.CaseDateFrom[counter]" is-open="CaseParams.caseDateFromPopup[counter].opened" datepicker-options="dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="CaseParams.openCaseDateFrom([counter])"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (To)</label>
+                            <!--<div class="ui-select">
+                                <input type="text" class="form-control" placeholder="City" ng-model="constituent_city" />
+                            </div>-->
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-keypress="$event.keyCode == 13 && caseSearch()" ng-model="CaseParams.CaseDateTo[counter]" is-open="CaseParams.caseDateToPopup[counter].opened" datepicker-options="dateOptions" ng-required="false" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="CaseParams.openCaseDateTo([counter])"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Status</label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="CaseParams.caseStatus[counter]">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Open">Open</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Or</label>
+                            <div style="font-size:14px; ">
+                                <label style="float: left">Me</label>
+                                <input style="float: left;margin-top: 1px;margin-left: 5px;" type="checkbox" ng-model="CaseParams.SearchMeChkbx[counter]" ng-change="SearchMeChkbxChange([counter])" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div ng-show="CaseParams.PanelSeparator[counter]" style="height:3px; background-color:#cccccc; width:100%; margin-top:5px; float: left"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div style="padding-top:10px; float: left;">
+                <input type="text" value="Search" class="btn btn-default" style="width:100px;" id="btnSearch" name="btnSearch" ng-click="caseSearch()" />
+            </div>
+            <div style="padding-top:10px; float: left; margin-left: 10px;">
+                <input type="submit" value="Clear" class="btn btn-default" style="width:100px;" id="btnClear" name="btnClear" ng-click="caseClear()" />
+            </div>
+
+            <div style="padding-top:10px; float: right;">
+                <button type="button" class="btn btn-default" ng-model="SearchRows" ng-click="AddNewSearchRow(SearchRows)">Add New Row</button>
+            </div>
+            <span class="search-no-results">{{CaseNoResults}}</span>
+        </div>
+    </div>
+    <h3 ng-show="toggleAdvancedSearchHeader">Search Results</h3>
+
+
+    <!--<div class="modal fade" id="recentSearchesModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Recent Searches</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="panel panel-default">
+                        
+                        <div class="menu_simple" ng-repeat="obj in CaseRecentSearches" style="padding:8px;">
+                            <ul>
+                                <li>
+                                    <a href="#" ng-click="CaseRecentSearch(obj)" ng-model="obj"> {{obj | placeholderfunc}} </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>-->
+
+</div>

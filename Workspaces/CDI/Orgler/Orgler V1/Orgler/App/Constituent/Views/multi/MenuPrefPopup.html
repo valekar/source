@@ -1,0 +1,174 @@
+﻿
+<div>
+
+    <uib-alert ng-repeat="alert in alerts" type="success" close="closeAlert($index)">Saved preferences</uib-alert>
+    <input type="hidden" name="UserName" ng-model="UserName" value="Nagaraju">
+    <div id="divMenuErrorMsg" class="alert-box error" ng-show="divMenuErrorMsg"><span>error: </span>Error, Please contact administrator.</div>
+    <div id="divMenuSuccessMsg" class="alert-box success" ng-show="divMenuSuccessMsg"><span>success: </span>Successfully saved menu preferences.</div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="pref_MasterDetails" ng-click="toggleCheck('pref_MasterDetails',pref_MasterDetails)" />
+            Master Details
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='IN'">
+        <label>
+            <input type="checkbox" value="1" id="Preferences" name="Preferences" ng-model="pref_Smryview" ng-click="toggleCheck('pref_Smryview',pref_Smryview)" />
+            Summary View
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="2" id="Preferences" name="Preferences" ng-model="pref_ARCBestSmry" ng-click="toggleCheck('pref_ARCBestSmry',pref_ARCBestSmry)" />
+            ARC Best Summary
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="7" id="Preferences" name="Preferences" ng-model="pref_ExternalBrdge" ng-click="toggleCheck('pref_ExternalBrdge',pref_ExternalBrdge)">
+            External Bridge
+        </label>
+    </div>
+    <div class="checkbox" ng-show="constituent_type =='IN'">
+        <label>
+            <input type="checkbox" value="3" id="Preferences" name="Preferences" ng-model="pref_PrsnName" ng-click="toggleCheck('pref_PrsnName',pref_PrsnName)" />
+            Person Names
+        </label>
+    </div>
+
+    <div class="checkbox" ng-show="constituent_type =='OR'">
+        <label>
+            <input type="checkbox" value="3" id="Preferences" name="Preferences" ng-model="pref_OrgName" ng-click="toggleCheck('pref_OrgName',pref_OrgName)" />
+            Org Names
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="4" id="Preferences" name="Preferences" ng-model="pref_Address" ng-click="toggleCheck('pref_Address',pref_Address)" />
+            Addresses
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="5" id="Preferences" name="Preferences" ng-model="pref_Phones" ng-click="toggleCheck('pref_Phones',pref_Phones)" />
+            Phones
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="6" id="Preferences" name="Preferences" ng-model="pref_Email" ng-click="toggleCheck('pref_Email',pref_Email)">
+            Emails
+        </label>
+    </div>
+   
+    <div class="checkbox" ng-if="constituent_type=='IN'">
+        <label>
+            <input type="checkbox" value="8" id="Preferences" name="Preferences" ng-model="pref_Birth" ng-click="toggleCheck('pref_Birth',pref_Birth)">
+            Birth
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='IN'">
+        <label>
+            <input type="checkbox" value="9" id="Preferences" name="Preferences" ng-model="pref_Death" ng-click="toggleCheck('pref_Death',pref_Death)">
+            Death
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="9" id="Preferences" name="Preferences" ng-model="pref_CntctPref" ng-click="toggleCheck('pref_CntctPref',pref_CntctPref)">
+            Contact Preferences
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="10" id="Preferences" name="Preferences" ng-model="pref_Characteristics" ng-click="toggleCheck('pref_Characteristics',pref_Characteristics)">
+            Characteristics
+        </label>
+    </div>
+    <!--<div class="checkbox">
+        <label>
+            <input type="checkbox" value="11" id="Preferences" name="Preferences" ng-model="pref_Relationships" ng-click="toggleCheck('pref_Relationships',pref_Relationships)">
+            Relationships
+        </label>
+    </div>-->
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="12" id="Preferences" name="Preferences" ng-model="pref_grpMemb" ng-click="toggleCheck('pref_grpMemb',pref_grpMemb)">
+            Group Membership
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="13" id="Preferences" name="Preferences" ng-model="pref_TransHistory" ng-click="toggleCheck('pref_TransHistory',pref_TransHistory)">
+            Transaction History
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="14" id="Preferences" name="Preferences" ng-model="pref_AnonInfo" ng-click="toggleCheck('pref_AnonInfo',pref_AnonInfo)">
+            Anonymous Information
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="15" id="Preferences" name="Preferences" ng-model="pref_MasterAttmpt" ng-click="toggleCheck('pref_MasterAttmpt',pref_MasterAttmpt)">
+            Mastering Attempts
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="16" id="Preferences" name="Preferences" ng-model="pref_IntBridge" ng-click="toggleCheck('pref_IntBridge',pref_IntBridge)">
+            Internal Bridge
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='OR'">
+        <label>
+            <input type="checkbox" value="17" id="Preferences" ng-model="pref_affiliator" ng-click="toggleCheck('pref_affiliator',pref_affiliator)" />
+            Affiliator
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="17" id="Preferences" ng-model="pref_MergeHist" ng-click="toggleCheck('pref_MergeHist',pref_MergeHist)" />
+            Merge History
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='OR'">
+        <label>
+            <input type="checkbox" value="18" id="Preferences" ng-model="pref_EmailDomain" ng-click="toggleCheck('pref_EmailDomain',pref_EmailDomain)" />
+            Email Domain
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='OR'">
+        <label>
+            <input type="checkbox" value="19" id="Preferences" ng-model="pref_NaicsCodes" ng-click="toggleCheck('pref_NaicsCodes',pref_NaicsCodes)" />
+            Naics Codes
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='OR'">
+        <label>
+            <input type="checkbox" value="20" id="Preferences" ng-model="pref_Contacts" ng-click="toggleCheck('pref_Contacts',pref_Contacts)" />
+            Contacts
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='OR'">
+        <label>
+            <input type="checkbox" value="20" id="Preferences" ng-model="pref_AlternateIds" ng-click="toggleCheck('pref_AlternateIds',pref_AlternateIds)" />
+            AlternateIds
+        </label>
+    </div>
+    <div class="checkbox" ng-if="constituent_type=='OR'">
+        <label>
+            <input type="checkbox" value="20" id="Preferences" ng-model="pref_RFMValues" ng-click="toggleCheck('pref_RFMValues',pref_RFMValues)" />
+            RFM Values
+        </label>
+    </div>
+    <div style="padding-top:5px; margin-bottom:10px; width:100%; border-bottom:2px #808080 solid;"></div>
+
+    <div style="float:left; margin-right:10px;"><input type="button" value=" Save " class="btn btn-default" ng-click="savePreferences()"></div>
+    <div style="float:left; margin-right:20px;"><input type="button" value=" Close " class="btn btn-default" ng-click="closePreferences()"></div>
+    <div style="clear:both;"></div>
+
+</div>
+

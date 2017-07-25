@@ -1,0 +1,163 @@
+﻿<div>
+    <!-- Please Wait overlay -->
+    <!--<div class="AjaxLoaderOuter" ng-show="processingOverlay">
+        <div valign="middle" class="AjaxLoaderInner">
+            <img src="{{processingOverlaySource}}" width="60px" height="60px" />
+            <h4>Please wait....</h4>   
+        </div>
+    </div>-->
+    <div ng-show="processingOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- Recent Searches pop-up -->
+    <div class="row">
+        <div style="margin-left: 1%;">
+            <h3>New Account Search</h3>
+            <div style="float: right; margin-top:-35px;margin-right:15px;">
+                <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#newAccountrecentSearches">Recent Searches</button>
+            </div>
+        </div>
+        <div class="modal fade" role="dialog" id="newAccountrecentSearches">
+            <div class="modal-dialog" style="width:85%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Recent Searches</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+
+                            <div class="menu_simple" ng-repeat="obj in NewAccountRecentSearches track by $index" style="padding:8px;">
+                                <ul>
+                                    <li>
+                                        <a href="#" ng-click="newAccountRecentSearch(obj)" ng-model="obj">{{obj| placeholderfunc}}</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Container -->
+    <form name="searchFormName" role="form" ng-submit="NewAccountSearchFormMethod()">
+        <div class="col-lg-12" style="width:98%;">
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Line of Business(LOB)
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchLOBType" id="selSearchLOBType" class="form-control" ng-model="searchInput.LOBType">
+                                <option value="All">All</option>
+                                <option value="BIO">Biomedical</option>
+                                <option value="FR">Fundraising</option>
+                                <option value="PHSS">Health & Safety</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px;">
+                        <label>Account Creation Date</label>
+                        <p class="input-group">
+                            <input id="accountCreationDate" style="width:200px"  name="accountCreationDate" date-range-picker class="form-control date-picker" type="text" ng-model="searchInput.accountCreatedDate" alt-input-formats="altInputFormats" datepicker-options="dateOptions" max="searchInput.accountCreatedDate.maxDate"  />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="clickDateRangePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Stewarding Status
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchNAICSType" id="selSearchNAICSType" class="form-control" ng-model="searchInput.StewardingStatus">
+                                <option>All</option>
+                                <option value="All Incomplete">All – Incomplete</option>
+                                <option>NAICS Suggestions</option>
+                                <option>No NAICS Suggestions</option>
+                                <option>Stewardship Underway</option>
+                                <option>Stewardship Complete</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Mastering Type
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchMasteringType" id="selSearchMasteringType" class="form-control" ng-model="searchInput.MasteringType">
+                                <option value="All">All</option>
+                                <option value="New">New Master</option>
+                                <option value="Existing">Existing Master</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Enterprise Org Type
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchEnterpriseOrgType" id="selSearchEnterpriseOrgType" class="form-control" ng-model="searchInput.EntOrgType">
+                                <option>All</option>
+                                <option>Enterprise Org found</option>
+                                <option>Premier Enterprise Org found</option>
+                                <option>No Enterprise Org</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>               
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Enterprise Org ID
+                        </label>
+                        <input id="EnterpriseOrgId" style="width:200px" class="form-control" placeholder="Enterprise Org Id" ng-model="searchInput.EnterpriseOrgId"  />
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px;">
+                        <label>NAICS Code</label>
+                        <p class="input-group">
+                            <input id="newAccountNAICSsegment" class="form-control" placeholder="NAICS Code" name="newAccountNAICSsegment" type="text" ng-click="selectNaicsSegmentNewAccount()" ng-model="searchInput.selectedNaicsSegments" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+                <div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div style="padding-top:10px; float:left;">
+                            <button class="btn btn-default" id="btnSubmit" type="Submit" style="width:100px;" name="btnSearch">Search</button>
+                        </div>
+                        <div style="padding-top:10px; float: left; margin-left: 10px;">
+                            <input class="btn btn-default" id="btnClear" style="width:100px;" name="btnClear" value="Clear" ng-click="clearNewAccountSearch()" />
+                        </div>
+                        <!--<button class="btn btn-default" id="btnClear" style="width:110px;height:40px" name="btnClear" ng-click="clearNewAccountSearch()">Clear</button>-->
+                        <br style="clear:both;" /><br style="clear:both;" />
+                        <span class="search-message" style="color:{{SearchMessageColour}}" ng-show="showSearchMessage">{{SearchMessage}}</span>
+                    </div>
+                </div>
+            </div>        
+    </form>
+</div>
+<ng-include src="selectNAICSCodeTemplate"></ng-include>

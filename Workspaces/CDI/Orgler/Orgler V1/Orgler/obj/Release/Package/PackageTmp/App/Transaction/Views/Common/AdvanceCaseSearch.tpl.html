@@ -1,0 +1,220 @@
+﻿<div id="modalCover" ng-show="case.toggleAdvSearch">
+    <div class="modal-header">
+        <h3 class="modal-title">Advanced Case Search</h3>
+    </div>
+    <br />
+    <div ng-show="case.togglePleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+    <div class="row" style="width:98%; ">
+        <div style="width:100%; background-color:red !important;">
+            <div class="col-lg-8 col-sm-8 col-md-8 " style=" margin-left:20px; float:left !important; width:60%;">
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Case Number
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Case Number" ng-model="case.number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Case Name
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Case Name" ng-model="case.name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                CRM System
+                            </label>
+                            <div>
+                                <select name="selCRMSystemType" id="selCRMSystemType" class="form-control" ng-model="case.CRMSystem">
+                                    <option selected="selected" value=""></option>
+                                    <option value="90">CDI Hygiene</option>
+                                    <option value="13">SFDC PI</option>
+                                    <option value="14">SFDC PHSS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                CRM System Id
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="CRM System Id" ng-model="case.CRMSysId" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Type
+                            </label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case.type">
+                                    <option selected="selected" value=""></option>
+                                    <option value="34">Internal Matching</option>
+                                    <option value="33">Merge Conflicts - Low Priority</option>
+                                    <option value="32">Merge Conflicts - Medium Priority</option>
+                                    <option value="31">Merge Conflicts - High Priority</option>
+                                    <option value="7">Do Not Contact</option>
+                                    <option value="4">Identification Investigation</option>
+                                    <option value="90">Data Hygiene</option>
+                                    <option value="5">NCOA, Death, or Undeliverable Update</option>
+                                    <option value="3">Constituent Contact Update Request</option>
+                                    <option value="8">Escalate to CDI Team</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Constituent Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Constituent Name" ng-model="case.constName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>User Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="User Name" ng-model="case.userName" ng-disabled="case.userNameDisabled" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Or</label>
+                            <div style="font-size:14px; ">
+                                <label style="float: left">Me</label>
+                                <input style="float: left;margin-top: 1px;margin-left: 5px;" type="checkbox" ng-model="case.searchMe" ng-change="case.searchMeChange()" value="" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (From)</label>
+                            <!--<div class="ui-select">
+                            <input type="text" class="form-control" placeholder="Address Line" ng-model="constituent_AddressLine" />
+                        </div>-->
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{case.format}}" ng-model="case.dateFrom" is-open="case.popup1.opened" datepicker-options="case.dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="case.openFirstCalendar()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (To)</label>
+                            <!--<div class="ui-select">
+                            <input type="text" class="form-control" placeholder="City" ng-model="constituent_city" />
+                        </div>-->
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{case.format}}" ng-model="case.dateTo" is-open="case.popup2.opened" datepicker-options="case.dateOptions" ng-required="false" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="case.openSecondCalendar()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Status</label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case.caseStatus">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Open">Open</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div class="modal-footer">
+        <div style="clear:both;"></div>
+        <div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>
+        <span class="search-no-results pull-left" ng-show="case.toggleNoResults">{{case.noResults}}</span>
+        <br />
+        <br />
+        <div style="padding-top:10px;">
+            <button type="button" value="Search" class="btn btn-default pull-left" style="width:100px;" id="btnSearch" name="btnSearch" ng-click="case.caseSearch()">Search</button>
+            <button class="btn btn-default pull-right" type="button" ng-click="case.cancel()">Cancel</button>
+        </div>
+        <!--<span class="search-no-results pull-left" ng-show="case.toggleNoResults">{{case.noResults}}</span>-->
+    </div>
+
+
+</div>
+
+
+
+<div ng-show="case.toggleAdvSearchResults">
+    <div class="modal-header">
+        <h3 class="modal-title">Advanced Case Search Results</h3>
+    </div>
+    <br />
+    <div ng-show="caseresults.togglePleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div style="margin-left:40px;margin-right:40px;">
+            <div ui-grid="case.gridOptions" ui-grid-selection class="ConstPhone" ui-grid-pagination ui-grid-auto-resize scrolldown>
+                <div class="watermark" ng-show="!case.gridOptions.data.length">No data available</div>
+            </div>
+
+            <div class="grid-pager">
+                <uib-pagination boundary-links="true" total-items="case.totalItems" items-per-page="8" ng-change="case.pageChanged(case.currentPage)" ng-show="(case.totalItems>8) == true"
+                                ng-model="case.currentPage" class="pagination" direction-links="false" id=""
+                                first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="modal-footer">
+        <!--<button class="btn btn-default pull-left" ng-click="case.backToSearchForm()"> Back</button>-->
+        <div style="padding-top:10px;">
+            <button type="button" class="btn btn-default pull-left" style="width:100px;" ng-click="case.caseAssociateSubmit()">Submit</button>
+            <button class="btn btn-default pull-right" type="button" ng-click="case.backToSearchForm()">Cancel</button>
+        </div>
+    </div>
+
+</div>

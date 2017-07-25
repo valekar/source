@@ -1,0 +1,100 @@
+﻿
+<div ng-show="listUpload.pleaseWait">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<div class="row">
+    <div style=" margin-left: 1%;">
+        <h3>List Upload Search</h3>
+    </div>
+</div>
+
+<form name="myForm" ng-submit="listUpload.search()">
+    <div class="row " style="width:98%;" ng-repeat="form in listUpload.searchForms track by $index">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-4 col-sm-4 col-md-4">
+                    <div style="padding-bottom:15px; padding-top:15px; ">
+                        <label>
+                            Group
+                        </label>
+                        <!--<div>
+
+                            <select name="selSearchType" id="selSearchType" class="form-control" ng-model="listUpload['grpCd_'+form.id]"
+                                    ng-options="group.id as group.value for group in listUpload.groups">
+                                <option></option>
+                            </select>
+                        </div>-->
+
+                        <br />
+                        <!--<div >
+
+                            <span class="glyphicon glyphicon-triangle-bottom" style="margin-right: 10px;top: 25px; float:right" ng-click="listUpload.groupmembership(form.id)"></span>
+                            <input type="text" class="form-control " list="groupNameList" ng-model="listUpload['grpValue_'+form.id]" ng-click="listUpload.groupmembership(form.id)"  />
+
+                            <ul name="selSearchType" id="selSearchType" ng-show="groupNamedropdown_{{form.id}}" class="upload_groupnameclass" ng-focus="listUpload.onDropDown = true">
+                                <li ng-class="{upload_licolor: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" class="upload_groupnamedropdown_value" ng-repeat="group in listUpload.groups|orderBy:listUpload.UploadFilter| filter : listUpload['grpValue_'+form.id]"
+                                    ng-click="listUpload.Getgroupname(group.id,group.value,form.id)" >{{group.value}}</li>
+                            </ul>
+
+                        </div>-->
+
+
+                        <ui-select ng-model="listUpload['grp_'+form.id]">
+                            <ui-select-match placeholder ="Select a group...">
+                                <span ng-bind="$select.selected.value "></span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="group in (listUpload.groups | filter: $select.search | orderBy:listUpload.UploadFilter)">
+                                <div ng-bind-html="group.value | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                       
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-sm-7 col-md-7">
+
+                </div>
+
+                <div class="col-lg-1 col-sm-1 col-md-1">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <button ng-show="listUpload.searchForms.length>1" type="button" ng-click="listUpload.removeForm($index)" tabindex="-1"
+                                class="btn btn-xs btn-danger pull-right" style="margin-top:5px;margin-right:-15px;float:right;">
+                            <span tabindex="-1"> x</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div style="height:3px; background-color:#cccccc; width:103%; margin-top:5px;margin-left:-15px;"></div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div style="padding-top:10px; float: left;">
+                <!--<input type="submit" value="  Search   " class="btn btn-default" style="width:100px;" id="btnSearch" name="btnSearch"  />-->
+                <button class="btn btn-default" id="btnSubmit" type="Submit" style="width:100px;" id="btnSearch" name="btnSearch">  Search  </button>
+            </div>
+            <div style="padding-top:10px; float: left; margin-left: 10px;">
+                <input type="button" value="  Clear   " class="btn btn-default" style="width:100px;" id="btnClear" name="btnClear" ng-click="listUpload.clearForm()" />
+            </div>
+            <span class="search-no-results">{{listUpload.noResults}}</span>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="pull-right" style="padding-top:10px;">
+                <button type="button" class="btn btn-default" ng-model="SearchRows" ng-click="listUpload.addForm()">Add New Row</button>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+
+
+

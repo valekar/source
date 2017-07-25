@@ -1,0 +1,1602 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DonorWebservice</name>
+    </assembly>
+    <members>
+        <member name="M:DonorWebservice.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:DonorWebservice.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,DonorWebservice.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,DonorWebservice.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:DonorWebservice.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},DonorWebservice.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:DonorWebservice.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:DonorWebservice.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:DonorWebservice.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.#ctor(DonorWebservice.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:DonorWebservice.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,DonorWebservice.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:DonorWebservice.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:DonorWebservice.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DonorWebservice.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:DonorWebservice.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:DonorWebservice.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DonorWebservice.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="M:DonorWebservice.Controllers.AccountController.#ctor(DonorWebservice.ApplicationUserManager,Microsoft.Owin.Security.ISecureDataFormat{Microsoft.Owin.Security.AuthenticationTicket})">
+            <summary>
+            
+            </summary>
+            <param name="userManager"></param>
+            <param name="accessTokenFormat"></param>
+        </member>
+        <member name="M:DonorWebservice.Controllers.AccountController.ChangePassword(DonorWebservice.Models.ChangePasswordBindingModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DonorWebservice.Controllers.CaseController.log">
+            <summary>
+            
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+             
+        </member>
+        <member name="M:DonorWebservice.Controllers.CaseController.GetCaseAdvSearchResults(ARC.Donor.Business.Case.ListCaseInputSearchModel)">
+            <summary>
+            Constituents Case Advance Search ......
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.CaseController.GetCaseTransactionDetails(System.Int32)">
+            <summary>
+            Get Transaction Details......
+            </summary>
+            <param name="caseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.CaseController.GetCaseLocatorDetails(System.Int32)">
+            <summary>
+            Get the Locator details for case tab
+            </summary>
+            <param name="caseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.CaseController.GetCaseNotesDetails(System.Int32)">
+            <summary>
+            Get case notes details
+            </summary>
+            <param name="caseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.CaseController.GetCasePreferenceDetails(System.Int32)">
+            <summary>
+            Get preference detais for case
+            </summary>
+            <param name="caseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentResults(ARC.Donor.Business.ConstituentInputSearchModel)">
+            <summary>
+            This is used to get simple search results
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentAdvSearchResults(ARC.Donor.Business.ListConstituentInputSearchModel)">
+            <summary>
+            This is used to get advanced search results by passing various parameters
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentMasterDetails(System.String)">
+            <summary>
+            Get constituent master details, used in constituent tab.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentPersonName(System.String)">
+            <summary>
+            This api is used to get the individual details of a constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentOrgName(System.String)">
+            <summary>
+            Get the organization details of a constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentAddress(System.String)">
+            <summary>
+            Get the address details of a constituent... pass master id as string ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentEmail(System.String)">
+            <summary>
+            Get email details of a constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentPhone(System.String)">
+            <summary>
+            This API is used to get the phone details of constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetARCBest(System.String)">
+            <summary>
+            ARC best summary details about a searched master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentBirth(System.String)">
+            <summary>
+            Birth details of a constituent 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentCharacteristics(System.String)">
+            <summary>
+            Use this to get the characteristics details of a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentContactPreference(System.String)">
+            <summary>
+            Not used anymore
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentDeath(System.String)">
+            <summary>
+            Get the demise details of a constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentExternalBridge(System.String)">
+            <summary>
+            External bridge details of a master. Gives you the sources from which a master id got the info from
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentGroupMembership(System.String)">
+            <summary>
+            This section is moved to CEM functionality
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentInternalBridge(System.String)">
+            <summary>
+            Internal bridge details of constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentMasteringAttempts(System.String)">
+            <summary>
+            Mastering details of a master id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentMergeHistory(System.String)">
+            <summary>
+            Merge history of a constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentRelationship(System.String)">
+            <summary>
+            Not used in constituent tab. But this api can be used to get the relationship of a constituent
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentSummary(System.String)">
+            <summary>
+            get the summary details of a master id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentTransactionHistory(System.String)">
+            <summary>
+            All the transaction history related to a master id can retrieved
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentPrivateInformation(System.String)">
+            <summary>
+            Not used in constituent tab.This is used to get private info
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentAnonymousInformation(System.String)">
+            <summary>
+            Get the anonymous info of a master id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentOldMasters(System.String)">
+            <summary>
+            Get all the old master ids that were previously mapped to a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentOrgAffiliators(System.String)">
+            <summary>
+            Get the affiliator of a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowPersonNameDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Get more name details of a master
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowOrgNameDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            get more org name details of a master id 
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowAddressDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Retrieve more details of an address
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowPhoneDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Get more phone details about a masterid 
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowEmailDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Get more email details of a constituent
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowBirthDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Get more details of birth of a constituent 
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowDeathDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Get the death details of a constituent
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowContactPreferenceDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Moved to CEM
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowCharacteristicsDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            This is used to get more details of characteristics of a master id
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowExternalBridgeDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            External details of a constituent 
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowInternalBridgeDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Get more details of internal bridge
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowMasterMetricsDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            Master metrics of a master id 
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.PostShowFsaRelationshipDetails(ARC.Donor.Business.Constituents.ShowDetailsInput)">
+            <summary>
+            FSA details of masterid.. not used in constituent tab
+            </summary>
+            <param name="ShowDetailsInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetConstituentDNCRecords(System.String)">
+            <summary>
+            Get the DNC records of masterid 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetPreferredCommunicationChannel(System.String)">
+            <summary>
+            Get the prferred communication channel of a constituent 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetPreferredLocator(System.String)">
+            <summary>
+            Get the preferred locator of a master id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetMessagePreferences(System.String)">
+            <summary>
+            Get the message prefernce of a master id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.GetAlternateIds(ARC.Donor.Business.Constituents.AlternateIdsInput)">
+            <summary>
+            Get alternate ids of a master id
+            </summary>
+            <param name="altInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.ConstituentController.getOrgRelationship(System.String)">
+            <summary>
+            Get individaul master details linked with the given master id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.DNCController.getDNC(System.String)">
+            <summary>
+            This api is used to get DNC of a constituent 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.DNCController.getAllDNC(System.String)">
+            <summary>
+            Get all the DNCs of a given id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.GroupMembershipController.getGroupMembership(System.String)">
+            <summary>
+            Get the details of group membership. CEM changes have been incorporated. 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.GroupMembershipController.getAllGroupMembership(System.String)">
+            <summary>
+            Get more details of group membership of a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorEmailSearchResults(ARC.Donor.Business.Locator.ListLocatorEmailInputSearchModel)">
+            <summary>
+            Post constituent parameters to get Locator Email search results.
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorEmailDetailsByID(ARC.Donor.Business.Locator.LocatorEmailInputSearchModel)">
+            <summary>
+            Post Email parameters to get email details of locator 
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorEmailConstDetailsByID(ARC.Donor.Business.Locator.LocatorEmailInputSearchModel)">
+            <summary>
+            Post email parameters to get email coonstituent details of locator
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorDomain_Correction(ARC.Donor.Business.LocatorDomain.ListLocatorDomainInputSearchModel)">
+            <summary>
+            get email domain details by passing email domain parameters
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorAddressDetails(ARC.Donor.Business.LocatorAddress.ListLocatorAddressInputSearchModel)">
+            <summary>
+            Get the locator address details by passing address parameters
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorAddressDetailsById(ARC.Donor.Business.LocatorAddress.LocatorAddressInputSearchModel)">
+            <summary>
+            Post address parameters to address details of locator 
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorAddressConstituentsDetailsById(ARC.Donor.Business.LocatorAddress.LocatorAddressInputSearchModel)">
+            <summary>
+            Get the email constituent details of locator address by passing address parameters
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LocatorController.GetLocatorAddressAssessmentDetailsById(ARC.Donor.Business.LocatorAddress.LocatorAddressInputSearchModel)">
+            <summary>
+            Get the details of locator address assessment by passing ID as main post parameter
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LoginController.PostInsertLoginHistory(ARC.Donor.Business.Login.LoginHistoryInput)">
+            <summary>
+            Insert into Login History
+            </summary>
+            <param name="LoginHistoryInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LoginController.PostAddTabLevelSecurity(ARC.Donor.Business.Login.UserTabLevelSecurity)">
+            <summary>
+            Add user tab level into user profile. Used if the user logs in for the first time
+            </summary>
+            <param name="UserTabLevelSecurity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.LoginController.EditTabLevelSecurity(ARC.Donor.Business.Admin.AdminPostInput)">
+            <summary>
+            Used for editing of user if there are any changes in the role of user while logging in
+            </summary>
+            <param name="adminInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.MessagePreferenceController.getMessagePreference(System.String)">
+            <summary>
+            Get the message preference of a constituent by passing the master id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.MessagePreferenceController.getAllMessagePreference(System.String)">
+            <summary>
+            Get all the details of message preferences of a constituent by passing master id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.MessagePreferenceController.getMessagePreferenceOptions(System.String)">
+            <summary>
+            Get the drop down options of message preferences 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.MsgPrefUploadController.PostMsgPrefValidate(ARC.Donor.Business.Upload.ListMsgPrefUploadInput)">
+            <summary>
+            This is used to validate a record if the record is valid or not.Pass the relevant parameters for verifying
+            </summary>
+            <param name="listMsgPrefUploadInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.OrgController.GetEmailDomain(System.String)">
+            <summary>
+            This method is used to Get Email Domain for Organizations
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.OrgController.GetOrgNAICS(System.String)">
+            <summary>
+            This method is used to Get NAICS information for Organizations
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.OrgController.GetOrgContacts(System.String)">
+            <summary>
+            This method is used to Get Contacts information for Organizations
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.OrgController.GetOrgContactsExport(System.String)">
+            <summary>
+            This method is used to Get Contacts Export information for Organizations
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.OrgController.GetSourceSystemAlternateIds(System.String)">
+            <summary>
+            This method is used to Get Source System AlternateIds information for Organizations
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.OrgController.GetRFMValues(System.String)">
+            <summary>
+            This method is used to Get Source System AlternateIds information for Organizations
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.GetNewAccountSearchResults(ARC.Donor.Business.Orgler.AccountMonitoring.NewAccountsInputModel)">
+            <summary>
+            Displays all the New Accounts as per users input
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.GetTopOrgsSearchResults(ARC.Donor.Business.Orgler.AccountMonitoring.TopOrgsInputModel)">
+            <summary>
+            Displays all the Top Organization as per users input
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.getPotentialMergeDetails(System.String)">
+            <summary>
+            This method gets the potential merge details for a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.GetOrgNAICSDetails(ARC.Donor.Business.Orgler.AccountMonitoring.GetMasterNAICSDetailsInput)">
+            <summary>
+            This method gets the naics related details for a particular master
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.GetALLNAICSCodes">
+            <summary>
+            This method gets all the naics codes in hierchial(tree-view) data structure
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.NAICSStatusChange(ARC.Donor.Business.Orgler.AccountMonitoring.NAICSStatusChangeInput)">
+            <summary>
+            This method updates(approve/reject/add) the status of the NAICS codes for a particular master
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.ConfirmAccount(ARC.Donor.Business.Orgler.AccountMonitoring.ConfirmAccountInput)">
+            <summary>
+            This method confirms an account for data stewarding
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AccountMonitoringController.UploadNAICSSuggestions(ARC.Donor.Business.Orgler.AccountMonitoring.NAICSSuggestionsDetails)">
+            <summary>
+            This method uploads bulk Naics Suggesions for New Accounts
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AdminServiceController.GetUserProfileDetails(ARC.Donor.Business.Orgler.Admin.AdminTabSecurityInput)">
+            <summary>
+            This method displays all UserProfileDetails/// </summary>
+            <param name="adminInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.AdminServiceController.PostInsertLoginHistory(ARC.Donor.Business.Orgler.Admin.LoginHistoryInput)">
+            <summary>
+            Insert into Login History
+            </summary>
+            <param name="LoginHistoryInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetEnterpriseOrgSearchResults(ARC.Donor.Business.Orgler.EnterpriseOrgs.ListEnterpriseOrgInputSearchModel)">
+            <summary>
+            This is used to get the search result for Enterprise Organizatios
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetAffiliatedMasterBridgeResults(ARC.Donor.Business.Orgler.EnterpriseOrgs.AffiliatedMasterBridgeInput)">
+            <summary>
+            This method is used to find the affiliations of an enterprise Orgs
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetAffiliatedMasterBridgeExportResults(System.String)">
+            <summary>
+            This method is used to find the affiliations of an enterprise and Export in Excel
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetAffiliationsResults(System.String)">
+            <summary>
+            This method is used to find the affiliations of an enterprise
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetBridgeDetails(System.String)">
+            <summary>
+            This method finds the bridge of an enterprise
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetBasicEnterpriseDetails(System.String)">
+            <summary>
+            This method get the basic details of particular enterprise
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetHierarchyDetails(System.String)">
+            <summary>
+            This method get the hierarchy details of particular enterprise
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetNAICSDetails(System.String)">
+            <summary>
+            This method gets the naics related details for a particular master
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetSummaryDetails(System.String)">
+            <summary>
+            This method gets the naics related details for a particular master
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetRankingDetails(System.String)">
+            <summary>
+            This method gets the naics related details for a particular master
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetTransactionHistoryDetails(System.String)">
+            <summary>
+            This method gets the naics related details for a particular master
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetTagsDetails(System.String)">
+            <summary>
+            This method get the tags details of particular enterprise
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.PostCreateEnterpriseOrg(ARC.Donor.Business.Orgler.EnterpriseOrgs.CreateEnterpriseOrgInputModel)">
+            <summary>
+            This method creates new enterprise Organizations
+            </summary>
+            <param name="CreateEntOrgInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.PostUpdateEnterpriseOrg(ARC.Donor.Business.Orgler.EnterpriseOrgs.EditEnterpriseOrgInputModel)">
+            <summary>
+            This method Edit existing enterprise Organizations
+            </summary>
+            <param name="EditEntOrgInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.PostDeleteEnterpriseOrg(ARC.Donor.Business.Orgler.EnterpriseOrgs.DeleteEnterpriseOrgInputModel)">
+            <summary>
+            This method Delete existing enterprise Organizations
+            </summary>
+            <param name="DeleteEntOrgInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetTransformationDetails(System.String)">
+            <summary>
+            This method get the transformation details of particular enterprise        /// </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetRFMDetails(System.String)">
+            <summary>
+            This method gets the rfm related details for a particular enterprise
+            </summary>
+            <param name="enterpriseOrgId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetTagDDList">
+            <summary>
+            Method to get the list of active tags
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.UpdateTags(ARC.Donor.Business.Orgler.EnterpriseOrgs.TagUpdateInputModel)">
+            <summary>
+            Method to perform updates to the tags on an enterprise organization
+            </summary>
+            <param name="TagUpdateInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.UpdateTransformations(ARC.Donor.Business.Orgler.EnterpriseOrgs.TransformationUpdateInput)">
+            <summary>
+            Method to perform updates to the transformations on an enterprise organizations
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.SmokeTestTransformations(ARC.Donor.Business.Orgler.EnterpriseOrgs.TransformationUpdateInput)">
+            <summary>
+            Method to evaluate the potential affiliations which might get created for the rules configured by the user
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.SmokeTestTransformationsExport(ARC.Donor.Business.Orgler.EnterpriseOrgs.TransformationUpdateInput)">
+            <summary>
+            Method to get the organization details corresonding to the potential affiliations on the selected enterprise
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetOrgCharacteristics(System.String)">
+            <summary>
+            Use this to get the characteristics details of a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.GetOrgAllCharacteristics(System.String)">
+            <summary>
+            Use this to get more characteristics details of a master
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.EnterpriseOrgController.UpdateHierarchy(ARC.Donor.Business.Orgler.EnterpriseOrgs.HierarchyUpdateInput)">
+            <summary>
+            Method to perform updates to the hierarchy of an enterprise organizations
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.OrglerUploadController.validateAffiliationUpload(ARC.Donor.Business.Orgler.Upload.AffiliationUploadValidationInput)">
+            <summary>
+            Method to validate the inputs provided as part of the Affiliation upload
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.OrglerUploadController.insertAffiliationUpload(ARC.Donor.Business.Orgler.Upload.AffiliationUploadControllerInput)">
+            <summary>
+            Method to process the inputs provided as part of the Affiliation upload
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.OrglerUploadController.validateEosiUpload(ARC.Donor.Business.Orgler.Upload.EosiUploadValidationInput)">
+            <summary>
+            Method to validate the inputs provided as part of the EOSI upload
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.OrglerUploadController.insertEosiUpload(ARC.Donor.Business.Orgler.Upload.EosiUploadControllerInput)">
+            <summary>
+            Method to process the inputs provided as part of the EOSI upload
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.OrglerUploadController.validateEoUpload(ARC.Donor.Business.Orgler.Upload.EoUploadValidationInput)">
+            <summary>
+            Method to validate the inputs provided as part of the EO upload
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.Orgler.OrglerUploadController.insertEoUpload(ARC.Donor.Business.Orgler.Upload.EoUploadControllerInput)">
+            <summary>
+            Method to process the inputs provided as part of the EO upload
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.PreferenceController.getPreferenceLocator(System.String)">
+            <summary>
+            Get the preferred locator for a given master id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.PreferenceController.getAllPreferenceLocator(System.String)">
+            <summary>
+            Get all the preferred locator details of master 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.PreferenceController.getPreferenceLocatorOptions(System.String)">
+            <summary>
+            Get the drop down values of preferred locator for a master id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.getTransactionSearchResults(ARC.Donor.Business.Transaction.ListTransactionSearchInputModel)">
+            <summary>
+            Get the transaction details by passing relevant parameters
+            </summary>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetMergeTransactionDetails(System.String)">
+            <summary>
+            Get the merge transaction details by passing the transaction id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetEmailTransactionDetails(System.String)">
+            <summary>
+            Get the transaction details of email by passing the transaction id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetAddressTransactionDetails(System.String)">
+            <summary>
+            Get the details of address transactions by passing transaction id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetBirthTransactionDetails(System.String)">
+            <summary>
+            Get the birth transaction details of transaction by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetCharacteristicsTransactionDetails(System.String)">
+            <summary>
+            Get the characteristics of a transaction by passing transaction id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetDeathTransactionDetails(System.String)">
+            <summary>
+              Get the transaction details related to death by passing the transaction id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetPersonNameTransactionDetails(System.String)">
+            <summary>
+            Get person name details of a transaction by passing the transaction id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetOrgNameTransactionDetails(System.String)">
+            <summary>
+            Get org name transaction details by passing the transaaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetPhoneTransactionDetails(System.String)">
+            <summary>
+            Get the transaction details of phone by passing transaction id as the parameter
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetOrgTransformationsTransactionDetails(System.String)">
+            <summary>
+            Get all org transformation details by passing the transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetOrgAffiliatorTransactionDetails(System.String)">
+            <summary>
+            Get org affiliator transaction details by passing the transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetAffiliatorTagsTransactionDetails(System.String)">
+            <summary>
+            Get the affiliator tag transaction details by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetAffiliatorTagsUploadTransactionDetails(System.String)">
+            <summary>
+            Get affiliator tag upload transaction by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetAffiliatorHierarchyTransactionDetails(System.String)">
+            <summary>
+            Get the affiliator hierarcy transaction details by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetUploadDetailsTransactionDetails(System.String)">
+            <summary>
+            Get the upload(email/group membership / name and email upload) details of a transaction by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetUnmergeRequestLogTransactionDetails(System.String)">
+            <summary>
+            Get unmerge request log transaction details by passsing trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetUnmergeProcessLogTransactionDetails(System.String)">
+            <summary>
+            Get unmerge process log transaction details by passing trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetNAICSTransactionDetails(System.String)">
+            <summary>
+            Get NAICS transaction details by passing trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetNAICSUploadTransactionDetails(System.String)">
+            <summary>
+            Get NAICD upload transaction details by passing trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetOrgEmailDomainTransactionDetails(System.String)">
+            <summary>
+            Get org email domain transaction details by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetOrgConfirmationTransactionDetails(System.String)">
+            <summary>
+            Get the org confirmation transaction details by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetCemDNCTransactionDetails(System.String)">
+            <summary>
+            Get CEM DNC transaction details by passing transaction key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetCemMsgPrefTransactionDetails(System.String)">
+            <summary>
+            Get message preference transaction details by passing the trans key as the parameter
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetCemPrefLocTransactionDetails(System.String)">
+            <summary>
+            Get preferred locator transaction details by passing trans key as the parameter
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetCemGrpMembershipTransDetails(System.String)">
+            <summary>
+            Get the group membership transaction details by passing trans key 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetDncUploadTransDetails(System.String)">
+            <summary>
+            Get transaction details of dnc uploaded records by passing the trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetMsgPrefUploadTransDetails(System.String)">
+            <summary>
+            Get transaction details message preference uploaded records by passing trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetEOAffiliationUploadTransactionDetails(System.String)">
+            <summary>
+            Get EO affiliator upload transaction details by passing trans key
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetEOSiteUploadTransactionDetails(System.String)">
+            <summary>
+            Get EO site uploaded records transaction details by passing trans key 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetEOUploadTransactionDetails(System.String)">
+            <summary>
+            Get EO uploaded records transaction details by passing trans key 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.TransactionController.GetEOCharacteristicsTransDetails(System.String)">
+            <summary>
+            Get EO characteristics records transaction details by passing trans key 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.PostGroupMembershipValidate(ARC.Donor.Business.Upload.ListGroupMembershipUploadInput)">
+            <summary>
+            Used for validating a group memberhsip record.Pass the group membership record as a list
+            </summary>
+            <param name="ListGroupMembershipUploadInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.getListUploadSearch(ARC.Donor.Business.Upload.ListOfListUploadSearchInput)">
+            <summary>
+            Search records that have been uploaded into the system using group membehsip references
+            </summary>
+            <param name="listUploadInputList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.GetGroupMembershipReferenceData">
+            <summary>
+            Get the group membership reference data 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.GetUploadDetailsTransExportDetails(System.String)">
+            <summary>
+            Get the upload details of the transaction id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.PostEmailOnlyDetailsValidate(ARC.Donor.Business.Upload.ListEmailOnlyUploadInput)">
+            <summary>
+            validate the uploded email record. pass the record as a list of email records
+            </summary>
+            <param name="ListEmailOnlyUploadInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.PostNameEmailDetailsValidate(ARC.Donor.Business.Upload.ListNameAndEmailUploadInput)">
+            <summary>
+            Validate the name and email upload record
+            </summary>
+            <param name="ListNameAndEmailUploadInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DonorWebservice.Controllers.UploadController.PostDncValidate(ARC.Donor.Business.Upload.ListDncUploadInput)">
+            <summary>
+            validate the DNC record. Pass the parameters as List of DNCs
+            </summary>
+            <param name="listDncUploadInput"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

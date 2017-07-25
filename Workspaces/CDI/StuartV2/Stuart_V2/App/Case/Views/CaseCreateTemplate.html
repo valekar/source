@@ -1,0 +1,521 @@
+﻿
+<form name="CreateCaseForm" ng-submit="CreateCase()" ng-controller="CaseCreateController">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+
+    <div class="row" style="width:98%;">
+        <div style="width:100%; background-color:red !important;">
+            <div class="col-lg-12 col-sm-12 col-md-12 " style="margin-left:20px; float:left !important;">
+                <div>
+                    <h3>Create Case</h3>
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Case Name (Short Description)
+                            </label><span class="requiredRed">*</span>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Case Name" required="true" ng-model="CaseName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Type
+                            </label><span class="requiredRed">*</span>
+                            <div class="ui-select">
+                                <!-- !!IMP!! Please filter out merge conflict dropdowns when binding from JSON -->
+                                <select name="selCaseType" id="selCaseType" required="true" class="form-control" ng-model="case_Type">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Internal Matching">Internal Matching</option>
+                                    <!--<option value="Merge Conflicts - Low Priority">Merge Conflicts - Low Priority</option>
+                                    <option value="Merge Conflicts - Medium Priority">Merge Conflicts - Medium Priority</option>
+                                    <option value="Merge Conflicts - High Priority">Merge Conflicts - High Priority</option>-->
+                                    <option value="Do Not Contact">Do Not Contact</option>
+                                    <option value="Identification Investigation">Identification Investigation</option>
+                                    <option value="Data Hygiene">Data Hygiene</option>
+                                    <option value="NCOA, Death, or Undeliverable Update">NCOA, Death, or Undeliverable Update</option>
+                                    <option value="Constituent Contact Update Request">Constituent Contact Update Request</option>
+                                    <option value="Escalate to CDI Team">Escalate to CDI Team</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Intake/Owner Department
+                            </label><span class="requiredRed">*</span>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" required="true" class="form-control" ng-model="case_IntakeDept">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Biomed Customer Care">Biomed Customer Care</option>
+                                    <option value="Fundraising Donor Services">Fundraising Donor Services</option>
+                                    <option value="PHSS TSC">PHSS TSC</option>
+                                    <option value="Public Inquiry">Public Inquiry</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="MKTDATA">MKTDATA</option>
+                                    <option value="IT">IT</option>
+                                    <option value="SAF">SAF</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Intake Channel
+                            </label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case_IntakeChannel">
+                                    <option selected="selected" value=""></option>
+                                    <option value="RCO Contact Us">RCO Contact Us</option>
+                                    <option value="Email">Email</option>
+                                    <option value="White Mail">White Mail</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Twitter">Twitter</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Internal">Internal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                CRM System
+                            </label>
+                            <div>
+                                <select name="selCRMSystemType" id="selCRMSystemType" class="form-control" ng-model="Case_CRMSystem">
+                                    <option selected="selected" value=""></option>
+                                    <!--<option value="90">CDI Hygiene</option>
+                                    <option value="13">SDFC PI</option>
+                                    <option value="14">SDFC PHSS</option>-->
+                                    <option value="CDI Hygiene">CDI Hygiene</option>
+                                    <option value="SFDC PI">SFDC PI</option>
+                                    <option value="SFDC PHSS">SFDC PHSS</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                CRM System Id
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="CRM System Id" ng-model="case_CRMSysId" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date</label>
+                            <!--<div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Address Line" ng-model="constituent_AddressLine" />
+                            </div>-->
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="CaseReportDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open1()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Case Details</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Case Details" ng-model="case_Details" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="row" style="width:98%; ">
+        <div style="width:100%; background-color:red !important;">
+            <div class="col-lg-12 col-sm-12 col-md-12 " style=" margin-left:20px; float:left !important; width:100%;">
+                <div>
+                    <h4>Constituent Contact Details: Please record all contact details related to the constituent(s)</h4>
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="font-size:14px; ">
+                            <label>Constituent Type</label>
+                            <div class="ui-select">
+                                <select name="selConstType" id="selConstType" ng-model="selConstType" ng-change="ChangeConstType()" class="form-control">
+                                    <option selected="selected" value="Individual">Individual</option>
+                                    <option value="Organization">Organization</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="font-size:14px; ">
+                            <label style="float: left">Set Case as closed</label>
+                            <input style="float: left;margin-top: 1px;margin-left: 5px;" type="checkbox" ng-model="CaseCloseChkbx" value="" />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="font-size:14px; ">
+                            <label>Upload File</label>
+                            <div class="ui-select">
+                                <!--<div file-select="file"></div>-->
+                                <input type="file" name="files" ng-files="getTheFiles($files)" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-md-1">
+                        <!--<div style="font-size:14px; ">
+                            <label></label>
+                            <div class="ui-select">
+                                <input type="button" ng-click="uploadFiles()" value="Upload" />
+                            </div>
+
+                        </div>-->
+
+
+
+                    </div>
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        <p>Record all constituent details (For DNC cases First Name and Last Name are required at minimum)</p>
+                    </div>
+                </div>
+                <div class="row" id="frmSearch" ng-show="OnIndTypeSel">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>First Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="First Name" ng-model="case_firstName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Last Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Last Name" ng-model="case_lastName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Address Line</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Address Line" ng-model="case_AddressLine" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>City</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="City" ng-model="case_city" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="frmSearch" ng-show="OnOrgTypeSel">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Organization Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="First Name" ng-model="Case_OrgName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Address Line</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Address Line" ng-model="case_AddressLine" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>City</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="City" ng-model="case_city" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>State</label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case_state">
+                                    <option selected="selected" value=""></option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AS">American Samoa</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Zip</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="zip" ng-model="case_zip" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Phone</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Phone" ng-model="case_phone" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Email Address</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="Email Address" ng-model="case_emailAddress" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Master Id
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Master Id" ng-model="case_masterid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Source System
+                            </label>
+                            <div>
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case_SrcSystem">
+                                    <option selected="selected" value=""></option>
+                                    <option value="ATG">ATG</option>
+                                    <option value="ATGO">ATGO</option>
+                                    <option value="BADW">BADW</option>
+                                    <option value="CAS2">CAS2</option>
+                                    <option value="CNVO">CNVO</option>
+                                    <option value="DRMS">DRMS</option>
+                                    <option value="ENTO">ENTO</option>
+                                    <option value="ePID">ePID</option>
+                                    <option value="ESCR">ESCR</option>
+                                    <option value="HEMO">HEMO</option>
+                                    <option value="HSIP">HSIP</option>
+                                    <option value="LEXN">LEXN</option>
+                                    <option value="LNHH">LNHH</option>
+                                    <option value="MDON">MDON</option>
+                                    <option value="NBCS">NBCS</option>
+                                    <option value="PHSF">PHSF</option>
+                                    <option value="SABA">SABA</option>
+                                    <option value="SABO">SABO</option>
+                                    <option value="SFFS">SFFS</option>
+                                    <option value="STRX">STRX</option>
+                                    <option value="TAFS">TAFS</option>
+                                    <option value="TPGS">TPGS</option>
+                                    <option value="VMS">VMS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Chapter System
+                            </label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="constituent_chapterSys">
+                                    <option selected="selected" value=""></option>
+                                    <option value="C018">C018</option>
+                                    <option value="C046">C046</option>
+                                    <option value="C052">C052</option>
+                                    <option value="C053">C053</option>
+                                    <option value="C062">C062</option>
+                                    <option value="C066">C066</option>
+                                    <option value="C071">C071</option>
+                                    <option value="C106">C106</option>
+                                    <option value="C109">C109</option>
+                                    <option value="C111">C111</option>
+                                    <option value="C131">C131</option>
+                                    <option value="C132">C132</option>
+                                    <option value="C183">C183</option>
+                                    <option value="C184">C184</option>
+                                    <option value="C186">C186</option>
+                                    <option value="C211">C211</option>
+                                    <option value="C227">C227</option>
+                                    <option value="C255">C255</option>
+                                    <option value="C256">C256</option>
+                                    <option value="C292">C292</option>
+                                    <option value="C303">C303</option>
+                                    <option value="C308">C308</option>
+                                    <option value="C322">C322</option>
+                                    <option value="C325">C325</option>
+                                    <option value="C363">C363</option>
+                                    <option value="C368">C368</option>
+                                    <option value="C382">C382</option>
+                                    <option value="C388">C388</option>
+                                    <option value="C391">C391</option>
+                                    <option value="C402">C402</option>
+                                    <option value="C431">C431</option>
+                                    <option value="C438">C438</option>
+                                    <option value="C474">C474</option>
+                                    <option value="C478">C478</option>
+                                    <option value="C491">C491</option>
+                                    <option value="C496">C496</option>
+                                    <option value="C497">C497</option>
+                                    <option value="D102">D102</option>
+                                    <option value="D109">D109</option>
+                                    <option value="D132">D132</option>
+                                    <option value="D134">D134</option>
+                                    <option value="D171">D171</option>
+                                    <option value="D223">D223</option>
+                                    <option value="D224">D224</option>
+                                    <option value="D239">D239</option>
+                                    <option value="D251">D251</option>
+                                    <option value="D302">D302</option>
+                                    <option value="D324">D324</option>
+                                    <option value="D326">D326</option>
+                                    <option value="D328">D328</option>
+                                    <option value="D361">D361</option>
+                                    <option value="D433">D433</option>
+                                    <option value="D436">D436</option>
+                                    <option value="D474">D474</option>
+                                    <option value="EMLT">EMLT</option>
+                                    <option value="F058">F058</option>
+                                    <option value="F102">F102</option>
+                                    <option value="F142">F142</option>
+                                    <option value="F225">F225</option>
+                                    <option value="G359">G359</option>
+                                    <option value="G384">G384</option>
+                                    <option value="H351">H351</option>
+                                    <option value="H387">H387</option>
+                                    <option value="S062">S062</option>
+                                    <option value="S071">S071</option>
+                                    <option value="S111">S111</option>
+                                    <option value="S322">S322</option>
+                                    <option value="S326">S326</option>
+                                    <option value="S351">S351</option>
+                                    <option value="SNHQ">SNHQ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Source System Id
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Source System Id" ng-model="constituent_srcSysId" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>
+                <div style="padding-top:10px;">
+                    <input type="submit" class="btn btn-default" style="width:100px;" value="Create Case" />
+                    <!--<button class="btn btn-default" style="width:100px;" ng-click="ClearCreate()" formnovalidate>Clear Case</button>-->
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div class="modal fade" id="CreateCaseConfirmation" role="dialog">
+        <div class="modal-dialog" data-backdrop="static">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmation Dialog - Create Case</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{ConfNote}}</p>
+                    <p><b>{{CaseNumText}}</b></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

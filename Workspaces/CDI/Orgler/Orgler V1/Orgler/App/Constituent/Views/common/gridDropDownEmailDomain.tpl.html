@@ -1,0 +1,44 @@
+﻿<div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 1%;" ng-show="row.entity.transNotes.length <= 0  && row.entity.record_type!='ConstExtBridge'">
+    <button id="btn-append-to-body" type="button" class="btn btn-default" style="background-color: #fff" uib-dropdown-toggle>
+        Action <span class="caret"></span>
+    </button>
+
+    <ul uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+        <!--<li role="menuitem"><a href="javascript:void(0)" ng-click="grid.appScope.commonEditGridRow(row.entity,grid)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a></li>-->
+        <li role="menuitem"><a href="javascript:void(0)" ng-click="grid.appScope.commonDeleteGridRow(row.entity,grid)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Inactivate</a></li>
+        <li role="menuitem" ng-if="row.entity.cnst_phn_num"><a href="javascript:void(0)" ng-click="grid.appScope.phoneResearchOneRecord(row.entity,grid)"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> Research</a></li>
+
+    </ul>
+</div>
+
+
+
+<div ng-show="row.entity.transNotes.length > 0 ">
+
+    <div style="float:left;" class="col-lg-3 nopadding">
+        <div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 1%;" ng-if="row.entity.cnst_phn_num ">
+            <button id="btn-spl" type="button" class="btn btn-default" style="background-color: #fff" uib-dropdown-toggle>
+                Action <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu role="menu" aria-labelledby="btn-spl">
+
+                <li role="menuitem"><a href="javascript:void(0)" ng-show="row.entity.transNotes == 'LN Records cannot be edited.'" ng-click="grid.appScope.commonDeleteGridRow(row.entity,grid)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Inactivate</a></li>
+                <!--<li role="menuitem" ng-if="row.entity.cnst_phn_num"><a href="javascript:void(0)" ng-click="grid.appScope.phoneResearchOneRecord(row.entity,grid)"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> Research</a></li>-->
+
+            </ul>
+        </div>
+
+        <button class="btn btn-sm custom-button" ng-show="row.entity.transNotes == 'LN Records cannot be edited.'" ng-if="!row.entity.cnst_phn_num"
+                ng-click="grid.appScope.commonDeleteGridRow(row.entity,grid)">
+            Inactivate
+        </button>
+    </div>
+    <div style="float:left;" class="col-lg-9 nopadding ">
+        <span tooltip-placement="right" tooltip-append-to-body="true" uib-tooltip="{{row.entity.transNotes}}">
+            <!--{{row.entity.transNotes}}-->
+        </span>
+    </div>
+
+    <div style="clear:both;"></div>
+
+</div>

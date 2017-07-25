@@ -1,0 +1,10 @@
+﻿<!--Show the Add symbol-->
+<!--<div ng-show="(row.entity.listEnterpriseOrgIds == null || row.entity.listEnterpriseOrgIds.length <= 0)">
+    <img src="{{grid.appScope.getImagePath('add')}}" style="width:20px; height:20px; margin-top:5px;" ng-click="grid.appScope.addEntOrgIdNewAccount(row.entity, grid)" />
+</div>-->
+
+<!--Show list of values-->
+<a href="javascript:void(0)">
+    <img ng-src="{{grid.appScope.getImagePath('edit')}}" style="width:20px; height:20px;float:left;margin-left:5px;" ng-click="grid.appScope.editEntOrgIdNewAccount(row.entity, grid)" />
+    </a>
+    <label style="float:left;margin-left:5px;">{{row.entity.ent_org_name}}</label>

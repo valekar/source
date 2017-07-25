@@ -1,0 +1,14 @@
+﻿<div ng-controller="EnterpriseAccountTemplateCtrl">
+    <uib-tabset active="activeForm">
+        <uib-tab index="0" heading="Enterprise Orgs Search">
+            <!--DEPLOYMENT CODE (Make this configurable)-->
+            <div ng-include src="searchTemplateUrl"></div>
+        </uib-tab>
+        <!-- chnaged by for tab security -->
+        <uib-tab index="1" heading="Create Enterprise Org">
+            <div ng-include src="createTemplateUrl"></div>
+        </uib-tab>
+
+    </uib-tabset>
+
+</div>

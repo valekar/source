@@ -1,0 +1,273 @@
+﻿
+<script type="text/javascript">
+
+</script>
+<div ng-style="pleaseWait">
+    <div class="refresh" style="padding:15px;width:100%;height:100px;">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<div class="row">
+    <!-- cart links -->
+    <div ng-include src="rootCaseLinkHtmlPath" style="margin-top:-1%;float:right;"></div>
+    <div style="margin-left: 1%;"> 
+        <!--<div style="float: right; margin-top:-35px;margin-right:15px;">
+            <button type="button" class="btn btn-default" ng-show="lastConstSearchResultPresent" ng-click="fetchLastConstSearchResult()">Last Search Result</button>
+            <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#recentConstSearchesModal">Recent Searches</button>
+        </div>-->
+    </div>
+    <!--<div class="modal fade" id="recentConstSearchesModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Recent Searches</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-default">
+
+                        <div class="menu_simple_recent_search" ng-repeat="obj in ConstRecentSearches track by $index" style="padding:8px;">
+                            <ul>
+                                <li>
+                                    <a href="#" ng-click="constituentRecentSearch(obj)" ng-model="obj">{{obj| placeholderfunc}}</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<form name="myForm" ng-submit="constituent.constSearch()">
+    <div class="row" style="width:98%;" ng-repeat="form in constituent.searchForms track by $index">
+        <div class="col-lg-12">
+<br />
+            <div class="row" id="frmSearch">
+                <!--<div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Master Id
+                        </label>
+                        <div>
+                            <input type="text" class="form-control" ng-pattern="/^\d+$/" placeholder=" Master id" ng-model="constituent['masterId_'+form.id]" name="constituent['masterId_'+$index]" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Organization Name</label>
+                        <div class="ui-select">
+                            <input type="text" class="form-control" placeholder="Organization Name" ng-model="constituent['organizationName_'+form.id]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Source System
+                        </label>
+                        <div>
+                            <select name="selSearchType" id="selSearchType" class="form-control" ng-model="constituent['sourceSystem_'+form.id]"
+                                    ng-options="sourceSys.id as sourceSys.id for sourceSys in constituent.sourceSystems">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Source System Id
+                        </label>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Source System Id" ng-model="constituent['sourceSystemId_'+form.id]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            NAICS Code
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchType" id="selSearchType" class="form-control" ng-model="constituent['naicsCode'+form.id]">
+                                <option>424	</option>
+                                <option>522</option>
+                                <option>425</option>
+                                <option>426</option>
+                                <option>427</option>
+                                <option>428</option>
+                                <option>429</option>
+                                <option>430</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>               
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <button ng-show="constituent.searchForms.length>1 && constituent_type == 'OR'" type="button" ng-click="constituent.removeForm($index)"
+                            class="btn btn-xs btn-danger pull-right" style="margin-top:5px;margin-right:-15px;float:right;">
+                        x
+                    </button>
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Address Line</label>
+                        <div class="ui-select">
+                            <input type="text" class="form-control" placeholder="Address Line" ng-model="constituent['addressLine_'+form.id]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>City</label>
+                        <div class="ui-select">
+                            <input type="text" class="form-control" placeholder="City" ng-model="constituent['city_'+form.id]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>State</label>
+                        <div class="ui-select">
+                            <select name="selSearchType" id="selSearchType" class="form-control" ng-model="constituent['state_'+form.id]"
+                                    ng-options="state.id as state.value for state in constituent.states">
+                                <option></option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Zip</label>
+                        <div class="ui-select">
+                            <input type="text" class="form-control" placeholder="zip" ng-model="constituent['zip_'+form.id]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Phone</label>
+                        <div class="ui-select">
+                            <input type="text" class="form-control" placeholder="Phone" ng-model="constituent['phone_'+form.id]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Email Address</label>
+                        <div class="ui-select">
+                            <input type="text" class="form-control" placeholder="Email Address" ng-model="constituent['emailAddress_'+form.id]" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Select Date (From)</label>
+                        <p class="input-group">
+                            <input type="date" class="form-control"  ng-model="constituent['dateFrom_'+form.id]" />
+                            <!--<span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="CaseParams.openCaseDateFrom([counter])"><span class="glyphicon glyphicon-calendar"></span></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>-->
+              
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Line of Business(LOB):
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchLOBType" id="selSearchLOBType" class="form-control" ng-model="constituent['masteringType_'+form.id]">
+                                <option>All	</option>
+                                <option>Biomedical</option>
+                                <option>Fundraising</option>
+                                <option>Health & Safety </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>                          
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>Account creation date:</label>
+                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                            <span></span> <b class="caret"></b>
+                        </div>
+                    </div>
+                    </div>
+             <!--       <div class="col-lg-2 col-sm-2 col-md-2">
+           <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (From)</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-model="TransParams.transactionDateFrom[counter]" is-open="TransParams.transDateFromPopup[counter].opened" datepicker-options="dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="constituent.openTransDateFrom([counter])"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+        </div>-->               
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div>
+                            <label>
+                                NAICS Stewarding status:
+                            </label>
+                            <div class="ui-select">
+                                <select name="selSearchNAICSType" id="selSearchNAICSType" class="form-control" ng-model="constituent['masteringType_'+form.id]">
+                                    <option>All	</option>
+                                    <option>Steward Complete</option>
+                                    <option>Steward Underway</option>
+                                    <option>Suggested </option>
+                                    <option>No Suggestions </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-2 col-sm-2 col-md-2">
+            <div style="padding-bottom:5px; padding-top:5px; ">
+                <label>
+                    NAICS Suggestions?:
+                </label>
+                <div class="ui-select">
+                    <input type="checkbox" name="chkNAICSSuggestions" id="chkNAICSSuggestions" class="form-control" ng-model="constituent['naicsSuggestionPresentInd_'+form.id]">
+
+                </div>
+            </div>
+        </div>-->
+                    <!--<div class="col-lg-2 col-sm-2 col-md-2">
+            <div style="padding-bottom:5px; padding-top:5px; ">
+                <label>
+                    Potential Merges Suggestions?:
+                </label>
+                <div class="ui-select">
+                    <div class="ui-select">
+                        <input type="checkbox" name="chkPMSuggestions" id="chkPMSuggestions" class="form-control" ng-model="constituent['potentialMergeInd_'+form.id]">
+                    </div>
+                </div>
+            </div>
+        </div>-->
+                </div>
+            <!--<div style="height:3px; background-color:#cccccc; width:104%; margin-top:5px;margin-left:-15px;"></div>-->
+            <!--<div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>-->
+        </div>   
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div style="padding-top:10px; float:left;">
+                    <!--<input type="submit" value="  Search   " class="btn btn-default" style="width:100px;" id="btnSearch" name="btnSearch"  />-->
+                   &nbsp; &nbsp; <button class="btn btn-default" id="btnSubmit" type="Submit" style="width:110px;height:40px" name="btnSearch">Search</button>
+                </div>
+            </div>           
+        </div>            
+</div>
+</form>
+
+

@@ -1,0 +1,189 @@
+﻿<div ng-style="pleaseWait">
+    <div class="refresh refresh-div" >
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<br />
+
+<!--<div class="row ">
+    <div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+
+        <div ng-style="toggleShowResultsGroupMembershipReference">
+            <div style="width:100%;" >
+                <div style="float:left;">
+                    <h3 style="float: left;" ng-show="groupMembershipReferenceDetailsVisible">Group Membership Reference Data Table</h3>
+                </div>
+                <div class="pagination-right items-number" ng-show="(totalItems>=8) == true">
+                    <select ng-model="groupMembershipReferenceGridOptions.paginationPageSize" ng-options="o as o for o in groupMembershipReferenceGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="groupMembershipReferenceGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+                <div style="font-style:italic; color:#ff6a00; margin-top:24px; margin-right:20px; float:right;" ng-show="groupMembershipReferenceDetailsVisible"> Found {{totalItems}} records to display.</div>
+
+            </div>
+            <br/>
+            <div style="white-space: nowrap ;  background-color:rgba(222, 223, 225, 0.66); height:25px; padding-left:5px;" ng-show="groupMembershipReferenceDetailsVisible"><b><u>Row Status Codes Description</u></b> : <b>I </b>-Active Records , <b>U </b>-Updated Records,<b>L</b>-Inactive Records</div>
+            <br />
+
+            <div style="float: left; width: 100%;" scrolldown ui-grid="groupMembershipReferenceGridOptions" ui-grid-selection ui-grid-pagination class="grid" ui-grid-auto-resize id="groupMembershipReferenceGrid" ng-show="groupMembershipReferenceDetailsVisible"></div>
+            <div style="padding-top:10px; float: right;" ng-show="groupMembershipReferenceDetailsVisible">
+                <button type="button" class="btn btn-default" ng-model="newRecord" ng-click="AddNewReferenceDataRecord(newRecord)">Add New Record</button>
+            </div>
+            <br />
+            <div class="grid-pager">
+                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="groupMembershipReferenceGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)" ng-show="(totalItems>=8) == true"
+                                ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                first-text="&laquo;" last-text="&raquo;">
+                </uib-pagination>
+            </div>
+
+            <br />
+        </div>
+
+    </div>-->
+
+
+
+    <div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+        <div ng-style="toggleShowResultsGroupMembershipReference">
+            <div class="row" style="padding:0px;">
+                <div style="width:100%;">
+                    <div style="float:left;">
+                        <h3 style="float: left;">Group Membership Reference Data Table</h3>
+                    </div>
+                </div>
+            </div>
+          
+
+            <div class="row" >
+                <div class="text-center" style="white-space: nowrap; background-color:rgba(222, 223, 225, 0.66);" ng-show="groupMembershipReferenceDetailsVisible"><b><u>Row Status Codes Description</u></b> : <b>I </b>-Active Records , <b>U </b>-Updated Records,<b>L</b>-Inactive Records</div>
+            </div>
+            
+            <br/>
+            <div style="float: left; width: 100%;" scrolldown ui-grid="groupMembershipReferenceGridOptions" ui-grid-selection ui-grid-pagination class="grid" ui-grid-auto-resize id="groupMembershipReferenceGrid" ng-show="groupMembershipReferenceDetailsVisible"></div>
+
+
+            <div class="grid-pager">
+
+                <div ng-show="(totalItems>=10) == true" >
+
+                    <div class="row " >
+                        <div class="col-lg-3 col-md-3 col-sm-3" style=" padding:0px;">
+
+                            <uib-pagination boundary-links="true" total-items="totalItems" max-size="5" items-per-page="groupMembershipReferenceGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)" ng-show="(totalItems>=10) == true"
+                                            ng-model="currentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-lg-pull-1 col-md-pull-1" style=" padding:0px;">
+
+                            <div class="col-lg-3 col-md-3 col-sm-3  " style="margin-top:20px; padding:0px;">
+                                <select ng-model="groupMembershipReferenceGridOptions.paginationPageSize" ng-options="o as o for o in groupMembershipReferenceGridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="groupMembershipReferenceGridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 " style="margin-top:25px; padding:0px;">
+                                <div style="color:#ff6a00; font-style:italic; display:inline;">
+                                    <div style="font-style:italic; color:#ff6a00;" ng-show="groupMembershipReferenceDetailsVisible"> Found {{totalItems}} records to display.</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-1 col-md-1 col-sm-1 " style="margin-top:20px;padding:0px;">
+                            <button type="button" class="btn btn-default" ng-model="newRecord" ng-click="AddNewReferenceDataRecord(newRecord)">Add New Record</button>
+                        </div>
+                    </div>
+            </div>
+
+
+            <div style="padding-top:10px; float: right;" ng-show="groupMembershipReferenceDetailsVisible && (totalItems<=10)">
+                <button type="button" class="btn btn-default" ng-model="newRecord" ng-click="AddNewReferenceDataRecord(newRecord)">Add New Record</button>
+            </div>
+
+            <div style="float: left;margin-top: 17px;margin-left: 20px;color:#ff6a00; font-style:italic; display:inline;" ng-show="(totalItems<=10) == true">
+                <div style="font-style:italic; color:#ff6a00; margin-top:24px; margin-right:20px; float:right;" ng-show="groupMembershipReferenceDetailsVisible"> Found {{totalItems}} record(s) to display.</div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="iConfirmationModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="FinalMessage"></p>
+                    <p ng-bind="ReasonOrTransKey"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="iErrorModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="header"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="message"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="accessDeniedModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Access Denied!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Logged in user does not have appropriate permission.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<section>
+    <sarcasm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sarcasm>
+</section>
+
+<section>
+    <sarcasm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sarcasm>
+</section>
+
+<section>
+    <sarcasm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sarcasm>
+</section>

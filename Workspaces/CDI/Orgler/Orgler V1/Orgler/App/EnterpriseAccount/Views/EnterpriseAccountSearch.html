@@ -1,0 +1,239 @@
+﻿<!-- Please Wait overlay -->
+<div ng-style="pleaseWait">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<form name="myForm" role="form" ng-submit="EnterpriseAccountSearch(myForm)">
+    <div style="margin: 10px;width:97%">
+        <!-- Recent Searches pop-up -->
+        <div class="row">
+            <div style="margin-left: 1%;">
+                <h3>&nbsp; Enterprise Orgs Search</h3>
+                <div style="float: right; margin-top:-35px;margin-right:30px;">
+                    <button type="button" class="btn btn-default" ng-show="lastEnterpriseSearchResultPresent" ng-click="fetchLastEnterpriseSearchResult()">Last Search Result</button>
+                    <button type="button" class="btn btn-default" style="margin-right: 6px;" data-toggle="modal" data-target="#enterPriseAccountrecentSearches">
+                        Recent Searches
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade" role="dialog" id="enterPriseAccountrecentSearches">
+                <div class="modal-dialog" style="width:85%;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Recent Searches</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+
+                                <div class="menu_simple" ng-repeat="obj in EnterpriseAccountRecentSearches track by $index" style="padding:8px;">
+                                    <ul>
+                                        <li>
+                                            <a href="#" ng-click="EnterpriseOrgsRecentSearch(obj)" ng-model="obj">{{obj | placeholderfunc}}</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search Container -->
+
+        <div class="row" ng-repeat="counter in EnterpriseAccountSearchFormElements">
+            <div ng-show="InputParams.showCloseButton[counter]" style="float:right;">
+                <a ng-click="RemoveRow(counter)" style="color: #f54b4b;">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </div>
+            <br />
+            <div ng-show="InputParams.SearchPanel[counter]">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label>Enterprise Org ID</label>
+                                <p class="input-group">
+                                    <input id="enterPriseAccountId" class="form-control" placeholder="Enterprise Org ID" maxlength="200" name="enterPriseOrgId" type="text" ng-pattern="/^\d+$/" ng-model="InputParams.EnterpriseOrgId[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label>Enterprise Org Name</label>
+                                <p class="input-group">
+                                    <input id="enterPriseAccountName" class="form-control" placeholder="Enterprise Org Name" maxlength="200" name="enterPriseAccountName" type="text" ng-model="InputParams.EnterpriseOrgName[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Rank Provider
+                                </label>
+                                <ui-select class="form-control" multiple remove-selected="true" ng-model="InputParams.RankProviderInput[counter]" theme="bootstrap" title="Select RankProviders" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)">
+                                    <ui-select-match placeholder="">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="rankProvider in RankProvider | filter:$select.search">
+                                        {{rankProvider}}
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <p>
+                                    <label>Rank Number From</label>
+                                    <br />
+
+                                    <input class="form-control" type="number" min="0" ng-model="InputParams.RankFrom[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+
+                                </p>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <p>
+                                    <label>Rank Number To</label>
+                                    <br />
+                                    <input class="form-control" type="number" min="0" ng-model="InputParams.RankTo[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+                                </p>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label>NAICS</label>
+                                <div>
+                                    <input id="NAICS" class="form-control" placeholder="NAICS" name="NAICS" type="text"   ng-click="selectNaicsSegmentEnterpriseAccount(counter)" ng-model="InputParams.ListNaicsCode[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <!--<div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                  <label>
+                                    Source System
+                                </label>
+                                <ui-select class="form-control" multiple remove-selected="true" ng-model="InputParams.SourceSystem[counter]" theme="bootstrap"  style="width: 200px;"  title="Select Source System" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch()">
+                                    <ui-select-match placeholder="">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="sourceSystem in SourceSystemData | filter:$select.search">
+                                        {{sourceSystem}}
+                                    </ui-select-choices>
+                                </ui-select>
+                        </div>
+                        </div>-->
+
+                    </div>
+
+                    <div class="row">
+                        <!--<div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Chapter System
+                                </label>
+                                <ui-select class="form-control" multiple remove-selected="true" ng-model="InputParams.ChapterSystem[counter]" theme="bootstrap"  style="width: 200px;" title="Select Chapter Systems" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch()">
+                                    <ui-select-match placeholder="">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="chapterSystem in ChapterSystem | filter:$select.search">
+                                        {{chapterSystem}}
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>-->
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label>Tags</label>
+
+                                <ui-select class="form-control" multiple remove-selected="true" ng-model="InputParams.Tags[counter]" theme="bootstrap" title="Select Tags" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)">
+                                    <ui-select-match placeholder="">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="affiliator in Tags | filter:$select.search">
+                                        {{affiliator}}
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label> Include Superior/Subordinate?  </label>
+                                <ui-select class="form-control" multiple remove-selected="true" ng-model="InputParams.IncludeSuperiorOrSubordinate[counter]" theme="bootstrap" title="Select Include Superior/Subordinate" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)">
+                                    <ui-select-match placeholder="">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="keyword in IncludeSuperiorOrSubordinate | filter:$select.search">
+                                        {{keyword}}
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label>Exclude</label>
+                                <p class="input-group">
+                                    <label>Transformations</label>
+                                    <input style="float: right;margin-top: 1px;margin-left: 5px;" type="checkbox" id="ExcludeTransformations" name="ExcludeTransformations" ng-model="InputParams.ExcludeTransformations[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>Created By</label>
+                                <div class="ui-select">
+                                    <input type="text" class="form-control" placeholder="Created By" ng-model="InputParams.Username[counter]"
+                                           ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>Or</label>
+                                <div style="font-size:14px; ">
+                                    <label style="float: left">Me</label>
+                                    <input style="float: left;margin-top: 1px;margin-left: 5px;" type="checkbox" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch(myForm)" ng-model="InputParams.SearchMeChkbx[counter]" ng-change="SearchMeChkbxChange(counter)" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-lg-2 col-sm-2 col-md-2">
+                            <div style="padding-bottom:5px; padding-top:5px;">
+                                <label>Recent </label>
+                                <p class="input-group">
+                                    <label>changes</label>
+                                    <input  style="float: right;margin-top: 1px;margin-left: 5px;" type="checkbox" id="RecentChanges" name="RecentChanges" ng-model="InputParams.RecentChanges[counter]" ng-keypress="$event.keyCode == 13 && EnterpriseAccountSearch()" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <div ng-show="InputParams.PanelSeparator[counter]" style="height:3px; background-color:#cccccc; width:100%; margin-top:5px; float:left"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div style="float: left;">
+                <input type="submit" value="Search" class="btn btn-default" style="width:100px;" id="btnSearch" name="btnSearch" />
+            </div>
+
+            <div style="float: left; margin-left: 10px;">
+                <button type="button" class="btn btn-default" ng-model="SearchRows" ng-click="EnterpriseAccountClear()">Clear</button>
+            </div>
+            <div style="float: right;margin-left: 10px;margin-right: 30px;">
+                <button type="button" class="btn btn-default" style="margin-right: 30px;" ng-model="SearchRows" ng-click="AddNewSearchRow(SearchRows)">Add New Row</button>
+            </div>
+            <span class="search-no-results">{{SearchMessage}}</span>
+            <span class="search-no-results">{{EntOrgsNoResults}}</span>
+        </div>
+    </div>
+
+</form>
+<ng-include src="enterPriseAccountNAICSCodeTemplate"></ng-include>

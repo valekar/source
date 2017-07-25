@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Enterprise Accounts";
+}
+<title>Orgler - Enterprise Account</title>
+<link rel="stylesheet" href="~/StyleSheets/ui-grid.css" />
+<link rel="stylesheet" href="~/StyleSheets/Custom.css" />
+@section scripts {
+    <script src="@Url.Content("~/App/App.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/App.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Services/Service.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Services/DataService.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Services/HelperServices.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Services/EntOrgDetailsService.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Services/ExportService.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Filters/CustomFilters.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Controllers/SearchController.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Controllers/CreateController.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Controllers/SearchResultController.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Controllers/DetailsController.js")"></script>
+    <script src="@Url.Content("~/App/EnterpriseAccount/Controllers/DetailsHeaderController.js")"></script>
+
+    <script src="~/App/EnterpriseAccount/ExtendedControllers/CharacteristicsCtrl.js"></script>
+    <script src="~/App/EnterpriseAccount/ExtendedControllers/ShowExtendedCtrl.js"></script>
+    <script src="~/App/EnterpriseAccount/Services/ExtendedServices.js"></script>
+    
+
+    @*<script src="@Url.Content("~/App/EnterpriseAccount/Directives/Directives.js")"></script>*@
+}
+
+<div class="container-fluid" ng-app="enterpriseAccountModule" id="enterpriseAccount">
+    <br />
+    <div class="row">
+        <div class="container-fluid">
+            <div ui-view="headerContent"></div>
+            <div ui-view="pageContent" ></div>
+        </div>
+    </div>
+
+    <!--Model Po-up-->
+    <div class="modal fade" id="enterpriseAccountMessageDialogBox" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{enterpriseAccountModalPopupHeaderText}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{enterpriseAccountModalPopupBodyText}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="clear:both;"></div>
+<div style="clear:both;"></div>

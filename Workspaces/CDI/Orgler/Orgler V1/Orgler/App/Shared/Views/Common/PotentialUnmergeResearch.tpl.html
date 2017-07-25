@@ -1,0 +1,46 @@
+﻿<!--Edit NAICS Code pop-up template-->
+<div class="modal fade" id="potentialUnmergePopup">
+    <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Potential Unmerges</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Constituent Name:</label>
+                        <div class="col-lg-6">
+                            <label class="form-control-label">{{pot_unmerge.name}}</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Source System Code:</label>
+                        <div class="col-lg-6">
+                            <label class="form-control-label">{{pot_unmerge.srcsys_cd}}</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Source System ID:</label>
+                        <div class="col-lg-6">
+                            <label class="form-control-label">{{pot_unmerge.srcsys_id}}</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Unmerge Reason:</label>
+                        <div class="col-lg-6">
+                            <label class="form-control-label">{{pot_unmerge.unmrg_rsn}}</label>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row" style="margin-right:10px; margin-left:10px">
+                        <button type="button" id="btnAddToCart" class="btn btn-default" ng-disabled="groupName == 'Orgler'" ng-click="addToCartPotUnmergeNewAccount()"> Add to Cart </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                    </div>
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>-->
+            </div>
+        </div>
+    </div>

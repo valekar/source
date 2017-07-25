@@ -1,0 +1,45 @@
+﻿
+
+<div style="padding:0px;margin-left:-15px;margin-right:-15px">
+    <div class="menu_simple collapse in" style="background-color:white; padding-top:2px;padding-left:0px;">
+
+        <ul style="margin-top:20px;">
+            <li class="" ng-class="liCaseInfo">
+                <div class="checkbox side-bar-link" >
+                    <label>
+                        <input type="checkbox" id="bestSmry" ng-change="getCaseInfo({{caseInfo}})" ng-model="caseInfo" />
+                        <label>Case Info</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liCaseLocInfo">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getCaseLocInfo({{caseLocInfo}})" ng-model="caseLocInfo" />
+                        <label>Locator Info</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liCaseNotes">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getCaseNotesInfo({{caseNotes}})" ng-model="caseNotes" />
+                        <label>Case Notes</label>
+                    </label>
+                </div>
+            </li>
+            <li class="" ng-class="liCaseTransaction">
+                <div class="checkbox side-bar-link">
+                    <label>
+                        <input type="checkbox" ng-change="getCaseTransDetailsInfo({{caseTransDetails}})" ng-model="caseTransDetails" />
+                        <label>Transaction Details</label>
+                    </label>
+                </div>
+            </li>
+
+
+            
+        </ul>
+    </div>
+
+</div>

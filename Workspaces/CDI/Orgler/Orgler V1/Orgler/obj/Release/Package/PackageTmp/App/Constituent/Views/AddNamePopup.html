@@ -1,0 +1,81 @@
+﻿<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title></title>
+</head>-->
+<!--<body>-->
+    <div ng-controller="ModalDemoCtrl">
+        <script type="text/ng-template" id="myModalContent.html">
+            Master Id:
+            <input ng-model="masterid" type="text" required="true">
+            <br />
+            Prefix Name:
+            <input ng-model="prefixname" type="text">
+            <br />
+            First Name:
+            <input ng-model="firstname" type="text" required="true">
+            <br />
+            Last Name:
+            <input ng-model="lastname" type="text" required="true">
+            <br />
+            Middle Name:
+            <input ng-model="middlename" type="text">
+            <br />
+            Suffix Name:
+            <input ng-model="suffixname" type="text">
+            <br />
+            Nick Name:
+            <input ng-model="nickname" type="text">
+            <br />
+            Maiden Name:
+            <input ng-model="maidenname" type="text">
+            <br />
+            Best LOS Indicator:
+
+            <div class="btn-group">
+
+                <ul class="dropdown-menu">
+                    <li ng-repeat="lositem in lositems">
+                        <a href="#" ng-click="$event.preventDefault(); selected.lositem = lositem">{{ lositem }}</a>
+                    </li>
+                </ul>
+                <button class="btn dropdown-toggle" data-toggle="toggleDropdown"> {{ selected.lositem }}<span class="caret"></span></button>
+            </div><!-- /btn-group -->
+            <br />
+            <br />
+            Source System:
+            <div class="btn-group">
+
+                <ul class="dropdown-menu">
+                    <li ng-repeat="sourcesystemitem in sourcesystemitems">
+                        <a href="#" ng-click="$event.preventDefault(); selected.sourcesystemitem = sourcesystemitem">{{ sourcesystemitem }}</a>
+                    </li>
+                </ul>
+                <button class="btn dropdown-toggle" data-toggle="toggleDropdown"> {{ selected.sourcesystemitem }}<span class="caret"></span></button>
+            </div><!-- /btn-group -->
+            <br />
+            <br />
+            Name Type:
+            <div class="btn-group">
+
+                <ul class="dropdown-menu">
+                    <li ng-repeat="nametypeitem in nametypeitems">
+                        <a href="#" ng-click="$event.preventDefault(); selected.nametypeitem = nametypeitem">{{ nametypeitem }}</a>
+                    </li>
+                </ul>
+                <button class="btn dropdown-toggle" data-toggle="toggleDropdown"> {{ selected.nametypeitem }}<span class="caret"></span></button>
+            </div><!-- /btn-group -->
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <button class="btn" type="submit">Submit</button>
+            </form>
+        </script>
+        <button class="btn" ng-click="open()">Add New Name</button>
+        <div ng-show="selected">{{ selected }}</div>
+    </div>
+<!--</body>
+</html>-->

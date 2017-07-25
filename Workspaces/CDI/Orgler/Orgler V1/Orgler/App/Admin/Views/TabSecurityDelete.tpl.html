@@ -1,0 +1,120 @@
+﻿<div id="modalCover">
+    <div class="modal-header">        
+            <h3 class="modal-title">Delete Tab Security Record</h3>
+      
+        <!--<div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="tabSecurityDelete.cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>-->
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="tabSecurityDelete.submit()" style="margin: 10px">
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label">User Name</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.usr_nm" id="" required="true"></label>
+                <!--<input ng-model="tabSecurityDelete.usr_nm" class="form-control" id="" type="text" disabled="disabled">-->
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label">Group Name</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.grp_nm" id="" required="true"></label>
+                <!--<input ng-model="tabSecurityDelete.grp_nm" class="form-control" id="" type="text" disabled="disabled">-->
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label">Email Address</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.email_address" id="" required="true"></label>
+                <!--<input ng-model="tabSecurityDelete.email_address" class="form-control" id="" type="text" disabled="disabled">-->
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Admin Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.admin_tb_access_value" id="" required="true"></label>
+            </div>          
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">New Account Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.newaccount_tb_access_value" id="" required="true"></label>
+            </div>           
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Top Orgs Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.topaccount_tb_access_value" id="" required="true"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Enterprise Orgs Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.enterprise_orgs_tb_access_value" id="" required="true"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Constituent Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.constituent_tb_access_value" id="" required="true"></label>
+            </div>            
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Transaction Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.transaction_tb_access_value" id="" required="true"></label>
+            </div>            
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">EO Site Upload Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.upload_eosi_tb_access_value" id="" required="true"></label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Affiliation Upload Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.upload_affil_tb_access_value" id="" required="true"></label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">EO Upload Tab Access</label>
+            <div class="col-sm-8">
+                <label ng-bind="tabSecurityDelete.upload_eo_tb_access_value" id="" required="true"></label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Has Merge/Unmerge Access?</label>
+            <div class="col-sm-8">
+                <input type="checkbox" ng-model="tabSecurityDelete.has_merge_unmerge_access_id" disabled="disabled"
+                       ng-true-value="'1'" ng-false-value="'0'">
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Is Approver?</label>
+            <div class="col-sm-8">
+                <input type="checkbox" ng-model="tabSecurityDelete.is_approver_id" disabled="disabled"
+                       ng-true-value="'1'" ng-false-value="'0'">
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="tabSecurityDelete.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

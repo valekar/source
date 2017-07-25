@@ -1,0 +1,82 @@
+﻿<div class="row nopadding">
+    <!-- This template has a parent controller ConstCemCtrl.js, all the cem variables cna be accessed in this template -->
+    <div ng-controller="ConstRelationshipCtrl">
+
+        <div ng-show="relationship.togglePleaseWait">
+            <div class="refresh refresh-div">
+                <h4>Please wait....</h4>
+            </div>
+        </div>
+        <div ng-show="relationship.toggleDetails">
+
+            <div class="row padding">
+
+                <div class="row nopadding">
+                    <div class="row nopadding">
+                        <div class="col-md-4 col-lg-4 col-sm-4 nopadding" style="display:inline;">
+                            <h3>Relationship </h3>
+
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 nopadding">
+                            <div ng-show="(relationship.totalItems>=5) == true" style="display:inline;">
+                                <select ng-model="relationship.gridOptions.paginationPageSize" ng-options="o as o for o in relationship.gridOptions.paginationPageSizes"
+                                        class="form-control-static new-form-control-static"
+                                        ng-if="relationship.gridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 font-orange-changer  ">
+                            <span class="font-orange" ng-show="relationship.distinctRecordCount==1">There is {{relationship.distinctRecordCount}} distinct record</span>
+                            <span class="font-orange" ng-show="relationship.distinctRecordCount>1">There are {{relationship.distinctRecordCount}} distinct record</span>
+                        </div>
+                    </div>
+
+                    <div class="pull-left">
+                        <span>Displays all relationship managers of a consituent record.</span>
+
+                    </div>
+                    <div class="pull-right ">
+                        <!--<a href="#" class=" " ng-click="relationship.showAllRecords.showAllrecords()">{{relationship.showAllRecords.showAllName}}  </a>
+                    <div style="display:inline;">
+                        <a href="#" class="" ng-click="relationship.showDetails.allDetails()">Show Details</a>
+
+                    </div>-->
+                    </div>
+                </div>
+            </div>
+
+            <div ui-grid="relationship.gridOptions" scrolldown ui-grid-selection ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+                <div class="watermark" ng-show="!relationship.gridOptions.data.length">No data available</div>
+            </div>
+
+
+
+
+            <div class="grid-pager">
+                <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                    <div ng-show="(relationship.totalItems>=5) == true">
+                        <div class="pagination-left">
+                            <uib-pagination boundary-links="true" max-size="15" total-items="relationship.totalItems" items-per-page="relationship.gridOptions.paginationPageSize" ng-change="relationship.pageChanged(relationship.currentPage)" scrolldown
+                                            boundary-link-numbers="true" ng-model="relationship.currentPage" class="pagination" direction-links="false" force-ellipses="true" rotation="true" style="float: left; width: 100%"
+                                            first-text="&laquo;" last-text="&raquo;" previous-text="&lsaquo;" next-text="&rsaquo;"></uib-pagination>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                    <div style="margin-top:20px;" class="pull-right">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                    <div style="margin-top:20px;" class="pull-right">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

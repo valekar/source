@@ -1,0 +1,8 @@
+﻿<div ng-controller="cartLinkCtrl">
+    <a href="" ng-click="ViewCart()" ng-show="CartVisibility" style="cursor: pointer; float: right;margin-bottom:1%;display: block;margin-right: 15px; padding-left:60px;padding-right:10px; ">
+        <!--<span class="glyphicon glyphicon-shopping-cart"></span>-->
+        <div id="divCartLable" style="margin-right:20px;padding-right:8px;border-bottom:1px dotted #0094ff; border-bottom-left-radius:18px; border-top-left-radius:18px;">
+            <span ng-model="$root.CartItemsNumber" class="numberCircle">{{$root.CartItemsNumber}} </span>View Cart
+        </div>
+    </a>
+</div>

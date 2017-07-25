@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Transaction";
+}
+
+<link rel="stylesheet" href="~/Content/ui-grid.css" />
+@section scripts {
+
+    <script src="~/App/Transaction/App.js"></script>
+    <script src="~/Scripts/ui-grid.min.js"></script>
+    @*@Scripts.Render("~/App/transaction.js");*@
+    <script src="~/Scripts/upload.js"></script>
+    <script src="~/Scripts/ng-file-upload.js"></script>
+    <script src="~/Scripts/FileSaver.min.js"></script>
+
+    @* If you are debugging then uncomment this and comment @scripts.Render *@
+    <script src="~/App/Transaction/Directives/TransactionDirectives.js"></script>
+
+    <script src="~/App/Transaction/Services/TransactionServices.js"></script>
+    <script src="~/App/Transaction/Services/TransactionMultiServices.js"></script>
+    <script src="~/App/Transaction/Services/CaseService/CaseServices.js"></script>
+    <script src="~/App/Transaction/Services/TransactionHelper.js"></script>
+
+    <script src="~/App/Transaction/Controllers/TransactionSearchController.js"></script>
+    <script src="~/App/Transaction/Controllers/TransactionSearchController.js"></script>
+    <script src="~/App/Transaction/Controllers/TransactionSearchResultsController.js"></script>
+
+    <script src="~/App/Transaction/Controllers/TransactionMultiDetailsController.js"></script>
+
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsBirthController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsPersonNameController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsOrgNameController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsAddressController.js"></script>
+
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsAffiliatorHierarchyController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsAffiliatorTagsController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsAffiliatorController.js"></script>
+
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsCharacteristicsController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsContactPreferenceController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsEmailController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsEmailOnlyUploadController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsMergeController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsGroupMembershipUploadController.js"></script>
+
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsOrgTransformsController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsPhoneController.js"></script>
+
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsDeathController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransactionDetailsUnmergeController.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/AssociateCaseCtrl.js"></script>
+
+    @* added by srini for CEM functionalities surfacing *@
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransDetailsCemDncCtrl.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransDetailsCemMsgPrefCtrl.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransDetailsCemPrefLocCtrl.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransDetailsCemDncUploadCtrl.js"></script>
+    <script src="~/App/Transaction/Controllers/InstantiatedControllers/TransDetailsCemMsgPrefUploadCtrl.js"></script>
+    @* Adding ends here *@
+
+    
+}
+
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("transaction"), ['transaction']);
+}
+
+
+<div class="container-fluid" data-ng-app="transaction" id="transaction">
+    <br />
+    <div class="row1">
+        <div class="container-fluid">
+            <div ui-view="header"></div>
+            <div ui-view="content"></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="iConfirmationModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="FinalMessage"></p>
+                    <p ng-bind="ReasonOrTransKey"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="iErrorModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="header"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="message"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="accessDeniedModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Access Denied!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Logged in user does not have appropriate permission.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

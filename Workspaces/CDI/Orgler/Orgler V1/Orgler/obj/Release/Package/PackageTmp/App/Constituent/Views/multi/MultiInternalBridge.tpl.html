@@ -1,0 +1,129 @@
+﻿<!--<div class="clearfix">
+    <div ng-style="toggleInternalBridgeLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleInternalBridgeHeader">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-left:-15px;">
+                <div class="pagination-left">
+                    <h3>Internal Bridge</h3>
+                </div>
+                
+                <div class="pagination-right items-number" ng-show="(totalInternalBridgeItems>=5) == true">
+                    <select ng-model="internalBridgeGridOptions.paginationPageSize" ng-options="o as o for o in internalBridgeGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="internalBridgeGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-top: 35px;">
+                <a href="#" class=" pull-right " style="padding-left:15px;" ng-click="showAllrecords(CONSTANTS.INTERNAL_BRIDGE)">{{showInternalBridge.showAllButtonName}}   </a>
+                <div ng-controller="ShowDetailsCtrl">
+                    <a href="#" class=" pull-right" ng-click="details.showDetails(CONSTANTS.INTERNAL_BRIDGE)">Show Details</a>
+                    <div ng-show="details.togglePleaseWait">
+                        <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                            <h4>Please wait....</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleInternalBridgeFiltering()">Filter</button>--
+        <div ui-grid="internalBridgeGridOptions" ui-grid-selection class="InternalBridge" scrolldown ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize ng-style="toggleInternalBridgeDetails">
+            <div class="watermark" ng-show="!internalBridgeGridOptions.data.length">No data available</div>
+        </div>
+
+
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding" >
+                <div ng-show="(totalInternalBridgeItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalInternalBridgeItems" items-per-page="internalBridgeGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.INTERNAL_BRIDGE,currentInternalBridgePage)"
+                                        ng-model="currentInternalBridgePage" class="pagination" direction-links="false" id="intBridge"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="clearfix">
+    <div ng-style="toggleInternalBridgeLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleInternalBridgeHeader">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-left:-15px;">
+                <div class="pagination-left">
+                    <h3>Internal Bridge</h3>
+                </div>
+               
+                <div class="pagination-right items-number" ng-show="(totalInternalBridgeItems>=5) == true">
+                    <select ng-model="internalBridgeGridOptions.paginationPageSize" ng-options="o as o for o in internalBridgeGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="internalBridgeGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-top: 35px;padding:0px;">
+               
+            </div>
+        </div>
+       <div class="row">
+           <div class="col-sm-6 col-lg-6 col-md-6 nopadding">
+               <div class="more-info">Displays all internal bridge record details</div>
+           </div>
+           <div class="col-sm-6 col-lg-6 col-md-6 nopadding">
+
+               
+               <div ng-controller="ShowDetailsCtrl" class="pull-right" style="padding-left:15px;">
+                   <a href="#" class=" pull-right" ng-click="details.showDetails(CONSTANTS.INTERNAL_BRIDGE)">Show Details</a>
+                   <div ng-show="details.togglePleaseWait">
+                       <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                           <h4>Please wait....</h4>
+                       </div>
+                   </div>
+
+               </div>
+               <a href="#" class=" pull-right "  ng-click="showAllrecords(CONSTANTS.INTERNAL_BRIDGE)">{{showInternalBridge.showAllButtonName}}   </a>
+           </div>
+       </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleInternalBridgeFiltering()">Filter</button>-->
+        <div ui-grid="internalBridgeGridOptions" ui-grid-selection class="InternalBridge" scrolldown ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize ng-style="toggleInternalBridgeDetails">
+            <div class="watermark" ng-show="!internalBridgeGridOptions.data.length">No data available</div>
+        </div>
+
+
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalInternalBridgeItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalInternalBridgeItems" items-per-page="internalBridgeGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.INTERNAL_BRIDGE,currentInternalBridgePage)"
+                                        ng-model="currentInternalBridgePage" class="pagination" direction-links="false" id="intBridge"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                <div style="margin-top:20px;" class="pull-right">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

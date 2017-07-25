@@ -1,0 +1,137 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Case Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Case Key:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseInfo.caseKey" class="form-control" id="CaseKey" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Case Name:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseInfo.caseName" id="CaseName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CasDesc" class="col-sm-4 form-control-label">Case Details:</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="5" ng-model="caseInfo.caseDesc" id="CaseDesc"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Intake Channel:</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseInfo.selected.intakeChannelType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseInfo.intakeChannels">
+                            <a href="#" ng-click="$event.preventDefault();caseInfo.selected.intakeChannelType = type.value; caseInfo.selected.intakeChannelTypeCode = type.id">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+</div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Intake Department:</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseInfo.selected.intakeOwnerDeptType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseInfo.intakeOwnerDepts">
+                            <a href="#" ng-click="$event.preventDefault(); caseInfo.selected.intakeOwnerDeptType = type.value;caseInfo.selected.intakeOwnerDeptTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">CRM System:</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseInfo.selected.CRMSystemType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseInfo.CRMSystems">
+                            <a href="#" ng-click="$event.preventDefault(); caseInfo.selected.CRMSystemType = type.value;caseInfo.selected.CRMSystemTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CRMSystemID" class="col-sm-4 form-control-label">CRM System ID:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseInfo.CRMSystem" id="CRMSystemID" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Type</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" ng-disabled="CaseTypeState" class="btn" uib-dropdown-toggle>
+                        {{ caseInfo.selected.CaseType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseInfo.CaseTypes">
+                            <a href="#" ng-click="$event.preventDefault(); caseInfo.selected.CaseType = type.value;caseInfo.selected.CaseTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="constName" class="col-sm-4 form-control-label">Constituent Name:</label>
+            <div class="col-sm-8">
+                <input id="constName" ng-model="caseInfo.constName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Status</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseInfo.selected.StatusType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseInfo.Statuses">
+                            <a href="#" ng-click="$event.preventDefault(); caseInfo.selected.StatusType = type.value;caseInfo.selected.StatusTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="rowCode" class="col-sm-4 form-control-label">Reported Date:</label>
+            <div class="col-sm-8">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="caseInfo.CaseReportDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><span class="glyphicon glyphicon-calendar"></span></button>
+                    </span>
+                </p>
+
+            </div>
+        </div><div class="form-group row">
+            <label for="loadID" class="col-sm-4 form-control-label">User Name:</label>
+            <div class="col-sm-8">
+                <input id="loadID" ng-model="caseInfo.userName" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+     
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

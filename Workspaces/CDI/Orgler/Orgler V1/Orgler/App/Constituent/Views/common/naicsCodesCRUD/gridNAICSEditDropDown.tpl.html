@@ -1,0 +1,10 @@
+﻿<!-- Display the drop down values based on the status of the NAICS Codes-->
+<div class="btn-group" uib-dropdown style="margin-top: 1%;">
+    <div class="ui-select">
+        <select name="confirmType" id="confirmType" class="form-control"   ng-model="row.entity.manual_sts">
+            <option>Action</option>
+            <option ng-show="row.entity.sts != 'Approved'" value="Approve" ng-disabled="groupName == 'Orgler'">Approve</option>
+            <option ng-show="row.entity.sts != 'Rejected'" value="Reject" ng-disabled="groupName == 'Orgler'">Reject </option>
+        </select>
+    </div>
+</div>

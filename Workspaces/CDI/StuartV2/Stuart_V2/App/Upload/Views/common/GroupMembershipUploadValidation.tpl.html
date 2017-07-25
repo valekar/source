@@ -1,0 +1,35 @@
+﻿
+<div class="modal-header">
+    <img src="Images/error.png" alt="logo" style="float:left;"/>
+    <h3 class="modal-title" style="float:left;"> Group Membership File Upload Validation Failed</h3>
+</div>
+<br />
+<div style="width:100%;">
+    <div style="font-style:italic; color:#ff6a00; margin-top:28px; margin-right:20px; float:right;" ng-show="upload.errorCountLessThan100"> {{upload.totalItems}} erroneous records were found while uploading.Please review and re-upload.</div>
+    <div style="font-style:italic; color:#ff6a00; margin-top:28px; margin-right:20px; float:right;" ng-hide="upload.errorCountLessThan100"> Out of 100 or more erroneous records, top 100 erroneous records present in the file are displayed below. Please review and re-upload.</div>
+    <div style="clear:both;"></div>
+</div>
+<br />
+<div class="row" style="width:98%; "> 
+    <div style="margin-left:40px;margin-right:5px;">
+        <div ui-grid="upload.gridOptions" ui-grid-pagination ui-grid-auto-resize>
+            <div class="watermark" ng-show="!upload.gridOptions.data.length">No data available</div>
+        </div>
+
+        <div class="grid-pager">
+            <uib-pagination boundary-links="true" total-items="upload.totalItems" items-per-page="8" ng-change="upload.pageChanged(upload.currentPage)" ng-show="(upload.totalItems>8) == true"
+                            ng-model="upload.currentPage" class="pagination" direction-links="false" id=""
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+
+    </div>
+</div>
+<br />
+
+<div class="modal-footer">
+    <div style="padding-top:10px;">
+        <button class="btn btn-default pull-right" type="button" ng-click="upload.back()">Cancel</button>
+    </div>
+</div>
+
+

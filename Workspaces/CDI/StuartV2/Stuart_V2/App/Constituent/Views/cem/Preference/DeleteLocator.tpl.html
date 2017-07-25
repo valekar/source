@@ -1,0 +1,93 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Delete Preferred Locator Record</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="deletePrefLocator.cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="deletePrefLocator.submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Master ID</label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.masterId" class="form-control" id="MasterId" type="text" disabled="disabled">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Line Of Service</label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.selected.prefLocatorLOS" class="form-control" disabled type="text">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label">Preference Locator Type</label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.selected.prefLocatorTypeValue" class="form-control" disabled type="text">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label">Preference Locator</label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.selected.prefLocatorIdValue" class="form-control" disabled type="text">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Source System</label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.sourceSys" class="form-control" id="sourceSys" type="text" disabled="disabled">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Start Date </label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.startDate" class="form-control" id="startDate" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">End Date </label>
+            <div class="col-sm-8">
+                <input ng-model="deletePrefLocator.endDate" class="form-control" id="startDate" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row hide">
+            <label for="rowCode" class="col-sm-4 form-control-label">Row Code:</label>
+            <div class="col-sm-8">
+                <input id="rowCode" ng-model="deletePrefLocator.rowCode" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Notes</label>
+            <div class="col-sm-8">
+
+                <input id="rowCode" ng-model="deletePrefLocator.selected.note" class="form-control" type="text">
+
+                <!--<div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ deletePrefLocator.selected.note }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="note in deletePrefLocator.notes">
+                            <a href="#" ng-click="$event.preventDefault(); deletePrefLocator.selected.note = note">{{ note }}</a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="deletePrefLocator.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿<div ng-controller="CaseSearchCtrl">
+    <div ng-show="case.togglePleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            Case Search
+        </div>
+
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case.searchTerm"
+                            ng-init="case.searchTerm == 'CaseNumber'" ng-options="o as o for o in case.searchTerms"></select>
+                </td>
+                <td><input type="text" class="form-control" placeholder="enter search term" ng-model="case.input" /></td>
+                <td><button class="btn btn-default" type="button" ng-click="case.quickSearch()">Quick Search</button></td>
+            </tr>
+            <tr>
+                <td colspan="3"><a href="#" ng-click="$event.preventDefault();case.advSearch()">Advanced Search</a></td>
+            </tr>
+        </table>
+
+    </div>
+    <span class="search-no-results pull-left" ng-show="case.toggleNoResults">{{case.noResults}}</span>
+    <br />
+    <br />
+    <button class="btn btn-default pull-left" type="button" ng-click="case.createCase()">Create New Case</button>
+</div>

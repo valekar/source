@@ -1,0 +1,23 @@
+﻿<div id="DivDetailsHeader" style="margin-bottom:0px;" >
+    <div ng-show="pleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <ui-breadcrumbs displayname-property="data.displayName" abstract-proxy-property="data.proxy">
+    </ui-breadcrumbs>
+    <div class="container-fluid " ng-style="{'display':display}" style="margin-top:-30px;">
+
+        <div class=" custom-master-header">
+            <div>
+                <div style="float:left;">
+                    <h4 style="display: inline;float:left; margin-left:5px;padding-top:10px;"><strong>{{constituent_name}}</strong> &nbsp;Master Id: {{constituent_masterId}}</h4>{{BreadCrumTplURL}}
+                </div>
+
+
+                <!-- cart links -->
+                <div ng-include src="rootCaseLinkHtmlPath" style="padding-top:10px;"></div>
+            </div>
+        </div>
+    </div>
+</div>

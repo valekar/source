@@ -1,0 +1,142 @@
+﻿<!--<div id="modalCover">
+    <div class="modal-header">
+        <div style="display:inline-block;float:left;">
+            <h3 class="modal-title">DNC Upload Details</h3>
+        </div>
+        <div ng-show="dncUpload.showCloseButton" style="display:inline-block; float:right; margin: 10px 10px 10px 0;">
+            <a ng-click="dncUpload.dncUserInputModal()" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+    </div>
+    <br />
+
+    <form name="dncUserInputForm" role="form" ng-submit="dncUpload.submit()" style="margin: 10px">
+
+        <div class="row" style="width:98%;">
+
+            <div style="width:100%; background-color:red !important;">
+                <div class="col-lg-12 col-sm-12 col-md-12 " style="float:left !important;">
+                    <div style="margin-left:1%;">
+                        Please provide the below details to proceed with the Upload
+                    </div>
+                    <br />
+                    <div class="row" id="frmSearch">
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Chapter Code
+                                </label><span class="requiredRed">*</span>
+                                <div>
+                                    <select name="selChapterCode" id="selChapterCode" class="form-control" ng-options="chapterCode.id for chapterCode in dncUpload.chapterCodes track by chapterCode.value" ng-model="dncUpload.chapterCode"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Group Code
+                                </label><span class="requiredRed">*</span>
+                                <div>
+                                    <input type="text" class="form-control" disabled placeholder="Group Code" required="true" ng-model="dncUpload.groupCode" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    Group Name
+                                </label><span class="requiredRed">*</span>
+                                <div>
+                                    <input type="text" class="form-control" list="groupNameList" ng-model="dncUpload.groupName" ng-change="dncUpload.populateGroupCode(dncUpload.groupName)" />
+                                    <datalist id="groupNameList">
+                                        <option ng-repeat="x1 in names" value="{{x1.value}}">
+                                    </datalist>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    DNC Start Date
+                                </label><span class="requiredRed">*</span>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{dncUpload.format}}" required="true" ng-model="dncUpload.startDate" is-open="dncUpload.popup2.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="dncUpload.openStartDate()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <div style="padding-bottom:5px; padding-top:5px; ">
+                                <label>
+                                    DNC End Date
+                                </label><span class="requiredRed">*</span>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{dncUpload.format}}" required="true" ng-model="dncUpload.endDate" ng-change="dncUpload.compareAgainstStartDate(dncUpload.endDate)" is-open="dncUpload.popup3.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="dncUpload.openEndDate()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <br />
+        <div class="modal-footer">
+            <span class="search-no-results pull-right" ng-show="dncUpload.toggleInvalidInput">{{dncUpload.invalidInput}}</span>
+            <br />
+            <br />
+            <input type="submit" class="btn btn-default pull-right" style="width:100px;" value="Submit" ng-disabled="dncUserInputForm.$invalid || !(!!dncUpload.chapterCode || !!dncUpload.groupCode || !!dncUpload.groupName || !!dncUpload.startDate || !!dncUpload.endDate || !!dncUpload.losCode) || dncUpload.chapterCode.value == undefined || dncUpload.groupName == undefined || !dncUpload.groupName || dncUpload.compareAgainstStartDate(dncUpload.endDate)" />
+            <button class="btn btn-default pull-left" type="button" ng-click="dncUpload.cancel()">Cancel</button>
+        </div>
+
+    </form>
+
+</div>-->
+
+
+<div id="modalCover">
+    <div class="modal-header">
+        <div style="display:inline-block;float:left;">
+            <h3 class="modal-title">DNC Upload Details</h3>
+        </div>
+        <div ng-show="dncUpload.showCloseButton" style="display:inline-block; float:right; margin: 10px 10px 10px 0;">
+            <a ng-click="dncUpload.dncUserInputModal()" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+    </div>
+    <br />
+
+    <form name="dncUserInputForm" role="form" ng-submit="dncUpload.submit()" style="margin: 10px">
+
+        <div class="row" style="width:98%;">
+
+            <div style="width:100%; background-color:red !important;">
+                <div class="col-lg-12 col-sm-12 col-md-12 " style="float:left !important;">
+                    <div style="margin-left:1%;">
+                        Do you want to upload the file ?
+                    </div>                  
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <br />
+        <div class="modal-footer">
+            <span class="search-no-results pull-right" ng-show="dncUpload.toggleInvalidInput">{{dncUpload.invalidInput}}</span>
+
+            <input type="submit" class="btn btn-default pull-right" style="width:100px;" value="Submit"  />
+            <button class="btn btn-default pull-left" type="button" ng-click="dncUpload.cancel()">Cancel</button>
+        </div>
+
+    </form>
+
+</div>

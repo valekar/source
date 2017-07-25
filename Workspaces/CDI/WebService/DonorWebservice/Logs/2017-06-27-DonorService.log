@@ -1,0 +1,10 @@
+2017-06-27 12:11:08.6334|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-27 12:18:24.4798|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 12:20:02.6806|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 12:22:04.7910|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 12:23:45.4378|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 12:25:25.6132|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 12:26:39.5439|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 15:16:34.8348|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 15:18:05.2207|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-27 15:34:38.9924|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3535] A character string failed conversion to a numeric value.

@@ -1,0 +1,89 @@
+﻿<div id="modalCover">
+    <div ng-if="mergeResearch.toggleMergeResearchSection">
+        <div class="modal-header">
+            <h3 class="modal-title">Research merge details</h3>
+        </div>
+        <div class="more-info">This section contains details about merged records</div>
+        <br />
+        <table class="table table-responsive table-bordered" ng-if="mergeResearch.toggleResearchCompare">
+            <tr style="white-space: pre;">
+                <th>MasterId</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null" >{{mergeResearch.masterId1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!= null">{{mergeResearch.masterId2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null" >{{mergeResearch.masterId3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null" >{{mergeResearch.masterId4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.masterId5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Dsp Id</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.dsp.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.dsp.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.dsp.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.dsp.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.dsp.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Bridge Presence</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.bridgePresence.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.bridgePresence.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.bridgePresence.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.bridgePresence.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.bridgePresence.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Name</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.name.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.name.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.name.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.name.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.name.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Address</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.address.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.address.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.address.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.address.detail4}}</td>
+                <td ng-if="mergeResearch.masterId5!=null">{{mergeResearch.address.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Phone</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.phone.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.phone.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.phone.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.phone.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.phone.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Email</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.email.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.email.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.email.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.email.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.email.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Birth</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.birth.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.birth.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null">{{mergeResearch.birth.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.birth.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.birth.detail5}}</td>
+            </tr>
+            <tr style="white-space: pre;">
+                <th>Death</th>
+                <td class="wordwrap" ng-if="mergeResearch.masterId1!=null">{{mergeResearch.death.detail1}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId2!=null">{{mergeResearch.death.detail2}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId3!=null"> {{mergeResearch.death.detail3}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId4!=null">{{mergeResearch.death.detail4}}</td>
+                <td class="wordwrap" ng-if="mergeResearch.masterId5!=null">{{mergeResearch.death.detail5}}</td>
+            </tr>
+        </table>
+
+        <div class="custom-modal-footer">
+            <button class="btn btn-default" type="button" ng-click="mergeResearch.cancel()">Cancel</button>
+
+        </div>
+    </div>
+
+</div>

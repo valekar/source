@@ -1,0 +1,62 @@
+﻿<div ng-show="tabSecurity.togglePleaseWait">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<br />
+<div class="row ">
+    <div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+        <div ng-show="tabSecurity.toggleShowResults">
+            <div style="width:100%;">
+                <div style="float:left;">
+                    <h3 style="float: left;">TabSecurity Search Results</h3>
+                </div>
+            </div>
+
+            <div style="float: left; width: 100%;" ui-grid="tabSecurity.gridOptions" scrolldown ui-grid-pagination ui-grid-move-columns custom-ui-grid-header
+                 ui-grid-resize-columns class="grid adminGrid" ui-grid-auto-resize id="searchResultsGrid"></div>
+
+
+            <div class="grid-pager" ng-show="(tabSecurity.totalItems>=10) == true">
+
+                <div ng-show="(tabSecurity.totalItems>=10) == true">
+
+                    <div class="row ">
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding:0px;">
+                            <uib-pagination boundary-links="true" total-items="tabSecurity.totalItems" items-per-page="tabSecurity.gridOptions.paginationPageSize" ng-change="pageChanged(currentPage)"
+                                            ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-lg-pull-1 col-md-pull-1" style="padding:0px;">
+                            <div class="col-lg-3 col-md-3 col-sm-3  " style="margin-top:20px;padding:0px;">
+                                <select ng-model="tabSecurity.gridOptions.paginationPageSize" ng-options="o as o for o in tabSecurity.gridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="tabSecurity.gridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-7 " style="margin-top:28px;padding:0px;">
+                                <div style="color:#ff6a00; font-style:italic; display:inline;">
+                                    <div ng-show="tabSecurity.totalItems<50"> {{(tabSecurity.totalItems > 1) ? 'Search results found ' + tabSecurity.totalItems + ' records.': 'Search results found ' + tabSecurity.totalItems + ' record.'}}</div>
+                                    <div ng-show="tabSecurity.totalItems>=50"> Search results found  {{tabSecurity.totalItems}} records.</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 " style="margin-top:20px;padding:0px;">
+                            <!--<button class="btn btn-default pull-right" ng-click="tabSecurity.insert()">Add New Record</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="(tabSecurity.totalItems<10) == true">
+                <div style="float: left;color:#ff6a00; font-style:italic; display:inline;margin-top: 20px;">
+                    <div ng-show="tabSecurity.totalItems<50"> {{(tabSecurity.totalItems > 1) ? 'Search results found ' + tabSecurity.totalItems + ' records.': 'Search results found ' + tabSecurity.totalItems + ' record.'}}</div>
+                    <div ng-show="tabSecurity.totalItems>=50"> Search results found  {{tabSecurity.totalItems}} records.</div>
+
+                </div>
+                <!--<button class="btn btn-default pull-right" ng-click="tabSecurity.insert()" style="float:right;margin-top: 20px;">Add New Record</button>-->
+            </div>
+        </div>
+    </div>
+</div>

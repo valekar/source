@@ -1,0 +1,153 @@
+﻿<!--Search Results Template - New Account-->
+<!-- Please Wait overlay -->
+<!--<div class="AjaxLoaderOuter" ng-show="processingOverlay">
+    <div valign="middle" class="AjaxLoaderInner">
+        <img src="{{processingOverlaySource}}" width="60px" height="60px" />
+    </div>
+</div>-->
+<div ng-show="processingOverlay">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>       
+    </div>
+</div>
+<!-- Search Results Container -->
+<div class="row" ng-style="toggleShowResults" >
+    <div class="row col-lg-12 col-sm-12 col-md-12">
+        <h3 style="float: left;"> Top Orgs Search Results</h3>
+        <a ui-sref="topaccount.search" style="float: right;margin-right:40px">Search Again</a>
+    </div>
+    <br />
+    <div class="row col-lg-12">
+        <span style="font:bold;font-size:large;"> Summary:</span>
+    </div>
+    <div class="row col-lg-12">
+        <!--There are <b>{{totalAccountCount}}</b> Top Accounts created across the enterprise <b>{{searchCriteria}}</b>-->
+        <span ng-if="totalAccountCount===500">
+            There are <b>{{totalAccountCount+"+"}}</b> Top Orgs created across the enterprise <b>{{searchCriteria}}</b>
+        </span>
+        <span ng-if="totalAccountCount!==500">
+            There are <b>{{totalAccountCount}}</b> Top Orgs created across the enterprise <b>{{searchCriteria}}</b>
+        </span>
+    </div>
+    <div class="row col-lg-12" ng-show="showIndLOSCounts">
+        <ul>
+            <li><b><div style="display:inline" ng-show="totalBIOAccountCount == 0">None</div><div style="display:inline" ng-show="totalBIOAccountCount > 0">{{totalBIOAccountCount}}</div></b> of them <div style="display:inline" ng-show="totalBIOAccountCount == 1">is</div> <div style="display:inline" ng-show="totalBIOAccountCount != 1 ">are</div> from Biomedical line of service.</li>
+            <li><b><div style="display:inline" ng-show="totalFRAccountCount == 0">None</div><div style="display:inline" ng-show="totalFRAccountCount > 0">{{totalFRAccountCount}}</div></b> of them <div style="display:inline" ng-show="totalFRAccountCount == 1">is</div> <div style="display:inline" ng-show="totalFRAccountCount != 1 ">are</div> from Fundraising line of service.
+            <li><b><div style="display:inline" ng-show="totalPHSSAccountCount == 0">None</div><div style="display:inline" ng-show="totalPHSSAccountCount > 0">{{totalPHSSAccountCount}}</div></b> of them <div style="display:inline" ng-show="totalPHSSAccountCount == 1">is</div> <div style="display:inline" ng-show="totalPHSSAccountCount != 1 ">are</div> from PHSS line of service.
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 custom-search-result">
+        <div class="row">
+            <div ng-show="toggleShowBIOResults" style="margin-right:20px">
+                <div style="width:100%;">
+                    <div style="float:left;">
+                        <h3 style="float: left;">Biomedical </h3>
+                    </div>
+                    <div class="pagination-left items-number">
+                        <select ng-model="searchResultsBIOGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsBIOGridOptions.paginationPageSizes" class="form-control-static"
+                                ng-if="searchResultsBIOGridOptions.paginationPageSizes.length > 1"></select>
+                        <span class="">&nbsp;records per page</span>
+                    </div>
+                    <br style="clear:both">
+                    <!--<div style="float:left;">
+                        <p style="float: left;">Orgs created newly in the Biomedical Line of Service.</p>
+
+                    </div>-->
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="float: left; width: 100%;" ui-grid="searchResultsBIOGridOptions" id="searchResultsBIOGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize>
+                    <div class="watermark" ng-show="!searchResultsBIOGridOptions.data.length">No data available</div>
+                </div>
+                <div class="grid-pager">
+                    <uib-pagination boundary-links="true" total-items="totalBIOAccountCount" max-size="10" items-per-page="searchResultsBIOGridOptions.paginationPageSize" ng-show="(totalBIOAccountCount > searchResultsBIOGridOptions.paginationPageSize) == true" ng-change="navigationPageChangeBIO(paginationBIOCurrentPage)"
+                                    ng-model="paginationBIOCurrentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                    first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                </div>  
+                <br />   
+                <div>
+                    <button class="btn btn-default pull-left" ng-disabled="totalBIOAccountCount==0" ng-click="exportSearchResults('BIO')" style="margin-left:5px;">Download BIO NAICS Suggestions</button>
+                    <button class="btn btn-default pull-left" ng-disabled="totalBIOAccountCount==0" ng-click="uploadNAICSSuggestions('BIO')" style="margin-left:5px;">Upload BIO NAICS Suggestions</button>
+                </div>   
+                 </div>           
+        </div>
+        <div class="row">
+            <div ng-show="toggleShowFRResults" style="margin-right:20px">
+                <div style="width:100%;">
+                    <div style="float:left;">
+                        <h3 style="float: left;">Fundraising </h3>
+                    </div>
+                    <div class="pagination-left items-number">
+                        <select ng-model="searchResultsFRGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsFRGridOptions.paginationPageSizes" class="form-control-static"
+                                ng-if="searchResultsFRGridOptions.paginationPageSizes.length > 1"></select>
+                        <span class="">&nbsp;records per page</span>
+                    </div>
+                    <br style="clear:both">
+                    <!--<div style="float:left;">
+                        <p style="float: left;">Orgs created newly in the Fundraising Line of Service.</p>
+
+                    </div>-->
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="float: left; width: 100%;" ui-grid="searchResultsFRGridOptions" id="searchResultsFRGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-selection ui-grid-exporter class="grid" ui-grid-auto-resize>
+                    <div class="watermark" ng-show="!searchResultsFRGridOptions.data.length">No data available</div>
+                </div>
+                <div class="grid-pager">
+                    <uib-pagination boundary-links="true" total-items="totalFRAccountCount" max-size="10" items-per-page="searchResultsFRGridOptions.paginationPageSize" ng-show="(totalFRAccountCount > searchResultsFRGridOptions.paginationPageSize) == true" ng-change="navigationPageChangeFR(paginationFRCurrentPage)"
+                                    ng-model="paginationFRCurrentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                    first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                </div>
+                <br />
+                <div>
+                    <button class="btn btn-default pull-left" ng-disabled="totalFRAccountCount==0" ng-click="exportSearchResults('FR')" style="margin-left:5px;">Download FR NAICS Suggestions</button>
+                    <button class="btn btn-default pull-left" ng-click="uploadNAICSSuggestions('FR')" style="margin-left:5px;">Upload FR NAICS Suggestions</button>
+                </div>
+              </div>
+        </div>
+        <div class="row">
+            <div ng-show="toggleShowPHSSResults" style="margin-right:20px">
+                <div style="width:100%;">
+                    <div style="float:left;">
+                        <h3 style="float: left;">Health & Safety </h3>
+                    </div>
+                    <div class="pagination-left items-number">
+                        <select ng-model="searchResultsPHSSGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsPHSSGridOptions.paginationPageSizes" class="form-control-static"
+                                ng-if="searchResultsPHSSGridOptions.paginationPageSizes.length > 1"></select>
+                        <span class="">&nbsp;records per page</span>
+                    </div>
+                    <br style="clear:both">
+                    <!--<div style="float:left;">
+                        <p style="float: left;">Orgs created newly in the Health & Safety Line of Service.</p>
+
+                    </div>-->
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="float: left; width: 100%;" ui-grid="searchResultsPHSSGridOptions" id="searchResultsPHSSGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize>
+                    <div class="watermark" ng-show="!searchResultsPHSSGridOptions.data.length">No data available</div>
+                </div>
+                <div class="grid-pager">
+                    <uib-pagination boundary-links="true" total-items="totalPHSSAccountCount" max-size="10" items-per-page="searchResultsPHSSGridOptions.paginationPageSize" ng-show="(totalPHSSAccountCount > searchResultsPHSSGridOptions.paginationPageSize) == true" ng-change="navigationPageChangePHSS(paginationPHSSCurrentPage)"
+                                    ng-model="paginationPHSSCurrentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                    first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                </div>
+                <br />
+                <div>
+                    <button class="btn btn-default pull-left" ng-disabled="totalPHSSAccountCount==0" ng-click="exportSearchResults('PHSS')" style="margin-left:5px;">Download PHSS NAICS Suggestions</button>
+                    <button class="btn btn-default pull-left" ng-click="uploadNAICSSuggestions('PHSS')" style="margin-left:5px; ">Upload PHSS NAICS Suggestions</button>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+<!--Include the pop-up templates-->
+<ng-include src="editNAICSCodeTemplate"></ng-include>
+<ng-include src="downloadNAICSSuggestionTemplate"></ng-include>
+<ng-include src="potentialMergeTemplate"></ng-include>
+<ng-include src="potentialUnmergeTemplate"></ng-include>
+<ng-include src="editAddressTemplate"></ng-include>
+<ng-include src="editNameTemplate"></ng-include>
+<ng-include src="editPhoneTemplate"></ng-include>
+<ng-include src="uploadNAICSSuggestionTemplate"></ng-include>

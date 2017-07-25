@@ -1,0 +1,85 @@
+﻿
+    <div ng-show="listUpload.pleaseWait">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+<br/>
+<div class="row">
+
+    <div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+        <div >
+            <div class="row" style="padding:0px;">
+                <div style="width:100%;">
+                    <div style="float:left;">
+                        <h3 style="float: left;">Transaction Details - {{listUpload.pageHeader}} Results</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div style="float: left; width: 100%;" ui-grid="listUpload.gridOptions"
+                 scrolldown ui-grid-selection ui-grid-pagination ui-grid-move-columns
+                 ui-grid-exporter ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+
+            <div class="grid-pager">
+
+                <div ng-show="(listUpload.totalItems>=10) == true">
+
+                    <div class="row ">
+                        <div class="col-lg-5 col-md-5 col-sm-5" style=" padding:0px;">
+
+                            <uib-pagination boundary-links="true" total-items="listUpload.totalItems" max-size="10" items-per-page="listUpload.gridOptions.paginationPageSize" ng-change="listUpload.pageChanged(currentPage)"
+                                            ng-model="currentPage" class="pagination" direction-links="false" force-ellipses="true" rotate="false" style="float: left; width: 100%"
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 " style=" padding:0px;">
+
+                            <div class="col-lg-5 col-md-5 col-sm-5  " style="margin-top:20px; padding:0px;">
+                                <select ng-model="listUpload.gridOptions.paginationPageSize" ng-options="o as o for o in listUpload.gridOptions.paginationPageSizes" class="form-control-static "
+                                        ng-if="listUpload.gridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-7 " style="margin-top:28px; padding:0px;">
+                                <div style="color:#ff6a00; font-style:italic; display:inline;">
+                                    <div ng-show="listUpload.totalItems<=1"> Search results found {{listUpload.totalItems}} record</div>
+                                    <div ng-show="listUpload.totalItems>1"> Search results found  {{listUpload.totalItems}} records.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 " style="margin-top:20px;padding:0px;">
+                            <button class="btn btn-default pull-right " ng-click="listUpload.exportTransData()" style="margin-top: 10px;">Export</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="padding-top:10px; float: right;" ng-show="(listUpload.totalItems<=10)">
+                    <button class="btn btn-default pull-right " ng-click="listUpload.exportTransData()" style="margin-top: 10px;">Export</button>
+                </div>
+
+                <div style="float: left;margin-top: 17px;margin-left: 20px;color:#ff6a00; font-style:italic; display:inline;" ng-show="(listUpload.totalItems<=10) == true">
+                    <div ng-show="listUpload.totalItems<=1"> Search results found {{listUpload.totalItems}} record</div>
+                    <div ng-show="listUpload.totalItems>1"> Search results found  {{listUpload.totalItems}} records.</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <br />
+    <br />
+
+
+
+
+
+
+
+
+
+

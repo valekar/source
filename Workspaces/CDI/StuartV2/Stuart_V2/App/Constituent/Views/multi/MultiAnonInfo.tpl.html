@@ -1,0 +1,94 @@
+﻿<!--<div class="clearfix">
+    <div ng-style="toggleAnonInfoLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleAnonInfoHeader">
+        <div class="pagination-left">
+            <h3>Anonymous Information</h3>
+        </div>
+        
+        <div class="pagination-right items-number" ng-show="(totalAnonInfoItems>=5) == true">
+            <select ng-model="anonInfoGridOptions.paginationPageSize" ng-options="o as o for o in anonInfoGridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="anonInfoGridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleAnonInfoFiltering()">Filter</button>--
+        <div ui-grid="anonInfoGridOptions" ui-grid-selection class="AnonInfo" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-exporter ui-grid-auto-resize ng-style="toggleAnonInfoDetails">
+            <div class="watermark" ng-show="!anonInfoGridOptions.data.length">No data available</div>
+        </div>
+
+
+
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding" >
+                <div >
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalAnonInfoItems" items-per-page="anonInfoGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.ANON_INFO,currentAnonInfoPage)"
+                                        ng-model="currentAnonInfoPage" class="pagination" direction-links="false" id="anonInfo"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                   
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+               
+            </div>
+        </div>
+
+    </div>
+</div>-->
+
+<div class="clearfix">
+    <div ng-style="toggleAnonInfoLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleAnonInfoHeader">
+        <div class="pagination-left">
+            <h3>Anonymous Information</h3>
+        </div>
+        <div class="more-info">Displays all anonymous information details of a record </div>
+        <div class="pagination-right items-number" ng-show="(totalAnonInfoItems>=5) == true">
+            <select ng-model="anonInfoGridOptions.paginationPageSize" ng-options="o as o for o in anonInfoGridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="anonInfoGridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleAnonInfoFiltering()">Filter</button>-->
+        <div ui-grid="anonInfoGridOptions" ui-grid-selection class="AnonInfo" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-exporter ui-grid-auto-resize ng-style="toggleAnonInfoDetails">
+            <div class="watermark" ng-show="!anonInfoGridOptions.data.length">No data available</div>
+        </div>
+
+
+
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalAnonInfoItems>=5) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalAnonInfoItems" items-per-page="anonInfoGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.ANON_INFO,currentAnonInfoPage)"
+                                        ng-model="currentAnonInfoPage" class="pagination" direction-links="false" id="anonInfo"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                <div style="margin-top:20px;" class="pull-right">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

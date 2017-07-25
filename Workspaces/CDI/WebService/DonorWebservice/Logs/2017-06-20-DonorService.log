@@ -1,0 +1,73 @@
+2017-06-20 10:18:38.4139|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 10:19:11.4548|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 10:20:22.3901|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 10:20:42.5242|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 15:04:46.7531|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:46.9872|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:47.2244|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:47.4627|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:47.6706|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:48.2510|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:48.4241|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:04:48.6022|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-20 15:07:08.3401|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 15:07:15.8982|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 15:39:31.4390|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:42:04.3546|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:42:28.9828|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:49:22.7509|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:50:38.9988|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:50:54.7112|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:51:11.1707|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:54:07.5699|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 15:56:04.3524|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: GetOrgCharacteristics : [Teradata Database] [3706] Syntax error: expected something between '=' and the 'undefined' keyword.
+2017-06-20 17:49:47.2769|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 17:50:17.2534|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:22:54.9802|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:23:01.7266|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:23:18.1514|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:23:18.1864|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:23:51.8258|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:23:51.8628|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:24:47.6314|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:24:47.8926|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:25:44.2652|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:25:44.2652|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:30:02.0238|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 19:30:03.4927|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-20 21:36:10.7787|INFO|ARC.Donor.Data.Repository|ERROR (Call arc_orgler_macs.orgler_login_hst ( ?,?,?,? );): An error was reported while committing a database transaction but it could not be determined whether the transaction succeeded or failed on the database server. See the inner exception and http://go.microsoft.com/fwlink/?LinkId=313468 for more information.INNER EXCEPTION: Teradata.Client.Provider.TdException (0x80004005): [.NET Data Provider for Teradata] [100001] Cannot close an Active Request. Please Abort the Request.
+   at Teradata.Client.Provider.Request.Close()
+   at Teradata.Client.Provider.Connection.ReturnRequest(Request request)
+   at Teradata.Client.Provider.Connection.Commit()
+   at Teradata.Client.Provider.TdTransaction.Commit()
+   at System.Data.Entity.Infrastructure.Interception.DbTransactionDispatcher.<Commit>b__c(DbTransaction t, DbTransactionInterceptionContext c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+2017-06-20 21:37:24.9946|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Get Tags Dropdown list -API The underlying provider failed on Open.
+2017-06-20 21:38:02.9824|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Summary Details -API The underlying provider failed on Open.
+2017-06-20 21:38:57.5485|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Tags Details Details -API The underlying provider failed on Open.
+2017-06-20 21:39:38.7781|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Summary Details -API The underlying provider failed on Open.
+2017-06-20 21:40:54.2832|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|NAICS Details -API The underlying provider failed on Open.
+2017-06-20 21:41:52.5686|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|NAICS Details -API The underlying provider failed on Open.
+2017-06-20 21:43:18.2667|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Tags Details Details -API The underlying provider failed on Open.
+2017-06-20 21:44:35.9265|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Transaction History Details -API The underlying provider failed on Open.
+2017-06-20 21:45:42.6587|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Transformation Details -API The underlying provider failed on Open.
+2017-06-20 21:46:54.4507|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Summary Details -API The underlying provider failed on Open.
+2017-06-20 21:47:59.8453|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Summary Details -API The underlying provider failed on Open.
+2017-06-20 21:49:08.8755|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Transaction History Details -API The underlying provider failed on Open.
+2017-06-20 21:49:51.9103|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Tags Details Details -API The underlying provider failed on Open.
+2017-06-20 21:50:39.5047|INFO|DonorWebservice.Models.ExceptionLogAttribute|Controller: /api/enterpriseorgs/getsummarydetails/64764 | Action: GET | Exception: System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Web.Http.HostAuthenticationFilter.<AuthenticateAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()

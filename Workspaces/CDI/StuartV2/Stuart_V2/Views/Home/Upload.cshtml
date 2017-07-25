@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+
+
+<link rel="stylesheet" href="~/Content/ui-grid.css" />
+@section scripts {
+
+    <script src="~/App/Upload/App.js"></script>
+    <script src="~/Scripts/ui-grid.min.js"></script>
+
+    <script src="~/App/Upload/Directives/UploadDirectives.js"></script>
+
+    <script src="~/App/Upload/Controllers/GroupMembershipUploadController.js"></script>
+    <script src="~/App/Upload/Controllers/ListUploadSearchCtrl.js"></script>
+    <script src="~/App/Upload/Controllers/NameAndEmailUploadController.js"></script>
+    <script src="~/App/Upload/Controllers/GroupMembershipReferenceController.js"></script>
+    <script src="~/App/Upload/Controllers/EmailOnlyUploadController.js"></script>
+   
+    
+    <script src="~/App/Upload/Controllers/ListUploadTransDetailsCtrl.js"></script>
+    <script src="~/App/Upload/Controllers/ListUploadSearchResultsCtrl.js"></script>
+    <script src="~/App/Upload/Services/ListUploadServices.js"></script>
+    <script src="~/App/Upload/Services/GroupMembershipReferenceServices.js"></script>
+    <script src="~/App/Upload/Services/EmailOnlyUploadServices.js"></script> 
+    <script src="~/App/Upload/Services/UploadServices.js"></script>
+    <script src="~/App/Upload/Services/NameAndEmailUploadServices.js"></script>
+    @* added by srini *@
+    <script src="~/App/Upload/Services/UploadHelper.js"></script>
+    <script src="~/App/Upload/Controllers/DNCUploadCtrl.js"></script>
+    <script src="~/App/Upload/Services/DNCService.js"></script>
+
+    @* added for Message Preference *@
+<script src="~/App/Upload/Controllers/MsgPrefUploadCtrl.js"></script>
+    <script src="~/App/Upload/Services/MsgPrefService.js"></script>
+
+    <script src="~/Scripts/upload.js"></script>
+    <script src="~/Scripts/ng-file-upload.js"></script>
+    <script src="~/Scripts/FileSaver.min.js"></script>
+
+
+
+}
+
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("upload"), ['upload']);
+}
+
+<div class="container-fluid" data-ng-app="upload" id="upload">
+    <br />
+    <div class="row1">
+        <div class="container-fluid">
+            <div ui-view="header"></div>
+            <div ui-view="content"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="iErrorModal" role="dialog" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" ng-bind="header"></h4>
+            </div>
+            <div class="modal-body">
+                <p ng-bind="message"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="accessDeniedModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Access Denied!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Logged in user does not have appropriate permission.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

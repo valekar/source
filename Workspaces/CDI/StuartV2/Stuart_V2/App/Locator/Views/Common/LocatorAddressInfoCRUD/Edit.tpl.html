@@ -1,0 +1,75 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Locator Address Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Address Key:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.locator_addr_key" class="form-control" id="email_key" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Address Line 1:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.line1_addr" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Address Line 2:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.line2_addr" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">City:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.city" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">State</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.state" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Zip 5:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.zip_5" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CaseName" class="col-sm-4 form-control-label">Zip 4:</label>
+            <div class="col-sm-8">
+                <input ng-model="LocatorAddress.zip_4" id="cnst_email_addr" class="form-control" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="CasDesc" class="col-sm-4 form-control-label">Final Assessment Code Title: Category</label>
+            <div class="col-sm-8">
+                    <div class="btn-group" uib-dropdown>                        
+                        <select name="selSearchType" id="selSearchType" class="form-control" ng-model="LocatorAddress.code_category">
+                            <option value="DELIVERABLE_MAN">Address is deliverable : Deliverable</option>
+                            <option value="NOT-DELIVERABLE_MAN">Address is not deliverable : Undeliverable</option>
+                        </select>
+                    </div>
+                
+            </div>
+        </div>
+       
+        
+     
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

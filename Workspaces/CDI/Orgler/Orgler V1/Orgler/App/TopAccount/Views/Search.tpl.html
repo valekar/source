@@ -1,0 +1,139 @@
+﻿<div>
+    <!-- Please Wait overlay -->
+    <!--<div class="AjaxLoaderOuter" ng-show="processingOverlay">
+        <div valign="middle" class="AjaxLoaderInner">
+            <img src="{{processingOverlaySource}}" width="60px" height="60px" />
+        </div>
+    </div>-->
+    <div ng-show="processingOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>            
+        </div>
+    </div>
+    <!-- Recent Searches pop-up -->
+    <div class="row">
+        <div style="margin-left: 1%;">
+            <h3>Top Orgs Search</h3>
+            <div style="float: right; margin-top:-35px;margin-right:15px;">
+                <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#newAccountrecentSearches">Recent Searches</button>
+            </div>
+        </div>
+        <div class="modal fade" role="dialog" id="newAccountrecentSearches">
+            <div class="modal-dialog" style="width:85%;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Recent Searches</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+
+                            <div class="menu_simple" ng-repeat="obj in TopAccountRecentSearches track by $index" style="padding:8px;">
+                                <ul>
+                                    <li>
+                                        <a href="#" ng-click="topAccountRecentSearch(obj)" ng-model="obj">{{obj| topaccplaceholderfunc}}</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Container -->
+    <form name="searchFormName" role="form" ng-submit="TopAccountSearchFormMethod()" >
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Line of Business(LOB)
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchLOBType" id="selSearchLOBType" class="form-control" ng-model="searchInput.LOBType">
+                                <option value="All">All</option>
+                                <option value="BIO">Biomedical</option>
+                                <option value="FR">Fundraising</option>
+                                <option value="PHSS">Health & Safety</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px;">
+                        <label>RFM score</label>
+                        <p class="input-group">
+                            <input id="topAccountRFMscore" class="form-control" placeholder="RFM score-1 to 15" name="topAccountRFMscore" type="text" ng-model="searchInput.RFMScoreValue" ng-pattern="RFMScoreRegex" />                            
+                        </p>
+                        <div role="alert">
+                            <span class="error" ng-show="searchFormName.topAccountRFMscore.$error.pattern" style="color:Crimson">
+                                Invalid Format
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px;">
+                        <label>NAICS Segments</label>                        
+                        <p class="input-group">
+                            <input id="topAccountNAICSsegment" class="form-control" placeholder="NAICS Segments" name="topAccountNAICSsegment" type="text" ng-click="selectNaicsSegmentTopAccount()" ng-model="searchInput.selectedNaicsSegments"/>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Stewarding Status
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchNAICSType" id="selSearchNAICSType" class="form-control" ng-model="searchInput.StewardingStatus">
+                                <option>All</option>
+                                <option value="All Incomplete">All – Incomplete</option>
+                                <option>NAICS Suggestions</option>
+                                <option>No NAICS Suggestions</option>
+                                <option>Stewardship Underway</option>
+                                <option>Stewardship Complete</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>               
+                <div class="col-lg-2 col-sm-2 col-md-2">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label>
+                            Enterprise Org Type
+                        </label>
+                        <div class="ui-select">
+                            <select name="selSearchEnterpriseOrgType" id="selSearchEnterpriseOrgType" class="form-control" ng-model="searchInput.EntOrgType">
+                                <option>All</option>
+                                <option>Enterprise Org found</option>
+                                <option>Premier Enterprise Org found</option>
+                                <option>No Enterprise Org</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div style="padding-top:10px; float:left;">
+                        <button class="btn btn-default" id="btnSubmit" type="Submit" style="width:100px;" name="btnSearch">Search</button>
+                       </div>
+                    <div style="padding-top:10px; float: left; margin-left: 10px;">
+                        <input class="btn btn-default" id="btnClear" style="width:100px;" name="btnClear" value="Clear" ng-click="clearTopAccountSearch()" />
+                        <!--<button class="btn btn-default" id="btnClear" style="width:110px;height:40px" name="btnClear" ng-click="clearNewAccountSearch()">Clear</button>-->
+                       </div>
+                     <br style="clear:both;" /><br style="clear:both;" />
+                        <span class="search-message" style="color:{{SearchMessageColour}}" ng-show="showSearchMessage">{{SearchMessage}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<ng-include src="selectNAICSCodeTemplate"></ng-include>

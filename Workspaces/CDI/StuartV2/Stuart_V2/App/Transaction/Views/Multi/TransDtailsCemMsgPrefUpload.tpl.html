@@ -1,0 +1,34 @@
+﻿<div class="home-grid-content" ng-controller="TransDetailsCemmsgPrefUploadCtrl" style="width:100%;">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleDetails">
+        <div class="pagination-left">
+            <h3>Message Upload Details</h3>
+        </div>
+        <div class="more-info">This section contains details about uploaded records</div>
+        <div class="pagination-right items-number" ng-show="(totalItems>4) == true">
+            <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+
+        <div ui-grid="gridOptions" ui-grid-selection class="" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+            <div class="watermark" ng-show="!gridOptions.data.length">No data available</div>
+        </div>
+
+        <div class="grid-pager">
+            <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="gridOptions.paginationPageSize" ng-change="pageChanged(currentPage)" ng-show="(totalItems>4) == true"
+                            ng-model="currentPage" class="pagination" direction-links="false" id="HconstBirth"
+                            first-text="&laquo;" last-text="&raquo;">
+            </uib-pagination>
+        </div>
+        <br />
+        <div style="margin-top:8px;">
+            <button type="button" class="btn btn-default pull-left" ng-click="backToDetailsPage()">Cancel</button>
+        </div>
+    </div>
+
+</div>

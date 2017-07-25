@@ -1,0 +1,59 @@
+﻿<div class="clearfix">
+    <div ng-style="toggleCaseNotesLoader">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleCaseNotesHeader">
+        <div class="pagination-left">
+            <h3>Notes</h3>
+        </div>
+        <div class="more-info">This section contains the notes for a case</div>
+        <div class="pagination-right items-number" ng-show="(totalcaseNotesItems>=5) == true">
+            <select ng-model="caseNotesGridOptions.paginationPageSize" ng-options="o as o for o in caseNotesGridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="caseNotesGridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleBestSmryFiltering()">Filter</button>-->
+
+        <div ui-grid="caseNotesGridOptions" ui-grid-selection class="CaseNotes" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+            <div class="watermark" ng-show="!caseNotesGridOptions.data.length">No data available</div>
+        </div>
+
+
+        <div class="grid-pager">
+            <!--<uib-pagination boundary-links="true" total-items="totalbestSmryItems" items-per-page="5" ng-change="bestSmryPageChanged(currentbestSmryPage)" ng-show="(totalbestSmryItems>=5) == true"
+                            ng-model="currentbestSmryPage" class="pagination" direction-links="false"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>-->
+
+            <uib-pagination boundary-links="true" total-items="totalcaseNotesItems" items-per-page="caseNotesGridOptions.paginationPageSize" ng-change="pageChanged(currentCaseNotesPage)" ng-show="(totalcaseNotesItems>=5) == true"
+                            ng-model="currentCaseNotesPage" class="pagination" direction-links="false" id="caseNotes"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+        <div style="margin-top:8px;" ng-show="showAddButton">
+            <button type="button" class="btn btn-default" ng-click="commonAddGridRow(CONSTANTS.CASE_NOTES)">Add Notes</button>
+        </div>
+    </div>
+    <div class="modal fade" id="CaseNotesModalDialog" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Case Notes</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{CaseNotes}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--ng-show="(totalbestSmryItems>=5) == true"-->

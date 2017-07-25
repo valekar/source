@@ -1,0 +1,135 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Locator Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Case Key</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.caseKey" class="form-control" id="CaseKey" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="FirstName" class="col-sm-4 form-control-label">First Name</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.firstName" class="form-control" id="FirstName" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="LastName" class="col-sm-4 form-control-label">Last Name:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.lastName" id="LastName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="OrgName" class="col-sm-4 form-control-label">Organization Name:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.orgName" id="OrgName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Address" class="col-sm-4 form-control-label">Address:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.address" id="Address" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="City" class="col-sm-4 form-control-label">City:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.city" id="City" class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">States</label>
+            <div class="col-sm-8">
+                <!--<div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseLocInfo.selected.State }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseLocInfo.States">
+                            <a href="#" ng-click="$event.preventDefault();caseLocInfo.selected.State = type.value; caseLocInfo.selected.StateCode = type.id">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>-->
+                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="caseLocInfo.selected.StateCode"
+                        ng-options="state.id as state.value for state in caseLocInfo.States"></select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="Zip" class="col-sm-4 form-control-label">Zip:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.zip" id="Zip" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="PhoneNum" class="col-sm-4 form-control-label">Phone Number:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.phoneNum" id="PhoneNum" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Email" class="col-sm-4 form-control-label">Email:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.email" id="Email" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterID" class="col-sm-4 form-control-label">Master ID:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.masterID" id="MasterID" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ConstType" class="col-sm-4 form-control-label">Constituent Type:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.constType" id="ConstType" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Source System:</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseLocInfo.selected.sourceSystemType}}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseLocInfo.sourceSystems">
+                            <a href="#" ng-click="$event.preventDefault(); caseLocInfo.selected.sourceSystemType= type.value;caseLocInfo.selected.sourceSystemTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Chapter System</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseLocInfo.selected.chapterSystemType}}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseLocInfo.chapterSystems">
+                            <a href="#" ng-click="$event.preventDefault(); caseLocInfo.selected.chapterSystemType= type.value;caseLocInfo.selected.chapterSystemTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="SourceSystemID" class="col-sm-4 form-control-label">Source System ID:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.SourceSystemID" id="SourceSystemID" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,162 @@
+﻿<div ng-controller="DNCUploadCtrl">
+    <div ng-show="dncUpload.togglePleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div style=" margin-left: 1%;">
+            <h3>DNC Upload</h3>
+        </div>
+    </div>
+    <br />
+    <div class="row" style="width:98%;">
+
+        <div class="form-label" style="display:inline-block; margin-left:1%;">
+            Choose a file for DNC Upload :
+        </div>
+        <div class="ui-select form-input" style="display:inline-block; margin-right:5px; margin-bottom:-8px;width:400px;">
+            <span class="input-group-btn">
+                <label class=" btn btn-info btn-file" for="multiple_input_group">
+                    <span class="input required">
+                        <input id="multiple_input_group" type="file" accept=".xlsx" multiple name=" files" ng-files="dncUpload.getDNCFiles($files)">
+                    </span> Browse
+                </label>
+            </span>
+            <span class="file-input-label" ng-model="fileName"></span>
+        </div>
+        <div class="export-template-label" style="display:inline-block;margin:5px 5px -8px 0px;">
+            <a href="{{dncUpload.dncTemplateDownload}}" target="_blank">
+                <img src="Images/excel.png" alt="logo" style="float:left;" />
+            </a>
+        </div>
+
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <br />
+    <br />
+    <div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>
+
+    <div class="modal fade" id="fileAlreadyUploadedModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">&times;</button>
+                    <img src="Images/error.png" alt="logo" style="float:left;" />
+                    <h4 class="modal-title">DNC File Upload Failed</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Similar file already has been uploaded. Please review and re-upload.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="emptyUploadModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">&times;</button>
+                    <img src="Images/error.png" alt="logo" style="float:left;" />
+                    <h4 class="modal-title">   DNC File Upload Failed</h4>
+                </div>
+                <div class="modal-body">
+                    <p>The uploaded file contains no data. Please update the values and re-upload. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="incorrectTemplateUploadModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">&times;</button>
+                    <img src="Images/error.png" alt="logo" style="float:left;" />
+                    <h4 class="modal-title"> DNC File Upload Failed</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Incorrect template uploaded. Please review and re-upload.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="fileUploadSuccessModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="Images/tick.png" alt="logo" style="float:left;" />
+                    <h3 class="modal-title" style="float:left;">DNC File Validation Succeeded.</h3>
+                </div>
+                <div class="modal-body">
+                    <p>There are no erroneous records in the file. You can submit this file for processing. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" ng-click="dncUpload.fileUpload()" data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="fileLimitExceedModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="Images/error.png" alt="logo" style="float:left;" />
+                    <h3 class="modal-title" style="float:left;" ng-bind="dncUpload.message"></h3>
+                </div>
+                <div class="modal-body">
+                    <p>There are {{dncUpload.rowCount}} records in {{dncUpload.fileName}} . The maximum allowed limit is 2000 recrods </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="dncUpload.similarFileUploadModalClose()">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="iUploadErrorModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="uploadHeader"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="uploadMessage"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

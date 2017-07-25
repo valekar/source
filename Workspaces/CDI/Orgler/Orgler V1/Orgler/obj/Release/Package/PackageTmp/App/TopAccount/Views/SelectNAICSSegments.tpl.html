@@ -1,0 +1,29 @@
+﻿<!--Edit NAICS Code pop-up template-->
+<div class="modal fade" id="editNAICSCodePopup">
+    <div class="modal-dialog" style="width: 70%;height:700px;" role="dialog">
+        <div class="modal-content">           
+            <div class="modal-body">
+                <div class="container-fluid">                                    
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px">
+                            <h4>Select NAICS Segments</h4>
+                            <p style="float: left;">Please select the NAICS Segments to perform Search.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px">
+                            <div style="float: left; width: 100%;" ui-grid="searchGridOptions" id="searchResultsGrid" scrolldown ui-grid-tree-view ui-grid-move-columns ui-grid-selection ui-grid-resize-columns class="grid" ui-grid-auto-resize>
+                                <div class="watermark" ng-show="!searchGridOptions.data.length">No data available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" ng-click="submitNaicsSegment()"> Submit </button>               
+                <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>

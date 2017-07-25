@@ -1,0 +1,169 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Add Address Record</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Master ID</label>
+            <div class="col-sm-8">
+                <input ng-model="address.masterId" class="form-control" id="MasterId" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Address Line 1<span class="requiredRed">*</span> </label>
+            
+            <div class="col-sm-8">
+                <input ng-model="address.addressLine1" class="form-control" id="" type="text" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Address Line 2</label>
+            <div class="col-sm-8">
+                <input ng-model="address.addressLine2" class="form-control" id="" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">City<span class="requiredRed">*</span> </label>
+            <div class="col-sm-8">
+                <input ng-model="address.city" class="form-control" id="" type="text" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">State</label>
+            <div class="col-sm-8">
+                <input ng-model="address.state" class="form-control" id="" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Country</label>
+            <div class="col-sm-8">
+                <input ng-model="address.country" class="form-control" id="" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Zip<span class="requiredRed">*</span> </label>
+            <div class="col-sm-8">
+                <input ng-model="address.zip" class="form-control" id="" type="text" ng-required="true" name="zip" ng-pattern="address.cnstZipRegex.zip">
+                <sub>Please provide a 5 digit zip</sub>
+            </div>
+            <div role="alert">
+                <span class="error" ng-show="myForm.zip.$error.pattern" style="color:Crimson">
+                    Invalid Format
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Zip 4</label>
+            <div class="col-sm-8">
+                <input ng-model="address.zip4" class="form-control" id="" type="text" name="zip4" ng-pattern="address.cnstZipRegex.zip4">
+                <sub>Please provide a 4 digit zip</sub>
+            </div>
+            <div role="alert">
+                <span class="error" ng-show="myForm.zip4.$error.pattern" style="color:Crimson">
+                    Invalid Format
+                </span>
+            </div>
+        </div>
+      
+        <div class="form-group row" hidden="hidden">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Undeliverable</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ address.selected.delivery }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="delivery in address.deliveries">
+                            <a href="#" ng-click="$event.preventDefault(); address.selected.delivery = delivery.value;address.selected.deliveryId = delivery.id">{{ delivery.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Associate Case Number</label>
+            <div class="col-sm-8">
+                <input ng-model="address.caseNo" class="form-control" id="" type="text">
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Source System</label>
+            <div class="col-sm-8">
+                <input ng-model="address.sourceSys" class="form-control" id="" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Address Type</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ address.selected.addressType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in address.addressTypes">
+                            <a href="#" ng-click="$event.preventDefault(); address.selected.addressType = type.value;address.selected.addressTypeCode = type.id">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Start Date</label>
+            <div class="col-sm-8">
+                <input ng-model="address.startDate" class="form-control" id="" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Row Code</label>
+            <div class="col-sm-8">
+                <input ng-model="address.rowCode" class="form-control" id="" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> DW Timestamp</label>
+            <div class="col-sm-8">
+                <input ng-model="address.DWTimestamp" class="form-control" id="" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Notes</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ address.selected.note }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="note in address.notes">
+                            <a href="#" ng-click="$event.preventDefault(); address.selected.note = note">{{ note }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <!-- This casePath is defined in App.js headerCtrl -->
+            <div ng-include src="CaseSearchPath"></div>
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+

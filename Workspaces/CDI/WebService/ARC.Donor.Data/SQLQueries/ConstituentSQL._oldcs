@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ARC.Donor.Data.SQLQueries
+{
+    public class ConstituentSQL
+    {
+        public static string GetProfileQury()
+        {
+            string SQL = "Select top 10  constituent_id, cnst_dsp_id ,  name,first_name,last_name ,constituent_type ,phone_number ,email_address ," +
+                       "addr_line_1 ,addr_line_2 ,city ,state_cd ,zip  FROM dw_stuart_vws.stwrd_dnr_prfle";
+            return SQL;
+            
+        }
+
+        public static string GetSearchResultsQuery(string Email, string srcCode, string transTypeId, string transStatsIn, 
+                            string transTypeDescIn, string const_type)
+        {
+            string SQL= "SELECT top 5 query.* from ( Select X.*  ,coalesce(trans.trans_key,-1) as request_transaction_key  " +
+	                   "From ( ( SELECT data_stwrd.constituent_id as constituent_id, data_stwrd.cnst_dsp_id as cnst_dsp_id, data_stwrd.name as name, data_stwrd.first_name as first_name, data_stwrd.last_name as last_name, data_stwrd.constituent_type as constituent_type ,data_stwrd.phone_number as phone_number ,data_stwrd.email_address as email_address , data_stwrd.addr_line_1 as addr_line_1, data_stwrd.addr_line_2 as addr_line_2, data_stwrd.city as city, data_stwrd.state_cd as state_cd, data_stwrd.zip as zip FROM dw_stuart_vws.stwrd_dnr_prfle data_stwrd " +
+			           " Inner Join arc_mdm_vws.bz_cnst_email_typ2 cnst_email on data_stwrd.constituent_id = cnst_email.cnst_mstr_id  ";
+
+                        if(!string.IsNullOrEmpty(Email) ) SQL += " and cnst_email.cnst_email_addr like '{0}'";
+
+                        SQL += " where 1=1 ";
+                        if (!string.IsNullOrEmpty(srcCode)) SQL += " and data_stwrd.appl_src_cd = '{1}' ";
+
+                         SQL += " And constituent_type = '{5}'  qualify row_number() over (partition by data_stwrd.constituent_id order by  cnst_email.dw_srcsys_trans_ts desc ) <=1)) X " +
+                         " Left Outer Join (SELECT trans_cnst.cnst_id,trans_cnst.trans_key FROM dw_stuart_vws.trans_cnst trans_cnst " +
+                         " Inner Join  dw_stuart_vws.trans trans ON  trans_cnst.trans_key=trans.trans_key WHERE trans.trans_typ_id <> {2} ) " +
+                         " trans_constituent on x.constituent_id = trans_constituent.cnst_id " +
+                         " Left Outer Join dw_stuart_vws.trans trans on trans_constituent.trans_key = trans.trans_key and trans.trans_stat in ({3}) and trans.sub_trans_typ_id in " +
+                         " ( Select Distinct sub_trans_typ_id from dw_stuart_vws.sub_trans_typ sub_trans_typ " +
+                             " Where sub_trans_typ.sub_trans_typ_dsc in ({4})) qualify row_number() over (partition by x.constituent_id Order by x.constituent_id  , trans.trans_key desc  ) <=1 ) query " +
+                         " Order by  last_name ASC, first_name ASC, constituent_id ASC ";                       
+
+            return string.Format(SQL, @Email, @srcCode, @transTypeId,@transStatsIn ,@transTypeDescIn,@const_type);
+        }
+
+
+    }
+}

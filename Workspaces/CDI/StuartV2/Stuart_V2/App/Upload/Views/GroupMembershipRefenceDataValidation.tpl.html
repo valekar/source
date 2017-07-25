@@ -1,0 +1,20 @@
+﻿
+<div class="modal-header">
+    <img src="Images/tick.png" alt="logo" style="float:left;" />
+    <h3 class="modal-title" style="float:left;"> {{referenceValidation.outputHeader}}</h3>
+</div>
+<br />
+<br />
+<div class="row" style="width:98%; ">
+    <div style="margin-left:20px;margin-right:2px;">
+        <p>Group Reference changes were propagated for the record with group key : {{referenceValidation.groupKey}}</p>
+        <p>For tracking purposes, the transaction token number is {{referenceValidation.transKey}}</p>
+    </div>
+</div>
+<br />
+
+<div class="modal-footer">
+    <div style="padding-top:10px;">
+        <button class="btn btn-default pull-right" type="button" ng-click="referenceValidation.back()">Done</button>
+    </div>
+</div>

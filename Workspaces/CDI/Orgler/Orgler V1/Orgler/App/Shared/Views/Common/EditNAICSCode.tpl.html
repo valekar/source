@@ -1,0 +1,95 @@
+﻿<!--Edit NAICS Code pop-up template-->
+<div class="modal fade" id="editNAICSCodePopup">
+    <div class="modal-dialog" style="width:85%;height:700px;" role="dialog">
+        <div class="modal-content" style="width:85%;height:700px;overflow-y:scroll;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Approve/Reject/Add NAICS Code</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div style="float: right; margin-top:10px;margin-right:15px;">
+                        <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#newAccountrecentNAICSUpdate">Recent NAICS Updates</button>
+                    </div>
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Organization Name:</label>
+                        <div class="col-lg-6">
+                            <label class="form-control-label">{{edit_naics_cd_input.cnst_org_nm}}</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="form-control-label col-lg-4">Address:</label>
+                        <div class="col-lg-6">
+                            <label class="form-control-label">{{edit_naics_cd_input.address}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px">
+                            <h4>Suggested NAICS Codes</h4>
+                            <p style="float: left;">Please verify and approve/reject the suggested NAICS Codes.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px" ng-show="isNaicsSuggested">
+                            <div style="float: left; width: 100%;" ui-grid="naicsEditGridOption" id="naicsEditGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize>
+                                <div class="watermark" ng-show="!naicsEditGridOption.data.length">No data available</div>
+                            </div>
+                        </div>
+                        <div style="margin-right:20px; margin-left:20px" ng-show="!isNaicsSuggested">
+                            <label style="float:left;margin-left:5px; color: brown; font-weight:bold">Account do not have any NAICS suggestions</label>
+                        </div>
+                    </div>
+                    <br style="clear:both;" />
+                    <br style="clear:both;" />
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px">
+                            <h4>Add New NAICS Codes</h4>
+                            <p style="float: left;">Please select the NAICS codes which need to be added newly.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-right:20px; margin-left:20px">
+                            <div style="float: left; width: 100%;" ui-grid="searchGridOptions" id="searchResultsGrid" scrolldown ui-grid-tree-view ui-grid-move-columns ui-grid-selection ui-grid-resize-columns class="grid" ui-grid-auto-resize>
+                                <div class="watermark" ng-show="!searchGridOptions.data.length">No data available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" ng-disabled="groupName == 'Orgler'"  ng-click="submitNaicsCodeUpdates()"> Submit </button>
+                <!--<button type="submit" class="btn btn-default" ng-click="editNaicsCdNewAccountSubmit('Add', edit_naics_cd)"><img src="{{addButtonPath}}" style="width:20px; height:20px;" /> Add New NAICS Code </button>
+                <button type="submit" class="btn btn-default" ng-show="isRejected" ng-click="editNaicsCdNewAccountSubmit('Approved', edit_naics_cd)"><img src="{{approveButtonPath}}" style="width:20px; height:20px;" /> Accept </button>
+                <button type="submit" class="btn btn-default" ng-show="isApproved" ng-click="editNaicsCdNewAccountSubmit('Rejected', edit_naics_cd)"><img src="{{rejectButtonPath}}" style="width:20px; height:20px;" /> Reject </button>-->
+                <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" role="dialog" id="newAccountrecentNAICSUpdate">
+    <div class="modal-dialog" style="width:50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Recent NAICS Updates</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+
+                    <div class="menu_simple" ng-repeat="obj in NewAccountRecentNAICSUpdate track by $index" style="padding:8px;">
+                        <ul>
+                            <li>
+                                <a href="#" ng-click="naicsRecentSearch(obj)" ng-model="obj">{{obj| placeholderfuncNAICS}}</a>
+                            </li>                           
+                        </ul>
+                        <div class="watermark" ng-show="!NewAccountRecentNAICSUpdate.length">No data available</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

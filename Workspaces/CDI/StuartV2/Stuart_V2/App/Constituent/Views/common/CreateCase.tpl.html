@@ -1,0 +1,188 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Create Case</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="case.cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <br />
+    <div ng-show="case.toggleCaseLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>   
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="row" style="width:98%;">
+            <div style="width:100%;">
+                <div class="col-lg-12 col-sm-12 col-md-12 " style="margin-left:20px; float:left !important;">
+                    <div class="row" id="frmSearch">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        Case Name (Short Description)<span class="requiredRed">*</span>
+                                    </label>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Case Name" ng-required="true" ng-model="case.name" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        Type<span class="requiredRed">*</span>
+                                    </label>
+                                    <div class="ui-select">
+                                        <select name="selCaseType" id="selCaseType" ng-required="true" class="form-control" ng-model="case.type">
+                                            <!-- !!IMP!! Please filter out merge conflict dropdowns when binding from JSON -->
+                                            <option selected="selected" value=""></option>
+                                            <option value="IntMatching">Internal Matching</option>
+                                            <!--<option value="MergeLow">Merge Conflicts - Low Priority</option>
+                    <option value="MergeMed">Merge Conflicts - Medium Priority</option>
+                    <option value="MergeHIgh">Merge Conflicts - High Priority</option>-->
+                                            <option value="DNC">Do Not Contact</option>
+                                            <option value="IdInvestigation">Identification Investigation</option>
+                                            <option value="DataHygiene">Data Hygiene</option>
+                                            <option value="NCOAdeathUNdelUpdate">NCOA, Death, or Undeliverable Update</option>
+                                            <option value="ConstContactUpdate">Constituent Contact Update Request</option>
+                                            <option value="CDIescalate">Escalate to CDI Team</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        Intake/Owner Department<span class="requiredRed">*</span>
+                                    </label>
+                                    <div class="ui-select">
+                                        <select name="selSearchType" id="selSearchType" ng-required="true" class="form-control" ng-model="case.intakeDept">
+                                            <option selected="selected" value=""></option>
+                                            <option value="Biomed Customer Care">Biomed Customer Care</option>
+                                            <option value="Fundraising Donor Services">Fundraising Donor Services</option>
+                                            <option value="PHSS TSC">PHSS TSC</option>
+                                            <option value="Public Inquiry">Public Inquiry</option>
+                                            <option value="Social Media">Social Media</option>
+                                            <option value="MKTDATA">MKTDATA</option>
+                                            <option value="IT">IT</option>
+                                            <option value="SAF">SAF</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        Intake Channel
+                                    </label>
+                                    <div class="ui-select">
+                                        <select name="selSearchType" id="selSearchType" class="form-control" ng-model="case.intakeChannel">
+                                            <option selected="selected" value=""></option>
+                                            <option value="RCO Contact Us">RCO Contact Us</option>
+                                            <option value="Email">Email</option>
+                                            <option value="White Mail">White Mail</option>
+                                            <option value="Phone">Phone</option>
+                                            <option value="Twitter">Twitter</option>
+                                            <option value="Facebook">Facebook</option>
+                                            <option value="Internal">Internal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        CRM System
+                                    </label>
+                                    <div>
+                                        <select name="selCRMSystemType" id="selCRMSystemType" class="form-control" ng-model="case.CRMSystem">
+                                            <option selected="selected" value=""></option>
+                                            <option value="90">CDI Hygiene</option>
+                                            <option value="13">SFDC PI</option>
+                                            <option value="14">SFDC PHSS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        CRM System Id
+                                    </label>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="CRM System Id" ng-model="case.CRMSysId" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>Reported Date</label>
+                                    <!--<div class="ui-select">
+                <input type="text" class="form-control" placeholder="Address Line" ng-model="constituent_AddressLine" />
+            </div>-->
+                                    <p class="input-group">
+                                        <input type="text" class="form-control" uib-datepicker-popup="{{case.format}}" ng-model="case.reportDate" is-open="case.popup.opened" datepicker-options="case.dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="case.open()"><span class="glyphicon glyphicon-calendar"></span></button>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>Case Details</label>
+                                    <div class="ui-select">
+                                        <input type="text" class="form-control" placeholder="Case Details" ng-model="case.details" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="padding-bottom:5px; padding-top:5px; ">
+                                    <label>
+                                        Upload
+                                    </label>
+                                    <div class="ui-select">
+                                        <input type="file" id="file1" name="file" multiple
+                                                ng-files="case.getTheFiles($files)" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3 col-md-3">
+                                <div style="font-size:14px; ">
+                                    <label style="float: left">Set Case as closed</label>
+                                    <input style="float: left;margin-top: 1px;margin-left: 5px;" type="checkbox" ng-model="case.caseClose" ng-true-value="'Closed'" ng-false-value="'Open'"  value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+            
+
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Create & Associate Case</button>
+            <button class="btn btn-default" type="button" ng-click="case.cancel()">Cancel</button>
+        </div>
+            
+
+    </form>
+</div>
+
+

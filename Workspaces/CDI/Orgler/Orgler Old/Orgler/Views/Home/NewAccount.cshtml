@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "New Accounts";
+}
+
+<link rel="stylesheet" href="~/Content/ui-grid.css" />
+@section scripts {
+
+    <script src="~/App/AccountMonitoring/App.js"></script>
+    <script src="~/Scripts/ui-grid.min.js"></script>
+    @Scripts.Render("~/App/account.js");
+    <script src="~/Scripts/upload.js"></script>
+    <script src="~/Scripts/ng-file-upload.js"></script>
+    <script src="~/Scripts/FileSaver.min.js"></script>
+
+    @* If you are debugging then uncomment this and comment @scripts.Render *@
+    @*<script src="~/App/Constituent/Directives/ConstituentDirectives.js"></script>
+        <script src="~/App/Constituent/Services/ConstituentServices.js"></script>
+        <script src="~/App/Constituent/Services/ConstituentMultiService.js"></script>
+        <script src="~/App/Constituent/Services/ConstituentHelper.js"></script>
+        <script src="~/App/Constituent/Services/CRUDService.js"></script>
+
+        <script src="~/App/Constituent/Controllers/ConstituentController.js"></script>
+        <script src="~/App/Constituent/Controllers/ConstSearchResultsController.js"></script>
+        <script src="~/App/Constituent/Controllers/ConstituentDetailsController.js"></script>
+        <script src="~/App/Constituent/Controllers/ConstMultiDetailsController.js"></script>
+        <script src="~/App/Constituent/Controllers/ConstHomeDetailsController.js"></script>
+
+        <script src="~/App/Constituent/Controllers/ConstCartController.js"></script>
+        <script src="~/App/Constituent/Controllers/ConstMergeController.js"></script>
+        <script src="~/App/Constituent/Controllers/ConstUnmergeController.js"></script>
+
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/ErrorInstantiateCtrl.js"></script>
+
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/NameInstantiateControllers.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/PhoneInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/EmailInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/DeathInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/BirthInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/AddressInstantiateControllers.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/ContactPrefInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/GroupInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/CharacterInstantiateCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/CaseCtrl.js"></script>
+        <script src="~/App/Constituent/Controllers/InstantiatedControllers/AffiliatorCtrl.js"></script>*@
+
+
+
+}
+
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("constituent"), ['constituent']);
+}
+
+
+<div class="container-fluid" data-ng-app="constituent" id="constituent">
+    <br />
+    <div class="row1">
+        <!-- <div class="col-lg-2 col-md-2 col-sm-2">
+             <ul class="nav nav-pills nav-stacked">
+                 <li class="active"><a href="/constituent/search">Search</a></li>
+                 <!--<li><a href="/constituent/masterdetail">Master Details</a></li>
+                 <li><a href="/constituent/summary">Summary View</a></li>
+                 <li><a href="/constituent/personname">Person Names </a></li>
+             </ul>
+         </div>-->
+        <!--<ui-breadcrumbs displayname-property="data.displayName"></ui-breadcrumbs>-->
+
+        <div class="container-fluid">
+            <div ui-view="header"></div>
+            <div ui-view="content"></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="iConfirmationModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="FinalMessage"></p>
+                    <p ng-bind="ReasonOrTransKey"></p>
+
+                    <p ng-bind="CaseNo"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="iErrorModal" role="dialog" data-backdrop="static"
+         data-keyboard="false">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" ng-bind="header"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="message"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="accessDeniedModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Access Denied!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Logged in user does not have appropriate permission.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Locator";
+}
+<link rel="stylesheet" href="~/Content/ui-grid.css" />
+
+@section scripts { 
+<script src="~/App/Locator/App.js"></script>
+<script src="~/Scripts/ui-grid.min.js"></script>
+@* If you are debugging then uncomment this and comment @scripts.Render *@
+<script src="~/App/Locator/Services/LocatorServices.js"></script>
+<script src="~/App/Locator/Services/LocatorEmailDetailsServices.js"></script>
+<script src="~/App/Locator/Services/LocatorEmailCRUDService.js"></script>
+
+<script src="~/App/Locator/Services/LocatorAddressServices.js"></script>
+<script src="~/App/Locator/Services/LocatorAddressDetailsServices.js"></script>
+<script src="~/App/Locator/Services/LocatorAddressCRUDService.js"></script>
+
+<script src="~/App/Locator/Services/LocatorDomainServices.js"></script>
+
+<script src="~/App/Locator/Controllers/LocatorEmailController.js"></script>    
+<script src="~/App/Locator/Controllers/LocatorEmailSearchResultsController.js"></script>
+<script src="~/App/Locator/Controllers/LocatorEmailDetailsController.js"></script>
+
+<script src="~/App/Locator/Controllers/LocatorAddressController.js"></script>
+<script src="~/App/Locator/Controllers/LocatorAddressSearchResultsController.js"></script>
+<script src="~/App/Locator/Controllers/LocatorAddressDetailsController.js"></script>
+
+<script src="~/App/Locator/Controllers/LocatorDomainController.js"></script>
+<script src="~/App/Locator/Controllers/LocatorDomainSearchResultsController.js"></script>
+
+
+<script src="~/App/Locator/Controllers/Instantiated Controllers/LocatorEmailInstantiatedController.js"></script>
+<script src="~/App/Locator/Controllers/Instantiated Controllers/LocatorAddressInstantiatedController.js"></script>
+
+@*<script src="~/App/Locator/Controllers/LocatorAddressController.js"></script>*@
+
+
+}
+
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("locator"), ['locator']);
+}
+
+
+
+<div class="container-fluid" data-ng-app="locator" id="locator">
+    <br />
+
+   
+
+    <div class="row1">     
+
+        <div class="container-fluid">
+            <div ui-view="header"></div>
+            <div ui-view="content"></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="LocatorConfirmationModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+            </div>
+            <div class="modal-body">
+                <p ng-bind="FinalMessage"></p>
+                <p ng-bind="ReasonOrTransKey"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="modal fade" id="accessDeniedModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Access Denied!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Logged in user does not have appropriate permission.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ </div>

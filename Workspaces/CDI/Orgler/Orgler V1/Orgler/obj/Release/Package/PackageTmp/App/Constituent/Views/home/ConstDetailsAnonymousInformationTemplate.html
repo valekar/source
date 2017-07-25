@@ -1,0 +1,48 @@
+﻿<div class="home-grid-content" ng-controller="constituentDetailsAnonymousInformationController">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleDetails">
+        <div class="pagination-left">
+            <h3>Anonymous Information</h3>
+        </div>
+        <div class="more-info">Displays all anonymous information details of a record</div>
+        <div class="pagination-right items-number" ng-show="(totalItems>10) == true">
+            <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleFiltering()">Filter</button>-->
+        <div ui-grid="gridOptions" ui-grid-selection class="AnonInfo" ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+            <div class="watermark" ng-show="!gridOptions.data.length">No data available</div>
+        </div>
+
+
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalItems>10) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="gridOptions.paginationPageSize" scrolldown ng-change="pageChanged(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" id="HanonInfo"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                    <div class="pagination-right items-number">
+                        <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                                ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+                        <span class="">&nbsp;records per page</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                
+            </div>
+        </div>
+    </div>
+
+</div>

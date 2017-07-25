@@ -1,0 +1,92 @@
+﻿<div ng-style="pleaseWait">
+    <div class="refresh refresh-div" >
+        <h4>Please wait....</h4>
+    </div>
+</div>
+<br />
+<div class="row ">
+    <div class="col-lg-12 col-sm-12 col-md-12 custom-const-search-result">
+        <div ng-style="toggleShowResults">
+            <div style="width:100%;" >
+                <div class="row" style="padding-bottom:10px;">
+                    <div class="pagination-left">
+                        <h3 style="float: left;">Transaction Search Results</h3>
+                    </div>
+                  
+                </div>
+                
+
+                
+            </div>
+
+            <div style="white-space: nowrap"><span style="background-color:#e5ffe9;">Green</span> - In Progress Records, <span style="background-color:#d9f7d8;">Dark Green</span> - Processed Records, <span style="background-color:#FFCCCC;">Red</span> - Rejected Records, <span style="background-color:#f9fcac;">Yellow</span> - Waiting For Approval Records</div>
+            <br/>
+            <!--<button class="btn btn-success btn-sm" ng-click="toggleSearchFilter()"> Filter</button>-->
+
+            <div style="float: left; width: 100%;" ui-grid="searchResultsGridOptions" scrolldown ui-grid-selection ui-grid-exporter
+                 ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize id="searchResultsGrid"></div>
+            <!--<div class="grid-pager">
+                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="searchResultsGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)" ng-show="(totalItems>=10) == true"
+                                ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                first-text="&laquo;" last-text="&raquo;">
+                </uib-pagination>
+
+                <div class="" ng-show="(totalItems>=10) == true">
+                    <select ng-model="searchResultsGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsGridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="searchResultsGridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+
+            </div>-->
+            <div class="grid-pager">
+
+                <div ng-show="(totalItems>=10) == true">
+
+                    <div class="row ">
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding:0px;">
+                            <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="searchResultsGridOptions.paginationPageSize" ng-change="pageChanged(currentPage)" ng-show="(totalItems>=10) == true"
+                                            ng-model="currentPage" class="pagination" direction-links="false" style="float: left; width: 100%"
+                                            first-text="&laquo;" last-text="&raquo;">
+                            </uib-pagination>
+                        </div>                                                   
+                        <div class="col-lg-8 col-md-8 col-sm-8 " style="padding:0px;">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-lg-pull-1 col-md-pull-1 " style="margin-top:20px;padding:0px;">
+                                <select ng-model="searchResultsGridOptions.paginationPageSize" ng-options="o as o for o in searchResultsGridOptions.paginationPageSizes" class="form-control-static"
+                                        ng-if="searchResultsGridOptions.paginationPageSizes.length > 1"></select>
+                                <span class="">&nbsp;records per page</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-lg-pull-2 col-md-pull-2" style="margin-top:28px; ">
+                                <div style="color:#ff6a00; font-style:italic; display:inline;">
+                                    <div style="font-style:italic; color:#ff6a00; " ng-show="(totalItems>=10) == true"> {{(totalItems > 1) ? 'Search results found ' + totalItems + ' records.': 'Search results found ' + totalItems + ' record.'}}</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+          
+
+
+
+            <a href="~/constituent/search" style="float: left;margin-top: 17px;">Search Again</a>
+            <div style="float: left;margin-top: 17px;color:#ff6a00; font-style:italic; display:inline;padding-left:20px;" ng-show="(totalItems<=10) == true">
+                <div style="font-style:italic; color:#ff6a00; " ng-show="(totalItems<=10) == true"> {{(totalItems > 1) ? 'Search results found ' + totalItems + ' records.': 'Search results found ' + totalItems + ' record.'}}</div>
+                
+            </div>
+
+            <button class="btn btn-default pull-right" ng-click="export()" style="margin-top: -55px;">Export</button>
+            <div class="custom-csv-link-location">
+                
+                <span class="ui-grid-exporter-csv-link">&nbsp</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+

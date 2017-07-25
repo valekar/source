@@ -1,0 +1,11 @@
+﻿
+<div ng-repeat="indVal in row.entity.listNAICSCodesAndDesc track by $index" ng-show="(row.entity.listNAICSCodesAndDesc != null && row.entity.listNAICSCodesAndDesc.length > 0)">
+    
+        <label style="float:left;margin-left:5px;" ng-show="indVal.status!= 'Approved' && indVal.status != 'Rejected'">({{indVal.naicsCode}})- {{indVal.naicsTitle}}</label>
+        <label style="float:left;margin-left:5px; color:green;" ng-show="indVal.status == 'Approved'">({{indVal.naicsCode}})- {{indVal.naicsTitle}}</label>
+        <label style="float:left;margin-left:5px;" ng-show="indVal.status == 'Rejected'">({{indVal.naicsCode}})-  <strike>{{indVal.naicsTitle}}</strike> </label>
+    <br style="clear:both;" />
+    </div>
+
+
+

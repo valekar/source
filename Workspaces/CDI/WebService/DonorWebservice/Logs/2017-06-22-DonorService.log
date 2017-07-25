@@ -1,0 +1,36 @@
+2017-06-22 11:08:49.6911|INFO|DonorWebservice.Providers.ApplicationOAuthProvider|Client ID: C2D61E08-F763-4786-9D8E-BEA23073733E IP Address: ::1 Agent: 
+2017-06-22 11:10:35.3817|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:27:55.3065|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:28:14.3908|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [Teradata Database] [6760] Invalid timestamp.
+2017-06-22 11:28:15.5747|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:28:33.8871|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [Teradata Database] [6760] Invalid timestamp.
+2017-06-22 11:28:34.8258|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:28:51.1646|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [Teradata Database] [6760] Invalid timestamp.
+2017-06-22 11:28:52.5000|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:29:12.0272|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:30:16.4656|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:30:33.6597|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [Teradata Database] [6760] Invalid timestamp.
+2017-06-22 11:30:34.8086|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:30:51.8426|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [Teradata Database] [6760] Invalid timestamp.
+2017-06-22 11:30:53.2272|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:31:15.7153|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:35:30.1935|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:35:51.9757|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:49:43.9601|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: AddOrgCharacteristics : [Teradata Database] [3523] The user does not have EXECUTE PROCEDURE access to arc_orgler_macs.ent_org_loc_dtl_chrctrstc.
+2017-06-22 11:51:52.6150|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|ERROR EnterpriseOrgController :: AddOrgCharacteristics : [Teradata Database] [3523] The user does not have EXECUTE PROCEDURE access to arc_orgler_macs.ent_org_loc_dtl_chrctrstc.
+2017-06-22 11:55:56.9580|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 11:56:20.4301|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 13:33:31.5656|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 13:33:32.5224|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 14:59:57.0338|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 15:00:09.7994|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 15:03:11.7196|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 15:05:14.2080|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 15:07:19.6469|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 15:07:55.2423|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [.NET Data Provider for Teradata] [100038] Command did not complete within the time specified (timeout).
+[Teradata Database] [3110] The transaction was aborted by the user.
+[Socket Transport] [115003] The receive operation timed out.
+2017-06-22 15:08:21.5175|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API
+2017-06-22 15:10:07.2375|INFO|DonorWebservice.Controllers.Orgler.EnterpriseOrgController|Search API Error - [.NET Data Provider for Teradata] [100038] Command did not complete within the time specified (timeout).
+[Teradata Database] [3110] The transaction was aborted by the user.
+[Socket Transport] [115003] The receive operation timed out.

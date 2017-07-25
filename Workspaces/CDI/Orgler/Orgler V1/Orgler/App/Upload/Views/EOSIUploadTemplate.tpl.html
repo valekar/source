@@ -1,0 +1,99 @@
+﻿<div ng-style="pleaseWait">
+    <div class="refresh refresh-div">
+        <h4>Please wait....</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div style=" margin-left: 1%;">
+        <h3>Enterprise Org Site Upload</h3>
+    </div>
+</div>
+<br />
+<div class="row" style="width:98%;">
+
+    <div class="form-label" style="display:inline-block; margin-left:1%;">
+        Choose a file for Enterprise Org Site Upload :
+    </div>
+    <div class="ui-select form-input" style="display:inline-block; margin-right:5px; margin-bottom:-8px;width:400px;">
+        <span class="input-group-btn">
+            <label class=" btn btn-info btn-file" for="multiple_input_group">
+                <div class="input required">
+                    <input id="multiple_input_group" type="file" accept=".xlsx" multiple name=" files" ng-files="getTheFiles($files)">
+                </div> Browse
+            </label>
+        </span>
+        <span class="file-input-label" ng-model="fileName"></span>
+    </div>
+    <div class="export-template-label" style="display:inline-block;margin:5px 5px -8px 0px;" tooltip-placement="top-right" tooltip-append-to-body="true" uib-tooltip="Download the template from here">
+        <a href="{{uploadTemplateDownload}}" target="_blank">
+            <img src="Images/excel.png" alt="logo" style="float:left;" />
+        </a>
+    </div>
+
+</div>
+
+<div style="clear:both;"></div>
+
+<br />
+<br />
+<div style="height:3px; background-color:#cccccc; width:100%; margin-top:5px;"></div>
+<div class="modal fade" id="fileUploadSuccessModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="Images/tick.png" alt="logo" style="float:left;padding:5px;margin-top:-10px;width:40px; height:40px;" />
+                <h3 class="modal-title" style="float:left;">EOSI File Validation Succeeded.</h3>
+            </div>
+            <div class="modal-body">
+                <p>There are no erroneous records in the file. You can submit this file for processing. </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" ng-click="uploadEOSIRecords()" data-dismiss="modal">Submit</button>
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="fileUploadWarningModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" style="width:90%">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="Images/icon-error.png" alt="logo" style="float:left; padding:5px;margin-top:-10px;width:40px; height:40px;" />
+                <h3 class="modal-title" style="float:left;"> EOSI File Upload Validation Failed</h3>
+            </div>
+            <div class="modal-body">
+                <div style="width:100%;">
+                    <div style="font-style:italic; color:#ff6a00; margin-top:28px; margin-right:20px; float:right;" ng-show="eosiUploadWarningGrid.totalItems < 100"> {{eosiUploadWarningGrid.totalItems}} erroneous records were found while uploading.Please review and re-upload.</div>
+                    <div style="font-style:italic; color:#ff6a00; margin-top:28px; margin-right:20px; float:right;" ng-show="eosiUploadWarningGrid.totalItems >= 100"> Out of 100 or more erroneous records, top 100 erroneous records present in the file are displayed below. Please review and re-upload.</div>
+                    <div style="clear:both;"></div>
+                </div>
+                <br />
+                <div class="row" style="width:98%; ">
+                    <div style="margin-left:40px;margin-right:5px;">
+                        <div ui-grid="eosiUploadWarningGrid" scrolldown ui-grid-pagination class="grid" ui-grid-auto-resize ui-grid-selection>
+                            <div class="watermark" ng-show="!eosiUploadWarningGrid.data.length">No data available</div>
+                        </div>
+                        <div class="grid-pager">
+                            <uib-pagination boundary-links="true" total-items="eosiUploadWarningGrid.totalItems" items-per-page="8" ng-change="eosiUploadWarningGridPageChange(eosiUploadWarningGrid.paginationCurrentPage)" ng-show="(eosiUploadWarningGrid.totalItems>8) == true"
+                                            ng-model="eosiUploadWarningGrid.paginationCurrentPage" class="pagination" direction-links="false" id=""
+                                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <div style="padding-top:10px;">
+                        <button class="btn btn-default pull-right" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

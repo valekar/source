@@ -1,0 +1,292 @@
+﻿<!--<style type="text/css">
+    .multi-side-panel {
+        transition: all 0.5s;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 15%;
+        overflow-wrap: break-word;
+        border-right-color: rgb(205, 205, 205);
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+
+    .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+        transition: all linear 0.5s;
+    }
+
+    .multi-hide-show-btn {
+        /*position: absolute;*/
+        /*top: 156px;
+        left: 200px;*/
+        cursor: pointer;
+        float: left;
+        left: 5px;
+    }
+
+    .ConstMultiDetailsRow .glyphicon-chevron-left {
+        left: -14px;
+    }
+
+
+    .ConstMultiDetailsRow .glyphicon-chevron-right {
+        left: 12px;
+    }
+
+    .ConstMultiDetailsRow .DetailsPanelSmall {
+        width: 80%;
+    }
+    .ConstMultiDetailsRow .DetailsPanelLarge {
+        width: 98%;
+    }
+
+    .ConstMultiDetailsRow .glyphicon-backward{
+        left:-1%;
+    }
+    .ConstMultiDetailsRow .glyphicon-forward{
+        left:1.5%;
+    }
+
+</style>
+
+<div ng-app="ngAnimate">
+    <div >
+        <div class="col-sm-3c" ng-hide="isMultiSidePanelOpen">                      
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">                                         
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div style="float:right;padding:2px; cursor:pointer;" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"><span class="glyphicon glyphicon-remove"></span> </div>
+                <div class="collapse navbar-collapse">
+                    <div>
+                        <div ng-include src="ConstMultiDetailsSidePanel"></div>
+                    </div>
+                </div><!-- /.navbar-collapse --
+            </nav>
+        </div><!--/end left column--
+       
+        <div ng-class="{'col-sm-12': isMultiSidePanelOpen, 'col-sm-9c': !isMultiSidePanelOpen}">
+            <div class="" ng-class1="{'DetailsPanelLarge': isMultiSidePanelOpen}" style1="padding:15px;padding-top:0px;float:left; height:100%;background-color:white;">
+                <back-top scroll-speed=600 button-theme="light" button-text="Take me back"><span class="glyphicon glyphicon-chevron-up"></span></back-top>
+                <div class="row">
+                    <div class="col-sm-2">                        
+                        <span style="cursor:pointer;" ng-class="{'glyphicon glyphicon glyphicon-th-list': isMultiSidePanelOpen}" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"></span>
+                    </div>
+                    <div class="col-sm-6"><span style="background-color:#f9fcac;">Yellow</span> - In Progress Records, <span style="background-color:#e5ffe9;">Green</span> - ARC best summary Records</div>
+                    <div class="col-lg-4 col-sm-4 col-md-4"><button class="btn btn-default pull-right" ng-click="exportDetails()">Export</button></div>
+
+                    <!-- cart links -->
+                    <!--<div ng-include src="rootCaseLinkHtmlPath" style="margin-top:-5%;float:right;margin-right:-10%"></div>--
+
+                </div>
+
+                <div ng-include src="masterDetailTemplate"></div>
+                <div ng-include src="summaryViewTemplate"></div>
+                <div ng-include src="bestSmryTemplate"></div>
+                <div ng-include src="constNameTemplate"></div>
+                <div ng-include src="constOrgNameTemplate"></div>
+                <div ng-include src="constAddressTemplate"></div>
+                <div ng-include src="constPhoneTemplate"></div>
+                <div ng-include src="constEmailTemplate"></div>
+                <div ng-include src="constExtBridgeTemplate"></div>
+                <div ng-include src="constBirthTemplate"></div>
+                <div ng-include src="constDeathTemplate"></div>
+                <div ng-include src="constPrefTemplate"></div>
+                <div ng-include src="characterTemplate"></div>
+                <div ng-include src="grpMembershipTemplate"></div>
+                <div ng-include src="transHistoryTemplate"></div>
+                <div ng-include src="anonInfoTemplate"></div>
+                <div ng-include src="masterAttemptTemplate"></div>
+                <div ng-include src="internalBridgeTemplate"></div>
+                <div ng-include src="mergeHistoryTemplate"></div>
+                <div ng-include src="affiliatorTemplate"></div>
+
+            </div>
+
+            <div col-lg-1 col-md-1 col-sm-1></div>
+
+        </div>
+
+        <div class="modal fade" id="iDetailsConfirmationModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p ng-bind="FinalMessage"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+        </div>
+
+</div>-->
+
+<style type="text/css">
+    .multi-side-panel {
+        transition: all 0.5s;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 15%;
+        overflow-wrap: break-word;
+        border-right-color: rgb(205, 205, 205);
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+
+    .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+        transition: all linear 0.5s;
+    }
+
+    .multi-hide-show-btn {
+        /*position: absolute;*/
+        /*top: 156px;
+        left: 200px;*/
+        cursor: pointer;
+        float: left;
+        left: 5px;
+    }
+
+    .ConstMultiDetailsRow .glyphicon-chevron-left {
+        left: -14px;
+    }
+
+
+    .ConstMultiDetailsRow .glyphicon-chevron-right {
+        left: 12px;
+    }
+
+    .ConstMultiDetailsRow .DetailsPanelSmall {
+        width: 80%;
+    }
+
+    .ConstMultiDetailsRow .DetailsPanelLarge {
+        width: 98%;
+    }
+
+    .ConstMultiDetailsRow .glyphicon-backward {
+        left: -1%;
+    }
+
+    .ConstMultiDetailsRow .glyphicon-forward {
+        left: 1.5%;
+    }
+</style>
+
+<div ng-app="ngAnimate;">
+    <div>
+        <div class="col-sm-3c" ng-hide="isMultiSidePanelOpen">
+            <nav class="custom-side-bar-border" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div style="float:right;padding:2px; cursor:pointer;" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen; "><span class="glyphicon glyphicon-remove"></span> </div>
+                <div class="collapse navbar-collapse">
+                    <div>
+                        <div ng-include src="ConstMultiDetailsSidePanel"></div>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div><!--/end left column-->
+
+        <div ng-class="{'col-sm-12': isMultiSidePanelOpen, 'col-sm-9c custom-main-content': !isMultiSidePanelOpen}" style="">
+            <div class="" ng-class1="{'DetailsPanelLarge': isMultiSidePanelOpen}" style1="padding:15px;padding-top:0px;float:left; height:100%;background-color:white;">
+                <back-top scroll-speed=600 button-theme="light" button-text="Take me back"><span class="glyphicon glyphicon-chevron-up"></span></back-top>
+                <div class="row">
+                    <div class="col-sm-2 nopadding">
+                        <span style="cursor:pointer;" ng-class="{'glyphicon glyphicon glyphicon-th-list': isMultiSidePanelOpen}" ng-click="isMultiSidePanelOpen = !isMultiSidePanelOpen"></span>
+                    </div>
+                    <div class="col-sm-6"><img src="Images/Expired-52.png" width="15" height="15" /> - Inactive Records,<img src="Images/Historical-52.png" width="15" height="15" /> - In Progress Records, <img src="Images/Medal First Place-52.png" width="15" height="15" /> - ARC best summary Records</div>
+                    <div class="col-lg-4 col-sm-4 col-md-4 nopadding"><button class="btn btn-default pull-right" ng-click="exportDetails()">Export</button></div>
+
+                    <!-- cart links -->
+                    <!--<div ng-include src="rootCaseLinkHtmlPath" style="margin-top:-5%;float:right;margin-right:-10%"></div>-->
+
+                </div>
+
+                <div ng-include src="masterDetailTemplate"></div>
+                <div ng-include src="summaryViewTemplate"></div>
+                <div ng-include src="bestSmryTemplate"></div>
+                <div ng-include src="constExtBridgeTemplate"></div>
+                <div ng-include src="constNameTemplate"></div>
+                <div ng-include src="constOrgNameTemplate"></div>
+                <div ng-include src="constAddressTemplate"></div>
+                <div ng-include src="constPhoneTemplate"></div>
+                <div ng-include src="constEmailTemplate"></div>                
+                <div ng-include src="constBirthTemplate"></div>
+                <div ng-include src="constDeathTemplate"></div>
+                <div ng-include src="constPrefTemplate"></div>
+                <div ng-include src="characterTemplate"></div>
+                <div ng-include src="grpMembershipTemplate"></div>
+                <div ng-include src="transHistoryTemplate"></div>
+                <div ng-include src="anonInfoTemplate"></div>
+                <div ng-include src="masterAttemptTemplate"></div>
+                <div ng-include src="internalBridgeTemplate"></div>
+                <div ng-include src="mergeHistoryTemplate"></div>
+                <div ng-include src="affiliatorTemplate"></div>
+                <div ng-include src="constEmailDomainTemplate"></div>
+                <div ng-include src="constNaicsCodesTemplate"></div>
+                <div ng-include src="constContactsTemplate"></div>
+                <div ng-include src="constAlternateIdsTemplate"></div>
+                <!-- Extended functionality-->
+                <div ng-include src="multi.orgRelationshipTemplate"></div>
+
+            </div>
+
+            <div col-lg-1 col-md-1 col-sm-1></div>
+
+        </div>
+
+        <div class="modal fade" id="iDetailsConfirmationModal" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" ng-bind="ConfirmationMessage"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p ng-bind="FinalMessage"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

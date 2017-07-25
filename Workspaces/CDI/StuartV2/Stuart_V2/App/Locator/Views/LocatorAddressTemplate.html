@@ -1,0 +1,195 @@
+﻿<div ng-controller="LocatorAddressController">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div>
+                <h3>Search Address</h3>
+                <div style="float: right; margin-top: -35px">
+                    <button type="button" class="btn btn-default" ng-show="lastLocatorAddressSearchResultPresent" ng-click="fetchLastLocatorAddressSearchResult()">Last Search Result</button>
+                    <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#recentLocatorAddressSearchesModal">Recent Searches</button>
+                </div>
+            </div>
+            <div class="modal fade" id="recentLocatorAddressSearchesModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Recent Searches</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="menu_simple" ng-repeat="obj in LocatorAddressRecentSearches track by $index" style="padding:8px;">
+                                    <ul>
+                                        <li>
+                                            <a href="#" ng-click="LocatorAddressRecentSearch(obj)" ng-model="obj">{{obj| placeholderfuncAddress}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row" ng-repeat="counter in LocatorAddressSearchFormElements">
+        <div ng-show="LocatorParams.showCloseButton[counter]" style="float:right; margin: 10px 10px 0 0;">
+            <a href="#" ng-click="RemoveRow(counter)" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+        <div ng-show="LocatorParams.SearchPanel[counter]">
+
+            <div class="col-lg-12">
+
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Address Key</label>
+                            <div class="ui-select">
+                                <input type="number"  autocomplete="off" placeholder="Address key" class="form-control" ng-model="LocatorParams.locator_addr_key[counter]" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()"  />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Address Line</label>
+                            <input type="text" placeholder="Address line" autocomplete="off"  ng-model="LocatorParams.line1_addr[counter]" class="form-control" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()"/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>City</label>
+                            <input type="text" placeholder="City" autocomplete="off"  ng-model="LocatorParams.city[counter]" class="form-control" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()"/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>State</label>
+                            <div class="ui-select">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="LocatorParams.state[counter]" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()"
+                                        ng-options="state.id as state.value for state in State_dropdown.states">
+                                    <option></option>
+                                </select>
+
+                            </div>       </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Zip</label>
+                            <input type="text" placeholder="Zip" autocomplete="off" ng-model="LocatorParams.zip_5[counter]" class="form-control" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()"/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Delivery Locator Type</label>
+                            <div>
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="LocatorParams.deliv_loc_type[counter]" autocomplete="off" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()">
+                                    <option selected="selected" value=""></option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                    <option value="H">H</option>
+                                    <option value="P">P</option>
+                                    <option value="R">R</option>
+                                    <option value="S">S</option>
+                                </select>
+                            </div>       </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Deliverability Code:</label>
+                            <select name="selSearchType" id="selSearchType" class="form-control" ng-model="LocatorParams.dpv_cd[counter]" autocomplete="off" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()">
+                                <option selected="selected" value=""></option>
+                                <option value="D">D</option>
+                                <option value="N">N</option>
+                                <option value="S">S</option>
+                                <option value="y">Y</option>
+
+                            </select>                   </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Final Assessment Code: Assessment Category</label>
+                            <div class="col-lg-6 col-sm-6 col-md-6 no-left-padding">
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="LocatorParams.code_category[counter]" ng-keypress="$event.keyCode == 13 && searchLocatorAddress()">
+                                    <option value="DELIVERABLE">Address is deliverable : Deliverable</option>
+                                    <option value="NOT-DELIVERABLE">Address is not deliverable : Undeliverable</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="col-lg-3 col-sm-3 col-md-3">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Final Assessment Code: Assessment Category</label>                            
+                                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="LocatorParams.code_category[counter]">
+                                    <option value=""></option>
+                                    <option value="DELIVERABLE">Address is deliverable : Deliverable</option>
+                                    <option value="NOT-DELIVERABLE">Address is not deliverable : Undeliverable</option>
+                                </select>
+                        </div>
+                    </div>-->
+                  
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div ng-show="LocatorParams.PanelSeparator[counter]" style="height:3px; background-color:#cccccc; width:100%; margin-top:5px; float: left"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div style="padding-top:10px; float: left;">
+                <button ng-click="searchLocatorAddress()" class="btn btn-default"  type="Submit" style="width:100px;" id="btnSearch" name="btnSearch">Search</button>
+            </div>
+            <div style="padding-top:10px; float: left; margin-left: 10px;">
+                <!--<input type="submit" value="Clear" class="btn btn-default" style="width:100px;" id="btnClear" name="btnClear" ng-click="LocatorAddressClear()" />-->
+                <button ng-click="LocatorAddressClear()" class="btn btn-default"  type="Submit" style="width:100px;" id="btnClear" name="btnClear">Clear</button>
+            </div>
+
+            <div style="padding-top:10px; float: right;">
+                <button type="button" class="btn btn-default" ng-model="SearchRows" ng-click="AddNewSearchRow(SearchRows)">Add New Row</button>
+            </div>
+            <span class="search-no-results">{{LocatorNoResults}}</span>
+        </div>
+    </div>
+    <h3 ng-show="toggleAdvancedSearchHeader">Search Results</h3>
+
+
+</div>
+<style>
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>

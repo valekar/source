@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "New Accounts";
+}
+
+<title>Orgler - New Account</title>
+
+<link rel="stylesheet" href="~/StyleSheets/ui-grid.css" />
+@section scripts { 
+    <script src="@Url.Content("~/App/NewAccount/App.js")"></script>
+    @Scripts.Render("~/App/newacount.js");
+    @*<script src="@Url.Content("~/App/NewAccount/Controllers/SearchController.js")"></script>
+    <script src="@Url.Content("~/App/NewAccount/Controllers/SearchResultsController.js")"></script>
+    <script src="@Url.Content("~/App/NewAccount/Services/Service.js")"></script>
+    <script src="@Url.Content("~/App/NewAccount/Services/DataService.js")"></script>
+    <script src="@Url.Content("~/App/NewAccount/Services/HelperService.js")"></script>
+    <script src="@Url.Content("~/App/NewAccount/Directives/Directives.js")"></script>*@
+}
+@section jsCode {
+    angular.bootstrap(document.getElementById("newAccountModule"), ['newAccountModule']);
+}
+
+<div class="container-fluid" data-ng-app="newAccountModule" id="newAccountModule">
+    <br />
+    <div class="row">
+        <div class="container-fluid">
+            <div ui-view="headerContent" ></div>
+            <div ui-view="pageContent" ></div>
+        </div>
+    </div>
+
+    <!--Model Po-up-->
+    <div class="modal fade" id="newAccountMessageDialogBox" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{newAccountModalPopupHeaderText}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{newAccountModalPopupBodyText}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

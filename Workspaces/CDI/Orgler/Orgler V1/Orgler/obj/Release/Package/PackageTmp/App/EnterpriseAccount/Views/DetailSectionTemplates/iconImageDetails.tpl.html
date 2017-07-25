@@ -1,0 +1,14 @@
+﻿<div style="margin-top:15%;">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="text-center" ng-show="row.entity.row_stat_cd == 'L'">
+            <span tooltip-append-to-body="true" uib-tooltip="Inactive record">
+                <img src="Images/Expired-52.png" width="25" height="25" />
+            </span>
+        </div>
+        <div class="text-center" ng-show="row.entity.strTransNotes.length>0">
+            <span tooltip-placement="right" tooltip-append-to-body="true" uib-tooltip="{{row.entity.strTransNotes}}">
+                <img src="Images/Historical-52.png" width="25" height="25" />
+            </span>
+        </div>
+    </div>
+</div>

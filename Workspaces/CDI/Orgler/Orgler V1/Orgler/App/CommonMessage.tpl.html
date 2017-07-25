@@ -1,0 +1,14 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="error.cancel()">&times;</button>
+        <h4 class="modal-title" ng-bind="error.header"></h4>
+    </div>
+    <div class="modal-body">
+        <p ng-bind="error.message"></p>
+
+        <p ng-if="error.transactionKey">Transaction Key: <span ng-bind="error.transactionKey"></span></p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="error.cancel()">Close</button>
+    </div>
+</div>

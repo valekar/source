@@ -1,0 +1,9 @@
+﻿<!--<div ng-repeat="indVal in row.entity.listTags track by $index" ng-show="(row.entity.listTags != null && row.entity.listTags.length > 0)">
+    <p style="float:left;margin-left:5px;" >- {{indVal.strText}}</p>   
+    <br style="clear:both;" />
+</div>-->
+<div  ng-repeat="indVal in row.entity.listTags track by $index" ng-show="(row.entity.listTags != null && row.entity.listTags.length > 0)">
+
+    <div style="float:left;margin-left:5px;" ng-show="indVal.strText!= '' && indVal.strText != null">- {{indVal.strText}}</div>
+    <br style="clear:both;" />
+</div>

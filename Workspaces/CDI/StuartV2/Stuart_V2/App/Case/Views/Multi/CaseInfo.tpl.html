@@ -1,0 +1,62 @@
+﻿<div class="clearfix">
+    <div ng-style="toggleCaseInfoLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleCaseInfoHeader">
+        <div class="pagination-left">
+            <h3>Case Information</h3>
+        </div>
+        <div class="more-info">This section contains the records of case information</div>
+        <div class="pagination-right items-number" ng-show="(totalcaseInfoItems>=5) == true">
+            <select ng-model="caseInfoGridOptions.paginationPageSize" ng-options="o as o for o in caseInfoGridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="caseInfoGridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleBestSmryFiltering()">Filter</button>-->
+
+        <div ui-grid="caseInfoGridOptions" ui-grid-selection class="CaseInfo" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+            <div class="watermark" ng-show="!caseInfoGridOptions.data.length">No data available</div>
+        </div>
+
+
+        <div class="grid-pager">
+            <!--<uib-pagination boundary-links="true" total-items="totalbestSmryItems" items-per-page="5" ng-change="bestSmryPageChanged(currentbestSmryPage)" ng-show="(totalbestSmryItems>=5) == true"
+                            ng-model="currentbestSmryPage" class="pagination" direction-links="false"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>-->
+
+            <uib-pagination boundary-links="true" total-items="totalCaseInfoItems" items-per-page="caseInfoGridOptions.paginationPageSize" ng-change="pageChanged(currentCaseInfoPage)" ng-show="(totalcaseInfoItems>=5) == true"
+                            ng-model="currentCaseInfoPage" class="pagination" direction-links="false" id="caseInfo"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+        <div>
+            <h4>Case Details</h4>
+            {{CaseDetails}}
+          
+        </div>
+    </div>
+
+    <div class="modal fade" id="CaseInfoConfirmation" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmation Dialog - Case Info</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{ConfNote}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--ng-show="(totalbestSmryItems>=5) == true"-->

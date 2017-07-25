@@ -1,0 +1,36 @@
+﻿<div class="clearfix">
+    <div ng-style="toggleCaseDetailsLoader">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleCaseDetailsHeader">
+        <div class="pagination-left">
+            <h3>Case Details</h3>
+        </div>
+        <div class="pagination-right items-number" ng-show="(totalcaseDetailsItems>=5) == true">
+            <select ng-model="caseDetailsGridOptions.paginationPageSize" ng-options="o as o for o in caseDetailsGridOptions.paginationPageSizes" class="form-control-static"
+                    ng-if="caseDetailsGridOptions.paginationPageSizes.length > 1"></select>
+            <span class="">&nbsp;records per page</span>
+        </div>
+        <!--<button class="btn btn-sm btn-success" ng-click="toggleBestSmryFiltering()">Filter</button>-->
+
+        <div ui-grid="caseDetailsGridOptions" ui-grid-selection class="CaseDetails" scrolldown ui-grid-pagination ui-grid-auto-resize>
+            <div class="watermark" ng-show="!caseDetailsGridOptions.data.length">No data available</div>
+        </div>
+
+
+        <div class="grid-pager">
+            <!--<uib-pagination boundary-links="true" total-items="totalbestSmryItems" items-per-page="5" ng-change="bestSmryPageChanged(currentbestSmryPage)" ng-show="(totalbestSmryItems>=5) == true"
+                            ng-model="currentbestSmryPage" class="pagination" direction-links="false"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>-->
+
+            <uib-pagination boundary-links="true" total-items="totalcaseDetailsItems" items-per-page="caseDetailsGridOptions.paginationPageSize" ng-change="pageChanged(CONSTANTS.CASE_DETAILS,currentcasedetailsPage)" ng-show="(totalcaseDetailsItems>=5) == true"
+                            ng-model="currentcaseDetailsPage" class="pagination" direction-links="false" id="caseDetails"
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+    </div>
+</div>
+
+
+<!--ng-show="(totalbestSmryItems>=5) == true"-->

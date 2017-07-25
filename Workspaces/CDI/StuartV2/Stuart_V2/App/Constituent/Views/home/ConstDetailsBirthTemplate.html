@@ -1,0 +1,147 @@
+﻿<!--<div class="home-grid-content" ng-controller="constituentDetailsBirthController">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div" >
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleDetails">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-md-6">
+                <div class="pagination-left">
+                    <h3>Constituent Birth</h3>
+                </div>
+                
+                <div class="pagination-right items-number" ng-show="(totalItems>10) == true">
+                    <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                            ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+                    <span class="">&nbsp;records per page</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6" style="margin-top: 35px;">
+                <a href="#" class=" pull-right " style="padding-left:15px;" ng-click="showAllrecords(CONSTANTS.CONST_BIRTH)">{{showBirth.showAllButtonName}} </a>
+                <div ng-controller="ShowDetailsCtrl">
+                    <a href="#" class=" pull-right" ng-click="details.showDetails(CONSTANTS.CONST_BIRTH)">Show Details</a>
+                    <div ng-show="details.togglePleaseWait">
+                        <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                            <h4>Please wait....</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div ui-grid="gridOptions" ui-grid-selection class="ConstBirth" ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+            <div class="watermark" ng-show="!gridOptions.data.length">No data available</div>
+        </div>
+
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalItems>10) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="gridOptions.paginationPageSize" scrolldown ng-change="pageChanged(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" id="HconstBirth"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="commonShowAddGridRow">
+                <div style="margin-top:20px;" class="pull-right">
+                    <button type="button" class="btn btn-default" ng-click="commonAddGridRow(CONSTANTS.CONST_BIRTH)">Add Birth</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+</div> -->
+
+
+<div class="clearfix" ng-controller="constituentDetailsBirthController">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <div ng-style="toggleDetails">
+
+        <div class="row padding">
+
+            <div class="row nopadding">
+                <div class="row nopadding">
+                    <div class="col-md-3 col-lg-3 col-sm-3 nopadding" style="display:inline;">
+                        <h3>Constituent Birth</h3>
+
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-5 nopadding">
+                        <div ng-show="(totalItems>=10) == true" style="display:inline;">
+                            <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                                    ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+                            <span class="">&nbsp;records per page</span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4 font-orange-changer ">
+                        <span class="font-orange" ng-show="distinctRecordCount==1">There is {{distinctRecordCount}} distinct record</span>
+                        <span class="font-orange" ng-show="distinctRecordCount>1">There are {{distinctRecordCount}} distinct record</span>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <span>Displays all the birth records existing on the master from the various production systems and LexisNexis</span>
+
+                </div>
+                <div class="pull-right ">
+                    <a href="#" class=" " ng-click="showAllrecords(CONSTANTS.CONST_BIRTH)">{{showBirth.showAllButtonName}}  </a>
+                    <div ng-controller="ShowDetailsCtrl" style="display:inline;">
+                        <a href="#" class="" ng-click="details.showDetails(CONSTANTS.CONST_BIRTH)">Show Details</a>
+                        <div ng-show="details.togglePleaseWait">
+                            <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                                <h4>Please wait....</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div ui-grid="gridOptions" ui-grid-selection class="ConstBirth" ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+            <div class="watermark" ng-show="!gridOptions.data.length">No data available</div>
+        </div>
+
+
+        <div class="grid-pager">
+            <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                <div ng-show="(totalItems>=10) == true">
+                    <div class="pagination-left">
+                        <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="gridOptions.paginationPageSize" scrolldown ng-change="pageChanged(currentPage)"
+                                        ng-model="currentPage" class="pagination" direction-links="false" id="HconstBirth"
+                                        first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="commonShowAddGridRow">
+                <div style="margin-top:20px;" class="pull-right">
+                    <button type="button" class="btn btn-default" ng-click="commonAddGridRow(CONSTANTS.CONST_BIRTH)">Add Birth</button>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-hide="commonShowAddGridRow">
+                <div style="margin-top:20px;" class="pull-right">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,205 @@
+﻿
+<!--NOTE :::::: This template is NOT USED -->
+
+<!--<div id="modalCover"> 
+    <div ng-if="mergeCart.toggleMergeCartSection">
+        <div class="modal-header">
+            <h3 class="modal-title">Compare section</h3>
+        </div>
+        <br />
+        <table class="table table-responsive table-bordered" ng-if="mergeCart.toggleCartCompare">
+            <tr>
+
+                <th>Merge</th>
+                <td ng-if="mergeCart.masterId1!=null" `>
+                    <div class="checkbox" style="color:red;">
+                        <input type="checkbox" ng-change="mergeCart.getMaster(mergeCart.masterId1)" ng-model="mergeCart.checkbox1" />
+                    </div>
+                </td>
+                <td ng-if="mergeCart.masterId2!=null" `>
+                    <div class="checkbox" style="color:red;">
+                        <input type="checkbox" ng-change="mergeCart.getMaster(mergeCart.masterId2)" ng-model="mergeCart.checkbox2" />
+                    </div>
+                </td>
+                <td ng-if="mergeCart.masterId3!=null" `>
+                    <div class="checkbox" style="color:red;">
+                        <input type="checkbox" ng-change="mergeCart.getMaster(mergeCart.masterId3)" ng-model="mergeCart.checkbox3" />
+                    </div>
+                </td>
+                <td ng-if="mergeCart.masterId4!=null" `>
+                    <div class="checkbox" style="color:red;">
+                        <input type="checkbox" ng-change="mergeCart.getMaster(mergeCart.masterId4)" ng-model="mergeCart.checkbox4" />
+                    </div>
+                </td>
+                <td ng-if="mergeCart.masterId5!=null" `>
+                    <div class="checkbox" style="color:red;">
+                        <input type="checkbox" ng-change="mergeCart.getMaster(mergeCart.masterId5)" ng-model="mergeCart.checkbox5" />
+                    </div>
+                </td>
+
+            </tr>
+
+            <tr>
+                <th>MasterId</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.masterId1}}</td>
+                <td ng-if="mergeCart.masterId2!= null">{{mergeCart.masterId2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.masterId3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.masterId4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.masterId5}}</td>
+            </tr>
+            <tr>
+                <th>Dsp Id</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.dsp.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.dsp.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.dsp.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.dsp.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.dsp.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Bridge Presence</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.bridgePresence.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.bridgePresence.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.bridgePresence.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.bridgePresence.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.bridgePresence.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.name.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.name.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.name.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.name.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.name.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.address.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.address.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.address.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.address.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.address.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.phone.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.phone.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.phone.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.phone.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.phone.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.email.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.email.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.email.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.email.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.email.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Birth</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.birth.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.birth.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null">{{mergeCart.birth.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.birth.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.birth.detail5}}</td>
+            </tr>
+            <tr>
+                <th>Death</th>
+                <td ng-if="mergeCart.masterId1!=null">{{mergeCart.death.detail1}}</td>
+                <td ng-if="mergeCart.masterId2!=null">{{mergeCart.death.detail2}}</td>
+                <td ng-if="mergeCart.masterId3!=null"> {{mergeCart.death.detail3}}</td>
+                <td ng-if="mergeCart.masterId4!=null">{{mergeCart.death.detail4}}</td>
+                <td ng-if="mergeCart.masterId5!=null">{{mergeCart.death.detail5}}</td>
+            </tr>
+        </table>
+
+        <div class="custom-modal-footer">
+            <button class="btn btn-default" id="" type="button" ng-click="mergeCart.confirm()">Confirm</button>
+            <button class="btn btn-default" type="button" ng-click="mergeCart.cancel()">Cancel</button>
+
+        </div>
+    </div>
+
+    <div ng-if="confirmCart.toggleMergeConfirmSection">
+        <div class="modal-header">
+            <h3 class="modal-title">Are you sure you want to Merge these records?</h3>
+        </div>
+        <br />
+        <table class="table table-responsive table-bordered">
+            <tr>
+                <th>Master Id</th>
+                <td ng-repeat="row in confirmCart.mergeRows">{{row.constituent_id}}</td>
+            </tr>
+
+            <tr>
+                <th>Name</th>
+                <td ng-repeat="row in confirmCart.mergeRows">{{row.name}}</td>
+            </tr>
+
+            <tr>
+                <th>Address</th>
+                <td ng-repeat="row in confirmCart.mergeRows">{{row.addr_line_1}}</td>
+            </tr>
+        </table>
+
+        <form name="myForm" role="form" ng-submit="confirmCart.submit(myForm)" style="margin: 10px" novalidate>
+            <div class="form-group row">
+                <label for="singlebutton" class="col-sm-2 form-control-label">LN Id to be preserved:</label>
+                <div class="col-sm-8">
+                    <div class="btn-group" uib-dropdown>
+                        <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                            {{ confirmCart.selected.LN }}<span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="LN in confirmCart.LNs() track by $index">
+                                <a href="#" ng-click="$event.preventDefault(); confirmCart.selected.LN = LN">{{ LN }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 form-control-label"> Associate Case Number</label>
+                <div class="col-sm-2">
+                    <input ng-model="confirmCart.caseNo" class="form-control" id="" type="text">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="singlebutton" class="col-sm-2 form-control-label">Notes</label>
+                <div class="col-sm-2">
+                    <div class="btn-group" uib-dropdown>
+                        <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                            {{ confirmCart.selected.note }}<span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="note in confirmCart.notes">
+                                <a href="#" ng-click="$event.preventDefault(); confirmCart.selected.note = note">{{ note }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <button class="btn btn-default" ng-click="confirmCart.createCase()">Add New Case</button>
+                    <a href="/Case" style="cursor: pointer">Search Case</a>
+                </div>
+
+            </div>
+
+            <div class="custom-modal-footer">
+                <button class="btn btn-default" id="" type="button" ng-click="confirmCart.back()">Back</button>
+                <button class="btn btn-default" id="btnSubmit" type="submit">Submit</button>
+                <button class="btn btn-default" type="button" ng-click="confirmCart.cancel()">Cancel</button>
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+</div>-->

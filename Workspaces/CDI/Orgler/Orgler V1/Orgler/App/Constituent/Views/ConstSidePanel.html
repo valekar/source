@@ -1,0 +1,67 @@
+﻿<ul class="nav nav-tabs">
+    <li style="height: 20px; width: 40px;"></li>
+    <li ui-sref="constituent.search.results.summary({constituentId:masterId})" ng-class="{active: $state.includes('results')}" class="active" active="false"><a class="side-panel-a-tag">Home</a></li>
+    <li ui-sref="constituent.search.results.multi({constituentId:masterId})"><a class="side-panel-a-tag">Multi</a></li>
+</ul>
+<div class="menu_simple" style="background-color:white; padding-top:20px;   padding-left: 25px;">
+    <ul>
+        <li ng-class="liARCBest" style="padding-bottom:8px;">
+            <a href="#" ng-click="currentTpl='ConstDetailsBestSmryTemplate.tpl'" id="tpl-link">Arc Best Summary</a>
+        </li>
+        <li ng-class="liName" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/names/{{masterId}}">Constituent Name</a>
+        </li>
+        <li ng-class="liAddress" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/address/{{masterId}}">Constituent Address</a>
+        </li>
+        <li ng-class="liPhone" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/phone/{{masterId}}">Constituent Phone</a>
+        </li>
+        <li ng-class="liEmail" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/email/{{masterId}}">Constituent Email</a>
+        </li>
+        <li ng-class="liExternalBridge" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/externalbridge/{{masterId}}">External Bridge</a>
+        </li>
+        <li ng-class="liBirth" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/birth/{{masterId}}">Constituent Birth</a>
+        </li>
+        <li ng-class="liDeath" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/death/{{masterId}}">Constituent Death</a>
+        </li>
+        <li ng-class="liConactPreference" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/contactpreference/{{masterId}}">Contact Preference</a>
+        </li>
+        <li ng-class="liCharacteristics" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/characteristics/{{masterId}}">Characteristics</a>
+        </li>
+        <li ng-class="liGroupMemberships" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/groupmemberships/{{masterId}}">Group Memberships</a>
+        </li>
+        <li ng-class="liTransactionHistory" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/transactionhistory/{{masterId}}">Transaction History</a>
+        </li>
+        <li ng-class="liAnonymousInfo" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/anonymousinformation/{{masterId}}">Anonymous Information</a>
+        </li>
+        <li ng-class="liMasteringAttempts" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/masteringattempts/{{masterId}}">Mastering Attempts</a>
+        </li>
+        <li ng-class="liInternalBridge" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/internalbridge/{{masterId}}">Internal Bridge</a>
+        </li>
+        <li ng-class="liMergeHistory" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/mergehistory/{{masterId}}">Merge History</a>
+        </li>
+        <li ng-class="liEmailDomainDetails" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/mergehistory/{{masterId}}">Email Domains</a>
+        </li>
+        <li ng-class="liNAICSCodes" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/mergehistory/{{masterId}}">NAICS Codes</a>
+        </li>
+        <li ng-class="liContactsDetails" class="" style="padding-bottom:8px;">
+            <a ng-href="{{BaseURL}}constituent/search/results/mergehistory/{{masterId}}">Contacts</a>
+        </li>
+
+    </ul>
+</div>

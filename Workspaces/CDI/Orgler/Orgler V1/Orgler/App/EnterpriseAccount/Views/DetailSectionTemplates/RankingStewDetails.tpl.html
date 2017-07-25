@@ -1,0 +1,52 @@
+﻿<!-- Ranking Stewarding Template -->
+<div class="clearfix" ng-show="toggleRankingStewSection">
+    <div ng-show="toggleRankingStewDBError">
+        <h3>Ranking Stewarding</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleRankingStewProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- Ranking Stewarding Container -->
+    <div ng-show="toggleRankingStewResults">
+        <div style="width:100%;">
+            <div class="pagination-left">
+                <div style="float:left;">
+                    <h3>Ranking Stewarding</h3>
+                </div>
+                <div class="pagination-left items-number-det" ng-if="totalRankingStewItems > 5">
+                    <span>Showing </span>
+                    <select ng-model="rankingStewGridOptions.paginationPageSize" ng-options="o as o for o in rankingStewGridOptions.paginationPageSizes" class="selcls"></select>
+                    <span> records per page of the total <b>{{totalRankingStewItems}}</b> records</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="pull-left">
+            <h5>Displays the ranking stewarding details for the enterprise</h5>
+        </div>
+        <div class="pull-right">
+            <a ng-click="filterShowInactive('RankingStew')" ng-show="isRankingStewFilterFlag">
+                <span ng-if="isRankingStewInactiveHidden">Show All Records</span>
+                <span ng-if="!isRankingStewInactiveHidden">Hide Inactive</span>
+            </a>
+            &nbsp;
+            <a href="#" ng-click="showDetailsPopup('RankingStew')" ng-show="isRankingStewShowDetailsFlag">
+                <span>Show Details</span>
+            </a>
+        </div>
+        <div style="float: left; width: 100%;" ui-grid="rankingStewGridOptions" id="rankingStewGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-exporter>
+            <div class="watermark" ng-show="!rankingStewGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="grid-pager pull-left">
+            <uib-pagination boundary-links="true" total-items="totalRankingStewItems" items-per-page="rankingStewGridOptions.paginationPageSize" ng-show="(totalRankingStewItems > rankingStewGridOptions.paginationPageSize) == true" max-size="10" rotate="false"
+                            ng-model="rankingStewPaginationCurrentPage" class="pagination" previous-text="&lt;" next-text="&gt" first-text="&laquo;" last-text="&raquo;"
+                            ng-change="rankingStewNavigationPageChange(rankingStewPaginationCurrentPage)"></uib-pagination>
+        </div>
+        <button class="btn btn-default pull-right" ng-click="addDetails('RankingStew')" ng-show="checkAction('Add','RankingStew')" style="margin-top: 10px;">Add Ranking Stewarding</button>
+    </div>
+</div>

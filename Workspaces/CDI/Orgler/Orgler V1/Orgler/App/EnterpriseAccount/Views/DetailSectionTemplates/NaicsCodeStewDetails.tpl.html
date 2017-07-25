@@ -1,0 +1,52 @@
+﻿<!-- NAICS Code Stewarding Template -->
+<div class="clearfix" ng-show="toggleNaicsCodeStewSection">
+    <div ng-show="toggleNaicsCodeStewDBError">
+        <h3>NAICS Code Stewarding</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleNaicsCodeStewProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- NAICS Code Stewarding Container -->
+    <div ng-show="toggleNaicsCodeStewResults">
+        <div style="width:100%;">
+            <div class="pagination-left">
+                <div style="float:left;">
+                    <h3>NAICS Code Stewarding</h3>
+                </div>
+                <div class="pagination-left items-number-det" ng-if="totalNaicsCodeStewItems > 5">
+                    <span>Showing </span>
+                    <select ng-model="naicsCodeStewGridOptions.paginationPageSize" ng-options="o as o for o in naicsCodeStewGridOptions.paginationPageSizes" class="selcls"></select>
+                    <span> records per page of the total <b>{{totalNaicsCodeStewItems}}</b> records</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="pull-left">
+            <h5>Displays the list of NAICS Codes defined for the organizations affiliated to the enterprise</h5>
+        </div>
+        <div class="pull-right">
+            <a ng-click="filterShowInactive('NaicsCodeStew')" ng-show="isNaicsCodeStewFilterFlag">
+                <span ng-if="isNaicsCodeStewInactiveHidden">Show All Records</span>
+                <span ng-if="!isNaicsCodeStewInactiveHidden">Hide Inactive</span>
+            </a>
+            &nbsp;
+            <a href="#" ng-click="showDetailsPopup('NaicsCodeStew')" ng-show="isNaicsCodeStewShowDetailsFlag">
+                <span>Show Details</span>
+            </a>
+        </div>
+        <div style="float: left; width: 100%;" ui-grid="naicsCodeStewGridOptions" id="naicsCodeStewGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-exporter>
+            <div class="watermark" ng-show="!naicsCodeStewGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="grid-pager pull-left">
+            <uib-pagination boundary-links="true" total-items="totalNaicsCodeStewItems" items-per-page="naicsCodeStewGridOptions.paginationPageSize" ng-show="(totalNaicsCodeStewItems > naicsCodeStewGridOptions.paginationPageSize) == true" max-size="10" rotate="false"
+                            ng-model="naicsCodeStewPaginationCurrentPage" class="pagination" previous-text="&lt;" next-text="&gt" first-text="&laquo;" last-text="&raquo;"
+                            ng-change="naicsCodeStewNavigationPageChange(naicsCodeStewPaginationCurrentPage)"></uib-pagination>
+        </div>
+        <button class="btn btn-default pull-right" ng-click="editNaicsCdNewAccount('NaicsCodeStew')" ng-show="checkAction('Add','NaicsCodeStew')" style="margin-top: 10px;">Approve/Reject/Add NAICS Code</button>
+    </div>
+</div>

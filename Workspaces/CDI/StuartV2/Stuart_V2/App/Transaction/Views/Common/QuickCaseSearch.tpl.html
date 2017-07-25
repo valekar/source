@@ -1,0 +1,31 @@
+﻿
+<div class="modal-header">
+    <h3 class="modal-title">Quick Case Search Results</h3>
+</div>
+<br />
+<br />
+
+<div class="row" style="width:98%; ">
+    <div style="margin-left:40px;margin-right:40px;">
+        <div ui-grid="case.gridOptions" scrolldown ui-grid-selection class="CaseAssociation" ui-grid-pagination ui-grid-auto-resize>
+            <div class="watermark" ng-show="!case.gridOptions.data.length">No data available</div>
+        </div>
+
+        <div class="grid-pager">
+            <uib-pagination boundary-links="true" total-items="case.totalItems" items-per-page="8" ng-change="case.pageChanged(case.currentPage)" ng-show="(case.totalItems>8) == true"
+                            ng-model="case.currentPage" class="pagination" direction-links="false" id=""
+                            first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="modal-footer">
+    <!--<button class="btn btn-default pull-left" ng-click="case.back()"> Back</button>-->
+    <div style="padding-top:10px;">
+        <button type="button" class="btn btn-default pull-left" style="width:100px;" ng-click="case.caseAssociateSubmit()">Submit</button>
+        <button class="btn btn-default pull-right" type="button" ng-click="case.back()">Cancel</button>
+    </div>
+</div>
+
+

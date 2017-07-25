@@ -1,0 +1,32 @@
+﻿<div style="margin-top:15%;">
+    <div uib-dropdown dropdown-append-to-body tooltip-placement="right" tooltip-append-to-body="true"
+         uib-tooltip="{{row.entity.transNotes}}"
+         ng-show="row.entity.transNotes.length <= 0 ||row.entity.transNotes == 'LN Records cannot be edited.' ">
+        <div ng-if="row.entity.best_phn_ind == '2' || row.entity.best_prsn_nm_ind == '2' || row.entity.best_org_nm_ind == '2' ||  row.entity.best_addr_ind == '2' ||  row.entity.best_email_ind == '2'">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div>
+                    <img src="Images/Medal First Place-52.png" width="25" height="25" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div ng-show="row.entity.transNotes.length > 0 ">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="text-center" ng-show="row.entity.transNotes != 'LN Records cannot be edited.'">
+                <span tooltip-append-to-body="true" uib-tooltip="{{row.entity.transNotes}}"
+                      ng-show="row.entity.transNotes =='Inactive/Soft-Deleted records cannot be edited.' || row.entity.row_stat_cd == 'L' || row.entity.transNotes.indexOf('delete')>0 ">
+                    <img src="Images/Expired-52.png" width="25" height="25" />
+                </span>
+            </div>
+            <div class="text-center" ng-show="row.entity.transNotes != 'LN Records cannot be edited.'">
+                <span tooltip-placement="right" tooltip-append-to-body="true" uib-tooltip="{{row.entity.transNotes}}" ng-show="row.entity.row_stat_cd != 'L' && row.entity.transNotes.indexOf('delete')<0 ">
+                    <img src="Images/Historical-52.png" width="25" height="25" />
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

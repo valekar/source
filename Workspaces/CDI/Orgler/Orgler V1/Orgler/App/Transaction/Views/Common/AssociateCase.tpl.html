@@ -1,0 +1,21 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Associate Case</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="AssociateCaseNumber" class="col-sm-4 form-control-label">Associate Case Number</label>
+            <div class="col-sm-8">
+                <input ng-model="associateCaseNumber" class="form-control" id="AssociateCaseNumber" type="text">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <!-- This casePath is defined in App.js headerCtrl -->
+            <div ng-include src="TransCaseSearchPath"></div>
+
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

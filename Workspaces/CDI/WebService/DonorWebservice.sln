@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonorWebservice", "DonorWebservice\DonorWebservice.csproj", "{7D6C6C42-0847-4F39-91F2-AE7351495AC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARC.Utility", "ARC.Utility\ARC.Utility.csproj", "{8DBBA1A0-609F-43C5-9690-86110FEF54F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARC.Donor.Business", "ARC.Donor.Business\ARC.Donor.Business.csproj", "{84402CF5-0C41-4615-B5A4-5F9C6C160EF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARC.Donor.Data", "ARC.Donor.Data\ARC.Donor.Data.csproj", "{42755B7C-040D-4223-A82E-A6DBCE1BB3F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARC.Donor.Service", "ARC.Donor.Service\ARC.Donor.Service.csproj", "{961CD1AC-B9D7-4A8D-B5FC-7AEB569A388E}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://redcrossit.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ARC.Donor.Business\\ARC.Donor.Business.csproj
+		SccProjectName1 = ARC.Donor.Business
+		SccLocalPath1 = ARC.Donor.Business
+		SccProjectUniqueName2 = ARC.Donor.Data\\ARC.Donor.Data.csproj
+		SccProjectName2 = ARC.Donor.Data
+		SccLocalPath2 = ARC.Donor.Data
+		SccProjectUniqueName3 = ARC.Donor.Service\\ARC.Donor.Service.csproj
+		SccProjectName3 = ARC.Donor.Service
+		SccLocalPath3 = ARC.Donor.Service
+		SccProjectUniqueName4 = ARC.Utility\\ARC.Utility.csproj
+		SccProjectName4 = ARC.Utility
+		SccLocalPath4 = ARC.Utility
+		SccProjectUniqueName5 = DonorWebservice\\DonorWebservice.csproj
+		SccProjectName5 = DonorWebservice
+		SccLocalPath5 = DonorWebservice
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D6C6C42-0847-4F39-91F2-AE7351495AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D6C6C42-0847-4F39-91F2-AE7351495AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D6C6C42-0847-4F39-91F2-AE7351495AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D6C6C42-0847-4F39-91F2-AE7351495AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DBBA1A0-609F-43C5-9690-86110FEF54F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBBA1A0-609F-43C5-9690-86110FEF54F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBBA1A0-609F-43C5-9690-86110FEF54F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DBBA1A0-609F-43C5-9690-86110FEF54F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84402CF5-0C41-4615-B5A4-5F9C6C160EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84402CF5-0C41-4615-B5A4-5F9C6C160EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84402CF5-0C41-4615-B5A4-5F9C6C160EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84402CF5-0C41-4615-B5A4-5F9C6C160EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42755B7C-040D-4223-A82E-A6DBCE1BB3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42755B7C-040D-4223-A82E-A6DBCE1BB3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42755B7C-040D-4223-A82E-A6DBCE1BB3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42755B7C-040D-4223-A82E-A6DBCE1BB3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961CD1AC-B9D7-4A8D-B5FC-7AEB569A388E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961CD1AC-B9D7-4A8D-B5FC-7AEB569A388E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961CD1AC-B9D7-4A8D-B5FC-7AEB569A388E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961CD1AC-B9D7-4A8D-B5FC-7AEB569A388E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

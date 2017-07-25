@@ -1,0 +1,44 @@
+﻿<!--<div class="modal fade" id="iErrorModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" ng-bind="header"></h4>
+            </div>
+            <div class="modal-body">
+                <p ng-bind="message"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="close()">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>-->
+
+
+<div id="modalCover">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()">&times;</button>
+        <h4 class="modal-title" ng-bind="error.header"></h4>
+    </div>
+    <br />
+    <div class="modal-body">
+        <p ng-bind="error.message"></p>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="close()">Close</button>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+

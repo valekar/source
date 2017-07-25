@@ -1,0 +1,18 @@
+﻿
+<div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 2%;">
+    <div ng-show="row.entity.row_stat_cd != 'L'">
+        <button id="btn-append-to-body" type="button" class="btn btn-default" style="background-color: #fff" uib-dropdown-toggle ng-click="grid.appScope.commonEditGridRow(row.entity,grid)">
+            Edit <span class="glyphicon glyphicon-pencil"></span>
+        </button>
+       
+    </div>
+    <div ng-show="row.entity.row_stat_cd == 'L' && grid.appScope.tabSecurity ">
+        
+
+        <span style="margin-left:42%;margin-top:10px;" tooltip-placement="top" tooltip-append-to-body="true" uib-tooltip="Inactivated records cannot be edited." >
+            <img src="Images/Expired-52.png" width="25" height="25" />
+        </span>
+
+
+    </div>
+</div>

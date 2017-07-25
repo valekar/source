@@ -1,0 +1,27 @@
+﻿<!-- Action dropdown template -->
+<!--<div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 1%;" ng-show="(row.groupHeader && row.treeLevel == 0)">
+    <button id="btn-append-to-body" type="button" class="btn btn-default" style="background-color: #fff" uib-dropdown-toggle>
+        Action <span class="caret"></span>
+    </button>
+
+    <ul uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+        <li role="menuitem"><a href="javascript:void(0)" ng-click="grid.appScope.deleteAffiliation(row)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Unaffiliate</a></li>
+    </ul>
+</div>-->
+
+<!-- Action dropdown template -->
+<div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 1%;" ng-show="(row.groupHeader && row.treeLevel == 0 && row.treeNode.children[0].row.entity.transNotes == null)">
+    <button id="btn-append-to-body" type="button" class="btn btn-default" style="background-color: #fff" uib-dropdown-toggle>
+        Action <span class="caret"></span>
+    </button>
+
+    <ul uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+        <li role="menuitem"><a href="javascript:void(0)" ng-click="grid.appScope.deleteAffiliation(row,'MasterBridgeMaster')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Unaffiliate</a></li>
+    </ul>
+</div>
+
+<div style="float:left;left:20px;top:5px" class="col-lg-9 nopadding" ng-show="(row.groupHeader && row.treeLevel == 0 && row.treeNode.children[0].row.entity.transNotes.length > 0)">
+    <span tooltip-placement="right" tooltip-append-to-body="true" uib-tooltip="{{row.treeNode.children[0].row.entity.transNotes}}">
+        <img src="Images/Historical-52.png" width="25" height="25" />
+    </span>
+</div>

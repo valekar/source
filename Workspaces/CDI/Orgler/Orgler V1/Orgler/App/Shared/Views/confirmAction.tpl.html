@@ -1,0 +1,12 @@
+﻿<!--Show the confirm button-->
+<div ng-show="row.entity.status != 'Stewardship Complete'">
+    <a href="javascript:void(0)">   <img ng-src="{{grid.appScope.getImagePath('confirm')}}"  style="width:20px; height:20px;float:left;margin-left:5px;" ng-click="grid.appScope.confirmNewAccount(row.entity, grid)" />
+       </a>
+</div>
+
+<!--Show the status-->
+<!--<div ng-show="row.entity.status == 'Stewardship Complete'">
+    <span tooltip-placement="right" tooltip-append-to-body="true" uib-tooltip="{{row.entity.status}}">
+        <b>{{row.entity.status}}</b>
+    </span>
+</div

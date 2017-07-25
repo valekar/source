@@ -1,0 +1,69 @@
+﻿<div id="modalCover hide fade">
+    <div class="modal-header">
+        <h3 class="modal-title">Data Insertion Confirmation</h3>
+    </div>
+    <br />
+
+    <form name="myReferenceDataForm" role="form" ng-submit="AddNewGroupMembershipReferenceRecord()" style="margin: 10px">
+
+                <p><b>Please fill in the details and click add to add a new record.</b></p>
+                <br/>
+
+                <div class="form-group row">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label for="GroupCode" class="col-sm-4 form-control-label">
+                            Group Code <span class="requiredRed">*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input ng-model="referenceAddRecord.groupCode" class="form-control" id="GroupCode" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div style="padding-bottom:5px; padding-top:5px; ">
+                        <label for="GroupName" class="col-sm-4 form-control-label">
+                            Group Name <span class="requiredRed">*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input ng-model="referenceAddRecord.groupName" id="GroupName" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="GroupType" class="col-sm-4 form-control-label">Group Type </label>
+                    <div class="col-sm-8">
+                        <select name="selGroupType" id="selGroupType" class="form-control" ng-change="referenceAddRecord.populateGroupTypeDetails(selGroupType)" ng-options="groupType.value for groupType in referenceAddRecord.groupTypes track by groupType.id" ng-model="referenceAddRecord.groupType"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="SubGroupType" class="col-sm-4 form-control-label">Sub Group Type </label>
+                    <div class="col-sm-8">
+                        <select name="selSubGroupType" id="selSubGroupType" class="form-control" ng-change="referenceAddRecord.populateSubGroupTypeDetails(selSubGroupType)" ng-options="subGroupType.value.split('|')[0] for subGroupType in referenceAddRecord.subGroupTypes | filter: {group : referenceAddRecord.groupType.id}  track by subGroupType.id" ng-model="referenceAddRecord.subGroupType"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="GroupAssignmentMethod" class="col-sm-4 form-control-label">
+                        Group Assignment Method<span class="requiredRed">*</span>
+                    </label>
+                    <div class="col-sm-8">
+                        <select name="selGroupAssignmentMethod" id="selGroupAssignmentMethod" class="form-control" ng-options="assignmentMethod.id for assignmentMethod in referenceAddRecord.assignmentMethods track by assignmentMethod.value" ng-model="referenceAddRecord.assignmentMethod"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="GroupOwnerMail" class="col-sm-4 form-control-label">
+                        Group Owner Email<span class="requiredRed">*</span>
+                    </label>
+                    <div class="col-sm-8">
+                        <input ng-model="referenceAddRecord.groupOwnerMail" id="GroupOwnerMail" class="form-control" type="text">
+                    </div>
+                </div>
+                <span class="search-no-results pull-left" ng-show="referenceAddRecord.toggleValidationSummary">{{referenceAddRecord.validationSummary}}</span>
+                <br />
+                <br />
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-default pull-right" style="width:100px;" value="Submit" ng-disabled="!(!!referenceAddRecord.groupCode && !!referenceAddRecord.groupName && !!referenceAddRecord.groupOwnerMail) || referenceAddRecord.assignmentMethod.value == undefined" />
+                    <button class="btn btn-default pull-left" type="button" ng-click="referenceAddRecord.cancel()">Cancel</button>
+                </div>
+    </form>
+</div>
+

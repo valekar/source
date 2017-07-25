@@ -1,0 +1,52 @@
+﻿<!-- RFM Details Template -->
+<div class="clearfix" ng-show="toggleRFMDetailsSection">
+    <div ng-show="toggleRFMDetailsDBError">
+        <h3>Patronage Summary (RFM)</h3>
+        <h4 style="color: Red; font-style: oblique">A database error occurred. Please try again later and if it persists, contact the Orgler Administrator (OrglerAdmin@redcross.org).</h4>
+    </div>
+    <!-- Please Wait overlay -->
+    <div ng-show="toggleRFMDetailsProcessOverlay">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+    <!-- RFMDetails Container -->
+    <div ng-show="toggleRFMDetailsResults">
+        <div style="width:100%;">
+            <div class="pagination-left">
+                <div style="float:left;">
+                    <h3>Patronage Summary (RFM)</h3>
+                </div>
+                <div class="pagination-left items-number-det" ng-if="totalRFMDetailsItems > 5">
+                    <span>Showing </span>
+                    <select ng-model="rFMDetailsGridOptions.paginationPageSize" ng-options="o as o for o in rFMDetailsGridOptions.paginationPageSizes" class="selcls"></select>
+                    <span> records per page of the total <b>{{totalRFMDetailsItems}}</b> records</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="pull-left">
+            <h5>Patronage Summary shows an "RFM" summary for each major Line of Service.</h5>
+        </div>
+        <div class="pull-right">
+            <a ng-click="filterShowInactive('RFMDetails')" ng-show="isRFMDetailsFilterFlag">
+                <span ng-if="isRFMDetailsInactiveHidden">Show All Records</span>
+                <span ng-if="!isRFMDetailsInactiveHidden">Hide Inactive</span>
+            </a>
+            &nbsp;
+            <a href="#" ng-click="showDetailsPopup('RFMDetails')" ng-show="isRFMDetailsShowDetailsFlag">
+                <span>Show Details</span>
+            </a>
+        </div>
+        <div style="float: left; width: 100%;" ui-grid="rFMDetailsGridOptions" id="rFMDetailsGrid" scrolldown ui-grid-pagination ui-grid-move-columns ui-grid-resize-columns class="grid" ui-grid-auto-resize ui-grid-selection ui-grid-exporter>
+            <div class="watermark" ng-show="!rFMDetailsGridOptions.data.length">No data available</div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="grid-pager pull-left">
+            <uib-pagination boundary-links="true" total-items="totalRFMDetailsItems" items-per-page="rFMDetailsGridOptions.paginationPageSize" ng-show="(totalRFMDetailsItems > rFMDetailsGridOptions.paginationPageSize) == true" max-size="10" rotate="false"
+                            ng-model="rFMDetailsPaginationCurrentPage" class="pagination" previous-text="&lt;" next-text="&gt" first-text="&laquo;" last-text="&raquo;"
+                            ng-change="rFMDetailsNavigationPageChange(rFMDetailsPaginationCurrentPage)"></uib-pagination>
+        </div>
+        <button class="btn btn-default pull-right" ng-click="addDetails('RFMDetails')" ng-show="checkAction('Add','RFMDetails')" style="margin-top: 10px;">Add Patronage Details</button>
+    </div>
+</div>

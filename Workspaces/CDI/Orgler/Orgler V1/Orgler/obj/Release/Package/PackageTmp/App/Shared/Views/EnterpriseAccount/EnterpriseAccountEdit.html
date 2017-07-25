@@ -1,0 +1,126 @@
+﻿<div class="modal fade" id="editEnterpriseAccountPopup">
+    <div class="modal-dialog" style="width: 90%;height:700px; margin-top:30px;" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Enterprise Org</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label> Enterprise Org Id:</label>
+                                        <p class="input-group">
+                                            <input id="EnterpriseOrgId" class="form-control" name="EnterpriseOrgId" type="text" readonly="readonly" ng-model="InputData.EnterpriseOrgId" />
+                                        </p>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label> Enterprise Org Name:</label>
+                                        <p class="input-group">
+                                            <input id="EnterpriseOrgName" class="form-control" name="EnterpriseOrgName" type="text" ng-model="InputData.EnterpriseOrgName" />
+                                        </p>
+                                    </div>
+                                </div>                               
+                                <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px; ">
+                                        <label>
+                                            Enterprise Org Type:
+                                        </label>
+                                        <div class="ui-select">
+                                            <select name="EnterpriseAccountType" id="EnterpriseAccountType" class="form-control" ng-model="InputData.EnterpriseOrgType">
+                                                <option> </option>
+                                                <option>Other Religious</option>
+                                                <option>Scouts</option>
+                                                <option>Jewish Federations</option>
+                                                <option>Major Corporation</option>
+                                                <option>YMCA, B&G</option>
+                                                <option>Community Action</option>
+                                                <option>Govt</option>
+                                                <option>Ronald McDonald House</option>
+                                                <option>Fraternal, Union</option>
+                                                <option>Org Type TBD</option>
+                                                <option>To Be Deleted</option>
+                                                <option>Catholic Charities</option>
+                                                <option>Clubs</option>
+                                                <option>Major Foundations</option>
+                                                <option>Panhellenic</option>
+                                                <option>Keyword Groups</option>
+                                                <option>Fortune-1K</option>
+                                                <option>Healthcare</option>
+                                                <option>Education</option>
+                                                <option>United Way</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label>NAICS:</label>
+                                        <p class="input-group">
+                                            <input id="NAICSCreate" class="form-control" name="NAICSCreate" type="text" value="NaicsCodeData" ng-click="selectNaicsCodesEnterpriseAccountCreate()" ng-model="InputData.NaicsCodeData" />
+                                        </p>
+                                    </div>
+                                </div>-->      
+                                <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label>Affiliator Visibility:</label>
+                                        <p class="input-group">
+                                            <input type="checkbox" id="Affil_vsbltyEdit" name="Affil_vsbltyEdit" ng-model="InputData.Affil_vsblty" />
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label>Premier flag FR:</label>
+                                        <p class="input-group">
+                                            <input type="checkbox" id="premierFlagFR" name="premierFlagFR" ng-model="InputData.IsPremierFR" />
+                                        </p>
+                                    </div>
+                                </div>                         
+                            </div>
+                           
+                            <div class="row">                                
+                                 <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label>Premier flag HS:</label>
+                                        <p class="input-group">
+                                            <input id="premierFlagHS" name="premierFlagHS" type="checkbox" ng-model="InputData.IsPremierHS" />
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label>Premier flag BIO:</label>
+                                        <p class="input-group">
+                                            <input type="checkbox" id="premierFlagBIO" name="premierFlagBIO" ng-model="InputData.IsPremierBIO" />
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-2 col-md-2">
+                                    <div style="padding-bottom:5px; padding-top:5px;">
+                                        <label>Premier flag ENT:</label>
+                                        <p class="input-group">
+                                            <input type="checkbox" id="premierFlagENT" name="premierFlagENT" ng-model="InputData.IsPremierENT" />
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>    
+                    </div>                    <br />
+                
+                <div class="modal-footer">
+                    &nbsp; &nbsp; <button class="btn btn-default" id="btnSubmit" ng-click="editEnterpriseAccountSubmit()" type="Submit" style="width:110px;height:40px" name="btnSearch">Submit</button>
+                    &nbsp; &nbsp;<button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

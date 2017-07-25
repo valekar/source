@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orgler", "Orgler\Orgler.csproj", "{29602BC3-D4C3-4F4B-97A2-2E1778357E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orgler.Tests", "Orgler.Tests\Orgler.Tests.csproj", "{F1794F41-406E-4094-BDB3-25AFACED88B5}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://redcrossit.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Orgler\\Orgler.csproj
+		SccProjectName1 = Orgler
+		SccLocalPath1 = Orgler
+		SccProjectUniqueName2 = Orgler.Tests\\Orgler.Tests.csproj
+		SccProjectName2 = Orgler.Tests
+		SccLocalPath2 = Orgler.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29602BC3-D4C3-4F4B-97A2-2E1778357E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29602BC3-D4C3-4F4B-97A2-2E1778357E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29602BC3-D4C3-4F4B-97A2-2E1778357E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29602BC3-D4C3-4F4B-97A2-2E1778357E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1794F41-406E-4094-BDB3-25AFACED88B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1794F41-406E-4094-BDB3-25AFACED88B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1794F41-406E-4094-BDB3-25AFACED88B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1794F41-406E-4094-BDB3-25AFACED88B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

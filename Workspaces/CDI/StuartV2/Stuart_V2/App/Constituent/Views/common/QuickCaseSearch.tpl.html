@@ -1,0 +1,32 @@
+﻿<div class="modal-header">
+    <div class="col-lg-10 col-sm-10 col-md-10">
+        <h3 class="modal-title">Quick Case Search Results</h3>
+    </div>
+    <div class="col-lg-2 col-sm-2 col-md-2">
+        <button ng-click="case.back()" class="btn btn-sm btn-danger pull-right">x</button>
+    </div>
+</div>
+    <br />
+    <br />
+
+    <div class="row">
+        <div style="margin-left:40px;margin-right:40px;">
+            <div ui-grid="case.gridOptions" ui-grid-selection class="ConstPhone" ui-grid-pagination ui-grid-auto-resize>
+                <div class="watermark" ng-show="!case.gridOptions.data.length">No data available</div>
+            </div>
+
+            <div class="grid-pager">
+                <uib-pagination boundary-links="true" total-items="case.totalItems" items-per-page="4" ng-change="case.pageChanged(currentPage)" ng-show="(case.totalItems>4) == true"
+                                ng-model="case.currentPage" class="pagination" direction-links="false" id=""
+                                first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="modal-footer">
+        <button class="btn btn-default pull-left" ng-click="case.back()"> Back</button>
+        <button class="btn btn-default pull-right" ng-click="case.associateCase()"> Associate Case </button>
+    </div>
+
+

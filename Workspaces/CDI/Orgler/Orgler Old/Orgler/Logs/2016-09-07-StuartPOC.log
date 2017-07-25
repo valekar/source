@@ -1,0 +1,107 @@
+2016-09-07 12:20:44.1060|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 12:52:32.4963|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 12:52:50.6143|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 12:52:53.7705|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 12:52:53.7705|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 12:52:55.6186|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 12:52:55.6186|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 13:18:19.9322|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 13:19:32.8545|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:19:35.9670|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:19:35.9670|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 13:19:37.6912|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 13:19:37.6912|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 13:38:07.0148|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 13:38:23.9767|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:38:28.6024|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:38:28.6024|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 13:38:31.5385|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 13:38:31.5745|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 13:46:12.7958|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 13:53:53.7221|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:54:00.7944|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:54:00.7944|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 13:54:06.4747|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 13:54:06.4788|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 13:58:16.5379|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 13:58:27.4625|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:58:30.5707|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 13:58:30.5707|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 13:58:32.5828|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 13:58:32.5828|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 14:03:47.5078|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 14:06:17.1654|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 14:06:20.1656|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 14:06:20.1656|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 14:06:22.2818|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 14:06:22.2898|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 14:07:22.7332|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 14:07:31.5801|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 14:07:34.3843|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 14:07:34.3843|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 14:07:36.4964|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 14:07:36.4964|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 20:31:21.1571|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 20:32:12.7658|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 20:32:15.4390|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 20:32:15.4390|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 20:32:17.0129|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 20:32:17.0129|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 20:47:39.5959|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 20:55:38.2658|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 20:55:49.3714|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 20:55:52.1396|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 20:55:52.1406|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 20:55:53.7565|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 20:55:53.7565|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 20:57:34.7039|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 20:57:47.0293|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 20:57:49.6943|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 20:57:49.6943|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 20:57:51.3937|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 20:57:51.3937|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 21:16:56.6955|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 21:17:52.0021|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 21:17:54.7055|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 21:17:54.7055|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 21:17:56.2655|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 21:17:56.2655|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 22:27:26.2754|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 22:27:35.4992|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 22:28:00.0746|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 22:28:00.0766|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 22:28:22.8847|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ALL CONTRACTORS, ADM MINDTREE DEVELOPMENT TEAM, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 22:28:22.8847|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 23:30:27.1625|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context A local error has occurred.
+
+2016-09-07 23:32:40.4599|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 23:32:45.3053|INFO|Orgler.Models.LDAPAuthentication|User Authenticated :archq.ri.redcross.net\dixit.jain
+2016-09-07 23:32:45.3053|INFO|Orgler.Models.LDAPAuthentication|Path:LDAP://ARCHQ.ri.redcross.net, User : dixit.jain, User Email: dixit.jain@redcross.org
+2016-09-07 23:32:47.4739|INFO|Orgler.Models.LDAPAuthentication|User All Groups: ADM MINDTREE DEVELOPMENT TEAM, ALL CONTRACTORS, STUART ADMIN, EDW NOTIFY - INFA DEVELOPERS, 
+2016-09-07 23:32:47.4739|INFO|Orgler.Controllers.LoginController|User ARCHQ\dixit.jain is validated. Roles Admin,
+2016-09-07 23:51:51.2598|INFO|Orgler.Models.LDAPAuthentication|User Name : M1034700, Error principal context The server could not be contacted. Inner Exception: System.DirectoryServices.Protocols.LdapException: The LDAP server is unavailable.
+   at System.DirectoryServices.Protocols.LdapConnection.Connect()
+   at System.DirectoryServices.Protocols.LdapConnection.SendRequestHelper(DirectoryRequest request, Int32& messageID)
+   at System.DirectoryServices.Protocols.LdapConnection.SendRequest(DirectoryRequest request, TimeSpan requestTimeout)
+   at System.DirectoryServices.Protocols.LdapConnection.SendRequest(DirectoryRequest request)
+   at System.DirectoryServices.AccountManagement.PrincipalContext.ReadServerConfig(String serverName, ServerProperties& properties)
+2016-09-07 23:52:01.6421|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 23:52:01.7032|INFO|Orgler.Models.LDAPAuthentication|Authentication error :Error authenticating user The server is not operational.
+
+2016-09-07 23:52:15.6231|INFO|Orgler.Models.LDAPAuthentication|Authenticating user :archq.ri.redcross.net\dixit.jain
+2016-09-07 23:52:27.7734|INFO|Orgler.Models.LDAPAuthentication|Authentication error :Error authenticating user The server is not operational.
+

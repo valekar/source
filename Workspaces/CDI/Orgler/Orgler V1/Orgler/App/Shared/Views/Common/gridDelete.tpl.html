@@ -1,0 +1,72 @@
+﻿<!--<div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 2%;">
+    <div ng-show="row.entity.transNotes.length <= 0 ">
+        <button id="btn-append-to-body" type="button" class="btn btn-default" style="background-color: #fff" uib-dropdown-toggle>
+            Action <span class="caret"></span>
+        </button>
+        <ul uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+            <li role="menuitem"><a href="javascript:void(0)" ng-click="grid.appScope.commonDeleteGridRow(row.entity,grid)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Inactivate</a></li>
+        </ul>
+    </div>
+
+    <div ng-show="row.entity.transNotes.length > 0 ">
+        <span ng-bind="row.entity.transNotes" tooltip-placement="right" tooltip-append-to-body="true" uib-tooltip="{{row.entity.transNotes}}"></span>
+        <a href="javascript:void(0)" ng-show="row.entity.transNotes == 'LN Records cannot be edited.'" ng-click="grid.appScope.commonDeleteGridRow(row.entity,grid)">Inactivate</a>
+        <ul uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+
+            <li role="menuitem">
+        </ul>
+    </div>
+</div>-->
+<!-- used the ConstExtBridge from Utility constants class -->
+
+<div class="btn-group" uib-dropdown dropdown-append-to-body style="margin-top: 2.5%;margin-left:5px;" ng-show="row.entity.transNotes.length <= 0  && row.entity.record_type!='ConstExtBridge'">
+    <div ng-if="row.entity.best_email_ind == '2'">
+        <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+            <div style="">
+                <img src="/Images/Medal First Place-52.png" width="15" height="15" />
+
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+
+        </div>
+    </div>
+
+    <div ng-if="row.entity.best_addr_ind != '2'">
+
+    </div>
+
+
+</div>
+
+
+
+<div ng-show="row.entity.transNotes.length > 0 " style="margin-top: 2.5%;margin-left:5px;">
+
+    <div style="float:left;" class="col-lg-12 nopadding">
+
+
+        <div ng-show="row.entity.transNotes == 'LN Records cannot be edited.'" ng-if="!row.entity.cnst_phn_num">
+            <div ng-if="row.entity.best_email_ind == '2'">
+                <div class="col-lg-3 col-md-3 col-sm-3 nopadding">
+                    <img src="/Images/Medal First Place-52.png" width="15" height="15" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="" style="" ng-show="row.entity.transNotes != 'LN Records cannot be edited.'">
+            <span style="margin-left:10px;" tooltip-placement="top" tooltip-append-to-body="true" uib-tooltip="{{row.entity.transNotes}}" ng-show="row.entity.transNotes =='Inactive/Soft-Deleted records cannot be edited.' || row.entity.row_stat_cd == 'L' || row.entity.transNotes.indexOf('delete')>0 ">
+                <img src="/Images/Expired-52.png" width="15" height="15" />
+            </span>
+        </div>
+        <div class="" style="" ng-show="row.entity.transNotes != 'LN Records cannot be edited.'">
+            <span tooltip-placement="top" tooltip-append-to-body="true" uib-tooltip="{{row.entity.transNotes}}" ng-show="row.entity.row_stat_cd != 'L' && row.entity.transNotes.indexOf('delete')<0 ">
+                <img src="/Images/Historical-52.png" width="15" height="15" />
+            </span>
+        </div>
+
+
+    </div>
+
+</div>

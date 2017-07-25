@@ -1,0 +1,114 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Delete Name Record</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Master ID</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.masterId" id="MasterId"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="PrefixName" class="col-sm-4 form-control-label">Prefix Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.prefixname" id="PrefixName"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="FirstName" class="col-sm-4 form-control-label">First Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.firstname" id="FirstName" required="true"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="LastName" class="col-sm-4 form-control-label">Last Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.lastname" id="LastName" required="true"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MiddleName" class="col-sm-4 form-control-label">Middle Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.middlename" id="MiddleName"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SuffixName" class="col-sm-4 form-control-label">Suffix Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.suffixname" id="SuffixName"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="NickName" class="col-sm-4 form-control-label">Nick Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.nickname" id="NickName"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MaidenName" class="col-sm-4 form-control-label">Maiden Name:</label>
+            <div class="col-sm-8">
+                <label ng-bind="name.maidenname" id="MaidenName"></label>
+            </div>
+        </div>
+        <div class="form-group row hide">
+            <label for="startDate" class="col-sm-4 form-control-label">Start Date:</label>
+            <div class="col-sm-8">
+                <label id="startDate" ng-bind="name.startDate"></label>
+            </div>
+        </div><div class="form-group row hide">
+            <label for="endDate" class="col-sm-4 form-control-label">End Date:</label>
+            <div class="col-sm-8">
+                <label id="endDate" ng-bind="name.endDate"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Associate Case Number</label>
+            <div class="col-sm-8">
+                <input ng-model="name.caseNo" class="form-control" id="" type="text">
+            </div>
+        </div>
+        <div class="form-group row hide">
+            <label for="rowCode" class="col-sm-4 form-control-label">Row Code:</label>
+            <div class="col-sm-8">
+                <label id="rowCode" ng-bind="name.rowCode"></label>
+            </div>
+        </div><div class="form-group row hide">
+            <label for="loadID" class="col-sm-4 form-control-label">Load ID:</label>
+            <div class="col-sm-8">
+                <label id="loadID" ng-bind="name.loadID"></label>
+            </div>
+        </div>
+        <div class="form-group row hide">
+            <label for="activeInd" class="col-sm-4 form-control-label">Active Indicator:</label>
+            <div class="col-sm-8">
+                <label id="activeInd" ng-bind="name.activeInd"></label>
+            </div>
+        </div>
+        <div class="form-group row hide">
+            <label for="DWTimestamp" class="col-sm-4 form-control-label">DW Timestamp:</label>
+            <div class="col-sm-8">
+                <label id="DWTimestamp" ng-bind="name.DWTimestamp"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nametype" class="col-sm-4 form-control-label">Name Type</label>
+            <div class="col-sm-8">
+                <label id="nametype" ng-bind="name.nametype"></label>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <!-- This casePath is defined in App.js headerCtrl -->
+            <div ng-include src="CaseSearchPath"></div>
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

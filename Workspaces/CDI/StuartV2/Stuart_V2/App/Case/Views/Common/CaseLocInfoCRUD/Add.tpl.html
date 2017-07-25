@@ -1,0 +1,223 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <h3 class="modal-title">Add Locator Record</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="CaseKey" class="col-sm-4 form-control-label">Case Key</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.caseKey" class="form-control" id="CaseKey" type="text" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="FirstName" class="col-sm-4 form-control-label">First Name</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.firstName" class="form-control" id="FirstName" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="LastName" class="col-sm-4 form-control-label">Last Name:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.lastName" id="LastName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="OrgName" class="col-sm-4 form-control-label">Organization Name:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.orgName" id="OrgName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Address" class="col-sm-4 form-control-label">Address:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.address" id="Address" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="City" class="col-sm-4 form-control-label">City:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.city" id="City" class="form-control" type="text">
+            </div>
+        </div>
+       
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">States</label>
+            <div class="col-sm-8">
+                <!--<div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseLocInfo.selected.State }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseLocInfo.States">
+                            <a href="#" ng-click="$event.preventDefault();caseLocInfo.selected.State = type.value; caseLocInfo.selected.StateCode = type.id">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>-->
+                <select name="selSearchType" id="selSearchType" class="form-control" ng-model="caseLocInfo.selected.StateCode"
+                        ng-options="state.id as state.value for state in caseLocInfo.States"></select>
+        </div>
+
+        <div class="form-group row">
+            <label for="Zip" class="col-sm-4 form-control-label">Zip:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.zip" id="Zip" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="PhoneNum" class="col-sm-4 form-control-label">Phone Number:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.phoneNum" id="PhoneNum" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Email" class="col-sm-4 form-control-label">Email:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.email" id="Email" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="MasterID" class="col-sm-4 form-control-label">Master ID:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.masterID" id="MasterID" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ConstType" class="col-sm-4 form-control-label">Constituent Type:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.constType" id="ConstType" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Source System:</label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseLocInfo.selected.sourceSystemType}}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseLocInfo.sourceSystems">
+                            <a href="#" ng-click="$event.preventDefault(); caseLocInfo.selected.sourceSystemType= type.value;caseLocInfo.selected.sourceSystemTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Chapter System</label>
+            <div class="col-sm-8">
+                <!--<select name="chpSystem" ng-model="chapSys">
+                    <option selected="selected" value=""></option>
+                    <option value="C018">C018</option>
+                    <option value="C046">C046</option>
+                    <option value="C052">C052</option>
+                    <option value="C053">C053</option>
+                    <option value="C062">C062</option>
+                    <option value="C066">C066</option>
+                    <option value="C071">C071</option>
+                    <option value="C106">C106</option>
+                    <option value="C109">C109</option>
+                    <option value="C111">C111</option>
+                    <option value="C131">C131</option>
+                    <option value="C132">C132</option>
+                    <option value="C183">C183</option>
+                    <option value="C184">C184</option>
+                    <option value="C186">C186</option>
+                    <option value="C211">C211</option>
+                    <option value="C227">C227</option>
+                    <option value="C255">C255</option>
+                    <option value="C256">C256</option>
+                    <option value="C292">C292</option>
+                    <option value="C303">C303</option>
+                    <option value="C308">C308</option>
+                    <option value="C322">C322</option>
+                    <option value="C325">C325</option>
+                    <option value="C363">C363</option>
+                    <option value="C368">C368</option>
+                    <option value="C382">C382</option>
+                    <option value="C388">C388</option>
+                    <option value="C391">C391</option>
+                    <option value="C402">C402</option>
+                    <option value="C431">C431</option>
+                    <option value="C438">C438</option>
+                    <option value="C474">C474</option>
+                    <option value="C478">C478</option>
+                    <option value="C491">C491</option>
+                    <option value="C496">C496</option>
+                    <option value="C497">C497</option>
+                    <option value="D102">D102</option>
+                    <option value="D109">D109</option>
+                    <option value="D132">D132</option>
+                    <option value="D134">D134</option>
+                    <option value="D171">D171</option>
+                    <option value="D223">D223</option>
+                    <option value="D224">D224</option>
+                    <option value="D239">D239</option>
+                    <option value="D251">D251</option>
+                    <option value="D302">D302</option>
+                    <option value="D324">D324</option>
+                    <option value="D326">D326</option>
+                    <option value="D328">D328</option>
+                    <option value="D361">D361</option>
+                    <option value="D433">D433</option>
+                    <option value="D436">D436</option>
+                    <option value="D474">D474</option>
+                    <option value="EMLT">EMLT</option>
+                    <option value="F058">F058</option>
+                    <option value="F102">F102</option>
+                    <option value="F142">F142</option>
+                    <option value="F225">F225</option>
+                    <option value="G359">G359</option>
+                    <option value="G384">G384</option>
+                    <option value="H351">H351</option>
+                    <option value="H387">H387</option>
+                    <option value="S">S</option>
+                    <option value="S052">S052</option>
+                    <option value="S062">S062</option>
+                    <option value="S066">S066</option>
+                    <option value="S071">S071</option>
+                    <option value="S111">S111</option>
+                    <option value="S131">S131</option>
+                    <option value="S134">S134</option>
+                    <option value="S142">S142</option>
+                    <option value="S171">S171</option>
+                    <option value="S183">S183</option>
+                    <option value="S211">S211</option>
+                    <option value="S322">S322</option>
+                    <option value="S326">S326</option>
+                    <option value="S351">S351</option>
+                    <option value="S387">S387</option>
+                    <option value="S402">S402</option>
+                    <option value="S431">S431</option>
+                    <option value="S438">S438</option>
+                    <option value="SNHQ">SNHQ</option>
+                    <option value="TPGS">TPGS</option>
+                </select>-->
+
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ caseLocInfo.selected.chapterSystemType}}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="type in caseLocInfo.chapterSystems">
+                            <a href="#" ng-click="$event.preventDefault(); caseLocInfo.selected.chapterSystemType= type.value;caseLocInfo.selected.chapterSystemTypeCode = type.id;">{{ type.value }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      
+        <div class="form-group row">
+            <label for="SourceSystemID" class="col-sm-4 form-control-label">Source System ID:</label>
+            <div class="col-sm-8">
+                <input ng-model="caseLocInfo.SourceSystemID" id="SourceSystemID" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

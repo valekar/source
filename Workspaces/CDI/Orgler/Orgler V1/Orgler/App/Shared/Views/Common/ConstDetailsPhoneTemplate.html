@@ -1,0 +1,97 @@
+﻿
+<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Constituent Phone</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div ng-style="pleaseWait">
+                <div class="refresh refresh-div">
+                    <h4>Please wait....</h4>
+                </div>
+            </div>
+            <div ng-style="toggleDetails">              
+
+                    <div class="row nopadding">
+                        <div class="row nopadding">
+                            <div class="col-md-3 col-lg-3 col-sm-3 nopadding" style="display:inline;">
+                                <h3>Constituent Phone</h3>
+
+                            </div>
+                            <div class="col-md-5 col-lg-5 col-sm-5 nopadding">
+                                <div ng-show="(totalItems>=10) == true" style="display:inline;">
+                                    <select ng-model="gridOptions.paginationPageSize" ng-options="o as o for o in gridOptions.paginationPageSizes" class="form-control-static"
+                                            ng-if="gridOptions.paginationPageSizes.length > 1"></select>
+                                    <span class="">&nbsp;records per page</span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-4 font-orange-changer ">
+                                <span class="font-orange" ng-show="distinctRecordCount==1">There is {{distinctRecordCount}} distinct record</span>
+                                <span class="font-orange" ng-show="distinctRecordCount>1">There are {{distinctRecordCount}} distinct record</span>
+                            </div>
+                        </div>
+                        <div class="pull-left">
+                            <span>Displays all the phone records from different source systems that are present in the master</span>
+
+                        </div>
+                        <div class="pull-right ">
+                            <a href="" class=" " ng-click="showAllrecords(CONSTANTS.CONST_PHONE)">{{showPhone.showAllButtonName}}  </a>
+                            <!--<div ng-controller="ShowDetailsCtrl" style="display:inline;">
+                                <a href="#" class="" ng-click="details.showDetails(CONSTANTS.CONST_PHONE)">Show Details</a>
+                                <div ng-show="details.togglePleaseWait">
+                                    <div class="refresh refresh-div" style="margin-left: -102.5%;">
+                                        <h4>Please wait....</h4>
+                                    </div>
+                                </div>
+
+                            </div>-->
+                        </div>
+                    </div>
+                <div ui-grid="gridOptions" ui-grid-selection class="ConstPhone" ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-auto-resize>
+                    <div class="watermark" ng-show="!gridOptions.data.length">No data available</div>
+                </div>
+
+
+
+                <div class="grid-pager">
+                    <div class="col-lg-9 col-md-9 col-sm-9 nopadding">
+                        <div ng-show="(totalItems>=10) == true">
+                            <div class="pagination-left">
+                                <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="gridOptions.paginationPageSize" scrolldown ng-change="pageChanged(currentPage)"
+                                                ng-model="currentPage" class="pagination" direction-links="false" id="HconstPhone"
+                                                first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-show="commonShowAddGridRow">
+                        <div style="margin-top:20px;" class="pull-right">
+                            <button type="button" class="btn btn-default" ng-click="commonAddGridRow(CONSTANTS.CONST_PHONE)">Add Phone</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 nopadding" ng-hide="commonShowAddGridRow">
+                        <div style="margin-top:20px;" class="pull-right">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-default"  ng-click="cancel()">Close</button>
+        </div>
+    </div>
+</div>
+
+
+

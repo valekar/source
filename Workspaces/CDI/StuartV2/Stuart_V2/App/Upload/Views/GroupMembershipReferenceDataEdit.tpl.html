@@ -1,0 +1,61 @@
+﻿<div id="modalCover hide fade">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Confirmation</h3>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="submit()" style="margin: 10px">
+        <p><b>Please edit the information shown and click Submit </b></p>
+        <br />
+        <div ng-style="pleaseWait">
+            <div class="refresh refresh-div">
+                <h4>Please wait....</h4>
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label for="GroupCode" class="col-sm-4 form-control-label">Group Code : </label>
+            <div class="col-sm-8">
+                <input ng-model="referenceEdit.groupCode" class="form-control" id="GroupCode" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="GroupName" class="col-sm-4 form-control-label">Group Name : </label>
+            <div class="col-sm-8">
+                <input ng-model="referenceEdit.groupName" id="GroupName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="GroupType" class="col-sm-4 form-control-label">Group Type : </label>
+            <div class="col-sm-8">
+                <select name="selGroupType" id="selGroupType" class="form-control" ng-change="referenceEdit.populateGroupTypeDetails(selGroupType)" ng-options="groupType.value for groupType in referenceEdit.groupTypes track by groupType.id" ng-model="referenceEdit.groupType">
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SubGroupType" class="col-sm-4 form-control-label">Sub Group Type </label>
+            <div class="col-sm-8">
+                <select name="selSubGroupType" id="selSubGroupType" class="form-control" ng-options="subGroupType.value.split('|')[0] for subGroupType in referenceEdit.subGroupTypes | filter: {group : referenceEdit.groupType.id}  track by subGroupType.id" ng-model="referenceEdit.subGroupType"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="GroupAssignmentMethod" class="col-sm-4 form-control-label">Group Assignment Method : </label>
+            <div class="col-sm-8">
+                <select name="selGroupAssignmentMethod" id="selGroupAssignmentMethod" class="form-control" ng-options="assignmentMethod.id for assignmentMethod in referenceEdit.assignmentMethods track by assignmentMethod.value" ng-model="referenceEdit.assignmentMethod"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="GroupOwnerEmail" class="col-sm-4 form-control-label">Group Owner Email : </label>
+            <div class="col-sm-8">
+                <input ng-model="referenceEdit.ownerEmail" id="GroupOwnerEmail" class="form-control" type="text">
+            </div>
+        </div>
+        <span class="search-no-results pull-left" ng-show="referenceEdit.toggleValidationSummary">{{referenceEdit.validationSummary}}</span>
+        <br />
+        <br />
+        <div class="modal-footer">
+            <button class="btn btn-default pull-right" type="button" ng-click="referenceDataEditSubmit()">Confirm</button>
+            <button class="btn btn-default pull-left" type="button" ng-click="referenceEdit.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+

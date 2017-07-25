@@ -1,0 +1,82 @@
+﻿
+<div>
+
+    <uib-alert ng-repeat="alert in alerts" type="success" close="closeAlert($index)">Saved preferences</uib-alert>
+    <div id="divMenuErrorMsg" class="alert-box error" ng-show="divMenuErrorMsg"><span>error: </span>Error, Please contact administrator.</div>
+    <div id="divMenuSuccessMsg" class="alert-box success" ng-show="divMenuSuccessMsg"><span>success: </span>Successfully saved menu preferences.</div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.EntOrgDetail" />
+            Enterprise Organization Details
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.RFMDetails" />
+            Patronage Summary (RFM)
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.TransformationDetail" />
+            Affiliation Matching Rules
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.Tags" />
+            Tags
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.EntOrgHierarchy" />
+            Enterprise Organization Hierarchy
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.MasterBridgeLocation" />
+            Affiliated Master Bridge Details(Location)
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.MasterBridgeMaster" />
+            Affiliated Master Bridge Details(Master)
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.NaicsCodeStew" />
+            NAICS Code Stewarding
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.RankingStew" />
+            Ranking Stewarding
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.TransactionHistory" />
+            Transaction History
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="0" id="Preferences" name="Preferences" ng-model="savePref.Characteristics" />
+            Characteristics
+        </label>
+    </div>
+
+    <div style="padding-top:5px; margin-bottom:10px; width:100%; border-bottom:2px #808080 solid;"></div>
+
+    <div style="float:left; margin-right:10px;"><input type="button" value=" Save " class="btn btn-default" ng-click="savePreferences()"></div>
+    <div style="float:left; margin-right:20px;"><input type="button" value=" Close " class="btn btn-default" ng-click="closePreferences()"></div>
+    <div style="clear:both;"></div>
+
+</div>
+

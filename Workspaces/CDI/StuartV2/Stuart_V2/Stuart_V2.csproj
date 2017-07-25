@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C28A64F7-D084-4B35-B042-B495D7D78C55}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stuart_V2</RootNamespace>
+    <AssemblyName>Stuart_V2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.2.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Teradata.Client.Provider, Version=14.11.0.0, Culture=neutral, PublicKeyToken=76b417ee2e04956c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Teradata\NET Data Provider for Teradata\14.11\bin\Teradata.Client.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\MVC\AdminController.cs" />
+    <Compile Include="Controllers\MVC\BaseController.cs" />
+    <Compile Include="Controllers\MVC\CaseController.cs" />
+    <Compile Include="Controllers\MVC\CemDncUploadController.cs" />
+    <Compile Include="Controllers\MVC\CemMsgPrefUploadController.cs" />
+    <Compile Include="Controllers\MVC\ConstituentController.cs" />
+    <Compile Include="Controllers\MVC\DoNotContactController.cs" />
+    <Compile Include="Controllers\MVC\EmailOnlyUploadController.cs" />
+    <Compile Include="Controllers\MVC\ExportController.cs" />
+    <Compile Include="Controllers\MVC\GeneralController.cs" />
+    <Compile Include="Controllers\MVC\GroupMembershipController.cs" />
+    <Compile Include="Controllers\MVC\GroupMembershipReferenceController.cs" />
+    <Compile Include="Controllers\MVC\HomeController.cs" />
+    <Compile Include="Controllers\MVC\LocatorController.cs" />
+    <Compile Include="Controllers\MVC\LoginController.cs" />
+    <Compile Include="Controllers\MVC\MessagePreferenceController.cs" />
+    <Compile Include="Controllers\MVC\NameAndEmailUploadController.cs" />
+    <Compile Include="Controllers\MVC\PreferenceLocatorController.cs" />
+    <Compile Include="Controllers\MVC\TestController.cs" />
+    <Compile Include="Controllers\MVC\TransactionController.cs" />
+    <Compile Include="Controllers\MVC\UploadController.cs" />
+    <Compile Include="Exceptions\CustomExceptionHandler.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthRoles.cs" />
+    <Compile Include="Models\DropdownHelper.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\Entities\Admin\Admin.cs" />
+    <Compile Include="Models\Entities\Case\CaseLocInfo.cs" />
+    <Compile Include="Models\Entities\Case\CaseNotes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Entities\Case\CaseSearchModel.cs" />
+    <Compile Include="Models\Entities\Case\CreateCaseModel.cs" />
+    <Compile Include="Models\Entities\Cem\DNC.cs" />
+    <Compile Include="Models\Entities\Cem\DoNotContact.cs" />
+    <Compile Include="Models\Entities\Cem\MessagePreference.cs" />
+    <Compile Include="Models\Entities\Cem\PreferenceLocator.cs" />
+    <Compile Include="Models\Entities\Constituents.cs" />
+    <Compile Include="Models\Entities\Constituents\Address.cs" />
+    <Compile Include="Models\Entities\Constituents\AlternateIds.cs" />
+    <Compile Include="Models\Entities\Constituents\ARCBest.cs" />
+    <Compile Include="Models\Entities\Constituents\Birth.cs" />
+    <Compile Include="Models\Entities\Constituents\Characteristics.cs" />
+    <Compile Include="Models\Entities\Constituents\Compare.cs" />
+    <Compile Include="Models\Entities\Constituents\ConstituentSearchModel.cs" />
+    <Compile Include="Models\Entities\Constituents\ConstSearchResultsCache.cs" />
+    <Compile Include="Models\Entities\Constituents\ContactPreference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Entities\Constituents\Death.cs" />
+    <Compile Include="Models\Entities\Constituents\Email.cs" />
+    <Compile Include="Models\Entities\Constituents\ExternalBridge.cs" />
+    <Compile Include="Models\Entities\Cem\GroupMembership.cs" />
+    <Compile Include="Models\Entities\Constituents\InternalBridge.cs" />
+    <Compile Include="Models\Entities\Constituents\MasteringAttempts.cs" />
+    <Compile Include="Models\Entities\Constituents\MergeHistory.cs" />
+    <Compile Include="Models\Entities\Constituents\Name.cs" />
+    <Compile Include="Models\Entities\Constituents\OldMaster.cs" />
+    <Compile Include="Models\Entities\Constituents\OrgAffiliators.cs" />
+    <Compile Include="Models\Entities\Constituents\Phone.cs" />
+    <Compile Include="Models\Entities\Constituents\Private.cs" />
+    <Compile Include="Models\Entities\Constituents\Relationship.cs" />
+    <Compile Include="Models\Entities\Constituents\ShowDetails.cs" />
+    <Compile Include="Models\Entities\Constituents\Summary.cs" />
+    <Compile Include="Models\Entities\Constituents\TransactionHistory.cs" />
+    <Compile Include="Models\Entities\Locator\LocatorSearchModel.cs" />
+    <Compile Include="Models\Entities\MenuPreferences.cs" />
+    <Compile Include="Models\Entities\PickListData.cs" />
+    <Compile Include="Models\Entities\TabLevelSecurityParams.cs" />
+    <Compile Include="Models\Entities\Transaction\TransactionExportDetails.cs" />
+    <Compile Include="Models\Entities\Transaction\TransactionSearch.cs" />
+    <Compile Include="Models\Entities\Transaction\TransactionUpdate.cs" />
+    <Compile Include="Models\Entities\Upload\EmailOnlyUpload.cs" />
+    <Compile Include="Models\Entities\Upload\GroupMembershipUpload.cs" />
+    <Compile Include="Models\Entities\Upload\ListUploadSearch.cs" />
+    <Compile Include="Models\Entities\Upload\NameAndEmailUpload.cs" />
+    <Compile Include="Models\Extentions.cs" />
+    <Compile Include="Models\LDAPAuthentication.cs" />
+    <Compile Include="Models\LocatorModels\LocatorSearchModel.cs" />
+    <Compile Include="Models\LoginHistory.cs" />
+    <Compile Include="Models\Resource.cs" />
+    <Compile Include="Models\SessionUtils.cs" />
+    <Compile Include="Models\TabLevelSecurity.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Models\Utility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\Admin\App.js" />
+    <Content Include="App\Admin\Controllers\TabSecurityCtrl.js" />
+    <Content Include="App\Admin\Controllers\TabSecurityDeleteCtrl.js" />
+    <Content Include="App\Admin\Controllers\TabSecurityEditCtrl.js" />
+    <Content Include="App\Admin\Controllers\TabSecurityInsertCtrl.js" />
+    <Content Include="App\Admin\Directives\AdminDirectives.js" />
+    <Content Include="App\Admin\Services\TabSecurityService.js" />
+    <Content Include="App\Admin\Views\content.html" />
+    <Content Include="App\Admin\Views\gridDropDown.tpl.html" />
+    <Content Include="App\Admin\Views\header.html" />
+    <Content Include="App\Admin\Views\TabSecurity.tpl.html" />
+    <Content Include="App\Admin\Views\TabSecurityDelete.tpl.html" />
+    <Content Include="App\Admin\Views\TabSecurityEdit.tpl.html" />
+    <Content Include="App\Admin\Views\TabSecurityInsert.tpl.html" />
+    <Content Include="App\App.js" />
+    <Content Include="App\Case\App.js" />
+    <Content Include="App\Case\Controllers\CaseCreateController.js" />
+    <Content Include="App\Case\Controllers\CaseDetailsController.js" />
+    <Content Include="App\Case\Controllers\CaseSearchController.js" />
+    <Content Include="App\Case\Controllers\CaseSearchResultsController.js" />
+    <Content Include="App\Case\Controllers\Instantiated Controllers\CaseNotedInstantiatedController.js" />
+    <Content Include="App\Case\Controllers\Instantiated Controllers\CaseLocInfoInstantiatedController.js" />
+    <Content Include="App\Case\Controllers\Instantiated Controllers\CaseInfoInstantiatedController.js" />
+    <Content Include="App\Case\Services\CaseCRUDService.js" />
+    <Content Include="App\Case\Services\CaseDetailsServices.js" />
+    <Content Include="App\Case\Services\CaseHelper.js" />
+    <Content Include="App\Case\Services\CaseServices.js" />
+    <Content Include="App\Case\Views\CaseCreateTemplate.html" />
+    <Content Include="App\Case\Views\CaseMainTemplate.html" />
+    <Content Include="App\Case\Views\CaseSearchResultsTemplate.html" />
+    <Content Include="App\Case\Views\CaseSearchTemplate.html" />
+    <Content Include="App\Case\Views\Common\CaseNotesCRUD\Add.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseNotesCRUD\Delete.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseNotesCRUD\Edit.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseInfoCRUD\Delete.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseInfoCRUD\Edit.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseLocInfoCRUD\Add.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseLocInfoCRUD\Delete.tpl.html" />
+    <Content Include="App\Case\Views\Common\CaseLocInfoCRUD\Edit.tpl.html" />
+    <Content Include="App\Case\Views\Common\gridDropDown.tpl.html" />
+    <Content Include="App\Case\Views\Common\gridDropDownCaseInfo.tpl.html" />
+    <Content Include="App\Case\Views\content.html" />
+    <Content Include="App\Case\Views\header.html" />
+    <Content Include="App\Case\Views\Multi\caseLocatorInfo.tpl.html" />
+    <Content Include="App\Case\Views\Multi\CaseMultiDetailsSidePanel.html" />
+    <Content Include="App\Case\Views\Multi\CaseMultiDetailsTemplate.html" />
+    <Content Include="App\Case\Views\Multi\CaseNotes.tpl.html" />
+    <Content Include="App\Case\Views\Multi\CaseTransactionDetails.tpl.html" />
+    <Content Include="App\Case\Views\Multi\CaseDetails.tpl.html" />
+    <Content Include="App\Case\Views\Multi\CaseInfo.tpl.html" />
+    <Content Include="App\Case\Views\uiBreadcrumbs.tpl.html" />
+    <Content Include="App\CommonMessage.tpl.html" />
+    <Content Include="App\Constituent\App.js" />
+    <Content Include="App\Constituent\Controllers\cem\ConstMsgPrefCtrl.js" />
+    <Content Include="App\Constituent\Controllers\cem\ConstDncCtrl.js" />
+    <Content Include="App\Constituent\Controllers\cem\ConstGrpMembrshipCtrl.js" />
+    <Content Include="App\Constituent\Controllers\cem\ConstPrefLocCtrl.js" />
+    <Content Include="App\Constituent\Controllers\ConstMultiCtrlHelper.js" />
+    <Content Include="App\Constituent\Controllers\ConstUnmergeController.js" />
+    <Content Include="App\Constituent\Controllers\ConstCartController.js" />
+    <Content Include="App\Constituent\Controllers\ConstHomeDetailsController.js" />
+    <Content Include="App\Constituent\Controllers\ConstituentController.js" />
+    <Content Include="App\Constituent\Controllers\ConstituentDetailsController.js" />
+    <Content Include="App\Constituent\Controllers\ConstMergeController.js" />
+    <Content Include="App\Constituent\Controllers\ConstMultiDetailsController.js" />
+    <Content Include="App\Constituent\Controllers\ConstSearchResultsController.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\AddressInstantiateControllers.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\AffiliatorCtrl.js" />
+    <Content Include="App\Constituent\Controllers\ExtentedControllers\AlternateIdsCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\BirthInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\CaseCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\CharacterInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\ContactPrefInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\DeathInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\EmailInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\ErrorInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\GroupInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\NameInstantiateControllers.js" />
+    <Content Include="App\Constituent\Controllers\InstantiatedControllers\PhoneInstantiateCtrl.js" />
+    <Content Include="App\Constituent\Directives\ConstituentDirectives.js" />
+    <Content Include="App\Constituent\Services\ConstCemService.js" />
+    <Content Include="App\Constituent\Services\ConstituentHelper.js" />
+    <Content Include="App\Constituent\Services\ConstituentMultiService.js" />
+    <Content Include="App\Constituent\Services\ConstituentServices.js" />
+    <Content Include="App\Constituent\Services\ExtendedServices.js" />
+    <Content Include="App\Constituent\Services\CRUDService.js" />
+    <Content Include="App\Constituent\Views\AddNamePopup.html" />
+    <Content Include="App\Constituent\Views\CartCompare.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\CemAllShowRecords.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\ConstCemDnc.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\ConstCemGrpMembrshp.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Dnc\AddDnc.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Dnc\DeleteDnc.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Dnc\EditDnc.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\GrpMembrship\AddGrpMembrship.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\GrpMembrship\DeleteGrpMembrship.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\GrpMembrship\EditGrpMembrship.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\iconGridCem.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Message\AddMessagePref.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Message\DeleteMessagePref.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Message\EditMessagePref.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Preference\AddLocator.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\ConstCemDetails.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\ConstCemMsgPref.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\ConstCemPrefLocator.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\gridCemDropDown.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Preference\DeleteLocator.tpl.html" />
+    <Content Include="App\Constituent\Views\cem\Preference\EditLocator.tpl.html" />
+    <Content Include="App\Constituent\Views\common\addressCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\addressCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\addressCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\AdvanceCaseSearch.tpl.html" />
+    <Content Include="App\Constituent\Views\common\affiliatorCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\affiliatorCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\birthCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\birthCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\birthCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\cartLink.tpl.html" />
+    <Content Include="App\Constituent\Views\common\Case.tpl.html" />
+    <Content Include="App\Constituent\Views\common\characterCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\characterCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\characterCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\contactPrefCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\contactPrefCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\contactPrefCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\CreateCase.tpl.html" />
+    <Content Include="App\Constituent\Views\common\deathCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\deathCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\deathCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\emailCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\emailCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\emailCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\gridDelete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\gridDropDown.tpl.html" />
+    <Content Include="App\Constituent\Views\common\GridHeader.tpl.html" />
+    <Content Include="App\Constituent\Views\common\grpMemberCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\grpMemberCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\grpMemberCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\iconGrid.tpl.html" />
+    <Content Include="App\Constituent\Views\common\iError.tpl.html" />
+    <Content Include="App\Constituent\Views\common\nameCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\nameCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\nameCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\nameCRUD\OrgAdd.tpl.html" />
+    <Content Include="App\Constituent\Views\common\nameCRUD\OrgDelete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\nameCRUD\OrgEdit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\phoneCRUD\Add.tpl.html" />
+    <Content Include="App\Constituent\Views\common\phoneCRUD\Delete.tpl.html" />
+    <Content Include="App\Constituent\Views\common\phoneCRUD\Edit.tpl.html" />
+    <Content Include="App\Constituent\Views\common\QuickCaseSearch.tpl.html" />
+    <Content Include="App\Constituent\Views\common\ShowDetails.tpl.html" />
+    <Content Include="App\Constituent\Views\constituentSearchResultsTemplate.html" />
+    <Content Include="App\Constituent\Views\ConstituentSearchTemplate.html" />
+    <Content Include="App\Constituent\Views\ConstSidePanel.html" />
+    <Content Include="App\Constituent\Views\content.html" />
+    <Content Include="App\Constituent\Views\gridDropDown.tpl.html" />
+    <Content Include="App\Constituent\Views\gridDropDown.tpl.html" />
+    <Content Include="App\Constituent\Views\header.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsAddressTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsAffiliator.tpl.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsAnonymousInformationTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsBestSmryTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsBirthTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsCharacteristicsTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsContactPreferenceTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsDeathTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsEmailTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsExternalBridgeTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsGroupMembershipsTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsInternalBridgeTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsMasteringAttemptsTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsMergeHistoryTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsNameTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsOrgName.tpl.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsPhoneTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsSummaryView.tpl.html" />
+    <Content Include="App\Constituent\Views\home\ConstDetailsTransactionHistoryTemplate.html" />
+    <Content Include="App\Constituent\Views\home\ConstHomeDetailsTemplate.html" />
+    <Content Include="App\Constituent\Views\home\MasterDetail.tpl.html" />
+    <Content Include="App\Constituent\Views\layout.tpl.html" />
+    <Content Include="App\Constituent\Views\MergeCart.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\Affiliator.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstAlternateIds.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiAddress.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiBestSmry.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiBirth.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiDeath.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiDetailsSidePanel.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiDetailsTemplate.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiEmail.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiExtBridge.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiName.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiPhone.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstMultiPref.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\ConstOrgName.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MasterDetail.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MenuPrefPopup.html" />
+    <Content Include="App\Constituent\Views\multi\MultiAnonInfo.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MultiCharacter.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MultiGrpMembership.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MultiInternalBridge.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MultiMasterAttempt.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MultiMergeHistory.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\MultiTransHistory.tpl.html" />
+    <Content Include="App\Constituent\Views\multi\SummaryView.tpl.html" />
+    <Content Include="App\Constituent\Views\test1.html" />
+    <Content Include="App\Constituent\Views\uiBreadcrumbs.tpl.html" />
+    <Content Include="App\Constituent\Views\UnmergeCart.tpl.html" />
+    <Content Include="App\Constituent\Views\ViewCartTemplate.html" />
+    <Content Include="App\Directives.js" />
+    <Content Include="App\Locator\App.js" />
+    <Content Include="App\Locator\Controllers\Instantiated Controllers\LocatorAddressInstantiatedController.js" />
+    <Content Include="App\Locator\Controllers\Instantiated Controllers\LocatorEmailInstantiatedController.js" />
+    <Content Include="App\Locator\Controllers\LocatorAddressController.js" />
+    <Content Include="App\Locator\Controllers\LocatorAddressDetailsController.js" />
+    <Content Include="App\Locator\Controllers\LocatorAddressSearchResultsController.js" />
+    <Content Include="App\Locator\Controllers\LocatorDomainController.js" />
+    <Content Include="App\Locator\Controllers\LocatorDomainSearchResultsController.js" />
+    <Content Include="App\Locator\Controllers\LocatorEmailController.js" />
+    <Content Include="App\Locator\Controllers\LocatorEmailDetailsController.js" />
+    <Content Include="App\Locator\Controllers\LocatorEmailSearchResultsController.js" />
+    <Content Include="App\Locator\Services\LocatorAddressCRUDService.js" />
+    <Content Include="App\Locator\Services\LocatorAddressDetailsServices.js" />
+    <Content Include="App\Locator\Services\LocatorAddressServices.js" />
+    <Content Include="App\Locator\Services\LocatorDomainServices.js" />
+    <Content Include="App\Locator\Services\LocatorEmailCRUDService.js" />
+    <Content Include="App\Locator\Services\LocatorEmailDetailsServices.js" />
+    <Content Include="App\Locator\Services\LocatorServices.js" />
+    <Content Include="App\Locator\Views\Common\gridDropDownLocatorAddressInfo.tpl.html" />
+    <Content Include="App\Locator\Views\Common\gridDropDownLocatorEmailInfo.tpl.html" />
+    <Content Include="App\Locator\Views\Common\LocatorAddressInfoCRUD\Delete.tpl.html" />
+    <Content Include="App\Locator\Views\Common\LocatorAddressInfoCRUD\Edit.tpl.html" />
+    <Content Include="App\Locator\Views\Common\LocatorEmailInfoCRUD\Delete.tpl.html" />
+    <Content Include="App\Locator\Views\Common\LocatorEmailInfoCRUD\Edit.tpl.html" />
+    <Content Include="App\Locator\Views\content.html" />
+    <Content Include="App\Locator\Views\header.html" />
+    <Content Include="App\Locator\Views\LocatorAddressSearchResultsTemplate.html" />
+    <Content Include="App\Locator\Views\LocatorAddressTemplate.html" />
+    <Content Include="App\Locator\Views\LocatorDomainSearchResultsTemplate.html" />
+    <Content Include="App\Locator\Views\LocatorEmailDomainCorrectionTemplate.html" />
+    <Content Include="App\Locator\Views\LocatorEmailSearchResultsTemplate.html" />
+    <Content Include="App\Locator\Views\LocatorEmailTemplate.html" />
+    <Content Include="App\Locator\Views\multi\DomainAll.tpl.html" />
+    <Content Include="App\Locator\Views\multi\DomainApproved.tpl.html" />
+    <Content Include="App\Locator\Views\multi\DomainRejected.tpl.html" />
+    <Content Include="App\Locator\Views\multi\DomainReverted.tpl.html" />
+    <Content Include="App\Locator\Views\multi\DomainWaitingforapproval.tpl.html" />
+    <Content Include="App\Locator\Views\multi\LocatorAddressAssessmentsInfo.tpl.html" />
+    <Content Include="App\Locator\Views\multi\LocatorAddressConstituentsInfo.tpl.html" />
+    <Content Include="App\Locator\Views\multi\LocatorAddressDetailsTemplate.html" />
+    <Content Include="App\Locator\Views\multi\LocatorAddressInfo.tpl.html" />
+    <Content Include="App\Locator\Views\multi\LocatorEmailDetailsTemplate.html" />
+    <Content Include="App\Locator\Views\multi\LocatorEmailInfo.tpl.html" />
+    <Content Include="App\Services.js" />
+    <Content Include="App\Transaction\App.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\AssociateCaseCtrl.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsAddressController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsAffiliatorController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsAffiliatorHierarchyController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsAffiliatorTagsController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsBirthController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsCharacteristicsController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsContactPreferenceController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsDeathController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsEmailController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsEmailOnlyUploadController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsGroupMembershipUploadController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsMergeController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsOrgNameController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsOrgTransformsController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsPersonNameController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsPhoneController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransactionDetailsUnmergeController.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransDetailsCemDncCtrl.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransDetailsCemDncUploadCtrl.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransDetailsCemMsgPrefCtrl.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransDetailsCemMsgPrefUploadCtrl.js" />
+    <Content Include="App\Transaction\Controllers\InstantiatedControllers\TransDetailsCemPrefLocCtrl.js" />
+    <Content Include="App\Transaction\Controllers\TransactionMultiDetailsController.js" />
+    <Content Include="App\Transaction\Controllers\TransactionSearchController.js" />
+    <Content Include="App\Transaction\Controllers\TransactionSearchResultsController.js" />
+    <Content Include="App\Transaction\Directives\TransactionDirectives.js" />
+    <Content Include="App\Transaction\Services\CaseService\CaseServices.js" />
+    <Content Include="App\Transaction\Services\TransactionHelper.js" />
+    <Content Include="App\Transaction\Services\TransactionMultiServices.js" />
+    <Content Include="App\Transaction\Services\TransactionServices.js" />
+    <Content Include="App\Transaction\Views\Common\AdvanceCaseSearch.tpl.html" />
+    <Content Include="App\Transaction\Views\Common\AssociateCase.tpl.html" />
+    <Content Include="App\Transaction\Views\Common\CaseInfo.tpl.html" />
+    <Content Include="App\Transaction\Views\Common\CaseSearch.tpl.html" />
+    <Content Include="App\Transaction\Views\Common\CreateCase.tpl.html" />
+    <Content Include="App\Transaction\Views\Common\gridDropDown.tpl.html" />
+    <Content Include="App\Transaction\Views\Common\QuickCaseSearch.tpl.html" />
+    <Content Include="App\Transaction\Views\content.html" />
+    <Content Include="App\Transaction\Views\header.html" />
+    <Content Include="App\Transaction\Views\Multi\ApproveMerge.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\ApproveUnmerge.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\MergeResearch.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\RejectMerge.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\RejectUnmerge.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\TransactionMultiDetailsTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsAddressTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsAffiliatorHierarchyTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsAffiliatorTagsTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsAffiliatorTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsBirthTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsCemDnc.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsCemDncUpld.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsCemMsgPref.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsCemPrefLoc.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsCharacteristicsTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsContactPreferenceTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsDeathTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsEmailOnlyUploadTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsEmailTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsGroupMembershipUploadTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsMergeTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsOrgNameTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsOrgTransformsTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsPersonNameTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsPhoneTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDetailsUnmergeTemplate.html" />
+    <Content Include="App\Transaction\Views\Multi\TransDtailsCemMsgPrefUpload.tpl.html" />
+    <Content Include="App\Transaction\Views\Multi\UnmergeResearch.tpl.html" />
+    <Content Include="App\Transaction\Views\TransactionSearchResultsTemplate.html" />
+    <Content Include="App\Transaction\Views\TransactionSearchTemplate.html" />
+    <Content Include="App\Transaction\Views\uiBreadcrumbs.tpl.html" />
+    <Content Include="App\Upload\App.js" />
+    <Content Include="App\Upload\Controllers\DNCUploadCtrl.js" />
+    <Content Include="App\Upload\Controllers\EmailOnlyUploadController.js" />
+    <Content Include="App\Upload\Controllers\GroupMembershipReferenceController.js" />
+    <Content Include="App\Upload\Controllers\GroupMembershipUploadController.js" />
+    <Content Include="App\Upload\Controllers\ListUploadSearchCtrl.js" />
+    <Content Include="App\Upload\Controllers\ListUploadSearchResultsCtrl.js" />
+    <Content Include="App\Upload\Controllers\ListUploadTransDetailsCtrl.js" />
+    <Content Include="App\Upload\Controllers\MsgPrefUploadCtrl.js" />
+    <Content Include="App\Upload\Controllers\NameAndEmailUploadController.js" />
+    <Content Include="App\Upload\Directives\UploadDirectives.js" />
+    <Content Include="App\Upload\Files\DncUploadTemplate.xlsx" />
+    <Content Include="App\Upload\Services\DNCService.js" />
+    <Content Include="App\Upload\Services\EmailOnlyUploadServices.js" />
+    <Content Include="App\Upload\Services\GroupMembershipReferenceServices.js" />
+    <Content Include="App\Upload\Services\ListUploadServices.js" />
+    <Content Include="App\Upload\Services\MsgPrefService.js" />
+    <Content Include="App\Upload\Services\NameAndEmailUploadServices.js" />
+    <Content Include="App\Upload\Services\UploadHelper.js" />
+    <Content Include="App\Upload\Services\UploadServices.js" />
+    <Content Include="App\Upload\Views\common\EmailOnlyUploadValidation.tpl.html" />
+    <Content Include="App\Upload\Views\common\gridButton.tpl.html" />
+    <Content Include="App\Upload\Views\common\gridReferenceDropDown.tpl.html" />
+    <Content Include="App\Upload\Views\common\GroupMembershipUploadConfirm.tpl.html" />
+    <Content Include="App\Upload\Views\common\GroupMembershipUploadError.tpl.html" />
+    <Content Include="App\Upload\Views\common\GroupMembershipUploadValidation.tpl.html" />
+    <Content Include="App\Upload\Views\common\GroupMembershipUserInput.tpl.html" />
+    <Content Include="App\Constituent\Views\common\MessagePopup.tpl.html" />
+    <Content Include="App\Upload\Views\common\iconGrid.tpl.html" />
+    <Content Include="App\Upload\Views\common\NameAndEmailUploadConfirm.tpl.html" />
+    <Content Include="App\Upload\Views\common\NameAndEmailUploadUserInput.tpl.html" />
+    <Content Include="App\Upload\Views\common\NameAndEmailUploadValidation.tpl.html" />
+    <Content Include="App\Upload\Views\dnc\DncUpload.tpl.html" />
+    <Content Include="App\Upload\Views\dnc\DNCUserConfirm.tpl.html" />
+    <Content Include="App\Upload\Views\dnc\DNCUserInput.tpl.html" />
+    <Content Include="App\Upload\Views\dnc\DNCValidation.tpl.html" />
+    <Content Include="App\Upload\Views\EmailOnlyUpload.html" />
+    <Content Include="App\Upload\Views\GroupMembershipRefenceDataValidation.tpl.html" />
+    <Content Include="App\Upload\Views\GroupMembershipReferenceAddRecord.tpl.html" />
+    <Content Include="App\Upload\Views\GroupMembershipReferenceDataDelete.tpl.html" />
+    <Content Include="App\Upload\Views\GroupMembershipReferenceDataEdit.tpl.html" />
+    <Content Include="App\Upload\Views\GroupMembershipReferenceTable.html" />
+    <Content Include="App\Upload\Views\ListUploadTransDetails.tpl.html" />
+    <Content Include="App\Upload\Views\content.html" />
+    <Content Include="App\Upload\Views\GroupMembershipUpload.html" />
+    <Content Include="App\Upload\Views\header.html" />
+    <Content Include="App\Upload\Views\ListUploadSearch.tpl.html" />
+    <Content Include="App\Upload\Views\ListUploadSearchResults.tpl.html" />
+    <Content Include="App\Upload\Views\msgPref\MsgPref.tpl.html" />
+    <Content Include="App\Upload\Views\msgPref\MsgPrefUserConfirm.tpl.html" />
+    <Content Include="App\Upload\Views\msgPref\MsgPrefUserInput.tpl.html" />
+    <Content Include="App\Upload\Views\msgPref\MsgPrefValidation.tpl.html" />
+    <Content Include="App\Upload\Views\NameAndEmailUpload.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\font-awesome.min_1.css" />
+    <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\jquery-ui\redmond\jquery-ui-1.8.14.custom.css" />
+    <Content Include="Content\ladda-bootstrap\ladda-themeless.min.css" />
+    <Content Include="Content\menustyles.css" />
+    <Content Include="Content\myCSS.css" />
+    <Content Include="Content\myCSS_1.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Tab.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\jquery-ui.css" />
+    <Content Include="Content\ui-grid.css" />
+    <Content Include="Content\ui-grid.min.css" />
+    <Content Include="Content\ui-grid.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\Death-52.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\Expired-52.png" />
+    <Content Include="Images\Headstone-52.png" />
+    <Content Include="Images\Historical-52.png" />
+    <Content Include="Images\Medal First Place-52.png" />
+    <Content Include="Images\redcross-logo.png" />
+    <Content Include="Images\redcross-logo1.png" />
+    <Content Include="Images\StuartFAK.jpg" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Scripts\angular-backtop.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="App\Upload\Files\MessagePrefTemplate.xlsx" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Scripts\angular.intellisense.js" />
+    <Content Include="Scripts\select.min.js" />
+    <Content Include="Scripts\ui-grid_1.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\ExcelIcon.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\Spinning_segments.gif" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\AddConstituentName.js" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-backtop.js" />
+    <Content Include="Scripts\angular-new.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap-ui.js" />
+    <Content Include="Scripts\bootstrap-ui1.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\ui-grid.eot" />
+    <Content Include="Content\ui-grid.ttf" />
+    <Content Include="Content\ui-grid.woff" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="App\Upload\Files\GroupMembershipUploadTemplate.xlsx" />
+    <Content Include="App\Upload\Views\common\EmailOnlyUploadUserInput.tpl.html" />
+    <Content Include="App\Upload\Views\common\EmailOnlyUploadConfirm.tpl.html" />
+    <Content Include="App\Upload\Files\EmailOnlyUploadTemplate.xlsx" />
+    <Content Include="App\Upload\Files\NameAndEmailUploadTemplate.xlsx" />
+    <Content Include="App\Upload\Files\Group Membership Upload Template.xlsx" />
+    <None Include="Properties\PublishProfiles\Test1.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FileSaver.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\ladda-bootstrap\ladda.min.js" />
+    <Content Include="Scripts\ladda-bootstrap\spin.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ng-file-upload.js" />
+    <Content Include="Scripts\ngStorage.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-new.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\ui-bootstrap.min.js" />
+    <Content Include="Scripts\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.min.js" />
+    <Content Include="Scripts\uiBreadcrumbs.js" />
+    <Content Include="Scripts\uiBreadcrumbs.min.js" />
+    <Content Include="Scripts\ui\1.10.3\jquery-ui.js" />
+    <Content Include="Scripts\ui\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\ui\jquery-ui.js" />
+    <Content Include="Scripts\upload.js" />
+    <Content Include="Scripts\URI.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\GroupMembershipReferenceTable.cshtml" />
+    <Content Include="Scripts\select.min.js.map" />
+    <None Include="Views\Home\test1.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Home\Constituent.cshtml" />
+    <Content Include="Views\Home\Transaction.cshtml" />
+    <Content Include="Views\Home\Locator.cshtml" />
+    <Content Include="Views\Home\Case.cshtml" />
+    <Content Include="Views\Home\Account.cshtml" />
+    <Content Include="Views\Home\Upload.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Home\Reports.cshtml" />
+    <Content Include="Views\Home\Reference.cshtml" />
+    <Content Include="Views\Home\Utilities.cshtml" />
+    <Content Include="Views\Home\Enterprise.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\templates\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\CaseResults\" />
+    <Folder Include="Views\Case\" />
+    <Folder Include="Views\CemMsgPrefUpload\" />
+    <Folder Include="Views\CemUpload\" />
+    <Folder Include="Views\Constituent\" />
+    <Folder Include="Views\DoNotContact\" />
+    <Folder Include="Views\General\" />
+    <Folder Include="Views\GroupMembership\" />
+    <Folder Include="Views\Message\" />
+    <Folder Include="Views\PreferenceLocator\" />
+    <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56319</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56319/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

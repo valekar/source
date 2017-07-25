@@ -1,0 +1,9 @@
+﻿<!--Show the potential unmerge message-->
+<div ng-show="row.entity.has_potential_unmerge != null ">
+    <div ng-show="(row.entity.has_potential_unmerge == true)" style="float:left;margin-left:5px;">Yes</div>
+    <a href="javascript:void(0)">
+        <img ng-show="(row.entity.has_potential_unmerge == true)" ng-src="{{grid.appScope.getImagePath('research')}}" style="width:20px; height:20px;float:left;margin-left:5px;" ng-click="grid.appScope.potentialUnmergesAddressNewAccount(row.entity, grid)" />
+      </a>
+          <div ng-show="(row.entity.has_potential_unmerge == false)" style="float:left;margin-left:5px;">No</div>
+        <b style="clear:both" />
+</div>

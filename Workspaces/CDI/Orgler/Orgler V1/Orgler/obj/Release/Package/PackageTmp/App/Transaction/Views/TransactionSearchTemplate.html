@@ -1,0 +1,215 @@
+﻿
+<div ng-controller="TransactionSearchController" ng-form="transSearchForm">
+    <div ng-style="pleaseWait">
+        <div class="refresh refresh-div">
+            <h4>Please wait....</h4>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div>
+                <h3>Search Transaction</h3>
+                <div style="float: right; margin-top: -35px">
+                    <button type="button" class="btn btn-default" ng-show="lastTransSearchResultPresent" ng-click="fetchLastTransSearchResult()">Last Search Result</button>
+                    <button type="button" class="btn btn-default" style="margin-left: 6px;" data-toggle="modal" data-target="#recentSearchesModal">Recent Searches</button>
+                </div>
+                <h5>Provide the user name in First Name.Last Name format </h5>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="recentSearchesModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Recent Searches</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-default">
+                        <!-- /.panel-heading -->
+                        <div class="menu_simple_recent_search" ng-repeat="obj in TransactionRecentSearches track by $index" style="padding:8px;">
+                            <ul>
+                                <li>
+                                    <a href="#" ng-click="transactionRecentSearch(obj)" ng-model="obj">{{obj| placeholderfunc}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-repeat="counter in TransSearchFormElements">
+        <div ng-show="TransParams.showCloseButton[counter]" style="float:right; margin: 10px 10px 0 0;">
+            <a href="#" ng-click="RemoveRow(counter)" style="color: #f54b4b;">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+        <div ng-show="TransParams.SearchPanel[counter]">
+
+            <div class="col-lg-12">
+
+                <div class="row" id="frmSearch">
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Transaction Number
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Transaction Number" name="transKey{{$index}}" ng-model="TransParams.transactionNumber[counter]" name="transKey" ng-pattern="TransactionNumberRegex" ng-keypress="$event.keyCode == 13 && transactionSearch()" />
+                            </div>
+                            <div role="alert">
+                                <span class="error" ng-show="transSearchForm.transKey{{$index}}.$error.pattern" style="color:Crimson">
+                                    Invalid Format
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Transaction Type
+                            </label>
+                            <div class="ui-select">
+                                <select name="selTransactionType" class="form-control" ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-model="TransParams.transactionType[counter]">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Locator Change-Address">Locator Change - Address</option>
+                                    <option value="Locator Change-Characteristics">Locator Change - Characteristics</option>
+                                    <option value="Locator Change-Contact Preference">Locator Change - Contact Preference</option>
+                                    <option value="Locator Change-Email">Locator Change - Email</option>
+                                    <option value="Locator Change-Organization Affiliator">Locator Change - Organization Affiliator</option>
+                                    <option value="Locator Change-Organization Name">Locator Change - Organization Name</option>
+                                    <option value="Locator Change-Phone">Locator Change - Phone</option>
+                                    <option value="Mastering Update-Merge">Mastering Update - Merge</option>
+                                    <option value="Mastering Update-Unmerge">Mastering Update - Unmerge</option>
+                                    <option value="Group Membership-Group Membership">Group Membership - Group Membership</option>
+                                    <option value="NAICS Code-NAICS Code">NAICS</option>
+                                    <option value="NAICS Upload-NAICS Upload">NAICS Upload</option>
+                                    <option value="Org Confirm Indicator-Org Confirm Indicator">Org Confirmation</option>
+                                    <option value="Org Email Domain-Org Email Domain">Org Email Domain</option>
+                                    <option value="Organization Transformations-Organization Transformations">Organization Transformations - Organization Transformations</option>
+                                    <option value="Enterprise Organization Affiliation Upload-Enterprise Organization Affiliation Upload">EO - Affiliation Upload</option>
+                                    <option value="Enterprise Organization Site Upload-Enterprise Organization Site Upload">EO - Site Upload</option>
+                                    <option value="Enterprise Organization Upload-Enterprise Organization Upload">EO Upload</option>
+                                    <option value="Enterprise Organization Characteristics-Enterprise Organization Characteristics">EO - Characteristics</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Status
+                            </label>
+                            <div>
+                                <select name="selTransactionStatus" class="form-control" ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-model="TransParams.transactionStatus[counter]">
+                                    <option selected="selected" value=""></option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Processed">Processed</option>
+                                    <option value="Rejected">Rejected</option>
+                                    <option value="Waiting for approval">Waiting for approval</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>
+                                Master Id
+                            </label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Master Id" ng-model="TransParams.transactionMasterId[counter]" name="masterId{{$index}}" ng-pattern="MasterIdRegex" ng-keypress="$event.keyCode == 13 && transactionSearch()" />
+                            </div>
+                            <div role="alert">
+                                <span class="error" ng-show="transSearchForm.masterId{{$index}}.$error.pattern" style="color:Crimson">
+                                    Invalid Format
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (From)</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-model="TransParams.transactionDateFrom[counter]" is-open="TransParams.transDateFromPopup[counter].opened" datepicker-options="dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="TransParams.openTransDateFrom([counter])"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Reported Date (To)</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-model="TransParams.transactionDateTo[counter]" is-open="TransParams.transDateToPopup[counter].opened" datepicker-options="dateOptions" ng-required="false" date-disabled="disabled(date, mode)" close-text="Close" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="TransParams.openTransDateTo([counter])"><span class="glyphicon glyphicon-calendar"></span></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="frmSearch">
+
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>User Name</label>
+                            <div class="ui-select">
+                                <input type="text" class="form-control" placeholder="User Name"  ng-model="TransParams.transactionUserName[counter]"
+                                    ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-disabled="TransParams.transUsernameState[counter]" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div style="padding-bottom:5px; padding-top:5px; ">
+                            <label>Or</label>
+                            <div style="font-size:14px; ">
+                                <label style="float: left">Me</label>
+                                <input style="float: left;margin-top: 1px;margin-left: 5px;" type="checkbox" ng-keypress="$event.keyCode == 13 && transactionSearch()" ng-model="TransParams.SearchMeChkbx[counter]" ng-change="SearchMeChkbxChange([counter])" value="" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div ng-show="TransParams.PanelSeparator[counter]" style="height:3px; background-color:#cccccc; width:100%; margin-top:5px; float: left"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div style="padding-top:10px; float: left;">
+                <input type="submit" value="Search" class="btn btn-default" style="width:100px;" id="btnTransSearch" name="btnTransSearch" ng-click="transactionSearch()" ng-disabled="!transSearchForm.$valid" />
+            </div>
+            <div style="padding-top:10px; float: left; margin-left: 10px;">
+                <input type="submit" value="  Clear   " class="btn btn-default" style="width:100px;" id="btnTransClear" name="btnTransClear" ng-click="transactionClear()" />
+            </div>
+
+            <div style="padding-top:10px; float: right;">
+                <button type="button" class="btn btn-default" ng-model="SearchRows" ng-click="AddNewSearchRow(SearchRows)">Add New Row</button>
+            </div>
+            <br/>
+            <br/>
+            <span class="search-no-results">{{ConstNoResults}}</span>
+        </div>
+    </div>
+
+    <h3 ng-show="toggleAdvancedSearchHeader">Search Results</h3>
+
+
+</div>

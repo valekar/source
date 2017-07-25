@@ -1,0 +1,185 @@
+﻿<div id="modalCover">
+    <div class="modal-header">
+        <div class="col-lg-10 col-sm-10 col-md-10">
+            <h3 class="modal-title">Edit Message Preference Record</h3>
+        </div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <button ng-click="editMessagePref.cancel()" class="btn btn-sm btn-danger pull-right">x</button>
+        </div>
+    </div>
+    <br />
+    <form name="myForm" role="form" ng-submit="editMessagePref.submit()" style="margin: 10px">
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Master ID</label>
+            <div class="col-sm-8">
+                <input ng-model="editMessagePref.masterId" class="form-control" id="MasterId" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="MasterId" class="col-sm-4 form-control-label">Source System </label>
+            <div class="col-sm-8">
+                <input ng-model="editMessagePref.sourceSys" class="form-control" id="MasterId" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Line Of Service <span class="requiredRed">*</span></label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ editMessagePref.selected.msgPrefLOS }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="option in editMessagePref.dropDowns | unique:'line_of_service_cd'">
+                            <a href="#" ng-click="editMessagePref.changeInLOS($event,option) ">{{ option.line_of_service_cd }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Communication Channel <span class="requiredRed">*</span></label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle ng-disabled="editMessagePref.selected.msgPrefLOS.length <=0">
+                        {{ editMessagePref.selected.msgPrefCommChannel }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="option in editMessagePref.dropDowns | filter:{line_of_service_cd: editMessagePref.selected.msgPrefLOS }:true | unique:'comm_chan' ">
+                            <a href="#" ng-click="editMessagePref.changeInCommChannel($event,option)">
+                                {{ option.comm_chan }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Message Preference Type <span class="requiredRed">*</span></label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle ng-disabled="editMessagePref.selected.msgPrefCommChannel.length <=0">
+                        {{ editMessagePref.selected.msgPrefType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="option in editMessagePref.dropDowns
+                            | filter:{comm_chan: editMessagePref.selected.msgPrefCommChannel ,line_of_service_cd: editMessagePref.selected.msgPrefLOS}:true
+                            | unique:'msg_prefc_typ' ">
+                            <a href="#" ng-click="editMessagePref.changeInMessagePrefType($event,option)">
+                                {{ option.msg_prefc_typ }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Message Preference Value <span class="requiredRed">*</span></label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle ng-disabled="editMessagePref.selected.msgPrefType.length <=0">
+                        {{ editMessagePref.selected.msgPrefValue }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="option in editMessagePref.dropDowns
+                            | filter:{msg_prefc_typ: editMessagePref.selected.msgPrefType,comm_chan: editMessagePref.selected.msgPrefCommChannel,
+                            line_of_service_cd: editMessagePref.selected.msgPrefLOS}:true
+                            | unique:'msg_prefc_val' ">
+                            <a href="#" ng-click="editMessagePref.changeInMessagePrefValue($event,option)">
+                                {{ option.msg_prefc_val }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Communication Type <span class="requiredRed">*</span></label>
+            <div class="col-sm-8">
+                <div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle ng-disabled="editMessagePref.selected.msgPrefCommChannel.length <=0">
+                        {{ editMessagePref.selected.msgPrefCommType }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="option in editMessagePref.dropDowns | filter:{comm_chan: editMessagePref.selected.msgPrefCommChannel} | unique:'comm_typ' ">
+                            <a href="#" ng-click="editMessagePref.changeInCommType($event,option)">
+                                {{ option.comm_typ }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="form-group row">
+            <label for="" class="col-sm-4 form-control-label"> Associate Case Number</label>
+            <div class="col-sm-8">
+                <input ng-model="editMessagePref.caseNo" class="form-control" id="" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Source System</label>
+            <div class="col-sm-8">
+                <input ng-model="editMessagePref.sourceSys" class="form-control" id="sourceSys" type="text" disabled="disabled">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="sourceSys" class="col-sm-4 form-control-label">Expiration Date <span class="requiredRed">*</span> </label>
+            <div class="col-sm-8">
+                <div class="row nopadding">
+                    <div class="col-lg-10 col-md-10 col-sm-10 nopadding">
+                        <input type="text" class="form-control" uib-datepicker-popup="{{editMessagePref.format}}" required="true"
+                               ng-model="editMessagePref.expirationDate" is-open="editMessagePref.popup.opened"
+                               datepicker-options="editMessagePref.dateOptions" close-text="Close" alt-input-formats="altInputFormats" />
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 nopadding">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="editMessagePref.openExpirationDate()"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group row hide">
+            <label for="rowCode" class="col-sm-4 form-control-label">Row Code</label>
+            <div class="col-sm-8">
+                <input id="rowCode" ng-model="editMessagePref.rowCode" class="form-control" disabled="disabled" type="text">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="singlebutton" class="col-sm-4 form-control-label">Notes</label>
+            <div class="col-sm-8">
+
+                <input id="rowCode" ng-model="editMessagePref.selected.note" class="form-control" type="text">
+
+                <!--<div class="btn-group" uib-dropdown>
+                    <button id="singlebutton" type="button" class="btn" uib-dropdown-toggle>
+                        {{ editMessagePref.selected.note }}<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li ng-repeat="note in editMessagePref.notes">
+                            <a href="#" ng-click="$event.preventDefault(); editMessagePref.selected.note = note">{{ note }}</a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <!-- This casePath is defined in App.js headerCtrl -->
+            <div ng-include src="CaseSearchPath"></div>
+            <button class="btn btn-default" id="btnSubmit" type="Submit">Submit</button>
+            <button class="btn btn-default" type="button" ng-click="editMessagePref.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
